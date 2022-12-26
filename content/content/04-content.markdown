@@ -1,98 +1,79 @@
 ---
-title: "Measurement and DAGs"
-linktitle: "4: Measurement and DAGs"
-date: "2021-02-01"
-start_date: "2021-02-01"
-end_date: "2021-02-05"
+title: "Importar y explorar datos"
+linktitle: "4: Importar y explorar datos"
+date: "2021-08-23"
+start_date: "2021-08-23"
+end_date: "2021-09-06"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 4
 type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "04-slides"
+slides: "03-slides"
 ---
 
-## Readings
-
-### Measurement
-
--   <i class="fab fa-youtube"></i> [The witch trial scene from *Monty Python and the Holy Grail*](https://www.youtube.com/watch?v=yp_l5ntikaU)
--   <i class="fas fa-book"></i> Chapter 5 in *Evaluation: A Systematic Approach*.[^1] This is available on iCollege.
-
-### DAGs
-
--   <i class="far fa-file-pdf"></i> Julia M. Rohrer, “Thinking Clearly About Correlations and Causation: Graphical Causal Models for Observational Data”[^2] This will be posted on iCollege.
--   <i class="far fa-file-pdf"></i> Section 2 only (pp. 4–11) from Julian Schuessler and Peter Selb, “Graphical Causal Models for Survey Inference.”[^3] [The PDF is available at SocArXiv.](https://osf.io/preprints/socarxiv/hbg3m/)
--   <i class="fas fa-book"></i> [Chapter 3, “Directed Acyclic Graphs”](https://mixtape.scunning.com/ch2.html) in *Causal Inference: The Mixtape*[^4]
-
-### DAG example page
-
--   The [example page on DAGs](/example/dags/) shows how to draw and analyze DAGs with both dagitty.net and R + **ggdag**
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="importar-tab" data-toggle="tab" href="#importar" role="tab" aria-controls="importar" aria-selected="true">Importar</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="abstraction-stretching-and-validity-tab" data-toggle="tab" href="#abstraction-stretching-and-validity" role="tab" aria-controls="abstraction-stretching-and-validity" aria-selected="false">Abstraction, stretching, and validity</a>
+<a class="nav-link" id="validar-tab" data-toggle="tab" href="#validar" role="tab" aria-controls="validar" aria-selected="false">Validar</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="causal-models-tab" data-toggle="tab" href="#causal-models" role="tab" aria-controls="causal-models" aria-selected="false">Causal models</a>
+<a class="nav-link" id="seleccionar-tab" data-toggle="tab" href="#seleccionar" role="tab" aria-controls="seleccionar" aria-selected="false">Seleccionar</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="paths-doors-and-adjustment-tab" data-toggle="tab" href="#paths-doors-and-adjustment" role="tab" aria-controls="paths-doors-and-adjustment" aria-selected="false">Paths, doors, and adjustment</a>
+<a class="nav-link" id="exportar-tab" data-toggle="tab" href="#exportar" role="tab" aria-controls="exportar" aria-selected="false">Exportar</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="importar" class="tab-pane fade show active" role="tabpanel" aria-labelledby="importar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/04-slides.html#1">
+<iframe class="embed-responsive-item" src="/slides/04-slides.html#import">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="abstraction-stretching-and-validity" class="tab-pane fade" role="tabpanel" aria-labelledby="abstraction-stretching-and-validity-tab">
+<div id="validar" class="tab-pane fade" role="tabpanel" aria-labelledby="validar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/04-slides.html#abstraction">
+<iframe class="embed-responsive-item" src="/slides/04-slides.html#renv">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="causal-models" class="tab-pane fade" role="tabpanel" aria-labelledby="causal-models-tab">
+<div id="seleccionar" class="tab-pane fade" role="tabpanel" aria-labelledby="seleccionar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/04-slides.html#causal-models">
+<iframe class="embed-responsive-item" src="/slides/04-slides.html#rcom">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="paths-doors-and-adjustment" class="tab-pane fade" role="tabpanel" aria-labelledby="paths-doors-and-adjustment-tab">
+<div id="exportar" class="tab-pane fade" role="tabpanel" aria-labelledby="exportar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/04-slides.html#paths-doors-adjustment">
+<iframe class="embed-responsive-item" src="/slides/04-slides.html#exp">
 </iframe>
 
 </div>
@@ -102,31 +83,29 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/aKaz3bmSVg5iE7Sn8qeDVTrj3zoK_7HBkvMB46hhuH5C0trYK_V6YXqxbRwdpEMu.Y17bJ5f4XEiDn2qT?startTime=1629756672000)
 
--   [Introduction](https://www.youtube.com/watch?v=V9zIL7bI9WI&list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF)
--   [Abstraction, stretching, and validity](https://www.youtube.com/watch?v=QkFhHOoYq-I&list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF)
--   [Causal models](https://www.youtube.com/watch?v=kJQuH3nssfI&list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF)
--   [Paths, doors, and adjustment](https://www.youtube.com/watch?v=_qs_1B4ySWY&list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF)
+# Material de la clase
 
-You can also watch the playlist (and skip around to different sections) here:
+-   [<i class="fas fa-file-archive"></i> `04-clase.zip`](https://github.com/learn-R/04-class/raw/main/04-clase.zip)
 
-<div class="embed-responsive embed-responsive-16by9">
+\-[<i class="fas fa-<Datos para la clase"></i> `datos`](https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sFVrHdTifzlyS9dsJjhEhsF" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/04-practico/)
 
-</div>
+# Materiales adicionales
 
-[^1]: Peter H. Rossi, Mark W. Lipsey, and Gary T. Henry, *Evaluation: A Systematic Approach*, 8th ed. (Los Angeles: Sage, 2019).
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
 
-[^2]: Julia M. Rohrer, “Thinking Clearly about Correlations and Causation: Graphical Causal Models for Observational Data,” *Advances in Methods and Practices in Psychological Science* 1, no. 1 (March 2018): 27–42, doi:[10.1177/2515245917745629](https://doi.org/10.1177/2515245917745629).
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
 
-[^3]: Julian Schuessler and Peter Selb, “Graphical Causal Models for Survey Inference” (Working Paper, SocArXiv, December 17, 2019), doi:[10.31235/osf.io/hbg3m](https://doi.org/10.31235/osf.io/hbg3m).
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
 
-[^4]: Scott Cunningham, *Causal Inference: The Mixtape* (New Haven, CT: Yale University Press, 2021), <https://mixtape.scunning.com/>.
+-   **Actividad con décimas**

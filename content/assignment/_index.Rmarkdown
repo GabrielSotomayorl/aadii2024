@@ -1,74 +1,33 @@
 ---
-title: Assignment details
+title: Sobre las evaluaciones
 menu:
   assignment:
-    parent: Assignments
+    parent: Información general
     weight: 1
 type: docs
 toc: true
 weight: 1
 ---
 
-The main goals of this class are to help you design, critique, code, and run rigorous, valid, and feasible evaluations of public sector programs. Each type of assignment in this class is designed to help you achieve one or more of these goals.
+
+# Evaluaciones
+
+Las evaluaciones del curso se componen de **tareas** (70% de la nota final) y la **entrega de una investigación** (30% de la nota final), en dónde en ambos casos la/el estudiante deberá seleccionar datos y temas de interés de modo de acercar la aplicación del software a contextos de investigación propios de la/el estudiante. En concreto, cada evaluación consiste en:
+
+**1. Tareas** (*70% de la nota final*): consisten en evaluaciones parciales temáticas que buscan poner en práctica los aprendizajes expuestos en la sesión de clases y herramientas reforzadas en los prácticos. **El promedio de notas las de tareas será calculado solo con las cuatro mejores entregas** a partir de la Tarea 1 (*25% c/u*)[^1]. La evaluación es **individual** o en **parejas** (la misma durante todo el semestre).
+
+**2. Investigación final** (*30% de la nota final*): consiste en una evaluación final que aplica los conocimientos y herramientas entregadas a lo largo de curso, a un proyecto de investigación de elección por el/la estudiante. La evaluación es **individual**.
+
+[^1]: Es decir, a lo largo del semestre deberá entregar 6 tareas: 5 calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas restantes, solo las 4 mejores serán consideradas en su promedio de las tareas.
 
 
-## Weekly check-in
+# Calendario de actividades
 
-Every week, after you finish working through the content, I want to hear about what you learned and what questions you still have. To facilitate this, and to encourage engagement with the course content, you'll need to fill out a short response on iCollege. This should be ≈150 words. That's fairly short: there are ≈250 words on a typical double-spaced page in Microsoft Word (500 when single-spaced). 
+El calendario de actividades se puede revisar con detención en la [pestaña planificación](/schedule/). Un resumen breve de las tareas es
 
-You should answer these two questions each week:
-
-1. What was the most exciting thing you learned from the session? Why?
-2. What was the muddiest thing from the session this week? What are you still wondering about?    
-
-I will grade these check-ins using a check system:
-
-- ✔+: (*11.5 points (115%) in gradebook*) Response shows phenomenal thought and engagement with the course content. I will not assign these often.
-- ✔: (*10 points (100%) in gradebook*) Response is thoughtful, well-written, and shows engagement with the course content. This is the expected level of performance.
-- ✔−: (*5 points (50%) in gradebook*) Response is hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.
-
-Notice that is essentially a pass/fail or completion-based system. I'm not grading your writing ability, I'm not counting the exact number of words you're writing, and I'm not looking for encyclopedic citations of every single reading to prove that you did indeed read everything. I'm looking for thoughtful engagement, that's all. Do good work and you'll get a ✓.
-
-You will submit these responses via iCollege. 
+| Evaluación    | Formato       | Fecha |  Ponderación Nota Final   |
+| ------------- |:-------------:| -----:| -------------------:|
+| Tarea         | 4 tareas[^1]   | *Hasta Viernes de la semana informada* | 70% (25% c/u)|
+| Investigación | Única entrega | 22 de noviembre  | 30% |
 
 
-## Problem sets
-
-To practice writing R code, running inferential models, and thinking about causation, you will complete a series of problem sets. 
-
-There are 9 problem sets on the schedule. **I will keep the highest grades for 8 of them.** That is, I will drop the lowest score (even if it's a zero). This means you can skip one of the problem sets. You need to show that you made a good faith effort to work each question. I will not grade these in detail. The problem sets will be graded using a check system:
-
-- ✔+: (*33 points (110%) in gradebook*) Assignment is 100% completed. Every question was attempted and answered, and most answers are correct. Document is clean and easy to follow. Work is exceptional. I will not assign these often.
-- ✔: (*30 points (100%) in gradebook*) Assignment is 70–99% complete and most answers are correct. **This is the expected level of performance.**
-- ✔−: (*15 points (50%) in gradebook*) Assignment is less than 70% complete and/or most answers are incorrect. This indicates that you need to improve next time. I will hopefully not asisgn these often.
-
-You may (and should!) work together on the problem sets, but *you must turn in your own answers.* You cannot work in groups of more than **four** people, and you must note who participated in the group in your assignment.
-
-
-## Evaluation assignments
-
-For your [final project](/assignment/final-project/), you will conduct a pre-registered evaluation of a social program using synthetic data. To (1) give you practice with the principles of program evaluation, research design, measurement, and causal diagrams, and (2) help you with the foundation of your final project, you will complete a set of four evaluation-related assignments. 
-
-Ideally these will become major sections of your final project. However, there is no requirement that the programs you use in these assignments must be the same as the final project. If, through these assignments, you discover that your initially chosen program is too simple, too complex, too boring, etc., you can change at any time.
-
-These assignments will be graded using a check system:
-
-- ✔+: (*33 points (110%) in gradebook*) Assignment is 100% completed. Every question was attempted and answered, and most answers are correct. Document is clean and easy to follow. Work is exceptional. I will not assign these often.
-- ✔: (*30 points (100%) in gradebook*) Assignment is 70–99% complete and most answers are correct. **This is the expected level of performance.**
-- ✔−: (*15 points (50%) in gradebook*) Assignment is less than 70% complete and/or most answers are incorrect. This indicates that you need to improve next time. I will hopefully not asisgn these often.
-
-
-## Exams
-
-There will be two exams covering (1) program evaluation, design, and causation, and (2) the core statistical tools of program evaluation and causal inference.
-
-You will take these exams online through iCollege. The exams will have a time limit, but you can use notes and readings and [the Google](https://www.youtube.com/watch?v=AQ45fO1uiOQ). You must take the exams on your own though, and not talk to anyone about them.
-
-
-## Final project
-
-At the end of the course, you will demonstrate your knowledge of program evaluation and causal inference by completing a final project.
-
-[Complete details for the final project are here.](/assignment/final-project/)
-
-There is no final exam. This project is your final exam.

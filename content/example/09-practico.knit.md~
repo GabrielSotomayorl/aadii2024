@@ -1,0 +1,121 @@
+---
+title: "Muestras complejas y precisión de inferencia estadística"
+linktitle: "9: Muestras complejas y precisión de inferencia estadística"
+date: "2021-09-16"
+menu:
+  example:
+    parent: Ejemplos
+    weight: 9
+type: docs
+editor_options: 
+  chunk_output_type: console
+output: 
+  html_document: 
+    toc: yes
+---
+
+
+
+## 0. Objetivo del práctico
+
+Este práctico tiene por objetivo introducir el trabajo estadístico con **muestras complejas en R**, es decir, cuando se trabaja con muestras que busquen ser representativas de la población a estudiar, bajo determinados parámetros. Buscaremos calcular estimadores puntuales e intervalos de confianza, que nos permiten reportar el error asociado a la inferencia. 
+
+## 1. Recursos del práctico
+
+El presente práctico será realizado con datos de la *Encuesta de Caracterización Socioeconómica (CASEN)* en su versión 2020. Estos datos ya han sido previamente procesados para su correcta realización, recodificando y eliminando casos perdidos, y renombrando y seleccionando variables. Esto es **muy importante**: para trabajar correctamente con muestreos complejos, **deben** asegurarse de que los datos estén bien preparados para ello. 
+
+Recuerden siempre consultar el [**manual/libro de códigos**](http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf) antes de trabajar una base de datos.
+
+### Material del práctico
+
+- [<i class="fas fa-file-archive"></i> `07-clase.zip`](https://github.com/learn-R/07-class/raw/main/07-clase.zip)
+
+
+## 2. Librerías a utilizar
+
+Utilizaremos las siguientes librerías:
+
+1. `pacman`: para facilitar y agilizar la lectura de los paquetes a utilizar en R
+
+2. `sjmisc`: para explorar datos y hacer cálculos agrupados
+
+3. `srvyr`: para trabajar con objetos encuesta
+
+4. `survey`: para realizar estimaciones a nivel poblacional en diálogo con `dplyr`
+
+4. `dplyr`: para manipular datos
+
+# Pasos del procesamiento
+
+## 1. Cargar librerías
+
+Cargamos los paquetes anteriormente señalados:
+
+
+```r
+pacman::p_load(tidyverse,
+               sjmisc,
+               srvyr,
+               survey,
+               dplyr)
+```
+
+
+## 2. Cargar datos
+
+Como se señaló anteriormente, trabajaremos con datos de CASEN 2020, ya procesados con anterioridad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,12 @@
 ---
-title: "Threats to validity"
-linktitle: "6: Threats to validity"
-date: "2021-02-15"
-start_date: "2021-02-15"
-end_date: "2021-02-19"
+title: "Transformación de variales"
+linktitle: "6: Transformación de variales"
+date: "2021-08-30"
+start_date: "2021-08-23"
+end_date: "2021-09-06"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 6
 type: docs
 toc: true
@@ -15,88 +15,107 @@ csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
 slides: "06-slides"
 ---
 
-## Readings
-
--   <i class="fas fa-external-link-square-alt"></i> Randall Munroe, [“Significant”](https://xkcd.com/882/)
--   <i class="fas fa-external-link-square-alt"></i> Alexander Coppock, [“10 Things to Know About Statistical Power”](https://egap.org/resource/10-things-to-know-about-statistical-power/)
--   <i class="fas fa-trophy"></i> Play around with FiveThirtyEight, [“Hack Your Way To Scientific Glory”](https://projects.fivethirtyeight.com/p-hacking/)
--   <i class="fas fa-book"></i> Chapter 9 in *Impact Evaluation in Practice*[^1]
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="básicos-tab" data-toggle="tab" href="#básicos" role="tab" aria-controls="básicos" aria-selected="true">Básicos</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="construct-validity-tab" data-toggle="tab" href="#construct-validity" role="tab" aria-controls="construct-validity" aria-selected="false">Construct validity</a>
+<a class="nav-link" id="procesar-datos-tab" data-toggle="tab" href="#procesar-datos" role="tab" aria-controls="procesar-datos" aria-selected="false">Procesar datos</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="statistical-conclusion-validity-tab" data-toggle="tab" href="#statistical-conclusion-validity" role="tab" aria-controls="statistical-conclusion-validity" aria-selected="false">Statistical conclusion validity</a>
+<a class="nav-link" id="operadores-tab" data-toggle="tab" href="#operadores" role="tab" aria-controls="operadores" aria-selected="false">Operadores</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="internal-validity-tab" data-toggle="tab" href="#internal-validity" role="tab" aria-controls="internal-validity" aria-selected="false">Internal validity</a>
+<a class="nav-link" id="seleccionar-tab" data-toggle="tab" href="#seleccionar" role="tab" aria-controls="seleccionar" aria-selected="false">Seleccionar</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="external-validity-tab" data-toggle="tab" href="#external-validity" role="tab" aria-controls="external-validity" aria-selected="false">External validity</a>
+<a class="nav-link" id="filtrar-tab" data-toggle="tab" href="#filtrar" role="tab" aria-controls="filtrar" aria-selected="false">Filtrar</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="crear-variables-tab" data-toggle="tab" href="#crear-variables" role="tab" aria-controls="crear-variables" aria-selected="false">Crear variables</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pipe-tab" data-toggle="tab" href="#pipe" role="tab" aria-controls="pipe" aria-selected="false">Pipe</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="básicos" class="tab-pane fade show active" role="tabpanel" aria-labelledby="básicos-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/06-slides.html#1">
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#11">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="construct-validity" class="tab-pane fade" role="tabpanel" aria-labelledby="construct-validity-tab">
+<div id="procesar-datos" class="tab-pane fade" role="tabpanel" aria-labelledby="procesar-datos-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/06-slides.html#construct-validity">
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#14">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="statistical-conclusion-validity" class="tab-pane fade" role="tabpanel" aria-labelledby="statistical-conclusion-validity-tab">
+<div id="operadores" class="tab-pane fade" role="tabpanel" aria-labelledby="operadores-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/06-slides.html#statistical-conclusion-validity">
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#29">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="internal-validity" class="tab-pane fade" role="tabpanel" aria-labelledby="internal-validity-tab">
+<div id="seleccionar" class="tab-pane fade" role="tabpanel" aria-labelledby="seleccionar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/06-slides.html#internal-validity">
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#35">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="external-validity" class="tab-pane fade" role="tabpanel" aria-labelledby="external-validity-tab">
+<div id="filtrar" class="tab-pane fade" role="tabpanel" aria-labelledby="filtrar-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/06-slides.html#external-validity">
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#45">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="crear-variables" class="tab-pane fade" role="tabpanel" aria-labelledby="crear-variables-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#52">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="pipe" class="tab-pane fade" role="tabpanel" aria-labelledby="pipe-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/06-slides.html#55">
 </iframe>
 
 </div>
@@ -106,26 +125,23 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/aOFcfYCGklH3cO41xd-WeFzC5oLS72a61wec84SYdTdDTiP-aGjV4rRWWWOj3mcj.1tjrSMe4RddJNO9i?startTime=1630364611000)
 
--   [Introduction](https://www.youtube.com/watch?v=46v8l60nQnI&list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ)
--   [Construct validity](https://www.youtube.com/watch?v=N4XYXuw_IA0&list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ)
--   [Statistical conclusion validity](https://www.youtube.com/watch?v=IziQBDzUJ6E&list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ)
--   [Internal validity](https://www.youtube.com/watch?v=ssz2DTfrGhw&list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ)
--   [External validity](https://www.youtube.com/watch?v=uK7YN6KTRT4&list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ)
+# Material de la clase
 
-You can also watch the playlist (and skip around to different sections) here:
+-   [<i class="fas fa-file-archive"></i> `06-clase.zip`](https://github.com/learn-R/06-class/raw/main/06-clase.zip)
 
-<div class="embed-responsive embed-responsive-16by9">
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/06-practico/)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+# Materiales adicionales
 
-</div>
-
-[^1]: Paul J. Gertler et al., *Impact Evaluation in Practice*, 2nd ed. (Inter-American Development Bank; World Bank, 2016), <https://openknowledge.worldbank.org/handle/10986/25030>.
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)

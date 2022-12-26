@@ -1,12 +1,12 @@
 ---
-title: "Regression and inference"
-linktitle: "2: Regression and inference"
-date: "2021-01-19"
-start_date: "2021-01-19"
-end_date: "2021-01-22"
+title: "Herramientas para el uso de R"
+linktitle: "2: Herramientas para el uso de R"
+date: "2021-08-09"
+start_date: "2021-08-09"
+end_date: "2021-08-16"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 2
 type: docs
 toc: true
@@ -15,46 +15,31 @@ csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
 slides: "02-slides"
 ---
 
-## Readings
-
--   <i class="fas fa-book"></i> Chapter 2 in *Mastering ’Metrics*[^1]
--   <i class="fas fa-book"></i> [Chapter 2, “Probability and Regression Review”](https://mixtape.scunning.com/ch1.html) in *Causal Inference: The Mixtape* (this is long; skim through this as a review)[^2]
-
-## Recommended readings
-
-Look through your notes on regression from your last stats class. Also, you can skim through these resources:
-
--   <i class="fas fa-book"></i> [6.1–6.4 in *ModernDive*](https://moderndive.com/6-regression.html)[^3]
--   <i class="fas fa-book"></i> [7.1–7.4 in *ModernDive*](https://moderndive.com/7-multiple-regression.html)[^4]
--   <i class="fas fa-book"></i> 7.1–7.3 in *OpenIntro Statistics*[^5]
--   <i class="fas fa-book"></i> 8.1 in *OpenIntro Statistics*[^6]
-
-We’ll review all this regression stuff in the videos, so *don’t panic* if this all looks terrifying! Also, take advantage of the videos that accompany the *OpenIntro* chapters. And *also*, the *OpenIntro* chapters are heavier on the math—don’t worry if you don’t understand everything.
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="introducción-tab" data-toggle="tab" href="#introducción" role="tab" aria-controls="introducción" aria-selected="true">Introducción</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="drawing-lines-tab" data-toggle="tab" href="#drawing-lines" role="tab" aria-controls="drawing-lines" aria-selected="false">Drawing lines</a>
+<a class="nav-link" id="rstudio-tab" data-toggle="tab" href="#rstudio" role="tab" aria-controls="rstudio" aria-selected="false">RStudio</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="lines-greek-and-regression-tab" data-toggle="tab" href="#lines-greek-and-regression" role="tab" aria-controls="lines-greek-and-regression" aria-selected="false">Lines, Greek, and regression</a>
+<a class="nav-link" id="rscript-tab" data-toggle="tab" href="#rscript" role="tab" aria-controls="rscript" aria-selected="false">RScript</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="null-worlds-and-statistical-significance-tab" data-toggle="tab" href="#null-worlds-and-statistical-significance" role="tab" aria-controls="null-worlds-and-statistical-significance" aria-selected="false">Null worlds and statistical significance</a>
+<a class="nav-link" id="paso-1-cargar-paquetes-tab" data-toggle="tab" href="#paso-1-cargar-paquetes" role="tab" aria-controls="paso-1-cargar-paquetes" aria-selected="false">Paso 1: Cargar paquetes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="rmarkdown-tab" data-toggle="tab" href="#rmarkdown" role="tab" aria-controls="rmarkdown" aria-selected="false">RMarkdown</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="introducción" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introducción-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
@@ -65,33 +50,44 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 
 </div>
 
-<div id="drawing-lines" class="tab-pane fade" role="tabpanel" aria-labelledby="drawing-lines-tab">
+<div id="rstudio" class="tab-pane fade" role="tabpanel" aria-labelledby="rstudio-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/02-slides.html#drawing-lines">
+<iframe class="embed-responsive-item" src="/slides/02-slides.html#4">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="lines-greek-and-regression" class="tab-pane fade" role="tabpanel" aria-labelledby="lines-greek-and-regression-tab">
+<div id="rscript" class="tab-pane fade" role="tabpanel" aria-labelledby="rscript-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/02-slides.html#lines-greek-regression">
+<iframe class="embed-responsive-item" src="/slides/02-slides.html#21">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="null-worlds-and-statistical-significance" class="tab-pane fade" role="tabpanel" aria-labelledby="null-worlds-and-statistical-significance-tab">
+<div id="paso-1-cargar-paquetes" class="tab-pane fade" role="tabpanel" aria-labelledby="paso-1-cargar-paquetes-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/02-slides.html#significance">
+<iframe class="embed-responsive-item" src="/slides/02-slides.html#29">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="rmarkdown" class="tab-pane fade" role="tabpanel" aria-labelledby="rmarkdown-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/02-slides.html#44">
 </iframe>
 
 </div>
@@ -101,35 +97,36 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/ng-5McE6dA8_cjBGouCZcEArBoP4IYUKuO3LYOdQqKmUoYuICw_cT4ENUCEEPaOZ.i-kqnRNBvpqj-U_I?startTime=1629145685000)
 
--   [Introduction](https://www.youtube.com/watch?v=S4OmWxc3h3Y&list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4)
--   [Drawing lines](https://www.youtube.com/watch?v=DGbLEgL4g6Y&list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4)
--   [Lines, Greek, and regression](https://www.youtube.com/watch?v=n-rV1TIoIgw&list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4)
--   [Null worlds and statistical significance](https://www.youtube.com/watch?v=RYKsrTKWCR4&list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4)
+# Materiales de la clase
 
-You can also watch the playlist (and skip around to different sections) here:
+## Rprojects
 
-<div class="embed-responsive embed-responsive-16by9">
+-   [<i class="fas fa-file-archive"></i> `02-class.zip`](https://github.com/learn-R/02-class/raw/main/02-clase.zip)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+-   [<i class="fas fa-laptop-code"></i> Práctico N°2](https://learn-r-uah.netlify.app/example/02-practico/)
 
-</div>
+# Recomendaciones
 
-[^1]: Joshua D. Angrist and Jörn-Steffen Pischke, *Mastering ’Metrics: The Path from Cause to Effect* (Princeton, NJ: Princeton University Press, 2015).
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
 
-[^2]: Scott Cunningham, *Causal Inference: The Mixtape* (New Haven, CT: Yale University Press, 2021), <https://mixtape.scunning.com/>.
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
 
-[^3]: Chester Ismay and Albert Y. Kim, *ModernDive: An Introduction to Statistical and Data Sciences via R*, 2018, <https://moderndive.com/>.
+    -   <small>Ver Tutorial N°1 Instalación de softwares</small>
+    -   <small>Ver Tutorial N°2 GitHub y GitHub Class Room</small>
 
-[^4]: Ibid.
+-   <i class="fas fa-external-link-square-alt"></i> [Contestar reporte de registro](https://learn-r.formr.org)
 
-[^5]: David M. Diez, Christopher D. Barr, and Mine Çetinkaya-Rundel, *OpenIntro Statistics*, 3rd ed., 2017, <https://www.openintro.org/stat/textbook.php?stat_book=os>.
+## De RMarkdown
 
-[^6]: Ibid.
+-   [RMarkdown en Ciencia de Datos - Hadley Whickham](https://es.r4ds.hadley.nz/r-markdown.html)
+-   [R Markdown](https://rmarkdown.rstudio.com/)
+-   [Tutoriales Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
+-   [cheatsheets](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+-   Para practicar ir a [Tutorial de Markdown](https://www.markdowntutorial.com/es/)

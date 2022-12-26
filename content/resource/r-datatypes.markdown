@@ -1,0 +1,365 @@
+---
+title: "Tipos de datos en R"
+author: "Nicolás Godoy y Dafne Jaime"
+date: "8/19/2021"
+menu:
+  resource:
+    parent: Material complementario
+type: docs
+weight: 2
+toc: true
+---
+
+La presente entrada es una traducción del artículo [**Data types in R**](https://statsandr.com/blog/data-types-in-r/) elaborado por _Antoine Soetewey_ (2019).
+
+Este artículo presenta los diferentes tipos de datos (_data types_) en R. Para aprender sobre diferentes tipos de variables desde un punto de vista estadístico, diríjanse a la entrada [Tipos de variables y ejemplos](https://learn-r-udp.netlify.app/resource/r-datatypes-examples/), disponible en la sección **Recursos**.
+
+# ¿Qué tipos de datos existen en R?
+
+Los 6 tipos de datos más comunes en R son:
+
+1. Numeric
+1. Integer
+1. Complex
+1. Character
+1. Factor
+1. Logical
+
+Los sets de datos en R usualmente constituyen una combinación de estos 6 tipos diferentes de datos. Más adelante, exploraremos en mayor detalle cada tipo de dato, exceptuando el tipo "complex", en tanto nos enfocaremos en los principales, y este tipo de dato rara vez es utilizado en la práctica.
+
+# Numeric
+
+El tipo de dato más común en R es **numeric**. Una variable o una serie será almacenado como un dato numérico si sus valores son números, o si tales valores contienen decimales. Por ejemplo, las siguientes dos series son almacenadas como numeric de forma predeterminada:
+
+
+```r
+# Series numeric sin decimales
+num_data <- c(3, 7, 2)
+num_data
+```
+
+```
+## [1] 3 7 2
+```
+
+```r
+class(num_data)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+# Series numeric con decimales
+num_data_dec <- c(3.4, 7.1, 2.9)
+num_data_dec
+```
+
+```
+## [1] 3.4 7.1 2.9
+```
+
+```r
+class(num_data_dec)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+# También podemos chequear la clase con la función str() 
+str(num_data_dec)
+```
+
+```
+##  num [1:3] 3.4 7.1 2.9
+```
+
+En otras palabras, si se asigna uno o varios números a un objeto en R, este se almacenará como numeric de forma predeterminada (números con decimales), a menos que se especifique algo distinto.
+
+# Integer
+
+Los datos de tipo **Integer** son, de hecho, un tipo particular de datos numericos. Los Integer (_enteros_) son datos numéricos sin decimales. Pueden ser utilizados si es que estás seguro/a de que los números almacenados **nunca** incorporarán decimales. Por ejemplo, digamos que estás interesada/o en el número de hijas/os en una muestra de 10 familias. Esta variable es discreta (para repasar estos contenidos, diríjanse a la entrada [Tipos de variables y ejemplos](https://learn-r-udp.netlify.app/resource/r-datatypes-examples/)), y nunca tendrá decimales. De estemodo, estos datos pueden almacenarse como integer gracias a la función `as.integer()`:
+
+
+
+
+```r
+children
+```
+
+```
+##  [1] 1 3 2 2 4 4 1 1 1 4
+```
+
+```r
+children <- as.integer(children)
+class(children)
+```
+
+```
+## [1] "integer"
+```
+
+Hay que considerar que si la variable no tiene decimales, R automáticamente establecerá el tipo de datos como integer en lugar de numeric.
+
+# Character
+
+Los datos de tipo **character** son utilizados al almacenar texto, conocido como _strings_ en R. La forma más simple de almacenar datos en formato character es usando `""` alrededor del texto: 
+
+
+```r
+char <- "some text"
+char
+```
+
+```
+## [1] "some text"
+```
+
+```r
+class(char)
+```
+
+```
+## [1] "character"
+```
+
+Si deseas forzar a que cualquier tipo de dato sea almacenado como character, puedes hacerlo con la función `as.character()`:
+
+
+```r
+char2 <- as.character(children)
+char2
+```
+
+```
+##  [1] "1" "3" "2" "2" "4" "4" "1" "1" "1" "4"
+```
+
+```r
+class(char2)
+```
+
+```
+## [1] "character"
+```
+
+Hay que notar que cualquier elemento entre `""` será considerado como character, sin importar si luce como character o no. Por ejemplo: 
+
+
+```r
+chars <- c("7.42")
+chars
+```
+
+```
+## [1] "7.42"
+```
+
+```r
+class(chars)
+```
+
+```
+## [1] "character"
+```
+
+Además, en la medida que exista al menos un valor character dentro de una variable o vector, este será considerado como character:
+
+
+```r
+char_num <- c("text", 1, 3.72, 4)
+char_num
+```
+
+```
+## [1] "text" "1"    "3.72" "4"
+```
+
+```r
+class(char_num)
+```
+
+```
+## [1] "character"
+```
+
+Por último, pese a que los espacios no importen en datos numéricos, estos sí son relevantes en datos character:
+
+
+```r
+num_space <- c(1)
+num_nospace <- c(1)
+# ¿Es num_space igual a num_nospace?
+num_space == num_nospace
+```
+
+```
+## [1] TRUE
+```
+
+```r
+char_space <- "text "
+char_nospace <- "text"
+# ¿Es char_space igual a char_nospace?
+char_space == char_nospace
+```
+
+```
+## [1] FALSE
+```
+
+Como pueden ver en los resultados anteriores, un espacio en datos de tipo character (por ejemplo, entre `""`) lo convierte en un string diferente para R
+
+# Factor
+
+Las variables **Factor** son un caso especial de variables character, en el sentido de que también contienen texto.Sin embargo, las variables factor son utilizadas cuando existe un número limitado de strings character únicas. Usualmente representan una [variable categórica](https://learn-r-udp.netlify.app/resource/r-datatypes-examples/). Por ejemplo, el _sexo_ usualmente toma sólo dos valores, "masculino" y "femenino" (y será considerado una variable factor), mientras que el _nombre_ generalmente presentará montones de posibilidades (de modo que será considerado una variable character). Para crear un factor, empleamos la función `factor()` :
+
+
+```r
+gender <- factor(c("female", "female", "male", "female", "male"))
+gender
+```
+
+```
+## [1] female female male   female male  
+## Levels: female male
+```
+
+Para conocer los diferentes _niveles_ (levels) de una variable factor, ocupamos la función `levels()`:
+
+
+```r
+levels(gender)
+```
+
+```
+## [1] "female" "male"
+```
+
+De manera predeterminada, los niveles son ordenados alfabéticamente. Estos pueden ser reordenados con el argumento `levels` de la función `factor()`:
+
+
+```r
+gender <- factor(gender, levels = c("male", "female"))
+levels(gender)
+```
+
+```
+## [1] "male"   "female"
+```
+
+Las strings character pueden convertirse en factores con la función `as.factor()`:
+
+
+```r
+text <- c("test1", "test2", "test1", "test1") # Crear un vector character
+class(text) # Conocer la clase
+```
+
+```
+## [1] "character"
+```
+
+```r
+text_factor <- as.factor(text) # Transformar a factor
+class(text_factor) # Re-conocer la clase
+```
+
+```
+## [1] "factor"
+```
+
+Las strings character han sido transformadas en factor, como muestra su clase de tipo `factor`.
+
+# Logical
+
+Una variable logical (lógica) es una variable que incluye sólo dos valores: `TRUE` or `FALSE`:
+
+
+```r
+value1 <- 7
+value2 <- 9
+# ¿Es value1 mayor a value2?
+greater <- value1 > value2
+greater
+```
+
+```
+## [1] FALSE
+```
+
+```r
+class(greater)
+```
+
+```
+## [1] "logical"
+```
+
+```r
+# ¿Es value1 menor o igual a value2?
+less <- value1 <= value2
+less
+```
+
+```
+## [1] TRUE
+```
+
+```r
+class(less)
+```
+
+```
+## [1] "logical"
+```
+
+También es posible transformar datos logical en datos numeric. Luego de transformar de logical a numeric con la función `as.numeric()`, los valores `FALSE` equivaldrán a 0, y los valores `TRUE` equivaldrán a 1:
+
+
+```r
+greater_num <- as.numeric(greater)
+sum(greater)
+```
+
+```
+## [1] 0
+```
+
+```r
+less_num <- as.numeric(less)
+sum(less)
+```
+
+```
+## [1] 1
+```
+
+Por su parte, datos numeric pueden convertirse en datos logical, con `FALSE` para todos los valores iguales a 0 y `TRUE` para todos los otros valores.
+
+
+```r
+x <- 0
+as.logical(x)
+```
+
+```
+## [1] FALSE
+```
+
+```r
+y <- 5
+as.logical(y)
+```
+
+```
+## [1] TRUE
+```
+
+¡Gracias por leer! Esperamos que este artículo les ayude a entender los tipos básicos de datos en R y sus particularidades. Si desean aprender más sobre diferentes tipos de variables desde un puntos de vista estadístico, lean [Tipos de variables y ejemplos](https://learn-r-udp.netlify.app/resource/r-datatypes-examples/).
+
+Como siempre, si tienen alguna pregunta o sugerencia relacionada con el tópico cubierto en este artículo, por favor coméntenlo por los canales de comunicación del curso, para que otras/os lectoras/es puedan beneficiarse de la discusión. 

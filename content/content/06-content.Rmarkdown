@@ -1,12 +1,12 @@
 ---
-title: "Threats to validity"
-linktitle: "6: Threats to validity"
-date: "2021-02-15"
-start_date: "2021-02-15"
-end_date: "2021-02-19"
+title: "Transformación de variales"
+linktitle: "6: Transformación de variales"
+date: "2021-08-30"
+start_date: "2021-08-23"
+end_date: "2021-09-06"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 6
 type: docs
 toc: true
@@ -17,32 +17,20 @@ slides: "06-slides"
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
 source(here::here("R", "slide-tabs.R"))
-source(here::here("R", "youtube-playlist.R"))
-
-playlist_id <- "PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ"
 
 slide_details <- tibble::tribble(
-  ~youtube_id,   ~title, ~slide, ~active,
-  "46v8l60nQnI", "Introduction", "1", TRUE,
-  "N4XYXuw_IA0", "Construct validity", "construct-validity", FALSE,
-  "IziQBDzUJ6E", "Statistical conclusion validity", "statistical-conclusion-validity", FALSE,
-  "ssz2DTfrGhw", "Internal validity", "internal-validity", FALSE,
-  "uK7YN6KTRT4", "External validity", "external-validity", FALSE
+  ~title, ~slide, ~active,
+  "Básicos", "11", TRUE,
+   "Procesar datos", "14", FALSE,
+   "Operadores", "29", FALSE,
+  "Seleccionar", "35", FALSE,
+  "Filtrar", "45", FALSE,
+  "Crear variables", "52", FALSE,
+    "Pipe", "55", FALSE
 )
 ```
 
-
-## Readings
-
-- <i class="fas fa-external-link-square-alt"></i> Randall Munroe, ["Significant"](https://xkcd.com/882/)
-- <i class="fas fa-external-link-square-alt"></i> Alexander Coppock, ["10 Things to Know About Statistical Power"](https://egap.org/resource/10-things-to-know-about-statistical-power/)
-- <i class="fas fa-trophy"></i> Play around with FiveThirtyEight, ["Hack Your Way To Scientific Glory"](https://projects.fivethirtyeight.com/p-hacking/)
-- <i class="fas fa-book"></i> Chapter 9 in *Impact Evaluation in Practice* [@wb-eval]
-
-
-## Slides
-
-The slides for today's lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 `r blogdown::shortcode("slide-buttons")`
 
@@ -51,56 +39,28 @@ slide_tabs(slide_details, "/slides/06-slides.html")
 ```
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
+# Video de la clase
 
-## Videos
-
-```{r show-youtube-list, echo=FALSE, results="asis"}
-youtube_list(slide_details, playlist_id)
-```
+- [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/aOFcfYCGklH3cO41xd-WeFzC5oLS72a61wec84SYdTdDTiP-aGjV4rRWWWOj3mcj.1tjrSMe4RddJNO9i?startTime=1630364611000)
 
 
-```{cat include=FALSE, eval=FALSE}
-Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sFJtz7egfUASfhhz6zuj7GZ
 
-https://youtu.be/46v8l60nQnI
-PMAP 8521 • (6) Threats to validity: (0) Introduction
+# Material de la clase
 
-Introduction to the class session on threats to validity
+- [<i class="fas fa-file-archive"></i> `06-clase.zip`](https://github.com/learn-R/06-class/raw/main/06-clase.zip)
 
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/06-content/
+- [<i class="fas fa-laptop-code"></i> Práctico](/example/06-practico/)
 
 
-https://youtu.be/N4XYXuw_IA0
-PMAP 8521 • (6) Threats to validity: (1) Construct validity
+# Materiales adicionales
 
-Discussion of threats to construct validity
+- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
+    - [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    - [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    - [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
 
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/06-content/
+- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
 
-  
-https://youtu.be/IziQBDzUJ6E
-PMAP 8521 • (6) Threats to validity: (2) Statistical conclusion validity
-
-Discussion of threats to statistical conclusion validity
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/06-content/
-  
-  
-https://youtu.be/ssz2DTfrGhw
-PMAP 8521 • (6) Threats to validity: (3) Internal validity
-
-Discussion of threats to internal validity
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/06-content/
-  
-  
-https://youtu.be/uK7YN6KTRT4
-PMAP 8521 • (6) Threats to validity: (4) External validity
-
-Discussion of threats to external validity
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/06-content/
-```

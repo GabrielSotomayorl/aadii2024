@@ -1,96 +1,198 @@
 ---
-title: Installing R, RStudio, tidyverse, and tinytex
-date: "2020-05-01"
+title: "Instalación de R, RStudio y Slack"
+date: "2021-08-11"
 menu:
   resource:
-    parent: Guides
+    parent: Tutoriales
 type: docs
 toc: true
 weight: 1
 ---
 
+# Contenido
+
+## 1. R
+
+R es un lenguaje de programación y software de código abierto, empleado en procesamiento, análisis y visualización de datos estadísticos, altamente extendibles. 
 
 
-You will do all of your work in this class with the open source (and free!) programming language [R](https://cran.r-project.org/). You will use [RStudio](https://www.rstudio.com/) as the main program to access R. Think of R as an engine and RStudio as a car dashboard—R handles all the calculations and the actual statistics, while RStudio provides a nice interface for running R code.
+### Ventajas:
 
+Las principales ventajas son:
 
-## RStudio.cloud
+- Es un lenguaje de programación destacado en lo que respecta al análisis estadístico
 
-R is free, but it can sometimes be a pain to install and configure. To make life easier, you can (and should!) use the free [RStudio.cloud](http://rstudio.cloud/) service *initially*, which lets you run a full instance of RStudio in your web browser. This means you won't have to install anything on your computer to get started with R! We will have a shared class workspace in RStudio.cloud that will let you quickly copy templates for labs and problem sets.
+- Es de acceso y código abierto 
 
-Go to <https://rstudio.cloud/> and create an account. You'll receive a link to join the shared class workspace separately. If you don't get this link, let me know and I will invite you.
+- Permite graficar el análisis y los datos estadísticos de forma eficiente y llamativa 
 
+- Se encuentra en constante actualización y desarrollo
 
-## RStudio on your computer
+Para descargar **R**, deben dirigirse al siguiente [link](https://cran.r-project.org), y seguir los pasos de instalación según su sistema operativo. Para el caso de *Windows* y *macOS*, se debe descargar el instalador de R, ejecutarlo, y proseguir con la instalación. Lo recomendado es instalarlo en español, y mantener las opciones de instalación que vienen por defecto.
 
-RStudio.cloud is convenient, but it can be slow and it is not designed to be able to handle larger datasets, more complicated analysis, or fancier graphics. Over the course of the semester, you should wean yourself off of RStudio.cloud and install all these things locally. This is also important if you want to customize fonts, since RStudio.cloud has extremely limited support for fonts other than Helvetica. 
+<img src="/img/tutorial/install/r-versions-os.png" width="60%" />
 
-Here's how you install all these things
+A continuación, se presentan imágenes del proceso de instalación de R en *Windows*
 
-### Install R
+Se aceptan las condiciones de uso
 
-First you need to install R itself (the engine).
+<img src="/img/tutorial/install/r-windows3.png" width="60%" />
 
-1. Go to the CRAN (Collective R Archive Network)^[It's a goofy name, but CRAN is where most R packages—and R itself—lives.] website: <https://cran.r-project.org/>
-2. Click on "Download R for `XXX`", where `XXX` is either Mac or Windows:
+Se define la carpeta de instalación. Pueden escoger donde deseen realizar la instalación clickeando en *examinar*; no obstante, se recomienda mantener la ruta predeterminada, en *Archivos de programa*
 
-    <img src="/img/install/install-r-links.png" width="60%" />
+<img src="/img/tutorial/install/r-windows4.png" width="60%" />
 
-    - If you use macOS, scroll down to the first `.pkg` file in the list of files (in this picture, it's `R-4.0.0.pkg`; as of right now, the current version is also 4.0.0) and download it.
-    
-        <img src="/img/install/install-r-mac.png" width="100%" />
-    
-    - If you use Windows, click "base" (or click on the bolded "install R for the first time" link) and download it. 
-    
-        <img src="/img/install/install-r-windows.png" width="100%" />
+Se recomienda seleccionar la *Instalación de usuario*
 
-3. Double click on the downloaded file (check your `Downloads` folder). Click yes through all the prompts to install like any other program.
+<img src="/img/tutorial/install/r-windows5.png" width="60%" />
 
-4. If you use macOS, [download and install XQuartz](https://www.xquartz.org/). You do not need to do this on Windows.
+Asimismo, también es recomendable no especificar las opciones de configuración
 
+<img src="/img/tutorial/install/r-windows6.png" width="60%" />
 
-### Install RStudio
+Si se desea, se pueden crear *accesos directos*. Lo que sí es importante, es *guardar el número de versión en el registro*, y *asociar archivos .RData con R* (lo análogo a asociar archivos .sav con SPSS, o archivos .dta con STATA)
 
-Next, you need to install RStudio, the nicer graphical user interface (GUI) for R (the dashboard). Once R and RStudio are both installed, you can ignore R and only use RStudio. RStudio will use R automatically and you won't ever have to interact with it directly.
+<img src="/img/tutorial/install/r-windows7.png" width="60%" />
 
-1. Go to the free download location on RStudio's website: <https://www.rstudio.com/products/rstudio/download/#download>
-2. The website should automatically detect your operating system (macOS or Windows) and show a big download button for it:
+Particularmente para el caso de *macOS*, es indispensable la instalación de **XQuartz**, pues este software nos permitirá visualizar, por ejemplo, los gráficos que elaboremos en R. Para ello, debemos dirigirnos al siguiente [enlace](https://www.xquartz.org), descargar la última versión disponible del software, y seguir el proceso de instalación. Tal como en el caso de R, lo recomendado es mantener la configuración predeterminada.
 
-    <img src="/img/install/install-r-rstudio1.png" width="50%" />
-    
-    If not, scroll down a little to the large table and choose the version of RStudio that matches your operating system.
+<img src="/img/tutorial/install/xquartz.png" width="60%" />
 
-    <img src="/img/install/install-r-rstudio2.png" width="100%" />
+Para el caso de *Ubuntu*, la versión 4.1 de R (que es la actual) viene incluida para gran parte de las versiones de Ubuntu. Para poder ejecutarlas, deben abrir el **terminal** y ejecutar los siguientes códigos (disponibles en el mirror de Ubuntu):
 
-3. Double click on the downloaded file (again, check your `Downloads` folder). Click yes through all the prompts to install like any other program.
+<img src="/img/tutorial/install/r-ubuntu.png" width="60%" />
 
-Double click on RStudio to run it (check your applications folder or start menu).
+Siguiendo los pasos anteriores, la instalación de R está *finalizada*.
 
+Sin embargo, para laborar y aprender de manera más cómoda y eficiente, este curso trabajará principalmente con **RStudio**.
 
-### Install `tidyverse`
+## 2. RStudio
 
-R packages are easy to install with RStudio. Select the packages panel, click on "Install," type the name of the package you want to install, and press enter.
+Es un ambiente integrado de desarrollo para R (y Python, otro lenguaje de programación, que no se abordará en este curso), que permite visualizar el trabajo llevado a cabo, de manera más cómoda, sencilla y eficiente. 
 
-<img src="/img/install/install-r-package-panel.png" width="40%" />
+Para instalarlo, deben dirigirse a la [siguiente página web](https://www.rstudio.com/products/rstudio/download/#download). Allí, en la sección **All Installers**, seleccionar el instalador correspondiente a su sistema operativo. 
 
-This can sometimes be tedious when you're installing lots of packages, though. [The tidyverse](https://www.tidyverse.org/), for instance, consists of dozens of packages (including **ggplot2**) that all work together. Rather than install each individually, you can install a single magical package and get them all at the same time.
+<img src="/img/tutorial/install/rstudio-installers.png" width="60%" />
 
-Go to the packages panel in RStudio, click on "Install," type "tidyverse", and press enter. You'll see a bunch of output in the RStudio console as all the tidyverse packages are installed.
+El proceso de instalación es el mismo que para *R*. Simplemente, se recomienda mantener todo en predeterminado. 
 
-<img src="/img/install/install-r-tidyverse.png" width="60%" />
+## 2.1. RStudio Cloud
 
-Notice also that RStudio will generate a line of code for you and run it: `install.packages("tidyverse")`. You can also just paste and run this instead of using the packages panel.
+Sin embargo, también está la opción de trabajar en **RStudio Cloud**, en caso que sus computadores no presenten los *requerimientos mínimimos* para trabajar con RStudio de manera local. Para poder trabajar en RStudio Cloud, debemos *crear un usuario*. Sin embargo, primero crearemos un **usuario en GitHub**, para luego conectarse a RStudio Cloud desde allí. 
 
+Entonces, debemos dirigirnos a la página de [GitHub](https://github.com). Allí, debemos hacer click en **Sign up**.
 
-### Install `tinytex`
+<img src="/img/tutorial/install/github-signup1.png" width="60%" />
 
-When you knit to PDF, R uses a special scientific typesetting program named LaTeX (pronounced "lay-tek" or "lah-tex"; for goofy nerdy reasons, the x is technically the "ch" sound in "Bach", but most people just say it as "k"—saying "layteks" is frowned on for whatever reason).
+Una vez allí, debemos ingresar nuestro correo electrónico, y luego seguir los pasos que se encuentran en el correo de confirmación. Es recomendable que creen la cuenta con la dirección de correo electrónico **que usen cotidianamente**.
 
-LaTeX is neat and makes pretty documents, but it's a huge program—[the macOS version, for instance, is nearly 4 GB](https://tug.org/mactex/mactex-download.html)! To make life easier, there's [an R package named **tinytex**](https://yihui.org/tinytex/) that installs a minimal LaTeX program and that automatically deals with differences between macOS and Windows.
+Posteriormente, nos dirigimos a la página de [RStudio Cloud](https://rstudio.cloud), y hacemos click en **Sign Up**.
 
-Here's how to install **tinytex** so you can knit to pretty PDFs:
+<img src="/img/tutorial/install/cloud-signup1.png" width="60%" />
 
-1. Use the Packages in panel in RStudio to install **tinytex** like you did above with **tidyverse**. Alternatively, run `install.packages("tinytex")` in the console.
-2. Run `tinytex::install_tinytex()` in the console.
-3. Wait for a bit while R downloads and installs everything you need.
-4. The end! You should now be able to knit to PDF.
+Volvemos a hacer click en **Sign Up**
+
+<img src="/img/tutorial/install/cloud-signup2.png" width="60%" />
+
+Luego, hacemos click en **Sign Up with GitHub**
+
+<img src="/img/tutorial/install/cloud-signup3.png" width="60%" />
+
+Se nos redirigirá a la página de **GitHub**, donde debemos ingresar los datos del usuario de GitHub que creamos en pasos anteriores. 
+
+<img src="/img/tutorial/install/cloud-signup4.png" width="60%" />
+
+Una vez realizado todo lo anterior, ingresaremos a **RStudio Cloud**. Allí, encontraremos nuestro espacio de trabajo (*Your Workspace*), donde podremos encontrar nuestros **proyectos**.
+
+<img src="/img/tutorial/install/cloud1.png" width="60%" />
+
+Haciendo click en la pestaña *Projects*, situada en la pestaña superior, aparecerá el botón **New Project**. Al pulsarlo, podremos crear un nuevo proyecto. 
+
+<img src="/img/tutorial/install/cloud2.png" width="60%" />
+
+Luego, se generará el nuevo proyecto. Es importante que **renombremos el nuevo proyecto**, haciendo click en el recuadro que se encuentra en la sección superior (en este caso, el proyecto se nombró como *Proyecto 1*).
+
+<img src="/img/tutorial/install/cloud4.png" width="60%" />
+
+Para cargar archivos (como bases de datos, o archivos .R), debemos hacer click en el botón **Upload**, situado en la sección *Files* situada en la esquina inferior derecha. Aparecerá una ventana emergente, y debemos hacer click en **Seleccionar archivo**, para explorar en nuestra computadora los archivos que necesitemos para trabajar. 
+
+<img src="/img/tutorial/install/cloud5.png" width="60%" />
+
+También podemos exportar el proyecto (con todos sus archivos asociados), haciendo click en el botón **More** (al lado del *engranaje*). Es importante que hagamos click en las casillas situadas a la izquierda de todos los archivos que deseemos descargar. 
+
+<img src="/img/tutorial/install/cloud6.png" width="60%" />
+
+En la sección superior derecha, encontraremos un *engranaje*. En la pestaña *Info* encontraremos la información general del proyecto; además, podremos agregar una descripción general de este. 
+
+<img src="/img/tutorial/install/cloud7.png" width="60%" />
+
+A la derecha de *Info*, encontraremos la pestaña *Access*. Allí, podremos cambiar quiénes pueden ver el proyecto. Por defecto, solamente quien creó el proyecto puede verlo; sin embargo, podemos permitir que cualquiera (Everyone) pueda hacerlo.
+
+<img src="/img/tutorial/install/cloud8.png" width="60%" />
+
+Para poder compartir nuestros proyectos, debemos hacer click en los *tres puntos* situados a la derecha del engranaje, y luego hacer click en **Share Project Link**. Aparecerá una ventana emergente, donde podemos agregar las direcciones de correo electrónico de todas las personas que queramos invitar al proyecto. También podemos agregar un mensaje a la invitación. 
+
+<img src="/img/tutorial/install/cloud9.png" width="60%" />
+
+## 3. Slack
+
+Este software será el principal medio de comunicación en el marco del curso. Allí, las y los estudiantes podrán plantear todas sus dudas, para que estas puedan ser respondidas de forma colectiva, tanto por parte del equipo docente, como de otras y otros estudiantes.  
+
+Primero, debemos descargar el instalador de **Slack**, dependiendo de nuestro sistema operativo: 
+
+- [Windows](https://slack.com/intl/es-cl/downloads/windows)
+- [macOS](https://slack.com/intl/es-cl/downloads/mac)
+- [Linux](https://slack.com/intl/es-cl/downloads/linux)
+
+En la siguiente imagen, está el ejemplo de *Windows* (64 bits)
+
+<img src="/img/tutorial/install/slack1.png" width="60%" />
+
+Una vez descargado el archivo, debemos ejecutarlo, y seguir el proceso de instalación. Tal como en el resto de los software instalados, recomendamos mantener todas las opciones de instalación *por defecto*.
+
+Luego, debemos crear una *cuenta de Slack*, dirigiéndose a la [siguiente página web](https://slack.com/get-started#/create). Se recomienda usar la *dirección de correo que usen de forma cotidiana*, a modo de estar al tanto de la actividad en el canal de Slack. 
+
+<img src="/img/tutorial/install/slack2.png" width="60%" />
+
+Posteriormente, deben confirmar su correo electrónico y, por último, han de hacer click en el link **Unirse a slack de curso**, presente en el apartado *Syllabus* de la página web. Ello redireccionará a la aplicación, abriendo allí el espacio de trabajo del curso. 
+
+<img src="/img/tutorial/install/slack3.png" width="60%" />
+
+Una vez realizado aquello, debemos permitir que la página web abra la aplicación de Slack, y se nos redirigirá al **espacio de trabajo** del curso. 
+
+<img src="/img/tutorial/install/slack4.png" width="60%" />
+
+A la izquierda, encontraremos los diversos *canales* asignados para distintas actividades. Aquellos que tengan a la izquierda un **#**, son canales abiertos a todas y todos quienes integren el espacio de trabajo; mientras que aquellos que tengan un **candado** a su izquierda son canales privados. Haciendo click en **añadir canales**, podemos crear *nuevos canales* (lo cual pueden hacer cuando, en el futuro, utilicen Slack para sus trabajos personales).
+
+<img src="/img/tutorial/install/slack5.png" width="60%" />
+
+Bajo los canales encontraremos la sección de **mensajes directos**, donde podremos enviar mensajes privados a cualquier persona que integre el espacio de trabajo. No olviden que pueden comunicarnos todas sus dudas, inquietudes y sugerencias respecto del curso. 
+
+<img src="/img/tutorial/install/slack6.png" width="60%" />
+
+En la sección superior derecha encontraremos nuestro usuario.
+
+<img src="/img/tutorial/install/slack7.png" width="60%" />
+
+Si hacemos click, se abrirá una pestaña emergente, donde podremos acceder a diversas configuraciones.
+
+<img src="/img/tutorial/install/slack8.png" width="60%" />
+
+En **Modificar tu perfil**, podemos cambiar nuestro nombre, describir a qué nos dedicamos, definir nuestros pronombres, entre otros elementos. También, podemos seleccionar una foto de perfil, para que el resto de las personas que integren el espacio de trabajo puedan (re)conocernos. 
+
+<img src="/img/tutorial/install/slack9.png" width="60%" />
+
+En la sección de **Preferencias**, podremos establecer diferentes configuraciones referentes, por ejemplo, a las *notificaciones*, la *barra lateral*, o seleccionar distintos *temas*, para personalizar la apariencia de nuestro espacio de trabajo. 
+
+<img src="/img/tutorial/install/slack10.png" width="60%" />
+
+### Una vez realizado todo lo anterior ¡Ya estamos listas y listos para empezar a trabajar en el curso!
+
+## 4. Video tutorial en Youtube
+
+Recuerden que el [video de asociado a este práctico](https://www.youtube.com/watch?v=9YD-F6-ktes) y muchos más podrán encontrarlos en el [canal de youtube del curso](https://www.youtube.com/channel/UCqBUeqBttVjS6h8fawK8sWg)
+
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9YD-F6-ktes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+

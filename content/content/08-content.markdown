@@ -1,101 +1,65 @@
 ---
-title: "Difference-in-differences I + II"
-linktitle: "8–9: Diff-in-diff I + II"
-date: "2021-03-01"
-start_date: "2021-03-01"
-end_date: "2021-03-12"
+title: "Análisis descriptivo bivariado"
+linktitle: "8: Análisis descriptivo bivariado"
+date: "2021-09-13"
+start_date: "2021-09-13"
+end_date: "2021-09-20"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 8
 type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "08-slides"
+slides: "07-slides"
 ---
 
-## Readings
-
--   <i class="fas fa-book"></i> Chapter 7 in *Impact Evaluation in Practice*[^1]
--   <i class="fas fa-book"></i> Chapter 5 in *Mastering ’Metrics*[^2]
--   <i class="fas fa-book"></i> [Chapter 9, “Differences-in-differences”](https://mixtape.scunning.com/ch8.html) in *Causal Inference: The Mixtape*[^3]
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="tendencia-central-tab" data-toggle="tab" href="#tendencia-central" role="tab" aria-controls="tendencia-central" aria-selected="true">Tendencia central</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="quasiexperiments-tab" data-toggle="tab" href="#quasiexperiments" role="tab" aria-controls="quasiexperiments" aria-selected="false">Quasi-experiments</a>
+<a class="nav-link" id="frecuencias-tab" data-toggle="tab" href="#frecuencias" role="tab" aria-controls="frecuencias" aria-selected="false">Frecuencias</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="interactions--regression-tab" data-toggle="tab" href="#interactions--regression" role="tab" aria-controls="interactions--regression" aria-selected="false">Interactions & regression</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="two-wrongs-make-a-right-tab" data-toggle="tab" href="#two-wrongs-make-a-right" role="tab" aria-controls="two-wrongs-make-a-right" aria-selected="false">Two wrongs make a right</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="diffindiff-assumptions-tab" data-toggle="tab" href="#diffindiff-assumptions" role="tab" aria-controls="diffindiff-assumptions" aria-selected="false">Diff-in-diff assumptions</a>
+<a class="nav-link" id="visualización-tab" data-toggle="tab" href="#visualización" role="tab" aria-controls="visualización" aria-selected="false">Visualización</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="tendencia-central" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tendencia-central-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/08-slides.html#1">
+<iframe class="embed-responsive-item" src="/slides/07-slides.html#1">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="quasiexperiments" class="tab-pane fade" role="tabpanel" aria-labelledby="quasiexperiments-tab">
+<div id="frecuencias" class="tab-pane fade" role="tabpanel" aria-labelledby="frecuencias-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/08-slides.html#quasi-experiments">
+<iframe class="embed-responsive-item" src="/slides/07-slides.html#14">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="interactions--regression" class="tab-pane fade" role="tabpanel" aria-labelledby="interactions--regression-tab">
+<div id="visualización" class="tab-pane fade" role="tabpanel" aria-labelledby="visualización-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/08-slides.html#interactions-regression">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="two-wrongs-make-a-right" class="tab-pane fade" role="tabpanel" aria-labelledby="two-wrongs-make-a-right-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/08-slides.html#two-wrongs">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="diffindiff-assumptions" class="tab-pane fade" role="tabpanel" aria-labelledby="diffindiff-assumptions-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/08-slides.html#diff-diff-assumptions">
+<iframe class="embed-responsive-item" src="/slides/07-slides.html#29">
 </iframe>
 
 </div>
@@ -105,30 +69,28 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/02wHR4FqFLAKDLVW1M81nhb34IyFL0zcsz46f0QHO4_fo6s7UrZmuozfcz5ZCaV9.J33m_B7mBbvZ3JAy?startTime=1632771055000)
 
--   [Introduction](https://www.youtube.com/watch?v=4y84N23Mx-o&list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-)
--   [Quasi-experiments](https://www.youtube.com/watch?v=ZHBZtKL7zAg&list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-)
--   [Interactions & regression](https://www.youtube.com/watch?v=B060u1zGOWo&list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-)
--   [Two wrongs make a right](https://www.youtube.com/watch?v=0v1aE70FhsQ&list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-)
--   [Diff-in-diff assumptions](https://www.youtube.com/watch?v=tDWoNTk8CS4&list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-)
+-   [<i class="fas fa-video"></i> `Video del práctico - mismo que el de la clase`](https://zoom.us/rec/share/02wHR4FqFLAKDLVW1M81nhb34IyFL0zcsz46f0QHO4_fo6s7UrZmuozfcz5ZCaV9.J33m_B7mBbvZ3JAy?startTime=1632771055000)
 
-You can also watch the playlist (and skip around to different sections) here:
+# Material de la clase
 
-<div class="embed-responsive embed-responsive-16by9">
+-   [<i class="fas fa-file-archive"></i> `08-clase.zip`](https://github.com/learn-R/08-class/raw/main/08-clase.zip)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sHydbEoTK9DkyKV92-uE3r-" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/08-practico/)
 
-</div>
+-   [<i class="fas fa-file-archive"></i> `taller_descriptivos.zip`](https://github.com/learn-R/taller_descriptivos/raw/main/taller_descriptivos.zip)
 
-[^1]: Paul J. Gertler et al., *Impact Evaluation in Practice*, 2nd ed. (Inter-American Development Bank; World Bank, 2016), <https://openknowledge.worldbank.org/handle/10986/25030>.
+# Materiales adicionales
 
-[^2]: Joshua D. Angrist and Jörn-Steffen Pischke, *Mastering ’Metrics: The Path from Cause to Effect* (Princeton, NJ: Princeton University Press, 2015).
-
-[^3]: Scott Cunningham, *Causal Inference: The Mixtape* (New Haven, CT: Yale University Press, 2021), <https://mixtape.scunning.com/>.
+-   [Tidy Messy data](https://tidyr.tidyverse.org/)
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Tidy data”](https://r4ds.had.co.nz/tidy-data.html)

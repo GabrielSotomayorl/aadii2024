@@ -1,12 +1,12 @@
 ---
-title: "Regression and inference"
-linktitle: "2: Regression and inference"
-date: "2021-01-19"
-start_date: "2021-01-19"
-end_date: "2021-01-22"
+title: "Herramientas para el uso de R"
+linktitle: "2: Herramientas para el uso de R"
+date: "2022-03-21"
+start_date: "2022-03-21"
+end_date: "2022-03-25"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 2
 type: docs
 toc: true
@@ -17,39 +17,18 @@ slides: "02-slides"
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
 source(here::here("R", "slide-tabs.R"))
-source(here::here("R", "youtube-playlist.R"))
-
-playlist_id <- "PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4"
 
 slide_details <- tibble::tribble(
-  ~youtube_id,   ~title, ~slide, ~active,
-  "S4OmWxc3h3Y", "Introduction", "1", TRUE,
-  "DGbLEgL4g6Y", "Drawing lines", "drawing-lines", FALSE,
-  "n-rV1TIoIgw", "Lines, Greek, and regression", "lines-greek-regression", FALSE,
-  "RYKsrTKWCR4", "Null worlds and statistical significance", "significance", FALSE
+  ~title, ~slide, ~active,
+  "Introducción", "1", TRUE,
+   "RStudio", "4", FALSE,
+   "RScript", "21", FALSE,
+  "Paso 1: Cargar paquetes", "29", FALSE,
+  "RMarkdown", "44", FALSE
 )
 ```
 
-## Readings
-
-- <i class="fas fa-book"></i> Chapter 2 in *Mastering 'Metrics* [@AngristPischke:2015]
-- <i class="fas fa-book"></i> [Chapter 2, "Probability and Regression Review"](https://mixtape.scunning.com/ch1.html) in *Causal Inference: The Mixtape* (this is long; skim through this as a review) [@mixtape]
-
-## Recommended readings
-
-Look through your notes on regression from your last stats class. Also, you can skim through these resources:
-
-- <i class="fas fa-book"></i> [6.1–6.4 in *ModernDive*](https://moderndive.com/6-regression.html) [@IsmayKim:2018]
-- <i class="fas fa-book"></i> [7.1–7.4 in *ModernDive*](https://moderndive.com/7-multiple-regression.html) [@IsmayKim:2018]
-- <i class="fas fa-book"></i> 7.1–7.3 in *OpenIntro Statistics* [@DiezBarrCetinkaya-Rundel:2017]
-- <i class="fas fa-book"></i> 8.1 in *OpenIntro Statistics* [@DiezBarrCetinkaya-Rundel:2017]
-
-We'll review all this regression stuff in the videos, so *don't panic* if this all looks terrifying! Also, take advantage of the videos that accompany the *OpenIntro* chapters. And *also*, the *OpenIntro* chapters are heavier on the math—don't worry if you don't understand everything.
-
-
-## Slides
-
-The slides for today's lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 `r blogdown::shortcode("slide-buttons")`
 
@@ -58,55 +37,40 @@ slide_tabs(slide_details, "/slides/02-slides.html")
 ```
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
 
-## Videos
+# Video de la clase
 
-```{r show-youtube-list, echo=FALSE, results="asis"}
-youtube_list(slide_details, playlist_id)
-```
-
-```{cat include=FALSE, eval=FALSE}
-Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sERjvBbJGr9mpqvtiLVPzd4
-
-https://youtu.be/S4OmWxc3h3Y
-PMAP 8521 • (2) Regression and inference: (0) Introduction
-
-Introduction to the class session on regression and inference
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/02-content/
+- [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/ng-5McE6dA8_cjBGouCZcEArBoP4IYUKuO3LYOdQqKmUoYuICw_cT4ENUCEEPaOZ.i-kqnRNBvpqj-U_I?startTime=1629145685000)
 
 
-https://youtu.be/DGbLEgL4g6Y
-PMAP 8521 • (2) Regression and inference: (1) Drawing lines
+# Materiales de la clase
 
-Overview of the basics of regression analysis (particularly ordinary least squares (OLS) regression)
+## Rprojects
 
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/02-content/
+- [<i class="fas fa-file-archive"></i> `02-class.zip`](https://github.com/learn-R/02-class/raw/main/02-clase.zip) 
 
-  
-https://youtu.be/n-rV1TIoIgw
-PMAP 8521 • (2) Regression and inference: (2) Lines, Greek, and regression
-
-Discussion of how to estimate parameters from a population using regression (with R specifically)
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/02-content/
+- [<i class="fas fa-laptop-code"></i> Práctico N°2](https://learn-r-uah.netlify.app/example/02-practico/)
 
 
-https://youtu.be/RYKsrTKWCR4
-PMAP 8521 • (2) Regression and inference: (3) Null worlds and statistical significance
+# Recomendaciones
 
-Discussion of statistical significance and p-values using simulated null worlds
+- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
 
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/02-content/
+- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
+    - <small>Ver Tutorial N°1 Instalación de softwares</small>
+    - <small>Ver Tutorial N°2 GitHub y GitHub Class Room</small>
 
 
-https://youtu.be/E-Zz5S5NOUo
-PMAP 8521 • Example: Regression with R
 
-Demonstration of how to run regression models with R
+## De RMarkdown
 
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/regression/
-```
+- [RMarkdown en Ciencia de Datos - Hadley Whickham](https://es.r4ds.hadley.nz/r-markdown.html)
+- [R Markdown](https://rmarkdown.rstudio.com/) 
+- [Tutoriales Markdown](https://rmarkdown.rstudio.com/lesson-1.html) 
+- [cheatsheets](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- Para practicar ir a [Tutorial de Markdown](https://www.markdowntutorial.com/es/)
+
+

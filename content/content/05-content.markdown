@@ -1,12 +1,12 @@
 ---
-title: "DAGs and potential outcomes"
-linktitle: "5: DAGs and potential outcomes"
-date: "2021-02-08"
-start_date: "2021-02-08"
-end_date: "2021-02-12"
+title: "Limpieza de datos"
+linktitle: "5: Limpieza de datos"
+date: "2021-08-30"
+start_date: "2021-08-23"
+end_date: "2021-09-06"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 5
 type: docs
 toc: true
@@ -15,63 +15,107 @@ csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
 slides: "05-slides"
 ---
 
-## Readings
-
--   <i class="fas fa-podcast"></i> Prologue and at least one of the four acts from [This American Life, “Gardens of Branching Paths,” episode \#691, January 10, 2020](https://www.thisamericanlife.org/691/gardens-of-branching-paths)
--   <i class="fas fa-book"></i> Chapter 3 in *Impact Evaluation in Practice*[^1]
--   <i class="fas fa-book"></i> [Chapter 4, “Potential Outcomes Causal Model”](https://mixtape.scunning.com/ch3.html) in *Causal Inference: The Mixtape*[^2]
-
-### Potential outcomes, ATEs, and CATEs example page
-
--   The [example page on potential outcomes, ATEs, and CATEs](/example/po-ate-cate/) shows how to use R to calculate ATEs and CATEs
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="básicos-tab" data-toggle="tab" href="#básicos" role="tab" aria-controls="básicos" aria-selected="true">Básicos</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="doing-observational-causal-inference-tab" data-toggle="tab" href="#doing-observational-causal-inference" role="tab" aria-controls="doing-observational-causal-inference" aria-selected="false">do()ing observational causal inference</a>
+<a class="nav-link" id="procesar-datos-tab" data-toggle="tab" href="#procesar-datos" role="tab" aria-controls="procesar-datos" aria-selected="false">Procesar datos</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="potential-outcomes-tab" data-toggle="tab" href="#potential-outcomes" role="tab" aria-controls="potential-outcomes" aria-selected="false">Potential outcomes</a>
+<a class="nav-link" id="operadores-tab" data-toggle="tab" href="#operadores" role="tab" aria-controls="operadores" aria-selected="false">Operadores</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="seleccionar-tab" data-toggle="tab" href="#seleccionar" role="tab" aria-controls="seleccionar" aria-selected="false">Seleccionar</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="filtrar-tab" data-toggle="tab" href="#filtrar" role="tab" aria-controls="filtrar" aria-selected="false">Filtrar</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="crear-variables-tab" data-toggle="tab" href="#crear-variables" role="tab" aria-controls="crear-variables" aria-selected="false">Crear variables</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pipe-tab" data-toggle="tab" href="#pipe" role="tab" aria-controls="pipe" aria-selected="false">Pipe</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="básicos" class="tab-pane fade show active" role="tabpanel" aria-labelledby="básicos-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/05-slides.html#1">
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#11">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="doing-observational-causal-inference" class="tab-pane fade" role="tabpanel" aria-labelledby="doing-observational-causal-inference-tab">
+<div id="procesar-datos" class="tab-pane fade" role="tabpanel" aria-labelledby="procesar-datos-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/05-slides.html#dag-adjustment">
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#14">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="potential-outcomes" class="tab-pane fade" role="tabpanel" aria-labelledby="potential-outcomes-tab">
+<div id="operadores" class="tab-pane fade" role="tabpanel" aria-labelledby="operadores-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/05-slides.html#potential-outcomes">
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#29">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="seleccionar" class="tab-pane fade" role="tabpanel" aria-labelledby="seleccionar-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#35">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="filtrar" class="tab-pane fade" role="tabpanel" aria-labelledby="filtrar-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#45">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="crear-variables" class="tab-pane fade" role="tabpanel" aria-labelledby="crear-variables-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#52">
+</iframe>
+
+</div>
+
+</div>
+
+<div id="pipe" class="tab-pane fade" role="tabpanel" aria-labelledby="pipe-tab">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<iframe class="embed-responsive-item" src="/slides/05-slides.html#55">
 </iframe>
 
 </div>
@@ -81,26 +125,25 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sHwqEeiG5xb3zAHcQCGWZUC).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/aOFcfYCGklH3cO41xd-WeFzC5oLS72a61wec84SYdTdDTiP-aGjV4rRWWWOj3mcj.1tjrSMe4RddJNO9i?startTime=1630364611000)
 
--   [Introduction](https://www.youtube.com/watch?v=6n7Qicffb2k&list=PLS6tnpTr39sHwqEeiG5xb3zAHcQCGWZUC)
--   [do()ing observational causal inference](https://www.youtube.com/watch?v=vARju899D3E&list=PLS6tnpTr39sHwqEeiG5xb3zAHcQCGWZUC)
--   [Potential outcomes](https://www.youtube.com/watch?v=0pOA8y3YASA&list=PLS6tnpTr39sHwqEeiG5xb3zAHcQCGWZUC)
+# Material de la clase
 
-You can also watch the playlist (and skip around to different sections) here:
+-   [<i class="fas fa-file-archive"></i> `05-clase.zip`](https://github.com/learn-R/05-class/raw/main/05-clase.zip)
 
-<div class="embed-responsive embed-responsive-16by9">
+\-[<i class="fas fa-<Datos para la clase"></i> `datos`](https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sHwqEeiG5xb3zAHcQCGWZUC" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/05-practico/)
 
-</div>
+# Materiales adicionales
 
-[^1]: Paul J. Gertler et al., *Impact Evaluation in Practice*, 2nd ed. (Inter-American Development Bank; World Bank, 2016), <https://openknowledge.worldbank.org/handle/10986/25030>.
-
-[^2]: Scott Cunningham, *Causal Inference: The Mixtape* (New Haven, CT: Yale University Press, 2021), <https://mixtape.scunning.com/>.
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)

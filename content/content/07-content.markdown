@@ -1,12 +1,12 @@
 ---
-title: "Randomization and matching"
-linktitle: "7: Randomization and matching"
-date: "2021-02-22"
-start_date: "2021-02-22"
-end_date: "2021-02-26"
+title: "Análisis descriptivo univariado"
+linktitle: "7: Análisis descriptivo univariado"
+date: "2021-09-13"
+start_date: "2021-09-13"
+end_date: "2021-09-20"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 7
 type: docs
 toc: true
@@ -15,46 +15,25 @@ csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
 slides: "07-slides"
 ---
 
-## Readings
-
--   <i class="fas fa-file-pdf"></i> Andrew Heiss, “Causal Inference,” Chapter 10 in *R for Political Data Science: A Practical Guide* (forthcoming) (Ignore the exercises!). [Get the PDF here.](/files/10-causal-inference.pdf)
--   <i class="fas fa-book"></i> Chapter 4 in *Impact Evaluation in Practice*[^1]
--   <i class="fas fa-book"></i> Chapter 1 in *Mastering ’Metrics*[^2]
--   <i class="fas fa-podcast"></i> Planet Money, [“Moving To Opportunity?,”](https://www.npr.org/2019/08/30/756028025/episode-937-moving-to-opportunity) episode 937
--   <i class="fas fa-external-link-square-alt"></i> Aaron Carroll, [“Workplace Wellness Programs Don’t Work Well. Why Some Studies Show Otherwise,”](https://www.nytimes.com/2018/08/06/upshot/employer-wellness-programs-randomized-trials.html) *The Upshot*, August 6, 2018
-
-### RCTs, matching, and inverse probability weighting
-
--   The [example page on RCTs](/example/rcts/) shows how to use R to analyze and estimate causal effects from RCTs
--   The [example page on matching and inverse probability weighting](/example/matching-ipw/) shows how to use R to close backdoors, make adjustments, and find causal effects from observational data using matching and inverse probability weighting
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="tendencia-central-tab" data-toggle="tab" href="#tendencia-central" role="tab" aria-controls="tendencia-central" aria-selected="true">Tendencia central</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="the-magic-of-randomization-tab" data-toggle="tab" href="#the-magic-of-randomization" role="tab" aria-controls="the-magic-of-randomization" aria-selected="false">The magic of randomization</a>
+<a class="nav-link" id="frecuencias-tab" data-toggle="tab" href="#frecuencias" role="tab" aria-controls="frecuencias" aria-selected="false">Frecuencias</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="how-to-analyze-rcts-tab" data-toggle="tab" href="#how-to-analyze-rcts" role="tab" aria-controls="how-to-analyze-rcts" aria-selected="false">How to analyze RCTs</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="the-gold-standard-tab" data-toggle="tab" href="#the-gold-standard" role="tab" aria-controls="the-gold-standard" aria-selected="false">The “gold” standard</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="adjustment-with-matching-tab" data-toggle="tab" href="#adjustment-with-matching" role="tab" aria-controls="adjustment-with-matching" aria-selected="false">Adjustment with matching</a>
+<a class="nav-link" id="visualización-tab" data-toggle="tab" href="#visualización" role="tab" aria-controls="visualización" aria-selected="false">Visualización</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="tendencia-central" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tendencia-central-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
@@ -65,44 +44,22 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 
 </div>
 
-<div id="the-magic-of-randomization" class="tab-pane fade" role="tabpanel" aria-labelledby="the-magic-of-randomization-tab">
+<div id="frecuencias" class="tab-pane fade" role="tabpanel" aria-labelledby="frecuencias-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/07-slides.html#magic-randomization">
+<iframe class="embed-responsive-item" src="/slides/07-slides.html#14">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="how-to-analyze-rcts" class="tab-pane fade" role="tabpanel" aria-labelledby="how-to-analyze-rcts-tab">
+<div id="visualización" class="tab-pane fade" role="tabpanel" aria-labelledby="visualización-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/07-slides.html#rct-how">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="the-gold-standard" class="tab-pane fade" role="tabpanel" aria-labelledby="the-gold-standard-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/07-slides.html#gold-standard">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="adjustment-with-matching" class="tab-pane fade" role="tabpanel" aria-labelledby="adjustment-with-matching-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/07-slides.html#matching">
+<iframe class="embed-responsive-item" src="/slides/07-slides.html#29">
 </iframe>
 
 </div>
@@ -112,28 +69,28 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Video de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz).
+-   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/02wHR4FqFLAKDLVW1M81nhb34IyFL0zcsz46f0QHO4_fo6s7UrZmuozfcz5ZCaV9.J33m_B7mBbvZ3JAy?startTime=1632771055000)
 
--   [Introduction](https://www.youtube.com/watch?v=m4nKVJ-2K3I&list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz)
--   [The magic of randomization](https://www.youtube.com/watch?v=-zjSixOybQE&list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz)
--   [How to analyze RCTs](https://www.youtube.com/watch?v=W0NyALrjLA4&list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz)
--   [The “gold” standard](https://www.youtube.com/watch?v=vHb2TYAze74&list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz)
--   [Adjustment with matching](https://www.youtube.com/watch?v=jECz-SS-sqc&list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz)
+-   [<i class="fas fa-video"></i> `Video del práctico - mismo que el de la clase`](https://zoom.us/rec/share/02wHR4FqFLAKDLVW1M81nhb34IyFL0zcsz46f0QHO4_fo6s7UrZmuozfcz5ZCaV9.J33m_B7mBbvZ3JAy?startTime=1632771055000)
 
-You can also watch the playlist (and skip around to different sections) here:
+# Material de la clase
 
-<div class="embed-responsive embed-responsive-16by9">
+-   [<i class="fas fa-file-archive"></i> `07-clase.zip`](https://github.com/learn-R/07-class/raw/main/07-clase.zip)
 
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sGJURMOwN9tf9MNDN4t0JMz" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/07-practico/)
 
-</div>
+-   [<i class="fas fa-file-archive"></i> `taller_descriptivos.zip`](https://github.com/learn-R/taller_descriptivos/raw/main/taller_descriptivos.zip)
 
-[^1]: Paul J. Gertler et al., *Impact Evaluation in Practice*, 2nd ed. (Inter-American Development Bank; World Bank, 2016), <https://openknowledge.worldbank.org/handle/10986/25030>.
+# Materiales adicionales
 
-[^2]: Joshua D. Angrist and Jörn-Steffen Pischke, *Mastering ’Metrics: The Path from Cause to Effect* (Princeton, NJ: Princeton University Press, 2015).
+-   [Tidy Messy data](https://tidyr.tidyverse.org/)
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Tidy data”](https://r4ds.had.co.nz/tidy-data.html)

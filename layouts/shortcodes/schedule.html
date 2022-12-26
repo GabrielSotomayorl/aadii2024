@@ -12,9 +12,10 @@
 
             {{- if .header }}
 
-            <td style="width:8%;text-align:center" class="mid-table-header">Content</td>
-            <td style="width:8%;text-align:center" class="mid-table-header">Example</td>
-            <td style="width:8%;text-align:center" class="mid-table-header">Assignment</td>
+            <td style="width:8%;text-align:center" class="mid-table-header">Clases</td>
+            <td style="width:8%;text-align:center" class="mid-table-header">Prácticos</td>
+            <td style="width:8%;text-align:center" class="mid-table-header">Tareas</td>
+            <td style="width:8%;text-align:center" class="mid-table-header">Talleres</td>
 
             {{- else }}
 
@@ -48,6 +49,17 @@
             <td align="center" style="width:10%;text-align:center">
                 <font color="f1f1f1">
                     <i class="fas fa-pencil-ruler fa-lg"></i></font>
+            </td>
+            {{- end }}
+
+            {{- if .resource }}
+            <td align="center" style="width:10%;text-align:center"><a
+                    href="{{ .Site.baseurl }}/resource/{{ .resource }}/">
+                    <i class="fas fa-tools fa-lg"></i></a></td>
+            {{- else }}
+            <td align="center" style="width:10%;text-align:center">
+                <font color="f1f1f1">
+                    <i class="fas fa-tools fa-lg"></i></font>
             </td>
             {{- end }}
 

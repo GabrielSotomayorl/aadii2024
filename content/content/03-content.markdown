@@ -1,87 +1,79 @@
 ---
-title: "Theories of change and logic models"
-linktitle: "3: Theories of change and logic models"
-date: "2021-01-25"
-start_date: "2021-01-25"
-end_date: "2021-01-29"
+title: "Tipos de datos en R"
+linktitle: "3: Tipos de datos en R"
+date: "2022-03-28"
+start_date: "2022-03-28"
+end_date: "2022-04-01"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 3
 type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "03-slides"
+slides: "03-slides-22"
 ---
 
-## Readings
-
--   <i class="fas fa-book"></i> Chapter 2 in *Impact Evaluation in Practice*[^1]
--   <i class="fas fa-book"></i> Chapter 2 in *Evaluation: A Systematic Approach*.[^2] This is available on iCollege.
--   <i class="fas fa-book"></i> Chapter 3 in *Evaluation: A Systematic Approach*.[^3] This is available on iCollege.
-
-## Slides
-
-The slides for today’s lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 {{% slide-buttons %}}
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introduction-tab" data-toggle="tab" href="#introduction" role="tab" aria-controls="introduction" aria-selected="true">Introduction</a>
+<a class="nav-link active" id="data-types-tab" data-toggle="tab" href="#data-types" role="tab" aria-controls="data-types" aria-selected="true">Data types</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="reproducibility-tab" data-toggle="tab" href="#reproducibility" role="tab" aria-controls="reproducibility" aria-selected="false">Reproducibility</a>
+<a class="nav-link" id="data-structures-tab" data-toggle="tab" href="#data-structures" role="tab" aria-controls="data-structures" aria-selected="false">Data structures</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="program-theories-tab" data-toggle="tab" href="#program-theories" role="tab" aria-controls="program-theories" aria-selected="false">Program theories</a>
+<a class="nav-link" id="data-frames-tab" data-toggle="tab" href="#data-frames" role="tab" aria-controls="data-frames" aria-selected="false">Data frames</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" id="logic-models--results-chains-tab" data-toggle="tab" href="#logic-models--results-chains" role="tab" aria-controls="logic-models--results-chains" aria-selected="false">Logic models & results chains</a>
+<a class="nav-link" id="ejercicios-tab" data-toggle="tab" href="#ejercicios" role="tab" aria-controls="ejercicios" aria-selected="false">Ejercicios</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introduction" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introduction-tab">
+<div id="data-types" class="tab-pane fade show active" role="tabpanel" aria-labelledby="data-types-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/03-slides.html#1">
+<iframe class="embed-responsive-item" src="/slides/03-slides-22.html#data-t">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="reproducibility" class="tab-pane fade" role="tabpanel" aria-labelledby="reproducibility-tab">
+<div id="data-structures" class="tab-pane fade" role="tabpanel" aria-labelledby="data-structures-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/03-slides.html#reproducibility">
+<iframe class="embed-responsive-item" src="/slides/03-slides-22.html#data-s">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="program-theories" class="tab-pane fade" role="tabpanel" aria-labelledby="program-theories-tab">
+<div id="data-frames" class="tab-pane fade" role="tabpanel" aria-labelledby="data-frames-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/03-slides.html#program-theories">
+<iframe class="embed-responsive-item" src="/slides/03-slides-22.html#df">
 </iframe>
 
 </div>
 
 </div>
 
-<div id="logic-models--results-chains" class="tab-pane fade" role="tabpanel" aria-labelledby="logic-models--results-chains-tab">
+<div id="ejercicios" class="tab-pane fade" role="tabpanel" aria-labelledby="ejercicios-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
-<iframe class="embed-responsive-item" src="/slides/03-slides.html#logic-models">
+<iframe class="embed-responsive-item" src="/slides/03-slides-22.html#ej">
 </iframe>
 
 </div>
@@ -91,37 +83,19 @@ The slides for today’s lesson are available online as an HTML file. Use the bu
 </div>
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-## Videos
+# Material de la clase
 
-Videos for each section of the lecture are [available at this YouTube playlist](https://www.youtube.com/playlist?list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH).
+-   [<i class="fas fa-file-archive"></i> `03-clase.zip`](https://github.com/learn-R/03-class/raw/main/03-clase.zip)
 
--   [Introduction](https://www.youtube.com/watch?v=dwsCSqczNng&list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH)
--   [Reproducibility](https://www.youtube.com/watch?v=XkHUQJp5fh0&list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH)
--   [Program theories](https://www.youtube.com/watch?v=Uos8RumBrzE&list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH)
--   [Logic models & results chains](https://www.youtube.com/watch?v=8CJ7M2dTmF4&list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH)
+-   [<i class="fas fa-laptop-code"></i> Práctico](/example/03-practico/)
 
-You can also watch the playlist (and skip around to different sections) here:
+# Materiales adicionales
 
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/playlist?list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-
-</div>
-
-## Optional lab
-
-Here are all the materials we used in the lab:
-
--   [RStudio.cloud project](https://rstudio.cloud/spaces/112607/project/2107489)
--   [Slides](https://evalsp21.classes.andrewheiss.com/projects/01_lab/slides/01_lab.html)
--   [Project `.zip` file](https://evalsp21.classes.andrewheiss.com/projects/01_lab.zip) (the slides are in here too)
-
-[^1]: Paul J. Gertler et al., *Impact Evaluation in Practice*, 2nd ed. (Inter-American Development Bank; World Bank, 2016), <https://openknowledge.worldbank.org/handle/10986/25030>.
-
-[^2]: Peter H. Rossi, Mark W. Lipsey, and Gary T. Henry, *Evaluation: A Systematic Approach*, 8th ed. (Los Angeles: Sage, 2019).
-
-[^3]: Ibid.
+-   <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
+    -   [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    -   [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    -   [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)

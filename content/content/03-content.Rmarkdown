@@ -1,104 +1,60 @@
 ---
-title: "Theories of change and logic models"
-linktitle: "3: Theories of change and logic models"
-date: "2021-01-25"
-start_date: "2021-01-25"
-end_date: "2021-01-29"
+title: "Tipos de datos en R"
+linktitle: "3: Tipos de datos en R"
+date: "2022-03-28"
+start_date: "2022-03-28"
+end_date: "2022-04-01"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 3
 type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "03-slides"
+slides: "03-slides-22"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
 source(here::here("R", "slide-tabs.R"))
-source(here::here("R", "youtube-playlist.R"))
-
-playlist_id <- "PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH"
 
 slide_details <- tibble::tribble(
-  ~youtube_id,   ~title, ~slide, ~active,
-  "dwsCSqczNng", "Introduction", "1", TRUE,
-  "XkHUQJp5fh0", "Reproducibility", "reproducibility", FALSE,
-  "Uos8RumBrzE", "Program theories", "program-theories", FALSE,
-  "8CJ7M2dTmF4", "Logic models & results chains", "logic-models", FALSE
+  ~title, ~slide, ~active,
+  "Data types", "data-t", TRUE,
+   "Data structures", "data-s", FALSE,
+   "Data frames", "df", FALSE,
+  "Ejercicios", "ej", FALSE
 )
 ```
 
-## Readings
-
-- <i class="fas fa-book"></i> Chapter 2 in *Impact Evaluation in Practice* [@wb-eval]
-- <i class="fas fa-book"></i> Chapter 2 in *Evaluation: A Systematic Approach* [@RossiLipseyHenry:2019]. This is available on iCollege.
-- <i class="fas fa-book"></i> Chapter 3 in *Evaluation: A Systematic Approach* [@RossiLipseyHenry:2019]. This is available on iCollege.
-
-
-## Slides
-
-The slides for today's lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 `r blogdown::shortcode("slide-buttons")`
 
 ```{r show-slide-tabs, echo=FALSE, results="asis"}
-slide_tabs(slide_details, "/slides/03-slides.html")
+slide_tabs(slide_details, "/slides/03-slides-22.html")
 ```
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
 
-## Videos
 
-```{r show-youtube-list, echo=FALSE, results="asis"}
-youtube_list(slide_details, playlist_id)
-```
+# Material de la clase
 
-
-## Optional lab
-
-Here are all the materials we used in the lab: 
-
-- [RStudio.cloud project](https://rstudio.cloud/spaces/112607/project/2107489)
-- [Slides](https://evalsp21.classes.andrewheiss.com/projects/01_lab/slides/01_lab.html)
-- [Project `.zip` file](https://evalsp21.classes.andrewheiss.com/projects/01_lab.zip) (the slides are in here too)
+- [<i class="fas fa-file-archive"></i> `03-clase.zip`](https://github.com/learn-R/03-class/raw/main/03-clase.zip)
 
 
-```{cat include=FALSE, eval=FALSE}
-Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sHjKJRcD-ebQUbcaFhc0cQH
-
-https://youtu.be/dwsCSqczNng
-PMAP 8521 • (3) Theories of change: (0) Introduction
-
-Introduction to the class session on theories of change
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/03-content/
+- [<i class="fas fa-laptop-code"></i> Práctico](/example/03-practico/)
 
 
-https://youtu.be/XkHUQJp5fh0
-PMAP 8521 • (3) Theories of change: (1) Reproducibility
+# Materiales adicionales
 
-Discussion about the importance of reproducible data analysis practices
+- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
+    - [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
+    - [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
+    - [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
 
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/03-content/
+- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
 
-  
-https://youtu.be/Uos8RumBrzE
-PMAP 8521 • (3) Theories of change: (2) Program theories
-
-Discussion of program components, program impact theories, and the importance of basing programs on sound theories
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/03-content/
-
-
-https://youtu.be/8CJ7M2dTmF4
-PMAP 8521 • (3) Theories of change: (3) Logic models & results chains
-
-Discussion of results chains, logic models, and the difference between logic models and impact theories 
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/03-content/
-```

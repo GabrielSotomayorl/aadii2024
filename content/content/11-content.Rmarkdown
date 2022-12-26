@@ -1,12 +1,12 @@
 ---
-title: "Instrumental variables I"
-linktitle: "11: IV I"
-date: "2021-03-29"
-start_date: "2021-03-29"
-end_date: "2021-04-02"
+title: "Calidad de modelos y otras técnicas"
+linktitle: "11: Calidad de modelos y otras técnicas"
+date: "2021-11-08"
+start_date: "2021-09-27"
+end_date: "2021-11-08"
 menu:
   content:
-    parent: Course content
+    parent: Contenido
     weight: 11
 type: docs
 toc: true
@@ -17,33 +17,15 @@ slides: "11-slides"
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
 source(here::here("R", "slide-tabs.R"))
-source(here::here("R", "youtube-playlist.R"))
-
-playlist_id <- "PLS6tnpTr39sEsOSeMK19h6RWUB5kHrn0q"
 
 slide_details <- tibble::tribble(
-  ~youtube_id,   ~title, ~slide, ~active,
-  "2L4h_XRrNAg", "Introduction", "1", TRUE,
-  "fLJKAMSXDyw", "Endogeneity and exogeneity", "endo-exo", FALSE,
-  "915d3OMaWNA", "Instruments", "instruments", FALSE,
-  "rCMQkrVIKOc", "Using instruments", "using-instruments", FALSE
+  ~title, ~slide, ~active,
+  "Repaso", "1", TRUE,
+   "Calidad de modelos", "10", FALSE,
 )
 ```
 
-## Readings
-
-- <i class="fas fa-book"></i> Chapter 5 in *Impact Evaluation in Practice* [@wb-eval]
-- <i class="fas fa-book"></i> Chapter 3 in *Mastering 'Metrics* [@AngristPischke:2015]
-- <i class="fas fa-book"></i> [Chapter 7, "Instrumental variables"](https://mixtape.scunning.com/ch6.html) in *Causal Inference: The Mixtape* [@mixtape]
-
-### Instrumental variables
-
-- The [example page on instrumental variables](/example/iv/) shows how to use R to analyze and estimate causal effects with instrumental variables
-
-
-## Slides
-
-The slides for today's lesson are available online as an HTML file. Use the buttons below to open the slides either as an interactive website or as a static PDF (for printing or storing for later). You can also click in the slides below and navigate through them with your left and right arrow keys.
+# Slides
 
 `r blogdown::shortcode("slide-buttons")`
 
@@ -52,133 +34,26 @@ slide_tabs(slide_details, "/slides/11-slides.html")
 ```
 
 {{% div fyi %}}
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
+**¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
+# Video de la clase
 
-## Videos
-
-```{r show-youtube-list, echo=FALSE, results="asis"}
-youtube_list(slide_details, playlist_id)
-```
+- [<i class="fas fa-video"></i> `Video de la clase`]()
 
 
-```{r create-save-data, include=FALSE}
-library(tidyverse)
-library(scales)
 
-set.seed(123456)
+# Material de la clase
 
-nrows <- 1000
-father_education <- tibble(
-  ability = rnorm(nrows, 35000, 10000),  # Ability
-  fathereduc = rnorm(nrows, 15000, 20000),  # Father's education (IV)
-  e_y = 0.43 * rnorm(nrows, 50000, 10000)  # Error for outcome
-) %>% 
-  mutate(educ = 3.7 + 0.52*fathereduc + 0.40*ability,  # Education (policy variable)
-         wage = 5 + 0.23*educ + 0.5*ability - e_y) %>%  # Wage (outcome variable)
-  mutate(wage = rescale(wage, to = c(7.75, 300)),  # Rescale from minimum wage to director wage (hourly)
-         educ = rescale(educ, to = c(10, 23)),  # Rescale as years of school. Min 10 to max 23 (PhD)
-         fathereduc = rescale(fathereduc, to = c(10, 23)),  # Rescale father's education
-         ability = rescale(ability, to = c(0, 600))) %>%  # Rescale as Hypothetical test scores
-  select(wage, educ, ability, fathereduc) %>% 
-  mutate(across(everything(), ~round(., 2)))
-write_csv(father_education, here::here("static", "data", "father_education.csv"))
-
-write_csv(wooldridge::wage2, here::here("static", "data", "wage2.csv"))
-
-write_csv(wooldridge::card, here::here("static", "data", "card.csv"))
-```
-
-```{cat include=FALSE, eval=FALSE}
-Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sEsOSeMK19h6RWUB5kHrn0q
-
-https://youtu.be/2L4h_XRrNAg
-PMAP 8521 • (11) Instrumental variables I: (0) Introduction
-
-Introduction to the class session on instrumental variables
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/11-content/
+- [<i class="fas fa-file-archive"></i> `11-clase.zip`](https://github.com/learn-R/11-class/raw/main/11-clase.zip)
 
 
-https://youtu.be/fLJKAMSXDyw
-PMAP 8521 • (11) Instrumental variables I: (1) Endogeneity and exogeneity
-
-Discussion of the difference between endogeneity and exogeneity in a DAG
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/11-content/
-
-  
-https://youtu.be/915d3OMaWNA
-PMAP 8521 • (11) Instrumental variables I: (2) Instruments
-
-Discussion of what an instrument is and how it needs to be relevant, exclusive, and exogenous
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/11-content/
-  
-  
-https://youtu.be/rCMQkrVIKOc
-PMAP 8521 • (11) Instrumental variables I: (3) Using instruments
-
-Discussion of how to use instruments in two-stage least squares (2SLS) models to isolate exogeneity in treatment variables
-
-Access the slides and other materials at the course website at https://evalf20.classes.andrewheiss.com/content/11-content/
-  
-  
-https://www.youtube.com/playlist?list=PLS6tnpTr39sF97TfofFZ1O-bOQtB4ygZQ
-
-https://youtu.be/h-rx-dXo74Y
-PMAP 8521 • Example: Instrumental variables with R: 1: Getting started
-
-Demonstration of how to create a new RStudio project and get ready to analyze data with instrumental variables
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
+- [<i class="fas fa-laptop-code"></i> Práctico](/example/11-practico/)
 
 
-https://youtu.be/wHTiAbGwKe4
-PMAP 8521 • Example: Instrumental variables with R: 2: Checking instrument validity
+# Examen
 
-Demonstration of how to check the validity of an instrument using fake data (wages ~ education | father's education)
+[Instrucciones](https://learn-r-uah.netlify.app/assignment/)
 
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-
-
-https://youtu.be/tnerIh0uMxU
-PMAP 8521 • Example: Instrumental variables with R: 3: Manual 2SLS
-
-Demonstration of how to run a two-stage least squares (2SLS) regression model by running a first stage model, generated predicted values of the treatment variable, and use those exogenous predictions in a second stage model (using fake data (wages ~ education | father's education))
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-
-
-https://youtu.be/EI-knWTbH-s
-PMAP 8521 • Example: Instrumental variables with R: 4: One-step 2SLS
-
-Demonstration of how to run two-stage least squares (2SLS) regression model in one step using the iv_robust function from the **estimatr** R package (using fake data (wages ~ education | father's education))
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-
-
-https://youtu.be/W8Up5OOPtEY
-PMAP 8521 • Example: Instrumental variables with R: 5: Checking instrument validity (real data)
-
-Demonstration of how to check instrument validity using real data (wages ~ education | father's education + mother's education)
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-  
-
-https://youtu.be/6sp8sYrRv5c
-PMAP 8521 • Example: Instrumental variables with R: 6: 2SLS (real data)
-
-Demonstration of how to run two-stage least squares (2SLS) regression with multiple instruments, using real data (wages ~ education | father's education + mother's education)
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-
-
-https://youtu.be/uDr4nsWkG2c
-PMAP 8521 • Example: Instrumental variables with R: 7: Validity + 2SLS (real data)
-
-Demonstration of how to check instrument validity and run two-stage least squares (2SLS) regression with control variables, using real data (wages ~ education + controls | distance to college + controls)
-
-Download the data and see the polished code at https://evalf20.classes.andrewheiss.com/example/iv/
-```
+- 22 de noviembre 23.59 horas
+- Individual y obligatorio

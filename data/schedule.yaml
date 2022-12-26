@@ -1,292 +1,176 @@
 lessons:
-  - title: 'Evaluation and causation'
+  - title: 'Análisis avanzado de datos 2'
     header: True
 
-  - title: '<span class="content-title">Evaluation and the causal revolution</span>'
-    session: "Session 1"
-    date: "January 11–15"
-    date_start: "January 11"
-    date_end: "January 15"
+  - title: '<span class="content-title">Unidad 1. Elementos y herramientas básicos de R</span>'
+    date: "8-22 de agosto"
+    date_start: "8 Agosto"
+    date_end: "22 Agosto"
+    bg: 1
+    
+  - title: '1.1 R enviroment: interfaz de RStudio, elementos de script, workspace<br>1.2 Prácticas y herramientas de consulta: CRAN, stackoverflow, Rcommunity<br>1.3 Herramientas para la colaboración y comunicación: Rprojects, GitHub y Slack'
+    session: "Sesión 1"
+    date: "8 Agosto"
     content: "01-content"
-    example: "rstudio-tidyverse"
-    bg: 1
-    
-  - title: 'Weekly check-in 1'
-    date: "January 19"
-    assignment: "weekly-check-in"
+    example: "01-practico"
+    resource: "install"
     bg: 1
 
-  - title: 'Problem set 1'
-    date: "January 19"
-    assignment: "01-problem-set"
-    bg: 1
-    bottomborder: True
-
-  - title: '<span class="content-title">Regression and inference</span>'
-    session: "Session 2"
-    date: "January 19–22"
-    date_start: "January 19"
-    date_end: "January 22"
+  - title: '1.4 Librerías y funciones para las ciencias sociales: tidyverse y sj (sjmisc y sjPlot)<br>1.5 Construcción de reportes reproducibles e integrados con código: Rmarkdown'
+    session: "Sesión 2"
+    date: "22 Agosto"
     content: "02-content"
-    bg: 2
-
-  - title: 'Weekly check-in 2'
-    date: "January 25"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: 'Problem set 2'
-    date: "January 25"
-    assignment: "02-problem-set"
-    bg: 2
+    example: "02-practico"
+    assignment: "00-tarea"
+    resource: "markdown"
+    bg: 1
     bottomborder: True
 
-  - title: '<span class="content-title">Theories of change and logic models</span>'
-    session: "Session 3"
-    date: "January 25–29"
-    date_start: "January 25"
-    date_end: "January 29"
+  - title: '<span class="content-title">Unidad 2. Manipulación y limpieza de datos</span>'
+    date: "29 agosto - 3 octubre"
+    date_start: "19 Agosto"
+    date_end: "3 Octubre"
+    bg: 2
+
+  - title: '2.1 Tipos de datos en R'
+    session: "Sesión 3"
+    date: "29 Agosto"
     content: "03-content"
-    bg: 1
+    example: "03-practico"
+    resource: "r-datatypes"
+    bg: 2
 
-  - title: 'Weekly check-in 3'
-    date: "February 1"
-    assignment: "weekly-check-in"
-    bg: 1
-
-  - title: "Evaluation: Background and theory"
-    date: "February 1"
-    assignment: "01-eval-background-theory"
-    bg: 1
-    bottomborder: True
-
-  - title: '<span class="content-title">Measurement and DAGs</span>'
-    session: "Session 4"
-    date: "February 1–5"
-    date_start: "February 1"
-    date_end: "February 5"
+  - title: '2.2 Importar/exportar datos en diferentes formatos'
+    session: "Sesión 4"
+    date: "12 Septiembre"
     content: "04-content"
-    example: "dags"
+    example: "04-practico"
     bg: 2
 
-  - title: 'Weekly check-in 4'
-    date: "February 8"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Evaluation: Measurement"
-    date: "February 8"
-    assignment: "02-eval-measurement"
-    bg: 2
-    bottomborder: True
-
-  - title: '<span class="content-title">DAGs and potential outcomes</span>'
-    session: "Session 5"
-    date: "February 8–12"
-    date_start: "February 8"
-    date_end: "February 12"
+  - title: '2.3 Selección de variables y filtrar datos'
+    session: "Sesión 5"
+    date: "26 Septiembre"
     content: "05-content"
-    example: "po-ate-cate"
-    bg: 1
+    example: "05-practico"
+    bg: 2
 
-  - title: 'Weekly check-in 5'
-    date: "February 15"
-    assignment: "weekly-check-in"
-    bg: 1
-
-  - title: "Evaluation: Causal model"
-    date: "February 15"
-    assignment: "03-eval-dag"
-    bg: 1
-    bottomborder: True
-
-  - title: '<span class="content-title">Threats to validity</span>'
-    session: "Session 6"
-    date: "February 15–19"
-    date_start: "February 15"
-    date_end: "February 19"
+  - title: '2.4 Transformación de variales'
+    session: "Sesión 6"
+    date: "3 Octubre"
     content: "06-content"
+    assignment: "01-tarea"
+    example: "06-practico"
     bg: 2
+    bottomborder: True
 
-  - title: 'Weekly check-in 6'
-    date: "February 22"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Evaluation: Threats to validity"
-    date: "February 22"
-    assignment: "04-eval-threats"
-    bg: 2
+  # - title: 'Sesión de apoyo Tarea N°1'
+  #   session: ""
+  #   date: "25 Abril"
+  #   content: "01-support"
+  #   assignment: "01-tarea"
+  #   bg: 2
+  #   bottomborder: True
     
-  - title: '<i class="fas fa-star"></i> **Exam 1**'
-    date: "February 22–28"
-    date_start: "February 22"
-    date_end: "March 1"
-    bg: 3
-
-  - title: 'Tools and methods'
-    header: True
-
-  - title: '<span class="content-title">Randomization and matching</span>'
-    session: "Session 7"
-    example: "matching-ipw"
-    date: "February 22–26"
-    date_start: "February 22"
-    date_end: "February 26"
+  - title: '<span class="content-title">Unidad 3. Análisis estadístico descriptivo en R</span>'
+    date: "17-24 de octubre"
+    date_start: "17 Octubre"
+    date_end: "24 Octubre"
+    bg: 1
+    
+  - title: '3.1 Análisis descriptivos univariados: medidas de tendencia central, dispersión y frecuencias<br>3.2 Análisis bivariado: tablas de contingencia, correlaciones y ANOVA'
+    session: "Sesión 7"
+    date: "17 Octubre"
     content: "07-content"
-    bg: 1
-
-  - title: 'Weekly check-in 7'
-    date: "March 1"
-    assignment: "weekly-check-in"
-    bg: 1
-
-  - title: "Problem set 3"
-    date: "March 1"
-    assignment: "03-problem-set"
+    example: "07-practico"
     bg: 1
     bottomborder: True
 
-  - title: '<span class="content-title">Difference-in-differences I + II</span>'
-    session: "Sessions 8–9"
-    example: "diff-in-diff"
-    date: "March 1–12"
-    date_start: "March 12"
-    date_end: "March 12"
+  - title: '3.2 Análisis bivariado: tablas de contingencia, correlaciones y ANOVA'
+    session: "Sesión 8"
+    date: "24 Octubre"
     content: "08-content"
+    example: "08-practico"
+    assignment: "02-tarea"
+    bg: 1
+    bottomborder: True
+
+  # - title: "Sesión de Apoyo Tarea N°2"
+  #   date: "23 Mayo"
+  #   content: "02-support"
+  #   bg: 1
+  #   bottomborder: True
+
+  - title: '<span class="content-title">Unidad 4. Análisis estadístico inferencial en R</span>'
+    date: "7 - 14 de novimebre"
+    date_start: "7 Noviembre"
+    date_end: "14 Noviembre"
     bg: 2
 
-  - title: 'Weekly check-in 8'
-    date: "March 8"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Problem set 4"
-    date: "March 8"
-    assignment: "04-problem-set"
-    bg: 2
-
-  - title: 'Weekly check-in 9'
-    date: "March 22"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Problem set 5"
-    date: "March 22"
-    assignment: "05-problem-set"
+  - title: '4.1 Muestras complejas y precisión de inferencia estadística'
+    session: "Sesión 9"
+    date: "7 Noviembre"
+    content: "09-content"
+    example: "09-practico"
+    assignment: "03-tarea"
     bg: 2
     bottomborder: True
     
-  - title: '<span class="content-title">Regression discontinuity I</span>'
-    session: "Session 10"
-    date: "March 22–26"
-    date_start: "March 22"
-    date_end: "March 26"
+  # - title: 'Sesión Apoyo Tarea N°3'
+  #   date: "06 junio"
+  #   content: "03-support"
+  #   bg: 2
+  #   bottomborder: True
+    
+
+  - title: '4.2 Regresiones **lineales y logísticas**, predictores categóricos y representación gráfica'
+    session: "Sesión 10"
+    date: "14 Noviembre"
     content: "10-content"
-    example: "rdd"
-    bg: 1
-
-  - title: 'Weekly check-in 10'
-    date: "March 29"
-    assignment: "weekly-check-in"
-    bg: 1
-
-  - title: "Problem set 6"
-    date: "March 29"
-    assignment: "06-problem-set"
-    bg: 1
-    bottomborder: True
-
-  - title: '<span class="content-title">Instrumental variables I</span>'
-    session: "Session 11"
-    date: "March 29–April 2"
-    date_start: "March 29"
-    date_end: "April 2"
-    content: "11-content"
-    example: "iv"
-    bg: 2
-
-  - title: 'Weekly check-in 11'
-    date: "April 5"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Problem set 7"
-    date: "April 5"
-    assignment: "07-problem-set"
+    example: "10-practico"
     bg: 2
     bottomborder: True
 
-  - title: '<span class="content-title">Instrumental variables II + Regression discontinuity II</span>'
-    session: "Session 12"
-    date: "April 5–9"
-    date_start: "April 5"
-    date_end: "April 9"
-    content: "12-content"
-    example: "rdd-fuzzy"
-    bg: 1
-
-  - title: 'Weekly check-in 12'
-    date: "April 12"
-    assignment: "weekly-check-in"
-    bg: 1
-
-  - title: "Problem set 8"
-    date: "April 12"
-    assignment: "08-problem-set"
-    bg: 1
-
-  - title: '<i class="fas fa-star"></i> **Exam 2**'
-    date: "April 12–18"
-    date_start: "April 12"
-    date_end: "April 18"
-    bg: 3
-
-  - title: 'Applied evaluation'
-    header: True
-
-  - title: '<span class="content-title">Choosing and planning ethical evaluations</span>'
-    session: "Session 13"
-    date: "April 12–16"
-    date_start: "April 12"
-    date_end: "April 16"
-    content: "13-content"
-    example: "synthetic-data"
-    bg: 2
-
-  - title: 'Weekly check-in 13'
-    date: "April 19"
-    assignment: "weekly-check-in"
-    bg: 2
-
-  - title: "Problem set 9"
-    date: "April 19"
-    assignment: "09-problem-set"
-    bg: 2
-    bottomborder: True
-
-  - title: '<span class="content-title">Ethics, stories, and curiosity</span>'
-    session: "Session 14"
-    date: "April 19–23"
-    date_start: "April 19"
-    date_end: "April 23"
-    content: "14-content"
-    bg: 1
-
-  - title: 'Weekly check-in 14'
-    date: "April 26"
-    assignment: "weekly-check-in"
-    bg: 1
-    bottomborder: True
-
-  - title: '<span class="content-title">Work session</span>'
-    date: "April 26"
-    bg: 2
-
-  - title: '<span class="fake-header-table">Final</span>'
-    header: True
-
-  - title: '<i class="fas fa-star"></i> **Final project due** (submit online by 11:59 PM)'
-    date: "May 3"
+  - title: '<i class="fas fa-dice-six"></i> **Entrega final**'
+    date: "21 Noviembre"
     assignment: "final-project"
     bg: 3
+    bottomborder: True
+
+  - title: 'Resumen Evaluaciones'
+    header: True
+
+  - title: '<i class="fas fa-square"></i> **Tarea 0: Colaborando en Github**'
+    date: "22 agosto"
+    assignment: "00-tarea"
+    bg: 3
+    bottomborder: True
+ 
+  - title: '<i class="fas fa-dice-two"></i> **Tarea 1: Procesamiento de datos**'
+    date: "26 septiembre"
+    assignment: "02-tarea"
+    bg: 3
+    bottomborder: True
+
+  - title: '<i class="fas fa-dice-two"></i> **Tarea 2: Análisis descriptivo**'
+    date: "24 octubre"
+    assignment: "03-tarea"
+    bg: 3
+    bottomborder: True
+
+  - title: '<i class="fas fa-dice-two"></i> **Tarea 3: Muestras complejas**'
+    date: "7 noviembre"
+    assignment: "04-tarea"
+    bg: 3
+    bottomborder: True
+
+  - title: '<i class="fas fa-dice-two"></i> **Tarea 4: Regresiones en R**'
+    date: "14 noviembre"
+    assignment: "05-tarea"
+    bg: 3
+    bottomborder: True
+
+  - title: '<i class="fas fa-dice-six"></i> **Entrega investigación final**'
+    date: "21 noviembre"
+    assignment: "final-project"
+    bg: 3
+    bottomborder: True
