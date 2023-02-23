@@ -100,14 +100,12 @@ author: Gabriel Sotomayor López
 
 instructor: 
   name: Gabriel Sotomayor López
-  email: valentinaandrade@uchile.cl
-  url: "https://valentinaandrade.netlify.app/"
-  twitter: valentiandrade
-  github: valentinaandrade
-  office: "valentinaandrade.netlify.app/"
+  email: 	gabriel.sotomayor@mail.udp.cl
+  url: ""
+  github: GabrielSotomayorl
   contact_policy: >-
-    El canal de contacto de preferencia es [Slack](http://learn-r-uah.slack.com/), y en segunda instancia, email.
-  appointment_url: https://calendly.com/valentinaandrade/
+    El canal de contacto de preferencia es el mail gabriel.sotomayor@mail.udp.cl
+
 
 ayudante1: 
   name: Anaís Herrera
@@ -116,8 +114,8 @@ ayudante1:
   appointment_url: https://calendly.com/dafne-jaime-vargas/
 
 ayudante2: 
-  name: Nicolas Godoy
-  email: nicolas.godoy.m@ug.uchile.cl
+  name: Nicolas Hernández
+  email: nicolas.hernandez_f@mail.udp.cl
   appointment_url: https://calendly.com/nicolas-godoy-m/
 
 course:
