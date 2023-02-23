@@ -20,7 +20,7 @@ design:
     text_color_light: true
 
 cta_note:
-  label: Profesor Gabriel Sotomayor • I° Semestre 2021<br>Sociología • Universidad Diego Portales
+  label: Profesor Gabriel Sotomayor • I° Semestre 2023<br>Sociología • Universidad Diego Portales
 ---
 
 Introducción al procesamiento, análisis y visualización para **Ciencias Sociales**
