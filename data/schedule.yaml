@@ -2,7 +2,7 @@ lessons:
   - title: 'Análisis avanzado de datos 2'
     header: True
 
-  - title: '<span class="content-title">Unidad 1. Elementos y herramientas básicos de R</span>'
+  - title: '<span class="content-title">Unidad 1. Análisis de datos y uso de R</span>'
     date: "8-22 de agosto"
     date_start: "8 Agosto"
     date_end: "22 Agosto"
@@ -26,7 +26,7 @@ lessons:
     bg: 1
     bottomborder: True
 
-  - title: '<span class="content-title">Unidad 2. Manipulación y limpieza de datos</span>'
+  - title: '<span class="content-title">Unidad 2. Formas funcionales de los Modelos de Regresión</span>'
     date: "29 agosto - 3 octubre"
     date_start: "19 Agosto"
     date_end: "3 Octubre"
@@ -71,7 +71,7 @@ lessons:
   #   bg: 2
   #   bottomborder: True
     
-  - title: '<span class="content-title">Unidad 3. Análisis estadístico descriptivo en R</span>'
+  - title: '<span class="content-title">Unidad 3. Análisis Factorial Exploratorio</span>'
     date: "17-24 de octubre"
     date_start: "17 Octubre"
     date_end: "24 Octubre"
@@ -100,7 +100,7 @@ lessons:
   #   bg: 1
   #   bottomborder: True
 
-  - title: '<span class="content-title">Unidad 4. Análisis estadístico inferencial en R</span>'
+  - title: '<span class="content-title">Unidad 4. Análisis Factorial Confirmatorio</span>'
     date: "7 - 14 de novimebre"
     date_start: "7 Noviembre"
     date_end: "14 Noviembre"
