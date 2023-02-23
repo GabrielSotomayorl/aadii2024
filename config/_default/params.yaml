@@ -101,7 +101,6 @@ author: Gabriel Sotomayor López
 instructor: 
   name: Gabriel Sotomayor López
   email: 	gabriel.sotomayor@mail.udp.cl
-  twitter: @GSotomayorL
   url: ""
   github: GabrielSotomayorl
   contact_policy: >-
@@ -121,12 +120,12 @@ ayudante2:
 
 course:
   number: "2255"
-  semester: "II° Semestre- 2021"
-  days: "Clases: Lunes 16.30-17.40"
+  semester: "I° Semestre- 2023"
+  days: "Clases: Lunes 10:00-12:50"
   #time: ""
-  location: "Online, en link de Zoom"
+  location: "Laboratorio de Computación 2° piso FCSH"
   dates: "Práctico: Lunes 18.00-19.20"
-  github: "valentinaandrade"
+  github: "GabrielSotomayorl"
   copyrightYear: "2021. Web developed by Andrew Heiss and custom by"
   slack: "http://learn-r-uah.slack.com/"
 
