@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clases, prácticos y materiales | Análisis Estadístico en R</title>
+    <title>Clases, prácticos y materiales | Análisis avanzado de datos 2</title>
     <link>/content/</link>
       <atom:link href="/content/index.xml" rel="self" type="application/rss+xml" />
     <description>Clases, prácticos y materiales</description>
@@ -283,6 +283,9 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/learn-R/09-class/raw/main/09-clase.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;09-clase.zip&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/learn-R/taller_descriptivos/raw/main/taller_descriptivos.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;taller_descriptivos.zip&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;/example/09-practico/&#34;&gt;&lt;i class=&#34;fas fa-laptop-code&#34;&gt;&lt;/i&gt; Práctico&lt;/a&gt;&lt;/p&gt;

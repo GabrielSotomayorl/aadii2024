@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Course materials | Análisis Estadístico en R</title>
+    <title>Course materials | Análisis avanzado de datos 2</title>
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Course materials</description>
@@ -2096,7 +2096,7 @@ posibles &lt;strong&gt;interacciones&lt;/strong&gt; entre las variables que no h
 &lt;/ol&gt;
 &lt;h2 id=&#34;proyecto&#34;&gt;Proyecto&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://classroom.github.com/a/yFHGOnrx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deben crear un repositorio en el link de GitHub Class Room&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Para acceder a la tarea &lt;a href=&#34;https://classroom.github.com/a/crXZ_wAu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deben aceptar el repositorio en el link de GitHub Class Room&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Deben hacer un README.md explicando aspectos generales del repositorio&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;criterios-de-evaluación&#34;&gt;Criterios de evaluación&lt;/h1&gt;
@@ -2253,7 +2253,7 @@ posibles &lt;strong&gt;interacciones&lt;/strong&gt; entre las variables que no h
       <link>/assignment/04-tarea/</link>
       <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/04-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/jv91XaPO&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°4 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/2ABddgzu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°4 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;El objetivo de esta tarea consiste en realizar un análisis de regresión lineal y logística utilizando R. Para ello debe utilizar los datos según según sus apellidos &lt;a href=&#34;https://github.com/learn-R/www-learn-R-uah/tree/master/content/assignment/05-tarea/bases/originales&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;(eg. &amp;lsquo;Andrade.sav&amp;rsquo;) los cuales podrán encontrar en el siguiente repositorio&lt;/a&gt;. Estas bases contienen una muestra aleatoria de 1000 casos de la encuesta MOVID-IMPACT (2020) del módulo “Orientaciones del Trabajo”. &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;La pregunta de investigación que buscamos contestar en esta tarea es &lt;strong&gt;“¿Qué factores inciden el cumplimiento de la distancia física para cuidarse del COVID-19?”&lt;/strong&gt; a partir de contestar la frecuencia con que se &lt;em&gt;“Evitar reunirse con más de 10 personas en un espacio cerrado”.&lt;/em&gt;&lt;/p&gt;
@@ -2452,7 +2452,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/03-tarea/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/03-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/y5stOTeF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°3 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/sh7Oqadk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°3 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°3 busca evaluar la unidad de muestras complejas utilizando R, en base a la creación de un &lt;em&gt;informe reproducible en RMarkdown&lt;/em&gt;. Este informe se basa en la replicación de estadísticos reportados por otras instituciones públicas y académicas. Considere que los conocimientos a evaluar en la tarea N°3 requieren de un manejo sustantivo de los contenidos anteriormente vistos en clases.&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
@@ -2725,6 +2725,9 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/learn-R/09-class/raw/main/09-clase.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;09-clase.zip&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/learn-R/taller_descriptivos/raw/main/taller_descriptivos.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;taller_descriptivos.zip&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;/example/09-practico/&#34;&gt;&lt;i class=&#34;fas fa-laptop-code&#34;&gt;&lt;/i&gt; Práctico&lt;/a&gt;&lt;/p&gt;
@@ -3263,15 +3266,11 @@ pobreza_sexo_p &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; 
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/example/07-practico/</guid>
       <description>&lt;h1 id=&#34;0-objetivo-del-práctico&#34;&gt;0. Objetivo del práctico&lt;/h1&gt;
-&lt;p&gt;El objetivo del práctico es avanzar en el análisis de los datos a través del uso de &lt;strong&gt;estadísticos descriptivos&lt;/strong&gt;. Para esto ya debemos contar con datos previamente &lt;a href=&#34;https://learn-r-uah.netlify.app/example/04-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;procesados del práctico N°6&lt;/a&gt;. Previo a eso, &lt;strong&gt;siempre es importante&lt;/strong&gt; que recordemos en qué parte del proceso estamos&lt;/p&gt;
+&lt;p&gt;El objetivo del práctico es avanzar en el análisis de los datos a través del uso de &lt;strong&gt;estadísticos descriptivos&lt;/strong&gt;. Para esto ya debemos contar con datos previamente &lt;a href=&#34;https://learn-r-uah.netlify.app/example/06-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;procesados del práctico N°6&lt;/a&gt;. Previo a eso, &lt;strong&gt;siempre es importante&lt;/strong&gt; que recordemos en qué parte del proceso estamos&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En este práctico veremos tanto la &lt;em&gt;estimación puntual&lt;/em&gt; de estadísticos descriptivos, como su &lt;em&gt;visualización&lt;/em&gt; para reportes, ya sea a través de tablas o de gráficos.&lt;/p&gt;
 &lt;h2 id=&#34;recursos-del-práctico&#34;&gt;Recursos del práctico&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizamos los &lt;strong&gt;datos&lt;/strong&gt; procesados &lt;em&gt;CASEN 2020&lt;/em&gt;, que proviene de los datos originales de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;. Recuerden &lt;em&gt;&lt;strong&gt;siempre&lt;/strong&gt;&lt;/em&gt; consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;libro códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar datos.&lt;/p&gt;
-&lt;p&gt;No olviden que los archivos asociados a este práctico se pueden descargar aquí:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/learn-R/07-class/raw/main/07-clase.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;07-class.zip&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1 id=&#34;1-paquetes-a-utilizar&#34;&gt;1. Paquetes a utilizar&lt;/h1&gt;
 &lt;p&gt;Para este práctico utilizaremos, principalmente, las librerías &lt;code&gt;sjmisc&lt;/code&gt; y &lt;code&gt;sjPlot&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sjmisc&lt;/code&gt;: esta paquete tiene múltiples funciones, desde la transformación de datos y variables. Este paquete suele complementar a &lt;code&gt;dplyr&lt;/code&gt; de &lt;code&gt;tidyverse&lt;/code&gt; en sus funciones.&lt;/p&gt;
@@ -4337,7 +4336,7 @@ Computed correlation used pearson-method with listwise-deletion.
       <link>/assignment/01-tarea/</link>
       <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/01-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/3O74wEvi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°1 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/uLbXEXPF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°1 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°1 consiste en la creación de un script (archivo .R) en R, este les permitirá construir datos limpios y procesados, que a la vez servirán de &amp;ldquo;input&amp;rdquo; para los análisis exploratorios a reportar (tarea N°2). El ejercicio que deben realizar se basa en un caso simulado de &amp;ldquo;trabajo&amp;rdquo; que les han solicitado&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
@@ -4347,7 +4346,7 @@ Computed correlation used pearson-method with listwise-deletion.
 &lt;p&gt;Debe ocupar la Encuesta Nacional de Empleo (ENE) del Instituto Nacional de Estadísticas, particularmente el trimestre &lt;em&gt;Octubre-Noviembre-Diciembre&lt;/em&gt; del año 2019 y del 2021.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Las variables que más interesan para el informe son: condición de actividad económica general (&lt;em&gt;CAE&lt;/em&gt;), no general (&lt;em&gt;Condición de actividad&lt;/em&gt;) y las horas de trabajo de la actividad principal (&lt;em&gt;modulo C&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Las variables que más interesan para el informe son: condición de actividad económica general (&lt;em&gt;CAE&lt;/em&gt;), no general (&lt;em&gt;Condición de actividad&lt;/em&gt;) y las horas de trabajo de la actividad principal (&lt;em&gt;Modulo C&lt;/em&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;También le han indicado que hay ciertas variables socio demográficas de interés como el nivel educacional (&lt;em&gt;CINE&lt;/em&gt;), edad y sexo&lt;/p&gt;
@@ -4357,7 +4356,7 @@ Computed correlation used pearson-method with listwise-deletion.
 &lt;p&gt;En su equipo de investigación quieren realizar los siguientes análisis, para lo cuál usted debe construir un data set procesado llamado &lt;em&gt;datos_proc.RData&lt;/em&gt; que permita realizar estos análisis de manera debida&lt;/p&gt;
 &lt;ol start=&#34;0&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Los análisis solo deben considerar a las personas en edad de trabajar *según las definiciones del Instituto Nacional de Estadística. *&lt;/p&gt;
+&lt;p&gt;Los análisis solo deben considerar a las personas en edad de trabajar &lt;em&gt;según las definiciones del Instituto Nacional de Estadística.&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Un análisis de la distribución de socio demográficos de nivel educacional, edad y sexo. Le han solicitado que el nivel educacional esté solo clasificado en &lt;em&gt;&amp;ldquo;Superior completa&amp;rdquo;, &amp;ldquo;Media y básica completa&amp;rdquo; y &amp;ldquo;Básica o menos incompleta&amp;rdquo;&lt;/em&gt;, que la edad esté clasificada &lt;em&gt;en tramos de &amp;ldquo;15 a 39 años&amp;rdquo;, &amp;ldquo;40 a 64 años&amp;rdquo; y &amp;ldquo;65 y más&amp;rdquo;&lt;/em&gt;; sexo debe estar codificada como &lt;em&gt;&amp;ldquo;Mujer&amp;rdquo; y &amp;ldquo;Hombre&amp;rdquo;.&lt;/em&gt;&lt;/p&gt;
@@ -4490,9 +4489,9 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/02-tarea/</link>
       <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/02-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/8WcwkjQq&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°2 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/hfKoUK3B&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°2 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
-&lt;p&gt;La tarea N°2 implica la continuación de la tarea N°1 donde procesaron datos que servirían de &amp;ldquo;input&amp;rdquo; para los análisis que deberán presentar en el siguiente ejercicio.&lt;/p&gt;
+&lt;p&gt;La tarea N°2 implica la continuación de la tarea N°1 (más otros elementos) donde procesaron datos que servirían de &amp;ldquo;input&amp;rdquo; para los análisis que deberán presentar en el siguiente ejercicio.&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
 &lt;p&gt;De su equipo de trabajo han recibido el procesamiento de sus datos, y luego de unos días, han hecho una serie de correcciones y le han dado consejos para mejorar su avance. Para ver estos deben ir a los comentarios de sus tareas en GitHub.&lt;/p&gt;
 &lt;p&gt;Además, le han pedido una serie de cambios respecto a sus datos de modo de que el informe de avance contenga los aspectos necesarios para ser presentados.&lt;/p&gt;
@@ -4520,7 +4519,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;li&gt;Grupo ocupacional a 1 dígito (CIUO)&lt;/li&gt;
 &lt;li&gt;Rama de actividad económica de la &lt;strong&gt;empresa donde trabaja el ocupado&lt;/strong&gt;(CIIU)&lt;/li&gt;
 &lt;li&gt;Tamaño de la empresa en categorías (5 niveles)&lt;/li&gt;
-&lt;li&gt;Variable de informalidad (Hint: ver página 43 del Libro de Códigos) [*]&lt;/li&gt;
+&lt;li&gt;Variable de informalidad (Hint: ver página 61 del Libro de Códigos) [*]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Condiciones laborales&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -7211,7 +7210,7 @@ or&lt;span style=&#34;color:#f92672&#34;&gt;@&lt;/span&gt;coef &lt;span style=&#
       <description>&lt;link href=&#34;/rmarkdown-libs/tile-view/tile-view.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/tile-view/tile-view.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;/rmarkdown-libs/animate.css/animate.xaringan.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script type=&#34;application/json&#34; id=&#34;xaringanExtra-editable-docid&#34;&gt;{&#34;id&#34;:&#34;xfec25b8f8ce415fa0f817cb39b267ea&#34;,&#34;expires&#34;:14}&lt;/script&gt;
+&lt;script type=&#34;application/json&#34; id=&#34;xaringanExtra-editable-docid&#34;&gt;{&#34;id&#34;:&#34;c61759ddce144eaa8d3e9b1f88db4dd8&#34;,&#34;expires&#34;:14}&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/himalaya/himalaya.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/js-cookie/js.cookie.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;/rmarkdown-libs/editable/editable.css&#34; rel=&#34;stylesheet&#34; /&gt;
@@ -7234,7 +7233,7 @@ or&lt;span style=&#34;color:#f92672&#34;&gt;@&lt;/span&gt;coef &lt;span style=&#
 &lt;h2 id=&#34;0-objetivo-del-práctico&#34;&gt;0. Objetivo del práctico&lt;/h2&gt;
 &lt;p&gt;Este práctico tiene por objeto introducir a las y los estudiantes del curso en herramientas que les permitan a) &lt;strong&gt;importar bases de datos en diversos formatos&lt;/strong&gt;; b)&lt;strong&gt;explorar las variables&lt;/strong&gt; de las bases de datos importadas; y c) &lt;strong&gt;exportar bases de datos&lt;/strong&gt; procesadas. Para ello, se trabajará con los paquetes &lt;code&gt;haven&lt;/code&gt; (que forma parte, a su vez, del mundo de paquetes &lt;code&gt;tidyverse&lt;/code&gt;), y &lt;code&gt;dplyr&lt;/code&gt;, para poder importar  y exportar los datos, y manipular estos datos, respectivamente.&lt;/p&gt;
 &lt;h2 id=&#34;1-recursos-de-la-práctica&#34;&gt;1. Recursos de la práctica&lt;/h2&gt;
-&lt;p&gt;Para el correcto trabajo de estos materiales, deben descargar los datos de la &lt;em&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/em&gt; en su versión 2020. Para ello, deben dirigirse al &lt;a href=&#34;https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siguiente enlace&lt;/a&gt;, descargar el archivo en .zip y luego descomprimirlo en la carpeta &lt;em&gt;input/data&lt;/em&gt; de su repositorio. Para descomprimir los &lt;a href=&#34;resource/unzipping/&#34;&gt;archivos revisen&lt;/a&gt;. Cuando lo hayan logrado verán la base en formato SPPS &lt;code&gt;Casen en Pandemia 2020 SPSS.sav&lt;/code&gt; y en STATA &lt;code&gt;Casen en Pandemia 2020 SPSS.dta&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Para el correcto trabajo de estos materiales, deben descargar los datos de la &lt;em&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/em&gt; en su versión 2020. Para ello, deben dirigirse al &lt;a href=&#34;https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siguiente enlace&lt;/a&gt;, descargar el archivo en .zip y luego descomprimirlo en la carpeta &lt;em&gt;input/data&lt;/em&gt; de su repositorio. Para descomprimir los &lt;a href=&#34;https://learn-r-uah.netlify.app/resource/unzipping/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;archivos revisen&lt;/a&gt;. Cuando lo hayan logrado verán la base en formato SPPS &lt;code&gt;Casen en Pandemia 2020 SPSS.sav&lt;/code&gt; y en STATA &lt;code&gt;Casen en Pandemia 2020 SPSS.dta&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
 &lt;h2 id=&#34;2-librerias-a-utilizar&#34;&gt;2. Librerias a utilizar&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizaremos seis paquetes&lt;/p&gt;
@@ -7325,18 +7324,18 @@ load(file = &amp;ldquo;datos.RData&amp;rdquo;)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;load&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.RData&amp;#34;&lt;/span&gt;)
 &lt;span style=&#34;color:#a6e22e&#34;&gt;readRDS&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.rds&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 100 x 5
-##       id                     region      sexo      pobreza ocupacion            
-##    &amp;lt;dbl&amp;gt;                  &amp;lt;dbl+lbl&amp;gt; &amp;lt;dbl+lbl&amp;gt;    &amp;lt;dbl+lbl&amp;gt; &amp;lt;chr&amp;gt;                
-##  1   502 16 [Región de Ñuble]       2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  2   184  6 [Región del Libertador~ 2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  3   308  8 [Región del Biobío]     2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  4   531  6 [Región del Libertador~ 1 [Hombr~ 3 [No pobre~ COSECHA DE GUINDAS   
-##  5   115  3 [Región de Atacama]     2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  6   261  5 [Región de Valparaíso]  2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  7   171  3 [Región de Atacama]     1 [Hombr~ 3 [No pobre~ ATENCIÓN PARADERO CO~
-##  8   333  7 [Región del Maule]      1 [Hombr~ 1 [Pobres e~ RECOLECTOR DE HORTAL~
-##  9    69 14 [Región de Los Ríos]    1 [Hombr~ 3 [No pobre~ EMPRESARIO DISTRIBUC~
-## 10   440  4 [Región de Coquimbo]    1 [Hombr~ 2 [Pobres n~ &amp;lt;NA&amp;gt;                 
+##       id                                        region    sexo pobreza ocupacion
+##    &amp;lt;dbl&amp;gt;                                     &amp;lt;dbl+lbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;chr&amp;gt;    
+##  1   502 16 [Región de Ñuble]                          2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  2   184  6 [Región del Libertador Gral. Bernardo O&amp;#39;H~ 2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  3   308  8 [Región del Biobío]                        2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  4   531  6 [Región del Libertador Gral. Bernardo O&amp;#39;H~ 1 [Hom~ 3 [No ~ COSECHA ~
+##  5   115  3 [Región de Atacama]                        2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  6   261  5 [Región de Valparaíso]                     2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  7   171  3 [Región de Atacama]                        1 [Hom~ 3 [No ~ ATENCIÓN~
+##  8   333  7 [Región del Maule]                         1 [Hom~ 1 [Pob~ RECOLECT~
+##  9    69 14 [Región de Los Ríos]                       1 [Hom~ 3 [No ~ EMPRESAR~
+## 10   440  4 [Región de Coquimbo]                       1 [Hom~ 2 [Pob~ &amp;lt;NA&amp;gt;     
 ## # ... with 90 more rows
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;datos &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;readRDS&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.rds&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Solo contiene datos? ¡No! Además de que puede contener múltiples datos, puede guardar otros &lt;em&gt;objetos&lt;/em&gt; que se creen en su proceso estadístico. Por ejemplo, &lt;em&gt;modelos&lt;/em&gt; ¡Lo veremos más adelante!&lt;/p&gt;
@@ -7435,9 +7434,8 @@ datos &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; readxl&lt
 ## 5         Asalariados principal - Sueldos y salarios monetario corregido
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Explorar distirbución de las variables&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;frq&lt;/span&gt;(datos&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;pobreza)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## 
-## Situación de pobreza por ingresos (x) &amp;lt;numeric&amp;gt;
-## # total N=185437  valid N=185339  mean=2.84  sd=0.48
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Situación de pobreza por ingresos (x) &amp;lt;numeric&amp;gt; 
+## # total N=185437 valid N=185339 mean=2.84 sd=0.48
 ## 
 ## Value |              Label |      N | Raw % | Valid % | Cum. %
 ## --------------------------------------------------------------
@@ -8660,7 +8658,7 @@ save(objeto1, objeto2, file = &amp;ldquo;datos.RData)&lt;/p&gt;
       <link>/assignment/00-tarea/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/00-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°0 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;../example/01-practico&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°0 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°0 consiste en la creación de un archivo &lt;strong&gt;RMarkdown&lt;/strong&gt;, donde deben incorporar elementos claves para la creación de estos archivos, lo que permitirá crear informes que incluyan texto y códigos en R, facilitando la reproducibilidad.&lt;/p&gt;
 &lt;h2 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h2&gt;
@@ -8693,18 +8691,18 @@ save(objeto1, objeto2, file = &amp;ldquo;datos.RData)&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;output&lt;/strong&gt;:&lt;/li&gt;
 &lt;li&gt;Para qué sirve el archivo con extensión &lt;strong&gt;.Rproj&lt;/strong&gt; (que es lo mismo que el Tipo Rproject)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En el apartado &lt;code&gt;## 3. Gráfico&lt;/code&gt; debes incorporar una imagen llamada &lt;code&gt;grafico01.jpg&lt;/code&gt;. Esta imagen la puedes incorporar en formato Markdown o con chunks. Deja una breve explicación de ese gráfico, intenta utilizar &lt;em&gt;&lt;strong&gt;lenguaje Markdown&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;En el apartado &lt;code&gt;## 3. Gráfico&lt;/code&gt; debes incorporar una imagen llamada &lt;code&gt;grafico01.jpg&lt;/code&gt; (es una imágen a tu elección). Esta imagen la puedes incorporar en formato Markdown o con chunks. Deja una breve explicación de ese gráfico, intenta utilizar &lt;em&gt;&lt;strong&gt;lenguaje Markdown&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Finalmente, deben crear una &lt;em&gt;&lt;strong&gt;tabla simple&lt;/strong&gt;&lt;/em&gt; de un tema interesante para ustedes, junto a una breve descripción.&lt;/p&gt;
 &lt;h2 id=&#34;pasos-para-realizar-la-tarea&#34;&gt;Pasos para realizar la tarea&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Entra a GitHub Class Room para realizar la tarea N°1 (aceptar tarea). Debes clonar este repositorio. Si tienes dudas sobre este procedimiento, revisa el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;práctico N°1&lt;/a&gt; o contáctanos vía slack.&lt;/p&gt;
+&lt;p&gt;Entra a GitHub Class Room para realizar la tarea N°0 (aceptar tarea). Debes clonar este repositorio. Si tienes dudas sobre este procedimiento, revisa el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;práctico N°1&lt;/a&gt; o contáctanos vía slack.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Una vez la tarea en tu computadora, no olvides crear un .Rproject llamado 00-tarea.Rproj que provenga de una &amp;ldquo;Carpeta existente&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Una vez esté la tarea en tu computadora, no olvides crear un .Rproject llamado 00-tarea.Rproj que provenga de una &amp;ldquo;Carpeta existente&amp;rdquo;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;En la carpeta input habrá una carpeta llamada &amp;ldquo;imagenes&amp;rdquo;. Dentro de esta carpeta encontrarás la imágen &lt;code&gt;flujo.png&lt;/code&gt; y deberás dejar el &lt;code&gt;gráfico01.jpg&lt;/code&gt;. Este puede ser cualquiera que resulte interesante para tí.&lt;/p&gt;
+&lt;p&gt;En la carpeta input habrá una carpeta llamada &amp;ldquo;imagenes&amp;rdquo;. Dentro de esta carpeta encontrarás la imagen &lt;code&gt;flujo.png&lt;/code&gt; y deberás dejar el &lt;code&gt;gráfico01.jpg&lt;/code&gt;. Este puede ser cualquiera que resulte interesante para ti.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Una vez finalizado todos los pasos del documento &lt;strong&gt;no olvides hacer knit&lt;/strong&gt; para que se compile tu documento final.&lt;/p&gt;
@@ -8712,51 +8710,6 @@ save(objeto1, objeto2, file = &amp;ldquo;datos.RData)&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;puntaje-adicional&#34;&gt;Puntaje adicional&lt;/h2&gt;
 &lt;p&gt;Si averiguas como dejar un archivo en pdf &lt;strong&gt;y&lt;/strong&gt; explicarlo en el canal #tareas, obtendrás un puntaje adicional para 01-tarea&lt;/p&gt;
-&lt;h2 id=&#34;pauta&#34;&gt;Pauta&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;RMarkdown, este ítem evalúa aspectos propios de los archivos .Rmd, desde su estructura hasta su correcto funcionamiento. Es necesario considerar:&lt;/p&gt;
-&lt;p&gt;a. Aspectos formales: títulos, nombres, información institucional, fecha, etc.&lt;/p&gt;
-&lt;p&gt;b. Estructura de los archivos .Rmd&lt;/p&gt;
-&lt;p&gt;c. Uso correcto y constante de markdown&lt;/p&gt;
-&lt;p&gt;d. Aspectos solicitados según cada tarea, por ejemplo:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Análisis: en estos archivos irán tanto sus reportes como el análisis que realicen&lt;/li&gt;
-&lt;li&gt;Replicación de informes: esto incluye la replicación de análisis con sus outputs, ya sean tablas, gráficos o lo que se solicite en la respectiva tarea.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Flujo: Este ítem se encarga de evaluar el flujo de trabajo desarrollado en el curso, para ello se debe considerar los elementos que hacen posible el correcto uso del flujo, para obtener buen puntaje en este ítem deben:&lt;/p&gt;
-&lt;p&gt;a. Seguir detalladamente las instrucciones&lt;/p&gt;
-&lt;p&gt;b. Crear las carpetas y archivos requeridos en cada tarea&lt;/p&gt;
-&lt;p&gt;c. Nombrar &lt;strong&gt;adecuadamente&lt;/strong&gt; los archivos/datos/carpetas&lt;/p&gt;
-&lt;p&gt;d. Todos los archivos por utilizar deben estar en su lugar correspondiente.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;R: Este ítem evalúa elementos relacionados a archivos .R. Este puede dividirse en dos etapas a lo largo del curso (Debe seguir un orden lógico):&lt;/p&gt;
-&lt;p&gt;a. Carga: esta etapa es necesaria para pasar a procesamiento&lt;/p&gt;
-&lt;p&gt;b. Procesamiento: etapa donde se preparan los datos para ser utilizados en el análisis.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Markdown: este ítem evalúa aspectos propios del formato en markdown, ya que su uso será constante en este curso &lt;a href=&#34;https://learn-r-uah.netlify.app/resource/markdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ver recursos&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reproducibilidad: En este curso es muy relevante la reproducibilidad, para ello es necesario tener en cuenta lo siguiente:&lt;/p&gt;
-&lt;p&gt;a. El archivo .R debe poder ejecutarse sin problemas por cualquier persona con el programa, siguiendo el orden lógico requerido para ello.&lt;/p&gt;
-&lt;p&gt;b. El archivo .Rmd debe poder ejecutarse sin problemas por cualquier persona con el programa. Esto implica que tanto los archivos/tablas/códigos deben visualizarse correctamente en su producto (output) final
-Este punto será esencial para lo que más adelante veremos como condición de suficiencia.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Condición de suficiencia: son elementos esenciales que si no son cumplidos la asignación de puntaje del ítem será 0, independiente de si lo que sigue a ese punto está realizado correctamente. Deben tener en cuenta que este ítem no será inmediato, sino que será a medida vaya avanzando el curso.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Bonus: En el curso habrá constantemente aspectos que brindarán puntos y/o décimas dependiendo de la tarea.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Descuentos: ítem que considera descuentos en puntos o décimas por el no logro o ausencia de aspectos de los ítems anteriores.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Si utiliza otros paquetes para resolver la tarea &lt;strong&gt;DEBE&lt;/strong&gt; explicar la razón del uso esos paquetes y qué ventajas tienen por sobre los utilizados en el curso, de no ser así se descontará con 0.5 puntos.&lt;/p&gt;
 &lt;h2 id=&#34;recursos&#34;&gt;Recursos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -10988,7 +10941,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;h2 id=&#34;6-github-class-room-del-curso-learn-r-uah&#34;&gt;6. GitHub Class Room del curso (learn-R-UAH)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Pasos para las dinámicas del curso&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;61-recibir-una-tarea&#34;&gt;6.1 Recibir una tarea&lt;/h3&gt;
-&lt;h3 id=&#34;62-ingresa-el-linkhttpsclassroomgithubcomazym3ol16&#34;&gt;6.2 Ingresa el &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;62-ingresa-el-linkhttpsclassroomgithubcomataoncqa7&#34;&gt;6.2 Ingresa el &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;a. El link contiene la tarea, ustedes deben aceptar la tarea la cual creará un &lt;em&gt;&lt;strong&gt;repositorio&lt;/strong&gt;&lt;/em&gt; que contendrá la &lt;em&gt;información&lt;/em&gt; y las &lt;em&gt;instrucciones&lt;/em&gt; de la tarea.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/ingrestarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;b. Para eso deben ir a &lt;em&gt;&lt;strong&gt;GitHub Desktop&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;clonar&lt;/strong&gt; el respositorio desde internet&lt;/em&gt;.&lt;/p&gt;
@@ -10998,12 +10951,12 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;p&gt;d. Después deben abrir el repositorio creado a través de &lt;em&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/em&gt;, ahí verán el mismo contenido pero en un archivo &lt;em&gt;&lt;strong&gt;.md&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso4tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;63-resolver-una-tarea&#34;&gt;6.3 Resolver una tarea&lt;/h3&gt;
-&lt;p&gt;a. Ahora resolveremos la &lt;strong&gt;Tarea 0&lt;/strong&gt; en conjunto, una vez abierto el &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio         clonado&lt;/a&gt;. Recuerden que es en este repositorio donde deben completar y subir la tarea&lt;/p&gt;
+&lt;p&gt;a. Ahora resolveremos la &lt;strong&gt;Tarea 0&lt;/strong&gt; en conjunto, una vez abierto el &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio         clonado&lt;/a&gt;. Recuerden que es en este repositorio donde deben completar y subir la tarea&lt;/p&gt;
 &lt;p&gt;b. La tarea se encuentra en un archivo llamado &lt;code&gt;*README*&lt;/code&gt; con información de los conceptos básicos y el flujo de GitHub, deben leerlo detalladamente.&lt;/p&gt;
 &lt;p&gt;c. Una vez leido deberán ir al final del archivo en &lt;strong&gt;Tarea 0&lt;/strong&gt; y responder las preguntas correspondientes&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso5tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;64-tarea-0&#34;&gt;6.4 Tarea 0&lt;/h3&gt;
-&lt;p&gt;¡Puedes ver las instrucciones de la &lt;a href=&#34;/assignment/00-tarea/&#34;&gt;tarea en el siguiente link&lt;/a&gt; o en &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Room&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;¡Puedes ver las instrucciones de la &lt;a href=&#34;/assignment/00-tarea/&#34;&gt;tarea en el siguiente link&lt;/a&gt; o en &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Room&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;65-subir-una-tarea&#34;&gt;6.5 Subir una tarea&lt;/h3&gt;
 &lt;p&gt;a. Una vez listo, deberán &lt;em&gt;&lt;strong&gt;subir&lt;/strong&gt;&lt;/em&gt; la tarea al repositorio remoto a través de GitHub Desktop&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso6tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
@@ -11126,7 +11079,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;p&gt;El objetivo de este práctico es introducir en la manipulacón de la estructura de los datos que posteriormente serán analizados. Ello incluye la selección de variables, el filtrado de filas, la eliminación de valores nulos, entre otros.&lt;/p&gt;
 &lt;p&gt;Es así como esta práctica se enmarca en el proceso de &lt;strong&gt;procesamiento de los datos&lt;/strong&gt;. Ello significa que &lt;strong&gt;todos&lt;/strong&gt; los procedimientos que aprenderemos en esta sesión deben ser incorporados necesariamente en el código de procesamiento, a modo de elaborar un posterior código de análisis lo más limpio posible.&lt;/p&gt;
 &lt;h2 id=&#34;1-recursos-de-la-práctica&#34;&gt;1. Recursos de la práctica&lt;/h2&gt;
-&lt;p&gt;En este práctico utilizaremos la base de datos de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;, la cual fue procesada en el &lt;a href=&#34;&#34;&gt;Práctico anterior&lt;/a&gt;.Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
+&lt;p&gt;En este práctico utilizaremos la base de datos de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;, la cual fue procesada en el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/04-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Práctico anterior&lt;/a&gt;.Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
 &lt;h2 id=&#34;2-librerías-a-utilizar&#34;&gt;2. Librerías a utilizar&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizaremos las siguientes librerías&lt;/p&gt;
 &lt;ol&gt;
@@ -11297,7 +11250,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;/img/example/operad.png&#34; width=&#34;60%&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;../img/example/operad.png&#34; width=&#34;60%&#34; /&gt;
 Figura 1: Resumen de operadores&lt;/p&gt;
 &lt;h3 id=&#34;operador-pipeline-&#34;&gt;Operador pipeline %&amp;gt;%&lt;/h3&gt;
 &lt;p&gt;¡Aquí mucha atención! Este operador &lt;code&gt;%&amp;gt;%&lt;/code&gt; (llamado &lt;code&gt;pipe&lt;/code&gt;) no es un operador que esté contenido en las funciones base del lenguaje R. Más bien proviene del paquete &lt;code&gt;magrittr&lt;/code&gt; de &lt;code&gt;tidyverse&lt;/code&gt;, y es de los operadores más útiles y utilizados en R.&lt;/p&gt;
@@ -11409,9 +11362,9 @@ variable1 &amp;gt;= 3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Y si quiero filtrar para saber el valor máximo de ingresos (&lt;code&gt;ytoth&lt;/code&gt;)?&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(datos_proc, ytoth &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;(ytoth))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 1 x 13
-##          folio  edad    sexo    prev ocupacion tot_per  ytoth y26d_hog y26d_total
-##          &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt;  &amp;lt;dbl+lbl&amp;gt;
-## 1 730830031501    41 1 [Hom~ 1 [Sis~    1 [Sí]       1 2.25e8   2 [No]         NA
+##         folio  edad    sexo    prev ocupacion tot_per  ytoth y26d_hog y26d_total
+##         &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt;  &amp;lt;dbl+lbl&amp;gt;
+## 1     7.31e11    41 1 [Hom~ 1 [Sis~    1 [Sí]       1 2.25e8   2 [No]         NA
 ## # ... with 4 more variables: o2 &amp;lt;dbl+lbl&amp;gt;, o3 &amp;lt;dbl+lbl&amp;gt;, o4 &amp;lt;dbl+lbl&amp;gt;,
 ## #   o6 &amp;lt;dbl+lbl&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¡Gana $225.200.000, es Hombre y tiene 41 años! (y vive solo&amp;hellip;)&lt;/p&gt;
@@ -11420,9 +11373,10 @@ variable1 &amp;gt;= 3
 &lt;p&gt;Ahora bien, antes hay que hacer una precisión importante: en los datos &lt;code&gt;sexo&lt;/code&gt; es una variable que está como &lt;code&gt;dbl&lt;/code&gt; y &lt;code&gt;lbl&lt;/code&gt; (número etiquetado), por lo que no es que en la base aparezcan &amp;ldquo;Mujeres&amp;rdquo; y &amp;ldquo;Hombres&amp;rdquo;, sino que 2 y 1.&lt;/p&gt;
 &lt;p&gt;Por ello, con el siguiente código aparecerá un error.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(datos_proc, sexo &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mujer&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Error: Problem with `filter()` input `..1`.
-## i Input `..1` is `sexo == &amp;#34;Mujer&amp;#34;`.
-## x Can&amp;#39;t combine `..1` &amp;lt;character&amp;gt; and `..2` &amp;lt;double&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Error in `filter()`:
+## ! Problem while computing `..1 = sexo == &amp;#34;Mujer&amp;#34;`.
+## Caused by error in `stop_vctrs()`:
+## ! Can&amp;#39;t combine `..1` &amp;lt;character&amp;gt; and `..2` &amp;lt;double&amp;gt;.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Una función &lt;strong&gt;muy muy útil&lt;/strong&gt; (sobre todo cuando trabajemos con regresiones) es &lt;code&gt;as_factor()&lt;/code&gt; que permite conservar los niveles pero definiendo sus categorías de respuesta en base a la etiqueta que traen (el &lt;code&gt;lbl&lt;/code&gt;)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;datos_proc&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;sexo &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;as_factor&lt;/span&gt;(datos_proc&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;sexo)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¡Ahora si funcionará!&lt;/p&gt;
@@ -11464,22 +11418,8 @@ variable1 &amp;gt;= 3
                &lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(edad &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; tot_per &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
                &lt;span style=&#34;color:#a6e22e&#34;&gt;select&lt;/span&gt;(folio, sexo, edad, ocupacion, ytoth, tot_per, ife &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; y26d_hog, o2, o3, o4, o6)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos visualizar la base resultante a partir de &lt;code&gt;view_df()&lt;/code&gt; de &lt;code&gt;sjPlot&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;sjPlot&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;view_df&lt;/span&gt;(datos_proc)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Registered S3 methods overwritten by &amp;#39;parameters&amp;#39;:
-##   method                           from      
-##   as.double.parameters_kurtosis    datawizard
-##   as.double.parameters_skewness    datawizard
-##   as.double.parameters_smoothness  datawizard
-##   as.numeric.parameters_kurtosis   datawizard
-##   as.numeric.parameters_skewness   datawizard
-##   as.numeric.parameters_smoothness datawizard
-##   print.parameters_distribution    datawizard
-##   print.parameters_kurtosis        datawizard
-##   print.parameters_skewness        datawizard
-##   summary.parameters_kurtosis      datawizard
-##   summary.parameters_skewness      datawizard
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Warning in sprintf(&amp;#34;%i&amp;#34;, as.integer(range(x[[index]], na.rm = T))): NAs
-## introduced by coercion to integer range
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;sjPlot&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;view_df&lt;/span&gt;(datos_proc, 
+                encoding &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table style=&#34;border-collapse:collapse; border:none;&#34;&gt;
 &lt;caption&gt;Data frame: datos_proc&lt;/caption&gt;
 &lt;tr&gt;
@@ -11591,14 +11531,14 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
 ## * sexo -&amp;gt; sexo...6
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;(bind_columnas)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 6 x 9
-##    folio...1 sexo...2 ocupacion   ytoth  folio...5 sexo...6  edad tot_per    ife
-##        &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl+&amp;gt;
-## 1    1.10e11 Mujer       2 [No]  390833    1.10e11 Mujer       50       5 2 [No]
-## 2    1.10e11 Hombre      1 [Sí]  947583    1.10e11 Mujer       79       5 2 [No]
-## 3    1.10e11 Mujer       2 [No]  947583    1.10e11 Hombre      53       5 2 [No]
-## 4    1.10e11 Hombre      1 [Sí] 3004167    1.10e11 Mujer       70       1 2 [No]
-## 5    1.10e11 Hombre      2 [No] 3004167    1.10e11 Hombre      16       5 2 [No]
-## 6    1.10e11 Mujer       2 [No] 3004167    1.10e11 Mujer       46       5 2 [No]
+##      folio...1 sexo...2 ocupacion  ytoth folio...5 sexo...6  edad tot_per    ife
+##          &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl+lbl&amp;gt;  &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl+&amp;gt;
+## 1 110110010101 Mujer       2 [No] 3.91e5   1.10e11 Mujer       50       5 2 [No]
+## 2 110110010201 Hombre      1 [Sí] 9.48e5   1.10e11 Mujer       79       5 2 [No]
+## 3 110110010201 Mujer       2 [No] 9.48e5   1.10e11 Hombre      53       5 2 [No]
+## 4 110110010301 Hombre      1 [Sí] 3.00e6   1.10e11 Mujer       70       1 2 [No]
+## 5 110110010301 Hombre      2 [No] 3.00e6   1.10e11 Hombre      16       5 2 [No]
+## 6 110110010301 Mujer       2 [No] 3.00e6   1.10e11 Mujer       46       5 2 [No]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vemos que simplemente pegó  &lt;code&gt;a&lt;/code&gt; y &lt;code&gt;b&lt;/code&gt;. Eso implica que tenemos columnas repetidas (a saber, folio y sexo). Cuando estemos seguras/os de que hay columnas repetidas entre dos dataframes que queramos unir, emplearemos &lt;code&gt;merge()&lt;/code&gt; mientras que, si estos no comparten ninguna columna, recurrimos a &lt;code&gt;bing_cols()&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;c-bind_rows&#34;&gt;c) &lt;code&gt;bind_rows()&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;También podemos unir dos dataframes a partir de sus filas, con la función &lt;code&gt;bind_rows()&lt;/code&gt; de &lt;code&gt;dplyr&lt;/code&gt;&lt;/p&gt;
@@ -11756,7 +11696,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
             class=&#34; fake-header-table&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
                 &lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;Análisis Estadístico en R&lt;/td&gt;
+            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;Análisis avanzado de datos 2&lt;/td&gt;
 
             &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Clases&lt;/td&gt;
             &lt;td style=&#34;width:8%;text-align:center&#34; class=&#34;mid-table-header&#34;&gt;Prácticos&lt;/td&gt;
@@ -11766,7 +11706,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;14-25 de marzo&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;8-22 de agosto&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;span class=&#34;content-title&#34;&gt;Unidad 1. Elementos y herramientas básicos de R&lt;/span&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -11788,7 +11728,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;14 Marzo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;8 Agosto&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 1)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;1.1 R enviroment: interfaz de RStudio, elementos de script, workspace&lt;br&gt;1.2 Prácticas y herramientas de consulta: CRAN, stackoverflow, Rcommunity&lt;br&gt;1.3 Herramientas para la colaboración y comunicación: Rprojects, GitHub y Slack&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11808,7 +11748,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;21 Marzo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;22 Agosto&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 2)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;1.4 Librerías y funciones para las ciencias sociales: tidyverse y sj (sjmisc y sjPlot)&lt;br&gt;1.5 Construcción de reportes reproducibles e integrados con código: Rmarkdown&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11827,7 +11767,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;28 marzo - 22 abril&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;29 agosto - 3 octubre&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;span class=&#34;content-title&#34;&gt;Unidad 2. Manipulación y limpieza de datos&lt;/span&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -11849,7 +11789,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;28 Marzo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;29 Agosto&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 3)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;2.1 Tipos de datos en R&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11869,7 +11809,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;4 Abril&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;12 Septiembre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 4)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;2.2 Importar/exportar datos en diferentes formatos&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11890,7 +11830,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;11 Abril&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;26 Septiembre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 5)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;2.3 Selección de variables y filtrar datos&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11911,7 +11851,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;11 Abril&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;3 Octubre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 6)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;2.4 Transformación de variales&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11929,29 +11869,9 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr
-            class=&#34; section-bottom schedule-bg-2&#34;&gt;
-            &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;25 Abril&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;Sesión de apoyo Tarea N°1&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
-                    href=&#34;/content/01-support/&#34;&gt;
-                    &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-laptop-code fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
-                    href=&#34;/assignment/01-tarea/&#34;&gt;
-                    &lt;i class=&#34;fas fa-pencil-ruler fa-lg&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-tools fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr
             class=&#34; schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;9-16 de mayo&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;17-24 de octubre&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;span class=&#34;content-title&#34;&gt;Unidad 3. Análisis estadístico descriptivo en R&lt;/span&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -11973,7 +11893,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;9 Mayo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;17 Octubre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 7)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;3.1 Análisis descriptivos univariados: medidas de tendencia central, dispersión y frecuencias&lt;br&gt;3.2 Análisis bivariado: tablas de contingencia, correlaciones y ANOVA&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -11994,7 +11914,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-1&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;16 Mayo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;24 Octubre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 8)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;3.2 Análisis bivariado: tablas de contingencia, correlaciones y ANOVA&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -12012,30 +11932,9 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr
-            class=&#34; section-bottom schedule-bg-1&#34;&gt;
-            &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;23 Mayo&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;Sesión de Apoyo Tarea N°2&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
-                    href=&#34;/content/02-support/&#34;&gt;
-                    &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-laptop-code fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-pencil-ruler fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-tools fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr
             class=&#34; schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;30 Mayo - 17 junio&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;7 - 14 de novimebre&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;span class=&#34;content-title&#34;&gt;Unidad 4. Análisis estadístico inferencial en R&lt;/span&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -12057,7 +11956,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;30 Mayo&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;7 Noviembre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 9)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;4.1 Muestras complejas y precisión de inferencia estadística&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -12077,28 +11976,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-2&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;06 junio&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;Sesión Apoyo Tarea N°3&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
-                    href=&#34;/content/03-support/&#34;&gt;
-                    &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-laptop-code fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-pencil-ruler fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-            &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
-                &lt;font color=&#34;f1f1f1&#34;&gt;
-                    &lt;i class=&#34;fas fa-tools fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr
-            class=&#34; section-bottom schedule-bg-2&#34;&gt;
-            &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;13 junio&lt;/strong&gt;&lt;br&gt;
+                &lt;strong&gt;14 Noviembre&lt;/strong&gt;&lt;br&gt;
                 &lt;small&gt;(Sesión 10)&lt;/small&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;4.2 Regresiones &lt;strong&gt;lineales y logísticas&lt;/strong&gt;, predictores categóricos y representación gráfica&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;&lt;a
@@ -12119,7 +11997,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;4 julio&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;21 Noviembre&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-six&#34;&gt;&lt;/i&gt; &lt;strong&gt;Entrega final&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -12151,7 +12029,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;25 marzo&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;22 agosto&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-square&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 0: Colaborando en Github&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -12172,8 +12050,8 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;29 abril&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 2: Procesamiento de datos&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;26 septiembre&lt;/strong&gt;&lt;/td&gt;
+            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 1: Procesamiento de datos&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
                     &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
@@ -12193,8 +12071,8 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;23 mayo&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 3: Análisis descriptivo&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;24 octubre&lt;/strong&gt;&lt;/td&gt;
+            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 2: Análisis descriptivo&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
                     &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
@@ -12214,8 +12092,8 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;10 junio&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 4: Muestras complejas&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;7 noviembre&lt;/strong&gt;&lt;/td&gt;
+            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 3: Muestras complejas&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
                     &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
@@ -12235,8 +12113,8 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;17 Junio&lt;/strong&gt;&lt;/td&gt;
-            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 5: Regresiones en R&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;14 noviembre&lt;/strong&gt;&lt;/td&gt;
+            &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-two&#34;&gt;&lt;/i&gt; &lt;strong&gt;Tarea 4: Regresiones en R&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
                     &lt;i class=&#34;fas fa-book-reader fa-lg&#34;&gt;&lt;/i&gt;&lt;/font&gt;
@@ -12256,7 +12134,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
         &lt;tr
             class=&#34; section-bottom schedule-bg-3&#34;&gt;
             &lt;td align=&#34;right&#34; style=&#34;width:20%;text-align:right&#34;&gt;
-                &lt;strong&gt;4 julio&lt;/strong&gt;&lt;/td&gt;
+                &lt;strong&gt;21 noviembre&lt;/strong&gt;&lt;/td&gt;
             &lt;td style=&#34;width:56%;text-align:left&#34;&gt;&lt;i class=&#34;fas fa-dice-six&#34;&gt;&lt;/i&gt; &lt;strong&gt;Entrega investigación final&lt;/strong&gt;&lt;/td&gt;
             &lt;td align=&#34;center&#34; style=&#34;width:10%;text-align:center&#34;&gt;
                 &lt;font color=&#34;f1f1f1&#34;&gt;
@@ -12281,7 +12159,7 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
 &lt;/p&gt;
 &lt;p&gt;
 Puedes descargar el programa apretando el siguiente botón:
-&lt;a Puedes descargar el programa apretando el siguiente botón class=&#34;btn btn-primary&#34; href=&#34;../files/programa-R-uah.pdf/&#34; role=&#34;button&#34;&gt;&lt;i class=&#34;far fa-file-pdf&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a Puedes descargar el programa apretando el siguiente botón class=&#34;btn btn-primary&#34; href=&#34;../files/programa-R-uah-2-2022.pdf/&#34; role=&#34;button&#34;&gt;&lt;i class=&#34;far fa-file-pdf&#34;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;/p&gt;
 </description>
     </item>

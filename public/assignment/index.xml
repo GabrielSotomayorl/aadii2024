@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sobre las evaluaciones | Análisis Estadístico en R</title>
+    <title>Sobre las evaluaciones | Análisis avanzado de datos 2</title>
     <link>/assignment/</link>
       <atom:link href="/assignment/index.xml" rel="self" type="application/rss+xml" />
     <description>Sobre las evaluaciones</description>
@@ -82,7 +82,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;proyecto&#34;&gt;Proyecto&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://classroom.github.com/a/yFHGOnrx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deben crear un repositorio en el link de GitHub Class Room&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Para acceder a la tarea &lt;a href=&#34;https://classroom.github.com/a/crXZ_wAu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deben aceptar el repositorio en el link de GitHub Class Room&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Deben hacer un README.md explicando aspectos generales del repositorio&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;criterios-de-evaluación&#34;&gt;Criterios de evaluación&lt;/h1&gt;
@@ -151,7 +151,7 @@
       <link>/assignment/04-tarea/</link>
       <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/04-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/jv91XaPO&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°4 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/2ABddgzu&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°4 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;El objetivo de esta tarea consiste en realizar un análisis de regresión lineal y logística utilizando R. Para ello debe utilizar los datos según según sus apellidos &lt;a href=&#34;https://github.com/learn-R/www-learn-R-uah/tree/master/content/assignment/05-tarea/bases/originales&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;(eg. &amp;lsquo;Andrade.sav&amp;rsquo;) los cuales podrán encontrar en el siguiente repositorio&lt;/a&gt;. Estas bases contienen una muestra aleatoria de 1000 casos de la encuesta MOVID-IMPACT (2020) del módulo “Orientaciones del Trabajo”. &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;La pregunta de investigación que buscamos contestar en esta tarea es &lt;strong&gt;“¿Qué factores inciden el cumplimiento de la distancia física para cuidarse del COVID-19?”&lt;/strong&gt; a partir de contestar la frecuencia con que se &lt;em&gt;“Evitar reunirse con más de 10 personas en un espacio cerrado”.&lt;/em&gt;&lt;/p&gt;
@@ -350,7 +350,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/03-tarea/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/03-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/y5stOTeF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°3 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/sh7Oqadk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°3 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°3 busca evaluar la unidad de muestras complejas utilizando R, en base a la creación de un &lt;em&gt;informe reproducible en RMarkdown&lt;/em&gt;. Este informe se basa en la replicación de estadísticos reportados por otras instituciones públicas y académicas. Considere que los conocimientos a evaluar en la tarea N°3 requieren de un manejo sustantivo de los contenidos anteriormente vistos en clases.&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
@@ -572,7 +572,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/01-tarea/</link>
       <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/01-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/3O74wEvi&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°1 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/uLbXEXPF&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°1 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°1 consiste en la creación de un script (archivo .R) en R, este les permitirá construir datos limpios y procesados, que a la vez servirán de &amp;ldquo;input&amp;rdquo; para los análisis exploratorios a reportar (tarea N°2). El ejercicio que deben realizar se basa en un caso simulado de &amp;ldquo;trabajo&amp;rdquo; que les han solicitado&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
@@ -582,7 +582,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;p&gt;Debe ocupar la Encuesta Nacional de Empleo (ENE) del Instituto Nacional de Estadísticas, particularmente el trimestre &lt;em&gt;Octubre-Noviembre-Diciembre&lt;/em&gt; del año 2019 y del 2021.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Las variables que más interesan para el informe son: condición de actividad económica general (&lt;em&gt;CAE&lt;/em&gt;), no general (&lt;em&gt;Condición de actividad&lt;/em&gt;) y las horas de trabajo de la actividad principal (&lt;em&gt;modulo C&lt;/em&gt;)&lt;/p&gt;
+&lt;p&gt;Las variables que más interesan para el informe son: condición de actividad económica general (&lt;em&gt;CAE&lt;/em&gt;), no general (&lt;em&gt;Condición de actividad&lt;/em&gt;) y las horas de trabajo de la actividad principal (&lt;em&gt;Modulo C&lt;/em&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;También le han indicado que hay ciertas variables socio demográficas de interés como el nivel educacional (&lt;em&gt;CINE&lt;/em&gt;), edad y sexo&lt;/p&gt;
@@ -592,7 +592,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;p&gt;En su equipo de investigación quieren realizar los siguientes análisis, para lo cuál usted debe construir un data set procesado llamado &lt;em&gt;datos_proc.RData&lt;/em&gt; que permita realizar estos análisis de manera debida&lt;/p&gt;
 &lt;ol start=&#34;0&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Los análisis solo deben considerar a las personas en edad de trabajar *según las definiciones del Instituto Nacional de Estadística. *&lt;/p&gt;
+&lt;p&gt;Los análisis solo deben considerar a las personas en edad de trabajar &lt;em&gt;según las definiciones del Instituto Nacional de Estadística.&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Un análisis de la distribución de socio demográficos de nivel educacional, edad y sexo. Le han solicitado que el nivel educacional esté solo clasificado en &lt;em&gt;&amp;ldquo;Superior completa&amp;rdquo;, &amp;ldquo;Media y básica completa&amp;rdquo; y &amp;ldquo;Básica o menos incompleta&amp;rdquo;&lt;/em&gt;, que la edad esté clasificada &lt;em&gt;en tramos de &amp;ldquo;15 a 39 años&amp;rdquo;, &amp;ldquo;40 a 64 años&amp;rdquo; y &amp;ldquo;65 y más&amp;rdquo;&lt;/em&gt;; sexo debe estar codificada como &lt;em&gt;&amp;ldquo;Mujer&amp;rdquo; y &amp;ldquo;Hombre&amp;rdquo;.&lt;/em&gt;&lt;/p&gt;
@@ -725,9 +725,9 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/02-tarea/</link>
       <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/02-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/8WcwkjQq&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°2 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/hfKoUK3B&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°2 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
-&lt;p&gt;La tarea N°2 implica la continuación de la tarea N°1 donde procesaron datos que servirían de &amp;ldquo;input&amp;rdquo; para los análisis que deberán presentar en el siguiente ejercicio.&lt;/p&gt;
+&lt;p&gt;La tarea N°2 implica la continuación de la tarea N°1 (más otros elementos) donde procesaron datos que servirían de &amp;ldquo;input&amp;rdquo; para los análisis que deberán presentar en el siguiente ejercicio.&lt;/p&gt;
 &lt;h3 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h3&gt;
 &lt;p&gt;De su equipo de trabajo han recibido el procesamiento de sus datos, y luego de unos días, han hecho una serie de correcciones y le han dado consejos para mejorar su avance. Para ver estos deben ir a los comentarios de sus tareas en GitHub.&lt;/p&gt;
 &lt;p&gt;Además, le han pedido una serie de cambios respecto a sus datos de modo de que el informe de avance contenga los aspectos necesarios para ser presentados.&lt;/p&gt;
@@ -755,7 +755,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;li&gt;Grupo ocupacional a 1 dígito (CIUO)&lt;/li&gt;
 &lt;li&gt;Rama de actividad económica de la &lt;strong&gt;empresa donde trabaja el ocupado&lt;/strong&gt;(CIIU)&lt;/li&gt;
 &lt;li&gt;Tamaño de la empresa en categorías (5 niveles)&lt;/li&gt;
-&lt;li&gt;Variable de informalidad (Hint: ver página 43 del Libro de Códigos) [*]&lt;/li&gt;
+&lt;li&gt;Variable de informalidad (Hint: ver página 61 del Libro de Códigos) [*]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Condiciones laborales&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -957,7 +957,7 @@ Este punto será esencial para lo que más adelante veremos como condición de s
       <link>/assignment/00-tarea/</link>
       <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
       <guid>/assignment/00-tarea/</guid>
-      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°0 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;../example/01-practico&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Esta tarea debe ser resuelta en GitHub Class Room. Para acceder a la &lt;i class=&#34;fas fa-external-link-square-alt&#34;&gt;&lt;/i&gt;  &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tarea N°0 hacer click aquí&lt;/a&gt;. Si aún tienes dudas de cómo interactuar con &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Roomm revisa el práctico&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
 &lt;p&gt;La tarea N°0 consiste en la creación de un archivo &lt;strong&gt;RMarkdown&lt;/strong&gt;, donde deben incorporar elementos claves para la creación de estos archivos, lo que permitirá crear informes que incluyan texto y códigos en R, facilitando la reproducibilidad.&lt;/p&gt;
 &lt;h2 id=&#34;instrucciones&#34;&gt;Instrucciones&lt;/h2&gt;
@@ -990,18 +990,18 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;li&gt;&lt;strong&gt;output&lt;/strong&gt;:&lt;/li&gt;
 &lt;li&gt;Para qué sirve el archivo con extensión &lt;strong&gt;.Rproj&lt;/strong&gt; (que es lo mismo que el Tipo Rproject)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En el apartado &lt;code&gt;## 3. Gráfico&lt;/code&gt; debes incorporar una imagen llamada &lt;code&gt;grafico01.jpg&lt;/code&gt;. Esta imagen la puedes incorporar en formato Markdown o con chunks. Deja una breve explicación de ese gráfico, intenta utilizar &lt;em&gt;&lt;strong&gt;lenguaje Markdown&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;En el apartado &lt;code&gt;## 3. Gráfico&lt;/code&gt; debes incorporar una imagen llamada &lt;code&gt;grafico01.jpg&lt;/code&gt; (es una imágen a tu elección). Esta imagen la puedes incorporar en formato Markdown o con chunks. Deja una breve explicación de ese gráfico, intenta utilizar &lt;em&gt;&lt;strong&gt;lenguaje Markdown&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Finalmente, deben crear una &lt;em&gt;&lt;strong&gt;tabla simple&lt;/strong&gt;&lt;/em&gt; de un tema interesante para ustedes, junto a una breve descripción.&lt;/p&gt;
 &lt;h2 id=&#34;pasos-para-realizar-la-tarea&#34;&gt;Pasos para realizar la tarea&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Entra a GitHub Class Room para realizar la tarea N°1 (aceptar tarea). Debes clonar este repositorio. Si tienes dudas sobre este procedimiento, revisa el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;práctico N°1&lt;/a&gt; o contáctanos vía slack.&lt;/p&gt;
+&lt;p&gt;Entra a GitHub Class Room para realizar la tarea N°0 (aceptar tarea). Debes clonar este repositorio. Si tienes dudas sobre este procedimiento, revisa el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/01-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;práctico N°1&lt;/a&gt; o contáctanos vía slack.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Una vez la tarea en tu computadora, no olvides crear un .Rproject llamado 00-tarea.Rproj que provenga de una &amp;ldquo;Carpeta existente&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Una vez esté la tarea en tu computadora, no olvides crear un .Rproject llamado 00-tarea.Rproj que provenga de una &amp;ldquo;Carpeta existente&amp;rdquo;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;En la carpeta input habrá una carpeta llamada &amp;ldquo;imagenes&amp;rdquo;. Dentro de esta carpeta encontrarás la imágen &lt;code&gt;flujo.png&lt;/code&gt; y deberás dejar el &lt;code&gt;gráfico01.jpg&lt;/code&gt;. Este puede ser cualquiera que resulte interesante para tí.&lt;/p&gt;
+&lt;p&gt;En la carpeta input habrá una carpeta llamada &amp;ldquo;imagenes&amp;rdquo;. Dentro de esta carpeta encontrarás la imagen &lt;code&gt;flujo.png&lt;/code&gt; y deberás dejar el &lt;code&gt;gráfico01.jpg&lt;/code&gt;. Este puede ser cualquiera que resulte interesante para ti.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Una vez finalizado todos los pasos del documento &lt;strong&gt;no olvides hacer knit&lt;/strong&gt; para que se compile tu documento final.&lt;/p&gt;
@@ -1009,51 +1009,6 @@ Este punto será esencial para lo que más adelante veremos como condición de s
 &lt;/ol&gt;
 &lt;h2 id=&#34;puntaje-adicional&#34;&gt;Puntaje adicional&lt;/h2&gt;
 &lt;p&gt;Si averiguas como dejar un archivo en pdf &lt;strong&gt;y&lt;/strong&gt; explicarlo en el canal #tareas, obtendrás un puntaje adicional para 01-tarea&lt;/p&gt;
-&lt;h2 id=&#34;pauta&#34;&gt;Pauta&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;RMarkdown, este ítem evalúa aspectos propios de los archivos .Rmd, desde su estructura hasta su correcto funcionamiento. Es necesario considerar:&lt;/p&gt;
-&lt;p&gt;a. Aspectos formales: títulos, nombres, información institucional, fecha, etc.&lt;/p&gt;
-&lt;p&gt;b. Estructura de los archivos .Rmd&lt;/p&gt;
-&lt;p&gt;c. Uso correcto y constante de markdown&lt;/p&gt;
-&lt;p&gt;d. Aspectos solicitados según cada tarea, por ejemplo:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Análisis: en estos archivos irán tanto sus reportes como el análisis que realicen&lt;/li&gt;
-&lt;li&gt;Replicación de informes: esto incluye la replicación de análisis con sus outputs, ya sean tablas, gráficos o lo que se solicite en la respectiva tarea.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Flujo: Este ítem se encarga de evaluar el flujo de trabajo desarrollado en el curso, para ello se debe considerar los elementos que hacen posible el correcto uso del flujo, para obtener buen puntaje en este ítem deben:&lt;/p&gt;
-&lt;p&gt;a. Seguir detalladamente las instrucciones&lt;/p&gt;
-&lt;p&gt;b. Crear las carpetas y archivos requeridos en cada tarea&lt;/p&gt;
-&lt;p&gt;c. Nombrar &lt;strong&gt;adecuadamente&lt;/strong&gt; los archivos/datos/carpetas&lt;/p&gt;
-&lt;p&gt;d. Todos los archivos por utilizar deben estar en su lugar correspondiente.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;R: Este ítem evalúa elementos relacionados a archivos .R. Este puede dividirse en dos etapas a lo largo del curso (Debe seguir un orden lógico):&lt;/p&gt;
-&lt;p&gt;a. Carga: esta etapa es necesaria para pasar a procesamiento&lt;/p&gt;
-&lt;p&gt;b. Procesamiento: etapa donde se preparan los datos para ser utilizados en el análisis.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Markdown: este ítem evalúa aspectos propios del formato en markdown, ya que su uso será constante en este curso &lt;a href=&#34;https://learn-r-uah.netlify.app/resource/markdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ver recursos&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reproducibilidad: En este curso es muy relevante la reproducibilidad, para ello es necesario tener en cuenta lo siguiente:&lt;/p&gt;
-&lt;p&gt;a. El archivo .R debe poder ejecutarse sin problemas por cualquier persona con el programa, siguiendo el orden lógico requerido para ello.&lt;/p&gt;
-&lt;p&gt;b. El archivo .Rmd debe poder ejecutarse sin problemas por cualquier persona con el programa. Esto implica que tanto los archivos/tablas/códigos deben visualizarse correctamente en su producto (output) final
-Este punto será esencial para lo que más adelante veremos como condición de suficiencia.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Condición de suficiencia: son elementos esenciales que si no son cumplidos la asignación de puntaje del ítem será 0, independiente de si lo que sigue a ese punto está realizado correctamente. Deben tener en cuenta que este ítem no será inmediato, sino que será a medida vaya avanzando el curso.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Bonus: En el curso habrá constantemente aspectos que brindarán puntos y/o décimas dependiendo de la tarea.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Descuentos: ítem que considera descuentos en puntos o décimas por el no logro o ausencia de aspectos de los ítems anteriores.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Si utiliza otros paquetes para resolver la tarea &lt;strong&gt;DEBE&lt;/strong&gt; explicar la razón del uso esos paquetes y qué ventajas tienen por sobre los utilizados en el curso, de no ser así se descontará con 0.5 puntos.&lt;/p&gt;
 &lt;h2 id=&#34;recursos&#34;&gt;Recursos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;

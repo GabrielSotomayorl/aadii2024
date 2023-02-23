@@ -38,7 +38,7 @@ font_size: "M"
 site_type: "Course"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description: "Análisis de Datos Estadísticos en R, por Valentina Andrade"
+description: "Análisis Avanzado de Datos II, por Gabriel Sotomayor López"
 
 
 ############################

@@ -73,16 +73,16 @@ A continuación, utilizaremos la función `head()` del paquete `base`, para revi
 
 ```
 ## # A tibble: 5 x 650
-##          folio     o id_persona id_vivienda  region provincia     comuna    zona
-##          <dbl> <dbl>      <dbl>       <dbl> <dbl+l> <dbl+lbl>  <dbl+lbl> <dbl+l>
-## 1 110110010101     1          5  1101100101 1 [Reg~ 11 [Iqui~ 1101 [Iqu~ 1 [Urb~
-## 2 110110010101     2          6  1101100101 1 [Reg~ 11 [Iqui~ 1101 [Iqu~ 1 [Urb~
-## 3 110110010201     2         31  1101100102 1 [Reg~ 11 [Iqui~ 1101 [Iqu~ 1 [Urb~
-## 4 110110010201     1         32  1101100102 1 [Reg~ 11 [Iqui~ 1101 [Iqu~ 1 [Urb~
-## 5 110110010201     3         30  1101100102 1 [Reg~ 11 [Iqui~ 1101 [Iqu~ 1 [Urb~
-## # ... with 642 more variables: area <dbl+lbl>, segmento <dbl>, estrato <dbl>,
-## #   cod_upm <dbl>, hogar <dbl>, p6_p_con <dbl+lbl>, expr <dbl>, expp <dbl>,
-## #   expc <dbl>, varstrat <dbl>, varunit <dbl>, fecha_entrev <date>,
+##          folio     o id_pe~1 id_vi~2 region  provin~3 comuna     zona    area   
+##          <dbl> <dbl>   <dbl>   <dbl> <dbl+l> <dbl+lb> <dbl+lbl>  <dbl+l> <dbl+l>
+## 1 110110010101     1       5  1.10e9 1 [Reg~ 11 [Iqu~ 1101 [Iqu~ 1 [Urb~ 1 [Urb~
+## 2 110110010101     2       6  1.10e9 1 [Reg~ 11 [Iqu~ 1101 [Iqu~ 1 [Urb~ 1 [Urb~
+## 3 110110010201     2      31  1.10e9 1 [Reg~ 11 [Iqu~ 1101 [Iqu~ 1 [Urb~ 1 [Urb~
+## 4 110110010201     1      32  1.10e9 1 [Reg~ 11 [Iqu~ 1101 [Iqu~ 1 [Urb~ 1 [Urb~
+## 5 110110010201     3      30  1.10e9 1 [Reg~ 11 [Iqu~ 1101 [Iqu~ 1 [Urb~ 1 [Urb~
+## # ... with 641 more variables: segmento <dbl>, estrato <dbl>, cod_upm <dbl>,
+## #   hogar <dbl>, p6_p_con <dbl+lbl>, expr <dbl>, expp <dbl>, expc <dbl>,
+## #   varstrat <dbl>, varunit <dbl>, fecha_entrev <date>,
 ## #   metodologia_entrev <dbl+lbl>, tot_hog <dbl>, numviv <dbl>,
 ## #   informante_idoneo <dbl+lbl>, tel1 <dbl+lbl>, tel2 <dbl+lbl>,
 ## #   tel3 <dbl+lbl>, tel4 <dbl+lbl>, tel5 <dbl+lbl>, tel6 <dbl+lbl>,
@@ -399,11 +399,11 @@ filter(datos_proc, ytoth == max(ytoth))
 
 ```
 ## # A tibble: 1 x 13
-##         folio  edad    sexo    prev ocupacion tot_per  ytoth y26d_hog y26d_total
-##         <dbl> <dbl> <dbl+l> <dbl+l> <dbl+lbl>   <dbl>  <dbl> <dbl+lb>  <dbl+lbl>
-## 1     7.31e11    41 1 [Hom~ 1 [Sis~    1 [Sí]       1 2.25e8   2 [No]         NA
-## # ... with 4 more variables: o2 <dbl+lbl>, o3 <dbl+lbl>, o4 <dbl+lbl>,
-## #   o6 <dbl+lbl>
+##         folio  edad sexo    prev    ocupa~1 tot_per  ytoth y26d_~2 y26d_~3 o2   
+##         <dbl> <dbl> <dbl+l> <dbl+l> <dbl+l>   <dbl>  <dbl> <dbl+l> <dbl+l> <dbl>
+## 1     7.31e11    41 1 [Hom~ 1 [Sis~ 1 [Sí]        1 2.25e8 2 [No]  NA      NA   
+## # ... with 3 more variables: o3 <dbl+lbl>, o4 <dbl+lbl>, o6 <dbl+lbl>, and
+## #   abbreviated variable names 1: ocupacion, 2: y26d_hog, 3: y26d_total
 ```
 
 ¡Gana \$225.200.000, es Hombre y tiene 41 años! (y vive solo...)
@@ -425,7 +425,7 @@ filter(datos_proc, sexo == "Mujer")
 ```
 ## Error in `filter()`:
 ## ! Problem while computing `..1 = sexo == "Mujer"`.
-## Caused by error in `stop_vctrs()`:
+## Caused by error in `vec_equal()`:
 ## ! Can't combine `..1` <character> and `..2` <double>.
 ```
 
@@ -544,7 +544,7 @@ Podemos visualizar la base resultante a partir de `view_df()` de `sjPlot`
 
 ```r
 sjPlot::view_df(datos_proc, 
-                encoding = "UTF-8")
+                encoding = "latin1")
 ```
 
 <table style="border-collapse:collapse; border:none;">
@@ -678,10 +678,10 @@ bind_columnas <- bind_cols(proc_1, proc_2)
 
 ```
 ## New names:
-## * folio -> folio...1
-## * sexo -> sexo...2
-## * folio -> folio...5
-## * sexo -> sexo...6
+## * `folio` -> `folio...1`
+## * `sexo` -> `sexo...2`
+## * `folio` -> `folio...5`
+## * `sexo` -> `sexo...6`
 ```
 
 ```r
@@ -690,14 +690,15 @@ head(bind_columnas)
 
 ```
 ## # A tibble: 6 x 9
-##      folio...1 sexo...2 ocupacion  ytoth folio...5 sexo...6  edad tot_per    ife
-##          <dbl> <fct>    <dbl+lbl>  <dbl>     <dbl> <fct>    <dbl>   <dbl> <dbl+>
-## 1 110110010101 Mujer       2 [No] 3.91e5   1.10e11 Mujer       50       5 2 [No]
-## 2 110110010201 Hombre      1 [Sí] 9.48e5   1.10e11 Mujer       79       5 2 [No]
-## 3 110110010201 Mujer       2 [No] 9.48e5   1.10e11 Hombre      53       5 2 [No]
-## 4 110110010301 Hombre      1 [Sí] 3.00e6   1.10e11 Mujer       70       1 2 [No]
-## 5 110110010301 Hombre      2 [No] 3.00e6   1.10e11 Hombre      16       5 2 [No]
-## 6 110110010301 Mujer       2 [No] 3.00e6   1.10e11 Mujer       46       5 2 [No]
+##      folio...1 sexo...2 ocupacion   ytoth folio...5 sexo.~1  edad tot_per ife   
+##          <dbl> <fct>    <dbl+lbl>   <dbl>     <dbl> <fct>   <dbl>   <dbl> <dbl+>
+## 1 110110010101 Mujer    2 [No]     390833   1.10e11 Mujer      50       5 2 [No]
+## 2 110110010201 Hombre   1 [Sí]     947583   1.10e11 Mujer      79       5 2 [No]
+## 3 110110010201 Mujer    2 [No]     947583   1.10e11 Hombre     53       5 2 [No]
+## 4 110110010301 Hombre   1 [Sí]    3004167   1.10e11 Mujer      70       1 2 [No]
+## 5 110110010301 Hombre   2 [No]    3004167   1.10e11 Hombre     16       5 2 [No]
+## 6 110110010301 Mujer    2 [No]    3004167   1.10e11 Mujer      46       5 2 [No]
+## # ... with abbreviated variable name 1: sexo...6
 ```
 
 Vemos que simplemente pegó  `a` y `b`. Eso implica que tenemos columnas repetidas (a saber, folio y sexo). Cuando estemos seguras/os de que hay columnas repetidas entre dos dataframes que queramos unir, emplearemos `merge()` mientras que, si estos no comparten ninguna columna, recurrimos a `bing_cols()`.
@@ -715,14 +716,14 @@ head(bind_filas)
 
 ```
 ## # A tibble: 6 x 7
-##          folio sexo   ocupacion   ytoth  edad tot_per       ife
+##          folio sexo   ocupacion   ytoth  edad tot_per ife      
 ##          <dbl> <fct>  <dbl+lbl>   <dbl> <dbl>   <dbl> <dbl+lbl>
-## 1 110110010101 Mujer     2 [No]  390833    NA      NA        NA
-## 2 110110010201 Hombre    1 [Sí]  947583    NA      NA        NA
-## 3 110110010201 Mujer     2 [No]  947583    NA      NA        NA
-## 4 110110010301 Hombre    1 [Sí] 3004167    NA      NA        NA
-## 5 110110010301 Hombre    2 [No] 3004167    NA      NA        NA
-## 6 110110010301 Mujer     2 [No] 3004167    NA      NA        NA
+## 1 110110010101 Mujer  2 [No]     390833    NA      NA NA       
+## 2 110110010201 Hombre 1 [Sí]     947583    NA      NA NA       
+## 3 110110010201 Mujer  2 [No]     947583    NA      NA NA       
+## 4 110110010301 Hombre 1 [Sí]    3004167    NA      NA NA       
+## 5 110110010301 Hombre 2 [No]    3004167    NA      NA NA       
+## 6 110110010301 Mujer  2 [No]    3004167    NA      NA NA
 ```
 
 `bind_rows()` nos permite pegar filas, independientemente si ambos dataframes comparten las mismas columnas. En caso de que ambos dataframes no compartan alguna columna, esta función rellenará con valores nulos (`NA`). En este caso, la unión es perfecta en tanto proc_1 y proc_2 se conformaron a partir del mismo data frame. 

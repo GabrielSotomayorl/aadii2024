@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Prácticos (códigos de ejemplo) | Análisis Estadístico en R</title>
+    <title>Prácticos (códigos de ejemplo) | Análisis avanzado de datos 2</title>
     <link>/example/</link>
       <atom:link href="/example/index.xml" rel="self" type="application/rss+xml" />
     <description>Prácticos (códigos de ejemplo)</description>
@@ -1467,15 +1467,11 @@ pobreza_sexo_p &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; 
       <pubDate>Mon, 13 Sep 2021 00:00:00 +0000</pubDate>
       <guid>/example/07-practico/</guid>
       <description>&lt;h1 id=&#34;0-objetivo-del-práctico&#34;&gt;0. Objetivo del práctico&lt;/h1&gt;
-&lt;p&gt;El objetivo del práctico es avanzar en el análisis de los datos a través del uso de &lt;strong&gt;estadísticos descriptivos&lt;/strong&gt;. Para esto ya debemos contar con datos previamente &lt;a href=&#34;https://learn-r-uah.netlify.app/example/04-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;procesados del práctico N°6&lt;/a&gt;. Previo a eso, &lt;strong&gt;siempre es importante&lt;/strong&gt; que recordemos en qué parte del proceso estamos&lt;/p&gt;
+&lt;p&gt;El objetivo del práctico es avanzar en el análisis de los datos a través del uso de &lt;strong&gt;estadísticos descriptivos&lt;/strong&gt;. Para esto ya debemos contar con datos previamente &lt;a href=&#34;https://learn-r-uah.netlify.app/example/06-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;procesados del práctico N°6&lt;/a&gt;. Previo a eso, &lt;strong&gt;siempre es importante&lt;/strong&gt; que recordemos en qué parte del proceso estamos&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En este práctico veremos tanto la &lt;em&gt;estimación puntual&lt;/em&gt; de estadísticos descriptivos, como su &lt;em&gt;visualización&lt;/em&gt; para reportes, ya sea a través de tablas o de gráficos.&lt;/p&gt;
 &lt;h2 id=&#34;recursos-del-práctico&#34;&gt;Recursos del práctico&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizamos los &lt;strong&gt;datos&lt;/strong&gt; procesados &lt;em&gt;CASEN 2020&lt;/em&gt;, que proviene de los datos originales de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;. Recuerden &lt;em&gt;&lt;strong&gt;siempre&lt;/strong&gt;&lt;/em&gt; consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;libro códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar datos.&lt;/p&gt;
-&lt;p&gt;No olviden que los archivos asociados a este práctico se pueden descargar aquí:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/learn-R/07-class/raw/main/07-clase.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;i class=&#34;fas fa-file-archive&#34;&gt;&lt;/i&gt; &lt;code&gt;07-class.zip&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1 id=&#34;1-paquetes-a-utilizar&#34;&gt;1. Paquetes a utilizar&lt;/h1&gt;
 &lt;p&gt;Para este práctico utilizaremos, principalmente, las librerías &lt;code&gt;sjmisc&lt;/code&gt; y &lt;code&gt;sjPlot&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sjmisc&lt;/code&gt;: esta paquete tiene múltiples funciones, desde la transformación de datos y variables. Este paquete suele complementar a &lt;code&gt;dplyr&lt;/code&gt; de &lt;code&gt;tidyverse&lt;/code&gt; en sus funciones.&lt;/p&gt;
@@ -4664,7 +4660,7 @@ or&lt;span style=&#34;color:#f92672&#34;&gt;@&lt;/span&gt;coef &lt;span style=&#
       <description>&lt;link href=&#34;/rmarkdown-libs/tile-view/tile-view.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;/rmarkdown-libs/tile-view/tile-view.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;/rmarkdown-libs/animate.css/animate.xaringan.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script type=&#34;application/json&#34; id=&#34;xaringanExtra-editable-docid&#34;&gt;{&#34;id&#34;:&#34;xfec25b8f8ce415fa0f817cb39b267ea&#34;,&#34;expires&#34;:14}&lt;/script&gt;
+&lt;script type=&#34;application/json&#34; id=&#34;xaringanExtra-editable-docid&#34;&gt;{&#34;id&#34;:&#34;c61759ddce144eaa8d3e9b1f88db4dd8&#34;,&#34;expires&#34;:14}&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/himalaya/himalaya.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/js-cookie/js.cookie.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;/rmarkdown-libs/editable/editable.css&#34; rel=&#34;stylesheet&#34; /&gt;
@@ -4687,7 +4683,7 @@ or&lt;span style=&#34;color:#f92672&#34;&gt;@&lt;/span&gt;coef &lt;span style=&#
 &lt;h2 id=&#34;0-objetivo-del-práctico&#34;&gt;0. Objetivo del práctico&lt;/h2&gt;
 &lt;p&gt;Este práctico tiene por objeto introducir a las y los estudiantes del curso en herramientas que les permitan a) &lt;strong&gt;importar bases de datos en diversos formatos&lt;/strong&gt;; b)&lt;strong&gt;explorar las variables&lt;/strong&gt; de las bases de datos importadas; y c) &lt;strong&gt;exportar bases de datos&lt;/strong&gt; procesadas. Para ello, se trabajará con los paquetes &lt;code&gt;haven&lt;/code&gt; (que forma parte, a su vez, del mundo de paquetes &lt;code&gt;tidyverse&lt;/code&gt;), y &lt;code&gt;dplyr&lt;/code&gt;, para poder importar  y exportar los datos, y manipular estos datos, respectivamente.&lt;/p&gt;
 &lt;h2 id=&#34;1-recursos-de-la-práctica&#34;&gt;1. Recursos de la práctica&lt;/h2&gt;
-&lt;p&gt;Para el correcto trabajo de estos materiales, deben descargar los datos de la &lt;em&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/em&gt; en su versión 2020. Para ello, deben dirigirse al &lt;a href=&#34;https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siguiente enlace&lt;/a&gt;, descargar el archivo en .zip y luego descomprimirlo en la carpeta &lt;em&gt;input/data&lt;/em&gt; de su repositorio. Para descomprimir los &lt;a href=&#34;resource/unzipping/&#34;&gt;archivos revisen&lt;/a&gt;. Cuando lo hayan logrado verán la base en formato SPPS &lt;code&gt;Casen en Pandemia 2020 SPSS.sav&lt;/code&gt; y en STATA &lt;code&gt;Casen en Pandemia 2020 SPSS.dta&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Para el correcto trabajo de estos materiales, deben descargar los datos de la &lt;em&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/em&gt; en su versión 2020. Para ello, deben dirigirse al &lt;a href=&#34;https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siguiente enlace&lt;/a&gt;, descargar el archivo en .zip y luego descomprimirlo en la carpeta &lt;em&gt;input/data&lt;/em&gt; de su repositorio. Para descomprimir los &lt;a href=&#34;https://learn-r-uah.netlify.app/resource/unzipping/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;archivos revisen&lt;/a&gt;. Cuando lo hayan logrado verán la base en formato SPPS &lt;code&gt;Casen en Pandemia 2020 SPSS.sav&lt;/code&gt; y en STATA &lt;code&gt;Casen en Pandemia 2020 SPSS.dta&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
 &lt;h2 id=&#34;2-librerias-a-utilizar&#34;&gt;2. Librerias a utilizar&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizaremos seis paquetes&lt;/p&gt;
@@ -4778,18 +4774,18 @@ load(file = &amp;ldquo;datos.RData&amp;rdquo;)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;load&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.RData&amp;#34;&lt;/span&gt;)
 &lt;span style=&#34;color:#a6e22e&#34;&gt;readRDS&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.rds&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 100 x 5
-##       id                     region      sexo      pobreza ocupacion            
-##    &amp;lt;dbl&amp;gt;                  &amp;lt;dbl+lbl&amp;gt; &amp;lt;dbl+lbl&amp;gt;    &amp;lt;dbl+lbl&amp;gt; &amp;lt;chr&amp;gt;                
-##  1   502 16 [Región de Ñuble]       2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  2   184  6 [Región del Libertador~ 2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  3   308  8 [Región del Biobío]     2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  4   531  6 [Región del Libertador~ 1 [Hombr~ 3 [No pobre~ COSECHA DE GUINDAS   
-##  5   115  3 [Región de Atacama]     2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  6   261  5 [Región de Valparaíso]  2 [Mujer] 3 [No pobre~ &amp;lt;NA&amp;gt;                 
-##  7   171  3 [Región de Atacama]     1 [Hombr~ 3 [No pobre~ ATENCIÓN PARADERO CO~
-##  8   333  7 [Región del Maule]      1 [Hombr~ 1 [Pobres e~ RECOLECTOR DE HORTAL~
-##  9    69 14 [Región de Los Ríos]    1 [Hombr~ 3 [No pobre~ EMPRESARIO DISTRIBUC~
-## 10   440  4 [Región de Coquimbo]    1 [Hombr~ 2 [Pobres n~ &amp;lt;NA&amp;gt;                 
+##       id                                        region    sexo pobreza ocupacion
+##    &amp;lt;dbl&amp;gt;                                     &amp;lt;dbl+lbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;chr&amp;gt;    
+##  1   502 16 [Región de Ñuble]                          2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  2   184  6 [Región del Libertador Gral. Bernardo O&amp;#39;H~ 2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  3   308  8 [Región del Biobío]                        2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  4   531  6 [Región del Libertador Gral. Bernardo O&amp;#39;H~ 1 [Hom~ 3 [No ~ COSECHA ~
+##  5   115  3 [Región de Atacama]                        2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  6   261  5 [Región de Valparaíso]                     2 [Muj~ 3 [No ~ &amp;lt;NA&amp;gt;     
+##  7   171  3 [Región de Atacama]                        1 [Hom~ 3 [No ~ ATENCIÓN~
+##  8   333  7 [Región del Maule]                         1 [Hom~ 1 [Pob~ RECOLECT~
+##  9    69 14 [Región de Los Ríos]                       1 [Hom~ 3 [No ~ EMPRESAR~
+## 10   440  4 [Región de Coquimbo]                       1 [Hom~ 2 [Pob~ &amp;lt;NA&amp;gt;     
 ## # ... with 90 more rows
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;datos &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;readRDS&lt;/span&gt;(file &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input/data/CASEN.rds&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Solo contiene datos? ¡No! Además de que puede contener múltiples datos, puede guardar otros &lt;em&gt;objetos&lt;/em&gt; que se creen en su proceso estadístico. Por ejemplo, &lt;em&gt;modelos&lt;/em&gt; ¡Lo veremos más adelante!&lt;/p&gt;
@@ -4888,9 +4884,8 @@ datos &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; readxl&lt
 ## 5         Asalariados principal - Sueldos y salarios monetario corregido
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Explorar distirbución de las variables&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;frq&lt;/span&gt;(datos&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;pobreza)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## 
-## Situación de pobreza por ingresos (x) &amp;lt;numeric&amp;gt;
-## # total N=185437  valid N=185339  mean=2.84  sd=0.48
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Situación de pobreza por ingresos (x) &amp;lt;numeric&amp;gt; 
+## # total N=185437 valid N=185339 mean=2.84 sd=0.48
 ## 
 ## Value |              Label |      N | Raw % | Valid % | Cum. %
 ## --------------------------------------------------------------
@@ -8086,7 +8081,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;h2 id=&#34;6-github-class-room-del-curso-learn-r-uah&#34;&gt;6. GitHub Class Room del curso (learn-R-UAH)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Pasos para las dinámicas del curso&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;61-recibir-una-tarea&#34;&gt;6.1 Recibir una tarea&lt;/h3&gt;
-&lt;h3 id=&#34;62-ingresa-el-linkhttpsclassroomgithubcomazym3ol16&#34;&gt;6.2 Ingresa el &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;62-ingresa-el-linkhttpsclassroomgithubcomataoncqa7&#34;&gt;6.2 Ingresa el &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;a. El link contiene la tarea, ustedes deben aceptar la tarea la cual creará un &lt;em&gt;&lt;strong&gt;repositorio&lt;/strong&gt;&lt;/em&gt; que contendrá la &lt;em&gt;información&lt;/em&gt; y las &lt;em&gt;instrucciones&lt;/em&gt; de la tarea.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/ingrestarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;b. Para eso deben ir a &lt;em&gt;&lt;strong&gt;GitHub Desktop&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;clonar&lt;/strong&gt; el respositorio desde internet&lt;/em&gt;.&lt;/p&gt;
@@ -8096,12 +8091,12 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;p&gt;d. Después deben abrir el repositorio creado a través de &lt;em&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/em&gt;, ahí verán el mismo contenido pero en un archivo &lt;em&gt;&lt;strong&gt;.md&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso4tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;63-resolver-una-tarea&#34;&gt;6.3 Resolver una tarea&lt;/h3&gt;
-&lt;p&gt;a. Ahora resolveremos la &lt;strong&gt;Tarea 0&lt;/strong&gt; en conjunto, una vez abierto el &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio         clonado&lt;/a&gt;. Recuerden que es en este repositorio donde deben completar y subir la tarea&lt;/p&gt;
+&lt;p&gt;a. Ahora resolveremos la &lt;strong&gt;Tarea 0&lt;/strong&gt; en conjunto, una vez abierto el &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio         clonado&lt;/a&gt;. Recuerden que es en este repositorio donde deben completar y subir la tarea&lt;/p&gt;
 &lt;p&gt;b. La tarea se encuentra en un archivo llamado &lt;code&gt;*README*&lt;/code&gt; con información de los conceptos básicos y el flujo de GitHub, deben leerlo detalladamente.&lt;/p&gt;
 &lt;p&gt;c. Una vez leido deberán ir al final del archivo en &lt;strong&gt;Tarea 0&lt;/strong&gt; y responder las preguntas correspondientes&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso5tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;64-tarea-0&#34;&gt;6.4 Tarea 0&lt;/h3&gt;
-&lt;p&gt;¡Puedes ver las instrucciones de la &lt;a href=&#34;/assignment/00-tarea/&#34;&gt;tarea en el siguiente link&lt;/a&gt; o en &lt;a href=&#34;https://classroom.github.com/a/zYM3oL16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Room&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;¡Puedes ver las instrucciones de la &lt;a href=&#34;/assignment/00-tarea/&#34;&gt;tarea en el siguiente link&lt;/a&gt; o en &lt;a href=&#34;https://classroom.github.com/a/taONcqa7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub Class Room&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;65-subir-una-tarea&#34;&gt;6.5 Subir una tarea&lt;/h3&gt;
 &lt;p&gt;a. Una vez listo, deberán &lt;em&gt;&lt;strong&gt;subir&lt;/strong&gt;&lt;/em&gt; la tarea al repositorio remoto a través de GitHub Desktop&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/example/paso6tarea.png&#34; width=&#34;60%&#34; /&gt;&lt;/p&gt;
@@ -8124,7 +8119,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;p&gt;El objetivo de este práctico es introducir en la manipulacón de la estructura de los datos que posteriormente serán analizados. Ello incluye la selección de variables, el filtrado de filas, la eliminación de valores nulos, entre otros.&lt;/p&gt;
 &lt;p&gt;Es así como esta práctica se enmarca en el proceso de &lt;strong&gt;procesamiento de los datos&lt;/strong&gt;. Ello significa que &lt;strong&gt;todos&lt;/strong&gt; los procedimientos que aprenderemos en esta sesión deben ser incorporados necesariamente en el código de procesamiento, a modo de elaborar un posterior código de análisis lo más limpio posible.&lt;/p&gt;
 &lt;h2 id=&#34;1-recursos-de-la-práctica&#34;&gt;1. Recursos de la práctica&lt;/h2&gt;
-&lt;p&gt;En este práctico utilizaremos la base de datos de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;, la cual fue procesada en el &lt;a href=&#34;&#34;&gt;Práctico anterior&lt;/a&gt;.Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
+&lt;p&gt;En este práctico utilizaremos la base de datos de la &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Encuesta de Caracterización Socioeconómica (CASEN)&lt;/strong&gt;&lt;/a&gt;, la cual fue procesada en el &lt;a href=&#34;https://learn-r-uah.netlify.app/example/04-practico/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Práctico anterior&lt;/a&gt;.Recuerden siempre consultar el &lt;a href=&#34;http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;manual/libro de códigos&lt;/strong&gt;&lt;/a&gt; antes de trabajar una base de datos.&lt;/p&gt;
 &lt;h2 id=&#34;2-librerías-a-utilizar&#34;&gt;2. Librerías a utilizar&lt;/h2&gt;
 &lt;p&gt;En este práctico utilizaremos las siguientes librerías&lt;/p&gt;
 &lt;ol&gt;
@@ -8295,7 +8290,7 @@ Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos ant
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;/img/example/operad.png&#34; width=&#34;60%&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;../img/example/operad.png&#34; width=&#34;60%&#34; /&gt;
 Figura 1: Resumen de operadores&lt;/p&gt;
 &lt;h3 id=&#34;operador-pipeline-&#34;&gt;Operador pipeline %&amp;gt;%&lt;/h3&gt;
 &lt;p&gt;¡Aquí mucha atención! Este operador &lt;code&gt;%&amp;gt;%&lt;/code&gt; (llamado &lt;code&gt;pipe&lt;/code&gt;) no es un operador que esté contenido en las funciones base del lenguaje R. Más bien proviene del paquete &lt;code&gt;magrittr&lt;/code&gt; de &lt;code&gt;tidyverse&lt;/code&gt;, y es de los operadores más útiles y utilizados en R.&lt;/p&gt;
@@ -8407,9 +8402,9 @@ variable1 &amp;gt;= 3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Y si quiero filtrar para saber el valor máximo de ingresos (&lt;code&gt;ytoth&lt;/code&gt;)?&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(datos_proc, ytoth &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;(ytoth))
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 1 x 13
-##          folio  edad    sexo    prev ocupacion tot_per  ytoth y26d_hog y26d_total
-##          &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt;  &amp;lt;dbl+lbl&amp;gt;
-## 1 730830031501    41 1 [Hom~ 1 [Sis~    1 [Sí]       1 2.25e8   2 [No]         NA
+##         folio  edad    sexo    prev ocupacion tot_per  ytoth y26d_hog y26d_total
+##         &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt;  &amp;lt;dbl+lbl&amp;gt;
+## 1     7.31e11    41 1 [Hom~ 1 [Sis~    1 [Sí]       1 2.25e8   2 [No]         NA
 ## # ... with 4 more variables: o2 &amp;lt;dbl+lbl&amp;gt;, o3 &amp;lt;dbl+lbl&amp;gt;, o4 &amp;lt;dbl+lbl&amp;gt;,
 ## #   o6 &amp;lt;dbl+lbl&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¡Gana $225.200.000, es Hombre y tiene 41 años! (y vive solo&amp;hellip;)&lt;/p&gt;
@@ -8418,9 +8413,10 @@ variable1 &amp;gt;= 3
 &lt;p&gt;Ahora bien, antes hay que hacer una precisión importante: en los datos &lt;code&gt;sexo&lt;/code&gt; es una variable que está como &lt;code&gt;dbl&lt;/code&gt; y &lt;code&gt;lbl&lt;/code&gt; (número etiquetado), por lo que no es que en la base aparezcan &amp;ldquo;Mujeres&amp;rdquo; y &amp;ldquo;Hombres&amp;rdquo;, sino que 2 y 1.&lt;/p&gt;
 &lt;p&gt;Por ello, con el siguiente código aparecerá un error.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(datos_proc, sexo &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mujer&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Error: Problem with `filter()` input `..1`.
-## i Input `..1` is `sexo == &amp;#34;Mujer&amp;#34;`.
-## x Can&amp;#39;t combine `..1` &amp;lt;character&amp;gt; and `..2` &amp;lt;double&amp;gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Error in `filter()`:
+## ! Problem while computing `..1 = sexo == &amp;#34;Mujer&amp;#34;`.
+## Caused by error in `stop_vctrs()`:
+## ! Can&amp;#39;t combine `..1` &amp;lt;character&amp;gt; and `..2` &amp;lt;double&amp;gt;.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Una función &lt;strong&gt;muy muy útil&lt;/strong&gt; (sobre todo cuando trabajemos con regresiones) es &lt;code&gt;as_factor()&lt;/code&gt; que permite conservar los niveles pero definiendo sus categorías de respuesta en base a la etiqueta que traen (el &lt;code&gt;lbl&lt;/code&gt;)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;datos_proc&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;sexo &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;as_factor&lt;/span&gt;(datos_proc&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;sexo)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¡Ahora si funcionará!&lt;/p&gt;
@@ -8462,22 +8458,8 @@ variable1 &amp;gt;= 3
                &lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(edad &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; tot_per &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
                &lt;span style=&#34;color:#a6e22e&#34;&gt;select&lt;/span&gt;(folio, sexo, edad, ocupacion, ytoth, tot_per, ife &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; y26d_hog, o2, o3, o4, o6)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos visualizar la base resultante a partir de &lt;code&gt;view_df()&lt;/code&gt; de &lt;code&gt;sjPlot&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;sjPlot&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;view_df&lt;/span&gt;(datos_proc)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Registered S3 methods overwritten by &amp;#39;parameters&amp;#39;:
-##   method                           from      
-##   as.double.parameters_kurtosis    datawizard
-##   as.double.parameters_skewness    datawizard
-##   as.double.parameters_smoothness  datawizard
-##   as.numeric.parameters_kurtosis   datawizard
-##   as.numeric.parameters_skewness   datawizard
-##   as.numeric.parameters_smoothness datawizard
-##   print.parameters_distribution    datawizard
-##   print.parameters_kurtosis        datawizard
-##   print.parameters_skewness        datawizard
-##   summary.parameters_kurtosis      datawizard
-##   summary.parameters_skewness      datawizard
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## Warning in sprintf(&amp;#34;%i&amp;#34;, as.integer(range(x[[index]], na.rm = T))): NAs
-## introduced by coercion to integer range
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;sjPlot&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;view_df&lt;/span&gt;(datos_proc, 
+                encoding &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table style=&#34;border-collapse:collapse; border:none;&#34;&gt;
 &lt;caption&gt;Data frame: datos_proc&lt;/caption&gt;
 &lt;tr&gt;
@@ -8589,14 +8571,14 @@ proc_2 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; proc_2[9
 ## * sexo -&amp;gt; sexo...6
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;(bind_columnas)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;## # A tibble: 6 x 9
-##    folio...1 sexo...2 ocupacion   ytoth  folio...5 sexo...6  edad tot_per    ife
-##        &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl+lbl&amp;gt;   &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl+&amp;gt;
-## 1    1.10e11 Mujer       2 [No]  390833    1.10e11 Mujer       50       5 2 [No]
-## 2    1.10e11 Hombre      1 [Sí]  947583    1.10e11 Mujer       79       5 2 [No]
-## 3    1.10e11 Mujer       2 [No]  947583    1.10e11 Hombre      53       5 2 [No]
-## 4    1.10e11 Hombre      1 [Sí] 3004167    1.10e11 Mujer       70       1 2 [No]
-## 5    1.10e11 Hombre      2 [No] 3004167    1.10e11 Hombre      16       5 2 [No]
-## 6    1.10e11 Mujer       2 [No] 3004167    1.10e11 Mujer       46       5 2 [No]
+##      folio...1 sexo...2 ocupacion  ytoth folio...5 sexo...6  edad tot_per    ife
+##          &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl+lbl&amp;gt;  &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt; &amp;lt;fct&amp;gt;    &amp;lt;dbl&amp;gt;   &amp;lt;dbl&amp;gt; &amp;lt;dbl+&amp;gt;
+## 1 110110010101 Mujer       2 [No] 3.91e5   1.10e11 Mujer       50       5 2 [No]
+## 2 110110010201 Hombre      1 [Sí] 9.48e5   1.10e11 Mujer       79       5 2 [No]
+## 3 110110010201 Mujer       2 [No] 9.48e5   1.10e11 Hombre      53       5 2 [No]
+## 4 110110010301 Hombre      1 [Sí] 3.00e6   1.10e11 Mujer       70       1 2 [No]
+## 5 110110010301 Hombre      2 [No] 3.00e6   1.10e11 Hombre      16       5 2 [No]
+## 6 110110010301 Mujer       2 [No] 3.00e6   1.10e11 Mujer       46       5 2 [No]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vemos que simplemente pegó  &lt;code&gt;a&lt;/code&gt; y &lt;code&gt;b&lt;/code&gt;. Eso implica que tenemos columnas repetidas (a saber, folio y sexo). Cuando estemos seguras/os de que hay columnas repetidas entre dos dataframes que queramos unir, emplearemos &lt;code&gt;merge()&lt;/code&gt; mientras que, si estos no comparten ninguna columna, recurrimos a &lt;code&gt;bing_cols()&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;c-bind_rows&#34;&gt;c) &lt;code&gt;bind_rows()&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;También podemos unir dos dataframes a partir de sus filas, con la función &lt;code&gt;bind_rows()&lt;/code&gt; de &lt;code&gt;dplyr&lt;/code&gt;&lt;/p&gt;
