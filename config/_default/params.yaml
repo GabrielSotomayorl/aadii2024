@@ -101,6 +101,7 @@ author: Gabriel Sotomayor López
 instructor: 
   name: Gabriel Sotomayor López
   email: 	gabriel.sotomayor@mail.udp.cl
+  twitter: @GSotomayorL
   url: ""
   github: GabrielSotomayorl
   contact_policy: >-
@@ -130,12 +131,12 @@ course:
   slack: "http://learn-r-uah.slack.com/"
 
 university: 
-  name: Universidad Alberto Hurtado
-  url: "https://www.uahurtado.cl/"
+  name: Universidad Diego Portales
+  url: "https://www.udp.cl/"
 
 school:
   name: Departamento de Sociología
-  url: "http://sociologia.uahurtado.cl/"
+  url: "https://sociologia.udp.cl/"
 
 
 ############################
@@ -146,7 +147,7 @@ school:
 sharing_image: "social-image.png"
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter: "valentiandrade"
+twitter: "GSotomayorL"
 
 
 ############################
