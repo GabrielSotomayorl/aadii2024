@@ -71,7 +71,7 @@ privacy_pack: false
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
 edit_page:
-  repo_url: 'https://github.com/learn-R' 
+  repo_url: 'https://github.com/Clases-GabrielSotomayor/pruebapagina' 
   content_dir: ''
   repo_branch: master
   editable:
@@ -124,9 +124,9 @@ course:
   days: "Clases: Lunes 10:00-12:50"
   #time: ""
   location: "Laboratorio de Computación 2° piso FCSH"
-  dates: "Práctico: Lunes 18.00-19.20"
+  dates: "Ayudantía: Lunes 18.00-19.20"
   github: "GabrielSotomayorl"
-  copyrightYear: "2021. Web developed by Andrew Heiss and custom by"
+  copyrightYear: "2023. Web developed by Andrew Heiss and custom by"
   slack: "http://learn-r-uah.slack.com/"
 
 university: 
