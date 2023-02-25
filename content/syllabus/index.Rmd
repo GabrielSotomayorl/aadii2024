@@ -20,38 +20,30 @@ library(pander)
 
 # Presentación
 
-R es uno de los lenguajes de programación estadística más populares y demandados del último tiempo. Una de las razones principales es que tanto el software como la comunidad que hace uso de este se maneja en un marco de la ciencia abierta (r Open Science Tools o *rOpensci*), permitiendo el desarrollo constante de una serie de herramientas que permiten mejorar nuestras investigaciones, de manera **libre, gratis y colaborativa.** 
+El curso profundiza las principales técnicas multivariantes, que permiten analizar en forma conjunta la interacción de múltiples factores, lo cual da la posibilidad de estudiar de forma más compleja los problemas sociales. 
+ 
+Se enfatizan la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.  
+ 
+Al final del curso el alumno deberá ser capaz de realizar análisis descriptivo de los datos tanto primarios como secundarios y poder seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables. 
 
-Para las ciencias sociales estos elementos no son triviales. Es frecuente encontrarse con personas de nuestro campo que se están iniciando en R y desisten de este intento dada la frustración y pensamientos de incapacidad. Aprender R puede ser difícil al iniciar – es como aprender cualquier otro lenguaje o idioma -, y poco se ha pensado en cómo implementar enseñanza a grupos más expuestos a estos prejuicios, como en las ciencias sociales y humanidades.
 
-Se propone que un curso de introducción de R para análisis de datos sociales puede abordar estos desafíos basado en enseñar herramientas concretas que faciliten y potencien las investigaciones sociales. Basada en la experiencia de enseñanza de R en contextos similares, esto implica introducir prácticas del *rOpensci* como la colaboración y reproducibilidad, que facilitan sin duda el aprendizaje colectivo y la calidad de los productos desarrollados durante el curso.
+# Resultados de Aprendizaje  
 
-**¡Iniciemos este desafío juntas/os!**
+## Resultado general  
 
-![](../../img/eval-flowchart.png)
+Entregar herramientas al alumno para que pueda abordar el análisis de datos desde la estadística multivariante descriptiva e inferencial, elaborando y probando hipótesis y desarrollando modelos explicativos de determinados fenómenos de estudio. 
 
-## Descripción
 
-Este curso busca introducir a estudiante en el uso de R y RStudio para el análisis de datos sociales. En ese sentido, será una introducción al entorno R y a la interfaz de RStudio para su uso en contextos académicos. Al mismo tiempo, el curso profundiza en temas específicos para las ciencias sociales como el análisis estadístico y la presentación de resultados (visualización de datos). 
+## Resultados específicos  
+1.	Manejar bases de datos complejas. 
+2.	Plantear y estructurar adecuadamente un problema de análisis multivariante. 
+3.	Identificar el tipo de técnica adecuada, o combinación de ellas, a aplicar en cada situación concreta. 
+4.	Comprender las herramientas utilizada en cada una de las técnicas estudiadas. 
+5.	Aprender a utilizar los programas computacionales necesarios para aplicar los distintos modelos estudiados, particularmente R. 
+6.	Interpretar los resultados del análisis. 
+7.	Redactar correctamente un informe con los resultados del análisis. 
 
-## Objetivos
 
-### Objetivo general
-
-Aprender las principales herramientas para el análisis de datos sociales en RStudio, con el fin de lograr un uso autónomo del software
-
-### Objetivos específicos
-El curso no es un curso de programación en R , sino que una aplicación concreta del uso de R para ciencias sociales. Por ello, el curso tiene como propósito específico que los estudiantes sean capaces de
-
-1.  Manejar R y herramientas asociadas a su utilización (*rOpensci*), utilizando prácticas que les permitan avanzar en su aprendizaje de manera autónoma (Unidad 1)
-
-2. Manipular, procesar y limpiar datos sociales utilizando R (Unidad 2)
-
-3. Aplicar herramientas para análisis estadísticos descriptivos en R (Unidad 3)
-
-4. Aplicar herramientas para análisis estadísticos inferenciales en R (Unidad 4)
-
-5. Presentar de resultados, a partir de la visualización de datos y construcción de documentos (transversal a todas las unidades)
 
 
 # I. Contenidos
