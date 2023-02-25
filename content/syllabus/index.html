@@ -10,70 +10,61 @@ output:
     fig_caption: false
 ---
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 <div id="TOC">
 <ul>
-<li><a href="#presentación">Presentación</a>
+<li><a href="#presentación" id="toc-presentación">Presentación</a></li>
+<li><a href="#resultados-de-aprendizaje" id="toc-resultados-de-aprendizaje">Resultados de Aprendizaje</a>
 <ul>
-<li><a href="#descripción">Descripción</a></li>
-<li><a href="#objetivos">Objetivos</a>
+<li><a href="#resultado-general" id="toc-resultado-general">Resultado general</a></li>
+<li><a href="#resultados-específicos" id="toc-resultados-específicos">Resultados específicos</a></li>
+</ul></li>
+<li><a href="#i.-contenidos" id="toc-i.-contenidos">I. Contenidos</a>
 <ul>
-<li><a href="#objetivo-general">Objetivo general</a></li>
-<li><a href="#objetivos-específicos">Objetivos específicos</a></li>
+<li><a href="#unidad-1.-elementos-y-herramientas-básicos-de-r" id="toc-unidad-1.-elementos-y-herramientas-básicos-de-r">Unidad 1. Elementos y herramientas básicos de R</a></li>
+<li><a href="#unidad-2.-manipulación-y-limpieza-de-datos" id="toc-unidad-2.-manipulación-y-limpieza-de-datos">Unidad 2. Manipulación y limpieza de datos</a></li>
+<li><a href="#unidad-3.-análisis-estadístico-descriptivo-en-r" id="toc-unidad-3.-análisis-estadístico-descriptivo-en-r">Unidad 3. Análisis estadístico descriptivo en R</a></li>
+<li><a href="#unidad-4.-análisis-estadístico-inferencial-en-r" id="toc-unidad-4.-análisis-estadístico-inferencial-en-r">Unidad 4. Análisis estadístico inferencial en R</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#i.-contenidos">I. Contenidos</a>
+<li><a href="#ii.-metodología-del-curso" id="toc-ii.-metodología-del-curso">II. Metodología del curso</a>
 <ul>
-<li><a href="#unidad-1.-elementos-y-herramientas-básicos-de-r">Unidad 1. Elementos y herramientas básicos de R</a></li>
-<li><a href="#unidad-2.-manipulación-y-limpieza-de-datos">Unidad 2. Manipulación y limpieza de datos</a></li>
-<li><a href="#unidad-3.-análisis-estadístico-descriptivo-en-r">Unidad 3. Análisis estadístico descriptivo en R</a></li>
-<li><a href="#unidad-4.-análisis-estadístico-inferencial-en-r">Unidad 4. Análisis estadístico inferencial en R</a></li>
+<li><a href="#recursos-principales-de-aprendizaje" id="toc-recursos-principales-de-aprendizaje">Recursos principales de aprendizaje</a></li>
 </ul></li>
-<li><a href="#ii.-metodología-del-curso">II. Metodología del curso</a>
+<li><a href="#iii.-evaluación-de-aprendizajes" id="toc-iii.-evaluación-de-aprendizajes">III. Evaluación de aprendizajes</a></li>
+<li><a href="#iv.-calendario-de-actividades" id="toc-iv.-calendario-de-actividades">IV. Calendario de actividades</a></li>
+<li><a href="#v.-recursos-pedagógicos" id="toc-v.-recursos-pedagógicos">V. Recursos pedagógicos</a>
 <ul>
-<li><a href="#recursos-principales-de-aprendizaje">Recursos principales de aprendizaje</a></li>
+<li><a href="#referencias-bibliográficas" id="toc-referencias-bibliográficas">1. Referencias bibliográficas</a></li>
+<li><a href="#sitios-de-consulta" id="toc-sitios-de-consulta">2. Sitios de consulta</a></li>
 </ul></li>
-<li><a href="#iii.-evaluación-de-aprendizajes">III. Evaluación de aprendizajes</a></li>
-<li><a href="#iv.-calendario-de-actividades">IV. Calendario de actividades</a></li>
-<li><a href="#v.-recursos-pedagógicos">V. Recursos pedagógicos</a>
-<ul>
-<li><a href="#referencias-bibliográficas">1. Referencias bibliográficas</a></li>
-<li><a href="#sitios-de-consulta">2. Sitios de consulta</a></li>
-</ul></li>
-<li><a href="#descargar-programa-en-pdf"><span>Descargar programa en pdf</span></a></li>
+<li><a href="#descargar-programa-en-pdf" id="toc-descargar-programa-en-pdf"><span>Descargar programa en pdf</span></a></li>
 </ul>
 </div>
 
 <p>{{% courseinfo %}}</p>
 <div id="presentación" class="section level1">
 <h1>Presentación</h1>
-<p>R es uno de los lenguajes de programación estadística más populares y demandados del último tiempo. Una de las razones principales es que tanto el software como la comunidad que hace uso de este se maneja en un marco de la ciencia abierta (r Open Science Tools o <em>rOpensci</em>), permitiendo el desarrollo constante de una serie de herramientas que permiten mejorar nuestras investigaciones, de manera <strong>libre, gratis y colaborativa.</strong></p>
-<p>Para las ciencias sociales estos elementos no son triviales. Es frecuente encontrarse con personas de nuestro campo que se están iniciando en R y desisten de este intento dada la frustración y pensamientos de incapacidad. Aprender R puede ser difícil al iniciar – es como aprender cualquier otro lenguaje o idioma -, y poco se ha pensado en cómo implementar enseñanza a grupos más expuestos a estos prejuicios, como en las ciencias sociales y humanidades.</p>
-<p>Se propone que un curso de introducción de R para análisis de datos sociales puede abordar estos desafíos basado en enseñar herramientas concretas que faciliten y potencien las investigaciones sociales. Basada en la experiencia de enseñanza de R en contextos similares, esto implica introducir prácticas del <em>rOpensci</em> como la colaboración y reproducibilidad, que facilitan sin duda el aprendizaje colectivo y la calidad de los productos desarrollados durante el curso.</p>
-<p><strong>¡Iniciemos este desafío juntas/os!</strong></p>
-<p><img src="../../img/eval-flowchart.png" /></p>
-<div id="descripción" class="section level2">
-<h2>Descripción</h2>
-<p>Este curso busca introducir a estudiante en el uso de R y RStudio para el análisis de datos sociales. En ese sentido, será una introducción al entorno R y a la interfaz de RStudio para su uso en contextos académicos. Al mismo tiempo, el curso profundiza en temas específicos para las ciencias sociales como el análisis estadístico y la presentación de resultados (visualización de datos).</p>
+<p>El curso profundiza las principales técnicas multivariantes, que permiten analizar en forma conjunta la interacción de múltiples factores, lo cual da la posibilidad de estudiar de forma más compleja los problemas sociales.</p>
+<p>Se enfatizan la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.</p>
+<p>Al final del curso el alumno deberá ser capaz de realizar análisis descriptivo de los datos tanto primarios como secundarios y poder seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables.</p>
 </div>
-<div id="objetivos" class="section level2">
-<h2>Objetivos</h2>
-<div id="objetivo-general" class="section level3">
-<h3>Objetivo general</h3>
-<p>Aprender las principales herramientas para el análisis de datos sociales en RStudio, con el fin de lograr un uso autónomo del software</p>
+<div id="resultados-de-aprendizaje" class="section level1">
+<h1>Resultados de Aprendizaje</h1>
+<div id="resultado-general" class="section level2">
+<h2>Resultado general</h2>
+<p>Entregar herramientas al alumno para que pueda abordar el análisis de datos desde la estadística multivariante descriptiva e inferencial, elaborando y probando hipótesis y desarrollando modelos explicativos de determinados fenómenos de estudio.</p>
 </div>
-<div id="objetivos-específicos" class="section level3">
-<h3>Objetivos específicos</h3>
-<p>El curso no es un curso de programación en R , sino que una aplicación concreta del uso de R para ciencias sociales. Por ello, el curso tiene como propósito específico que los estudiantes sean capaces de</p>
+<div id="resultados-específicos" class="section level2">
+<h2>Resultados específicos</h2>
 <ol style="list-style-type: decimal">
-<li><p>Manejar R y herramientas asociadas a su utilización (<em>rOpensci</em>), utilizando prácticas que les permitan avanzar en su aprendizaje de manera autónoma (Unidad 1)</p></li>
-<li><p>Manipular, procesar y limpiar datos sociales utilizando R (Unidad 2)</p></li>
-<li><p>Aplicar herramientas para análisis estadísticos descriptivos en R (Unidad 3)</p></li>
-<li><p>Aplicar herramientas para análisis estadísticos inferenciales en R (Unidad 4)</p></li>
-<li><p>Presentar de resultados, a partir de la visualización de datos y construcción de documentos (transversal a todas las unidades)</p></li>
+<li>Manejar bases de datos complejas.</li>
+<li>Plantear y estructurar adecuadamente un problema de análisis multivariante.</li>
+<li>Identificar el tipo de técnica adecuada, o combinación de ellas, a aplicar en cada situación concreta.</li>
+<li>Comprender las herramientas utilizada en cada una de las técnicas estudiadas.</li>
+<li>Aprender a utilizar los programas computacionales necesarios para aplicar los distintos modelos estudiados, particularmente R.</li>
+<li>Interpretar los resultados del análisis.</li>
+<li>Redactar correctamente un informe con los resultados del análisis.</li>
 </ol>
-</div>
 </div>
 </div>
 <div id="i.-contenidos" class="section level1">
@@ -147,7 +138,13 @@ output:
 <div id="iv.-calendario-de-actividades" class="section level1">
 <h1>IV. Calendario de actividades</h1>
 <p>El calendario de actividades se puede revisar con detención en la <a href="/schedule/">pestaña planificación</a>. Un resumen breve de las tareas es</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="24%" />
+<col width="27%" />
+<col width="11%" />
+<col width="37%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Evaluación</th>
@@ -201,7 +198,7 @@ output:
 <h1><a href="../files/programa-R-uah.pdf/">Descargar programa en pdf</a></h1>
 <p><a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/programa-R-uah.pdf/" role="button"><i class="far fa-file-pdf"></i></a></p>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Es decir, a lo largo del semestre deberá entregar 6 tareas: 5 calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas restantes, solo las 4 mejores serán consideradas en su promedio de las tareas.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
