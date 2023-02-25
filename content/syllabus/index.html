@@ -8,6 +8,9 @@ output:
   blogdown::html_page:
     toc: true
     fig_caption: false
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 
@@ -19,14 +22,16 @@ output:
 <li><a href="#resultado-general" id="toc-resultado-general">Resultado general</a></li>
 <li><a href="#resultados-específicos" id="toc-resultados-específicos">Resultados específicos</a></li>
 </ul></li>
-<li><a href="#i.-contenidos" id="toc-i.-contenidos">I. Contenidos</a>
+<li><a href="#contenidos." id="toc-contenidos.">Contenidos.</a>
 <ul>
-<li><a href="#unidad-1.-elementos-y-herramientas-básicos-de-r" id="toc-unidad-1.-elementos-y-herramientas-básicos-de-r">Unidad 1. Elementos y herramientas básicos de R</a></li>
-<li><a href="#unidad-2.-manipulación-y-limpieza-de-datos" id="toc-unidad-2.-manipulación-y-limpieza-de-datos">Unidad 2. Manipulación y limpieza de datos</a></li>
-<li><a href="#unidad-3.-análisis-estadístico-descriptivo-en-r" id="toc-unidad-3.-análisis-estadístico-descriptivo-en-r">Unidad 3. Análisis estadístico descriptivo en R</a></li>
-<li><a href="#unidad-4.-análisis-estadístico-inferencial-en-r" id="toc-unidad-4.-análisis-estadístico-inferencial-en-r">Unidad 4. Análisis estadístico inferencial en R</a></li>
+<li><a href="#análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen" id="toc-análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen">1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN</a></li>
+<li><a href="#formas-funcionales-de-los-modelos-de-regresión" id="toc-formas-funcionales-de-los-modelos-de-regresión">2. Formas funcionales de los Modelos de Regresión</a></li>
+<li><a href="#análisis-factorial-exploratorio" id="toc-análisis-factorial-exploratorio">3. Análisis Factorial Exploratorio</a></li>
+<li><a href="#análisis-factorial-confirmatorio" id="toc-análisis-factorial-confirmatorio">4. Análisis Factorial Confirmatorio</a></li>
+<li><a href="#análisis-de-sendero" id="toc-análisis-de-sendero">5. Análisis de Sendero</a></li>
+<li><a href="#modelos-de-ecuaciones-estructurales" id="toc-modelos-de-ecuaciones-estructurales">6. Modelos de Ecuaciones estructurales</a></li>
 </ul></li>
-<li><a href="#ii.-metodología-del-curso" id="toc-ii.-metodología-del-curso">II. Metodología del curso</a>
+<li><a href="#metodología-del-curso" id="toc-metodología-del-curso">Metodología del curso</a>
 <ul>
 <li><a href="#recursos-principales-de-aprendizaje" id="toc-recursos-principales-de-aprendizaje">Recursos principales de aprendizaje</a></li>
 </ul></li>
@@ -44,106 +49,214 @@ output:
 <p>{{% courseinfo %}}</p>
 <div id="presentación" class="section level1">
 <h1>Presentación</h1>
-<p>El curso profundiza las principales técnicas multivariantes, que permiten analizar en forma conjunta la interacción de múltiples factores, lo cual da la posibilidad de estudiar de forma más compleja los problemas sociales.</p>
-<p>Se enfatizan la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.</p>
-<p>Al final del curso el alumno deberá ser capaz de realizar análisis descriptivo de los datos tanto primarios como secundarios y poder seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables.</p>
+<p>El curso profundiza las principales técnicas multivariantes, que
+permiten analizar en forma conjunta la interacción de múltiples
+factores, lo cual da la posibilidad de estudiar de forma más compleja
+los problemas sociales.</p>
+<p>Se enfatizan la comprensión de procedimientos e interpretación de
+resultados, así como el uso de herramientas computacionales,
+principalmente en R y RStudio. Se trabajará en la aplicación de los
+métodos sin necesidad de estudiar en profundidad los fundamentos
+matemáticos de todos ellos.</p>
+<p>Al final del curso el alumno deberá ser capaz de realizar análisis
+descriptivo de los datos tanto primarios como secundarios y poder
+seleccionar la técnica estadística adecuada a utilizar cuando se tienen
+datos multivariables.</p>
 </div>
 <div id="resultados-de-aprendizaje" class="section level1">
 <h1>Resultados de Aprendizaje</h1>
 <div id="resultado-general" class="section level2">
 <h2>Resultado general</h2>
-<p>Entregar herramientas al alumno para que pueda abordar el análisis de datos desde la estadística multivariante descriptiva e inferencial, elaborando y probando hipótesis y desarrollando modelos explicativos de determinados fenómenos de estudio.</p>
+<p>Entregar herramientas al alumno para que pueda abordar el análisis de
+datos desde la estadística multivariante descriptiva e inferencial,
+elaborando y probando hipótesis y desarrollando modelos explicativos de
+determinados fenómenos de estudio.</p>
 </div>
 <div id="resultados-específicos" class="section level2">
 <h2>Resultados específicos</h2>
 <ol style="list-style-type: decimal">
 <li>Manejar bases de datos complejas.</li>
-<li>Plantear y estructurar adecuadamente un problema de análisis multivariante.</li>
-<li>Identificar el tipo de técnica adecuada, o combinación de ellas, a aplicar en cada situación concreta.</li>
-<li>Comprender las herramientas utilizada en cada una de las técnicas estudiadas.</li>
-<li>Aprender a utilizar los programas computacionales necesarios para aplicar los distintos modelos estudiados, particularmente R.</li>
+<li>Plantear y estructurar adecuadamente un problema de análisis
+multivariante.</li>
+<li>Identificar el tipo de técnica adecuada, o combinación de ellas, a
+aplicar en cada situación concreta.</li>
+<li>Comprender las herramientas utilizada en cada una de las técnicas
+estudiadas.</li>
+<li>Aprender a utilizar los programas computacionales necesarios para
+aplicar los distintos modelos estudiados, particularmente R.</li>
 <li>Interpretar los resultados del análisis.</li>
 <li>Redactar correctamente un informe con los resultados del análisis.</li>
 </ol>
 </div>
 </div>
-<div id="i.-contenidos" class="section level1">
-<h1>I. Contenidos</h1>
-<div id="unidad-1.-elementos-y-herramientas-básicos-de-r" class="section level2">
-<h2>Unidad 1. Elementos y herramientas básicos de R</h2>
-<p>1.1 R enviroment: interfaz de RStudio, elementos de script, workspace</p>
-<p>1.2 Prácticas y herramientas de consulta: CRAN, stackoverflow, Rcommunity</p>
-<p>1.3 Herramientas para la colaboración y comunicación: Rprojects, GitHub y Slack</p>
-<p>1.4 Librerías y funciones para las ciencias sociales: tidyverse y sj (sjmisc y sjPlot)</p>
-<p>1.5 Construcción de reportes reproducibles e integrados con código: RMarkdown</p>
-</div>
-<div id="unidad-2.-manipulación-y-limpieza-de-datos" class="section level2">
-<h2>Unidad 2. Manipulación y limpieza de datos</h2>
-<p>2.1 Importar y exportar datos en diferentes formatos</p>
-<p>2.2 Validación y limpieza de variables (missing values)</p>
-<p>2.3 Transformación y selección de variables</p>
-<p>2.4 Transformación de datos en tidydata con tidyr</p>
-</div>
-<div id="unidad-3.-análisis-estadístico-descriptivo-en-r" class="section level2">
-<h2>Unidad 3. Análisis estadístico descriptivo en R</h2>
-<p>3.1 Análisis descriptivos univariados: medidas de tendencia central, dispersión y frecuencias</p>
-<p>3.2 Análisis descriptivo bivariado: tablas de contingencia, correlaciones y ANOVA</p>
-<p>3.3 Representación gráfica con sjPlot: Likert, proporciones agrupadas y distribuciones</p>
-</div>
-<div id="unidad-4.-análisis-estadístico-inferencial-en-r" class="section level2">
-<h2>Unidad 4. Análisis estadístico inferencial en R</h2>
-<p>4.1 Muestras complejas y precisión de inferencia estadística con survey y srvyr</p>
-<p>4.2 Pruebas de hipótesis y representación gráfica</p>
-<p>4.3 Regresiones lineales, predictores categóricos y representación gráfica</p>
-<p>4.4 Regresiones logísticas, exponenciación y representación gráfica</p>
-<p>4.5 Ajuste de modelos (performance) y otras representaciones gráficas (predicción, efectos marginales e interacciones)</p>
-</div>
-</div>
-<div id="ii.-metodología-del-curso" class="section level1">
-<h1>II. Metodología del curso</h1>
-<p>Dado el contexto de pandemia se tendrán tres espacios principales de aprendizaje:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Sesiones de clases lectivas</strong> (<i class="fas fa-book-reader"></i>), donde se presentarán los aspectos centrales de los contenidos correspondientes a la semana vía Zoom. Tanto el documento de presentación como el video de la clase se encontrará disponible en la pestaña de <a href="/content/"><strong>Clases</strong></a> de este sitio web del curso.</p></li>
-<li><p><strong>Prácticas guiadas</strong> (<i class="fas fa-laptop-code"></i>): cada tema de las sesiones se acompaña de una guía práctica de aplicación de contenidos, y que estarán disponibles en la pestaña <a href="/example/"><strong>Prácticos</strong></a>. Estas guías están diseñadas para ser desarrolladas de manera autónoma por cada estudiante semana a semana. También serán desarrolladas y revisadas cada semana en grupos pequeños con supervisión de ayudantes para dar mayor oportunidad de participación y resolver las dudas respectivas.</p></li>
-</ol>
-<p><a class="btn btn-primary" href="https://learn-r.formr.org" role="button"><i class="fas fa-external-link-square-alt"></i></a> Existe un <strong>reporte de progreso</strong> asociado a estas guías que deberá ser completado una vez que finalices cada práctica. Estos se realizan con fines de monitoreo y retroalimentación.</p>
+<div id="contenidos." class="section level1">
+<h1>Contenidos.</h1>
+<div id="análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen" class="section level2">
+<h2>1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN</h2>
 <ul>
-<li><a href="https://learn-r.formr.org">Link</a> <a class="btn btn-primary" href="https://learn-r.formr.org" role="button"><i class="fas fa-external-link-square-alt"></i></a></li>
+<li><p>Análisis Univariado de los datos o Frecuencias o Media, Mediana,
+deciles o Gráficos (R base y ggplot2)</p></li>
+<li><p>Calculo y análisis de deciles de ingreso: Caso Chile – Encuesta
+CASEN o Creación de variables en bases de datos</p></li>
+<li><p>Construcción de deciles o Mediciones de desigualdad y CASEN o
+Metodología de cálculo de la pobreza en Chile</p>
+<ul>
+<li><p>Cálculo de la línea de pobreza según ingresos</p></li>
+<li><p>Medición de pobreza multidimensional</p></li>
+<li><p>Construcción en R</p></li>
+</ul></li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>Tareas</strong>: se desarrollarán <strong>6 tareas</strong> que les permitirán aplicar contenidos y replicar lo aprendido en los prácticos en base a una base de datos seleccionada por ustedes <strong>al inicio de semestre</strong>. Esto permitirá no solo recibir retroalimentación constante, sino que aprender con datos que puedan ser útiles para otros proyectos de investigación que sean de su interés.</li>
-</ol>
+</div>
+<div id="formas-funcionales-de-los-modelos-de-regresión" class="section level2">
+<h2>2. Formas funcionales de los Modelos de Regresión</h2>
+<ul>
+<li><p>Introducción</p></li>
+<li><p>Modelo Logarítmico bivariado</p></li>
+<li><p>Modelo Logarítmico Multivariado</p></li>
+<li><p>Interpretación de los coeficientes</p></li>
+<li><p>Ejemplos de aplicación en R.</p></li>
+</ul>
+</div>
+<div id="análisis-factorial-exploratorio" class="section level2">
+<h2>3. Análisis Factorial Exploratorio</h2>
+<ul>
+<li><p>Análisis factorial exploratorio y su aplicación en la investigación
+sociológica. El concepto de varianza y covarianza.</p></li>
+<li><p>Diferencias entre el análisis de componente principal y de factor
+común. Supuestos de la técnica.</p></li>
+<li><p>La extracción de factores comunes. Métodos de extracción de
+factores, criterios de selección del número de factores y rotación.</p></li>
+<li><p>La matriz factorial y su interpretación. Evaluación del modelo
+factorial y cálculo de puntuaciones factoriales.</p></li>
+</ul>
+</div>
+<div id="análisis-factorial-confirmatorio" class="section level2">
+<h2>4. Análisis Factorial Confirmatorio</h2>
+<ul>
+<li><p>Análisis factorial confirmatorio y su aplicación en la
+investigación sociológica. El análisis confirmatorio frente al
+análisis exploratorio. Supuestos de la técnica.</p></li>
+<li><p>Especificación e identificación del modelo. Estimación de
+parámetros, evaluación del ajuste y reespecificación.</p></li>
+<li><p>Fiabilidad y validez de los modelos de medida. Validez convergente y
+validez discriminante. Evaluación de la capacidad confirmatoria del
+modelo.</p></li>
+<li><p>Ejemplo de análisis factorial confirmatorio.</p></li>
+</ul>
+</div>
+<div id="análisis-de-sendero" class="section level2">
+<h2>5. Análisis de Sendero</h2>
+<ul>
+<li><p>Análisis de sendero y su aplicación en la investigación
+sociológica. Supuestos de la técnica.</p></li>
+<li><p>Especificación del modelo</p></li>
+<li><p>Evaluación del modelo de medición y de la capacidad confirmatoria
+del modelo.</p></li>
+<li><p>Ejemplo de análisis de sendero.</p></li>
+</ul>
+</div>
+<div id="modelos-de-ecuaciones-estructurales" class="section level2">
+<h2>6. Modelos de Ecuaciones estructurales</h2>
+<ul>
+<li><p>Análisis de ecuaciones estructurales y su aplicación en la
+investigación sociológica.</p></li>
+<li><p>La obtención de un modelo de ecuaciones estructurales: la estructura
+del modelo. Supuestos de la técnica.</p></li>
+<li><p>Estimación del modelo empírico.</p></li>
+<li><p>Evaluación del modelo</p></li>
+<li><p>Introducción de modificaciones y/o conclusión del análisis.
+Evaluación de la capacidad confirmatoria del modelo.</p></li>
+<li><p>Ejemplos sobre modelamiento de ecuaciones estructurales.</p></li>
+</ul>
+</div>
+</div>
+<div id="metodología-del-curso" class="section level1">
+<h1>Metodología del curso</h1>
+<p>Este curso se desarrolla sobre la base de clases expositivas y talleres
+de aplicación con uso intensivo de software computacionales a partir del
+sitio web del curso, lo cual permite trabajar cada uno de los distintos
+tópicos detallados en el contenido.</p>
+<p>Se realizarán 2 sesiones semanales, 1 de clases y otra en forma de
+taller. Durante el curso cada alumno
+desarrollará trabajos de aplicación.</p>
 <div id="recursos-principales-de-aprendizaje" class="section level2">
 <h2>Recursos principales de aprendizaje</h2>
 <p><strong>1. Sitio web</strong></p>
-<p>El curso tiene disponible este sitio web, que he programado pues permite integrar texto y código de R, junto con hacer interactuar con otras plataformas como el <em>foro Disqus</em> y <em>Github</em>.</p>
+<p>El curso tiene disponible este sitio web, que he programado pues permite
+integrar texto y código de R, junto con hacer interactuar con otras
+plataformas como el <em>foro Disqus</em> y <em>Github</em>.</p>
 <p><strong>2. R, RStudio y RStudio Cloud</strong> <i class="fab fa-r-project"></i></p>
-<p>El software que se utilizará principalmente será R y su interfaz RStudio. Ahora bien, muchos usuario/as de R presentan problemas de instalación dada la capacidad de sus computadores y sistemas operativos. Por ello se promoverá el uso del servicio gratuito de <a href="https://rstudio.cloud/">RStudio.cloud</a> , que permite ejecutar la interfaz de RStudio en el navegador web y compartir el código de manera sincrónica con la docente. Dado el enfoque <em>rOpensci</em>, las plantillas para ejemplos, ejercicios y mini proyectos podrán ser implementados en esta plataforma. Si bien no es ideal pues tiene limitantes de memoria, mientras ustedes asimilan el programa será una buena herramienta.</p>
+<p>El software que se utilizará principalmente será R y su interfaz
+RStudio. Ahora bien, muchos usuario/as de R presentan problemas de
+instalación dada la capacidad de sus computadores y sistemas operativos.
+Por ello se promoverá el uso del servicio gratuito de
+<a href="https://rstudio.cloud/">RStudio.cloud</a> , que permite ejecutar la
+interfaz de RStudio en el navegador web y compartir el código de manera
+sincrónica con la docente. Dado el enfoque <em>rOpensci</em>, las plantillas
+para ejemplos, ejercicios y mini proyectos podrán ser implementados en
+esta plataforma. Si bien no es ideal pues tiene limitantes de memoria,
+mientras ustedes asimilan el programa será una buena herramienta.</p>
 <p><strong>3. Slack</strong> <i class="fab fa-slack"></i></p>
-<p><a href="https://slack.com/intl/es-cl/"><em>Slack</em></a> es una herramienta de uso frecuente en equipos de trabajo que utilizan R pues permite integrar script (o <em>código</em>) de distintos lenguajes en el chat. Se tendrá un espacio de trabajo en la <em>app Slack</em> que permite que cualquier persona del curso pueda hacer preguntas y cualquiera pueda responder. Esta es una de las prácticas que se promoverán en el curso pues es probable que los estudiantes tengan dudas similares a las de sus compañeros, por lo que las respuestas de la docente, ayudante y otros compañeros serán de libre disposición de todo el curso. Dentro del <em>Slack</em> se tendrán canales para hacer preguntas sobre las sesiones, tareas y proyectos, y el link que permite unirse a este estará disponible en el sitio del curso.</p>
-<p><i class="fab fa-slack"></i> <a href="https://slack.com/intl/es-cl/help/articles/360059928654-C%C3%B3mo-usar-Slack--tu-gu%C3%ADa-de-inicio-r%C3%A1pido">Guía de uso de slack</a></p>
-<p><i class="fab fa-slack"></i> <a href="https://join.slack.com/t/learn-r-uah/shared_invite/zt-15cyy0t68-VjEeEwq_9vji3_dVdwr3Ug">Unirse a Slack de curso</a></p>
+<p><a href="https://slack.com/intl/es-cl/"><em>Slack</em></a> es una herramienta de uso
+frecuente en equipos de trabajo que utilizan R pues permite integrar
+script (o <em>código</em>) de distintos lenguajes en el chat. Se tendrá un
+espacio de trabajo en la <em>app Slack</em> que permite que cualquier persona
+del curso pueda hacer preguntas y cualquiera pueda responder. Esta es
+una de las prácticas que se promoverán en el curso pues es probable que
+los estudiantes tengan dudas similares a las de sus compañeros, por lo
+que las respuestas de la docente, ayudante y otros compañeros serán de
+libre disposición de todo el curso. Dentro del <em>Slack</em> se tendrán
+canales para hacer preguntas sobre las sesiones, tareas y proyectos, y
+el link que permite unirse a este estará disponible en el sitio del
+curso.</p>
+<p><i class="fab fa-slack"></i> <a href="https://slack.com/intl/es-cl/help/articles/360059928654-C%C3%B3mo-usar-Slack--tu-gu%C3%ADa-de-inicio-r%C3%A1pido">Guía de uso de
+slack</a></p>
+<p><i class="fab fa-slack"></i> <a href="https://join.slack.com/t/learn-r-uah/shared_invite/zt-15cyy0t68-VjEeEwq_9vji3_dVdwr3Ug">Unirse a Slack de
+curso</a></p>
 <p><strong>4. GitHub</strong> <i class="fab fa-github"></i></p>
-<p>Github es una plataforma online que permite depositar archivos y el control de versiones (VCS), por lo que se ha transformado una herramienta fácil y popular para corregir, colaborar y compartir códigos de distintos lenguajes (no solo R). Utilizaremos esta plataforma para subir las tareas, ayudarlos/as de manera directa con su código y darles <em>feedback</em>.</p>
+<p>Github es una plataforma online que permite depositar archivos y el
+control de versiones (VCS), por lo que se ha transformado una
+herramienta fácil y popular para corregir, colaborar y compartir códigos
+de distintos lenguajes (no solo R). Utilizaremos esta plataforma para
+subir las tareas, ayudarlos/as de manera directa con su código y darles
+<em>feedback</em>.</p>
 <p><strong>5. Zotero</strong> <i class="fab fa-zotero"></i></p>
-<p>Zotero es un gestor bibliográfico que permite sistematizar las referencias y archivos utilizados en una investigación o informe. Enseñaremos este de manera complementaria pues este software se puede integrar en los documentos escritos hechos en R.</p>
+<p>Zotero es un gestor bibliográfico que permite sistematizar las
+referencias y archivos utilizados en una investigación o informe.
+Enseñaremos este de manera complementaria pues este software se puede
+integrar en los documentos escritos hechos en R.</p>
 </div>
 </div>
 <div id="iii.-evaluación-de-aprendizajes" class="section level1">
 <h1>III. Evaluación de aprendizajes</h1>
-<p>Las evaluaciones del curso se componen de <strong>tareas</strong> (70% de la nota final) y la <strong>entrega de una investigación</strong> (30% de la nota final), en dónde en ambos casos la/el estudiante deberá seleccionar datos y temas de interés de modo de acercar la aplicación del software a contextos de investigación propios de la/el estudiante. En concreto, cada evaluación consiste en:</p>
-<p><strong>1. Tareas</strong> (<em>70% de la nota final</em>): consisten en evaluaciones parciales temáticas que buscan poner en práctica los aprendizajes expuestos en la sesión de clases y herramientas reforzadas en los prácticos. <strong>El promedio de notas las de tareas será calculado solo con las cuatro mejores entregas</strong> a partir de la Tarea 1 (<em>25% c/u</em>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. La evaluación es <strong>individual</strong> o en <strong>parejas</strong> (la misma durante todo el semestre).</p>
-<p><strong>2. Investigación final</strong> (<em>30% de la nota final</em>): consiste en una evaluación final que aplica los conocimientos y herramientas entregadas a lo largo de curso, a un proyecto de investigación de elección por el/la estudiante. La evaluación es <strong>individual</strong>.</p>
+<p>Las evaluaciones del curso se componen de <strong>tareas</strong> (70% de la nota
+final) y la <strong>entrega de una investigación</strong> (30% de la nota final), en
+dónde en ambos casos la/el estudiante deberá seleccionar datos y temas
+de interés de modo de acercar la aplicación del software a contextos de
+investigación propios de la/el estudiante. En concreto, cada evaluación
+consiste en:</p>
+<p><strong>1. Tareas</strong> (<em>70% de la nota final</em>): consisten en evaluaciones
+parciales temáticas que buscan poner en práctica los aprendizajes
+expuestos en la sesión de clases y herramientas reforzadas en los
+prácticos. <strong>El promedio de notas las de tareas será calculado solo con
+las cuatro mejores entregas</strong> a partir de la Tarea 1 (<em>25% c/u</em>)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. La
+evaluación es <strong>individual</strong> o en <strong>parejas</strong> (la misma durante todo el
+semestre).</p>
+<p><strong>2. Investigación final</strong> (<em>30% de la nota final</em>): consiste en una
+evaluación final que aplica los conocimientos y herramientas entregadas
+a lo largo de curso, a un proyecto de investigación de elección por
+el/la estudiante. La evaluación es <strong>individual</strong>.</p>
 </div>
 <div id="iv.-calendario-de-actividades" class="section level1">
 <h1>IV. Calendario de actividades</h1>
-<p>El calendario de actividades se puede revisar con detención en la <a href="/schedule/">pestaña planificación</a>. Un resumen breve de las tareas es</p>
-<table style="width:100%;">
+<p>El calendario de actividades se puede revisar con detención en la
+<a href="/schedule/">pestaña planificación</a>. Un resumen breve de las tareas es</p>
+<table>
 <colgroup>
+<col width="21%" />
 <col width="24%" />
-<col width="27%" />
-<col width="11%" />
-<col width="37%" />
+<col width="21%" />
+<col width="32%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -174,10 +287,19 @@ output:
 <div id="referencias-bibliográficas" class="section level2">
 <h2>1. Referencias bibliográficas</h2>
 <ul>
-<li><p><strong>Wickham, H., &amp; Grolemund, G. (2016). R for data science: import, tidy, transform, visualize, and model data (First edition). Sebastopol: O’Reilly.</strong> Libro con enfoque en el aprendizaje de R. Disponible en español como <a href="https://es.r4ds.hadley.nz/">“R para ciencia de datos”</a></p></li>
-<li><p><a href="https://CRAN.R-project.org/package=sjPlot"><strong>Daniel Lüdecke (2021) Data Visualization for Statistics in Social Science</strong> R package version 2.8.7</a></p></li>
-<li><p><a href="https://doi.org/10.21105/joss.01686"><strong>Wickham et al., (2019). Welcome to the tidyverse.</strong> Journal of Open Source Software, 4(43), 1686</a></p></li>
-<li><p><a href="https://bookdown.org/yihui/rmarkdown/"><strong>Yihui Xie, J. J. Allaire, Garrett Grolemund (2021) R Markdown: The Definitive Guide</strong></a></p></li>
+<li><p><strong>Wickham, H., &amp; Grolemund, G. (2016). R for data science: import,
+tidy, transform, visualize, and model data (First edition).
+Sebastopol: O’Reilly.</strong> Libro con enfoque en el aprendizaje de R.
+Disponible en español como <a href="https://es.r4ds.hadley.nz/">“R para ciencia de
+datos”</a></p></li>
+<li><p><a href="https://CRAN.R-project.org/package=sjPlot"><strong>Daniel Lüdecke (2021) Data Visualization for Statistics in Social
+Science</strong> R package version
+2.8.7</a></p></li>
+<li><p><a href="https://doi.org/10.21105/joss.01686"><strong>Wickham et al., (2019). Welcome to the tidyverse.</strong> Journal of
+Open Source Software, 4(43),
+1686</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/"><strong>Yihui Xie, J. J. Allaire, Garrett Grolemund (2021) R Markdown:
+The Definitive Guide</strong></a></p></li>
 <li><p><a href="https://happygitwithr.com/"><strong>Bryan, Jenny (2019) Happy Git in R</strong></a></p></li>
 </ul>
 </div>
@@ -185,7 +307,9 @@ output:
 <h2>2. Sitios de consulta</h2>
 <ul>
 <li><a href="https://*rOpensci*.org/"><em>rOpensci</em></a> (R Open Scicnce Tools)</li>
-<li>Laboratorio de Ciencia Social Abierta, Centro de Estudios de Conflicto y Cohesión Social <a href="https://lisa-coes.netlify.app/">(LISA-COES)</a></li>
+<li>Laboratorio de Ciencia Social Abierta, Centro de Estudios de
+Conflicto y Cohesión Social
+<a href="https://lisa-coes.netlify.app/">(LISA-COES)</a></li>
 <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>
 <li><a href="https://community.rstudio.com/">RStudio Community</a></li>
 <li><a href="https://rmarkdown.rstudio.com/">RMarkdown</a></li>
@@ -201,7 +325,13 @@ output:
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
-<li id="fn1"><p>Es decir, a lo largo del semestre deberá entregar 6 tareas: 5 calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas restantes, solo las 4 mejores serán consideradas en su promedio de las tareas.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Es decir, a lo largo del semestre deberá entregar 6 tareas: 5 calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas restantes, solo las 4 mejores serán consideradas en su promedio de las tareas.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Es decir, a lo largo del semestre deberá entregar 6 tareas: 5
+calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas
+restantes, solo las 4 mejores serán consideradas en su promedio de
+las tareas.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Es decir, a lo largo del semestre deberá entregar 6 tareas: 5
+calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas
+restantes, solo las 4 mejores serán consideradas en su promedio de
+las tareas.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
