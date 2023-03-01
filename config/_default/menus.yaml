@@ -25,10 +25,6 @@ main:
     parent: assignment
     url: /assignment/
     weight: 4
-  - name: 'Github Classroom<i class="fab fa-github"></i>'
-    parent: assignment
-    url: "https://classroom.github.com/classrooms/86887318-learn-r-uah-2021"
-    weight: 8
   - name: Recursos
     url: /resource/
     weight: 6
