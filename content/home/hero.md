@@ -13,7 +13,7 @@ hero_media: logo.png
 design:
   background:
     # Background gradient
-    gradient_start: '#00c4cc'
+    gradient_start: '#C85568'
     gradient_end: '#5271ff'
 
     # Text color (true=light or false=dark).
