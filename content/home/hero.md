@@ -5,7 +5,7 @@ headless: true
 active: true
 weight: 10
 
-title: "Análisis avanzado de datos 2"
+title: "Análisis avanzado de datos II"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
 hero_media: logo.png
