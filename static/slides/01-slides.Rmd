@@ -72,11 +72,11 @@ class: title title-inv-1
 
 --
 
-.box-3.medium.sp-after-half[Contenidos, bibliografía, evaluaciones y ayudantías]
+.box-3.medium.sp-after-half[Contenidos, bibliografía y evaluaciones]
 
 --
 
-.box-6.medium.sp-after-half[Página y delegado del curso]
+.box-inv-1.medium.sp-after-half[Ayudantías]
 
 ---
 
@@ -85,13 +85,21 @@ class: title title-inv-1
 
 # Contenidos
 
-.box-6.medium.sp-after-half[Objetivos de la sesión]
+.box-1.medium.sp-after-half[Página y delegado del curso]
 
 --
 
-.box-3.medium.sp-after-half[¿Dónde se sitúa la estadística y el uso de software en el proceso de investigación?]
+.box-inv-1.medium.sp-after-half[Objetivos de la sesión]
 
 --
+
+.box-1.medium.sp-after-half[¿Dónde se sitúa la estadística y el uso de software en el proceso de investigación?]
+
+---
+name: outline
+class: title title-inv-1
+
+# Contenidos
 
 .box-4.medium.sp-after-half[Uso de software en ciencias sociales]
 
@@ -101,7 +109,7 @@ class: title title-inv-1
 
 --
 
-.box-6.medium.sp-after-half[Bibliografía y otros recursos para profundizar]
+.box-inv-1.medium.sp-after-half[Bibliografía y otros recursos para profundizar]
 
 ---
 
@@ -115,11 +123,11 @@ El curso profundiza las principales técnicas multivariantes, que permiten anali
 
 --
 
-.box-4.small.sp-after-half[
+.box-inv-4.small.sp-after-half[
 Se enfatiza la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.]
 
 --
-.box-5.small.sp-after-half[
+.box-inv-5.small.sp-after-half[
 Al final del curso podrán realizar análisis descriptivo de los datos tanto primarios como secundarios y seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables.
 ]
 
@@ -129,9 +137,9 @@ class: title title-inv-8
 
 # Resultados de aprendizaje
 
-.box-4.small.sp-after-half[Resultado general:]
+.box-8.small.sp-after-half[Resultado general:]
 
-.box-5.small.sp-after-half[
+.box-inv-8.small.sp-after-half[
 - Entregar herramientas al alumno para que pueda abordar el análisis de datos desde la estadística multivariante descriptiva e inferencial, elaborando y probando hipótesis y desarrollando modelos explicativos de determinados fenómenos de estudio. 
 ]
 
@@ -230,9 +238,9 @@ class: title title-inv-8
 # Objetivos de la sesión
 
 .box-8.medium.sp-after-half[
-Reflexionar sobre el uso de software estadístico en ciencias sociales.
+- Reflexionar sobre el uso de software estadístico en ciencias sociales.
 
-Introducir el uso de R y Rstudio para ciencias sociales. 
+- Introducir el uso de R y Rstudio para ciencias sociales. 
 
 ]
 
@@ -255,7 +263,7 @@ class: title title-inv-1
 
 # Uso de Software en Ciencias Sociales
 
-.box-1.small.sp-after-half[Progresivamente se ha generalizado el uso de software estadístico en ciencias sociales, abriendo grandes posibilidades de realizar análisis más complejos y facilitando su uso.
+.box-inv-2.small.sp-after-half[Progresivamente se ha generalizado el uso de software estadístico en ciencias sociales, abriendo grandes posibilidades de realizar análisis más complejos y facilitando su uso.
 Riesgo de falta de formación estadística y reflexividad (calidad del análisis)
 
 Dos niveles de manejo del software:
@@ -345,14 +353,14 @@ class: title title-1
 
 # RStudio
 
-.pull-left.small[
+.pull-left.medium[
 Es una interfaz gráfica para R que nos permite tener mejor visualización y control de los procesos que realizamos.]
 
 ---
 class: title title-inv-1
 
 # RStudio
-.pull-left.small[
+.pull-left.medium[
 Tiene 4 partes principales:
 **Editor de Sintaxis:** formato de block de notas donde podemos construir nuestra sintaxis.]
 
@@ -361,7 +369,7 @@ class: title title-inv-1
 
 # RStudio
 
-.pull-left.small[
+.pull-left.medium[
 **Ambiente de trabajo (Environment):**  muestra los objetos que hemos creado (memoria temporal – RAM)]
 
 ---
@@ -369,7 +377,7 @@ class: title title-inv-1
 
 # RStudio
 
-.pull-left.small[
+.pull-left.medium[
 **Consola de R:** Aquí es donde podemos ver los resultados de nuestros análisis, las operaciones ejecutadas y mensajes de error.]
 
 ---
@@ -377,7 +385,7 @@ class: title title-inv-1
 
 # RStudio
 
-.pull-left.small[
+.pull-left.medium[
 Panel de visualización: Aquí aparecen los gráficos que ejecutemos, además de tener la pestaña help y nuestro directorio de trabajo.
 ]
 
@@ -388,7 +396,7 @@ class: title title-1
 # Instalar R y Rstudio
 
 .pull-middle.small[
-Instalar R
+**Instalar R**
 - Podemos encontrar R para Windows, Linux y Mac en https://cloud.r-project.org/ 
 - Debemos descargar el paquete base, luego ejecutar el instalador, e instalarlo según las opciones predeterminadas
 - Podemos encontrar R Studio en su sitio web, y bajar la versión gratis, que contiene todas las funciones https://www.rstudio.com/products/rstudio/download/ 
@@ -397,22 +405,19 @@ Instalar R
 
 ]
 ---
-name: ds-ps
-class: center middle section-title section-title-1 animated fadeIn
+class: title title-inv-1
 
 # El problema de Java x64
 
-.small[
-.box-1-inv.large[Para algunos análisis R se basa en Java, el problema es que nuestros computadores suelen instalar de manera automática la versión de 32 bits, porque los navegadores de internet funcionan (o funcionaban) en esta arquitectura, pero nuestro computadores y R funcionan a 64 bits.
+
+Para algunos análisis R se basa en Java, el problema es que nuestros computadores suelen instalar de manera automática la versión de 32 bits, porque los navegadores de internet funcionan (o funcionaban) en esta arquitectura, pero nuestro computadores y R funcionan a 64 bits.
 Para resolverlo debemos descargar e instalar la versión offline de 64 bits de Java https://www.java.com/es/download/manual.jsp 
-]
+
 
 imagen pendiente 
 
 ---
-layout: false
-name: evidence-evaluation-causation
-class: center middle section-title section-title-3 animated fadeIn
+class: title title-inv-3
 
 # Programación por objetos y funciones
 
@@ -434,9 +439,7 @@ Estructura básica de la sintaxis de R
 
 
 ---
-layout: false
-name: evidence-evaluation-causation
-class: center middle section-title section-title-3 animated fadeIn
+class: title title-inv-3
 
 # ¿Cómo continuar?
 
