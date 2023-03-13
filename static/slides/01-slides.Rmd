@@ -38,7 +38,8 @@ theme_set(theme_sjplot2())
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "share_again", "scribble", "frezeeframe"))
 ```
 
-class: center middle main-title section-title-9 top-logo
+layout: false
+class: center middle main-title section-title-1 top-logo
 
 .small[
 # Introducción al curso 
@@ -444,46 +445,67 @@ class: title title-inv-3
 # ¿Cómo continuar?
 
 
-Dominar R es un camino de mediano plazo y es importante desarrollar habilidad de “hacking”, es decir:
-estar dispuesto a buscar respuestas de manera autónoma
-saber donde buscar la información
+Dominar R es un camino de mediano plazo y es importante desarrollar habilidad de “hacking”, es decir: estar dispuesto a buscar respuestas de manera autónoma saber donde buscar la información
 utilizar nuevos datos y paquetes por su cuenta
-Donde buscar:
-GOOGLE! (preferentemente en inglés) y youtube
-Pedir ayuda a otros usuarios
-Pestaña “help”
-https://www.rdocumentation.org/ 
-https://stackoverflow.com/ 
-https://stats.stackexchange.com/ dudas específicas de análisis de datos
-Además hay múltiples recursos web para aprender R de manera profunda y guiada.
-Cuestiones importantes que no revisamos: visualización de datos con ggplot2, el tidyverse (paquete dplyr), y profundizar en programación en R (loops y funciones), programación literada (Rmarkdown).
 
+Donde buscar:
+- GOOGLE! (preferentemente en inglés) y youtube
+- Pedir ayuda a otros usuarios
+- Pestaña “help”
+- [RDocumentation](https://www.rdocumentation.org/)
 
 ---
+
+class: title title-inv-3
+
+# ¿Cómo continuar?
+
+Donde buscar:
+
+- [Stackoverflow](https://stackoverflow.com/)
+- [Stackexchange](https://stats.stackexchange.com/ ) dudas específicas de análisis de datos
+
+Además hay múltiples recursos web para aprender R de manera profunda y guiada.
+
+Cuestiones importantes que no revisamos: visualización de datos con ggplot2, el tidyverse (paquete dplyr), y profundizar en programación en R (loops y funciones), programación literada (Rmarkdown).
+
+---
+
 layout: true
 class: title title-3
 
----
+# Bibliografía y otros recursos 
 
-# Bibliografía y otros recursos para profundizar 
-
-Boccardo, Giorgio y Ruiz, Felipe. Uso de RStudio para Estadística Univariada en Ciencias Sociales. Manual de apoyo docente para la asignatura Estadística Descriptiva. Santiago: Departamento de Sociología, Facultad de Ciencias Sociales, Universidad de Chile. Disponible aquí.
-Grolemund, Garrett y Wickham Hadley. R para Ciencia de Datos. https://es.r4ds.hadley.nz/ 
-Paradis, E. (2003). R para Principiantes. Francia: Institut des Sciences de l’Évolution. Disponible en: https://cran.r-project.org/doc/contrib/rdebuts_es.pdf 
-Sitios web útiles
-http://www.sthda.com 
-Cursos online (inglés)
-Especialización en Ciencia de Datos Universidad John Hopkins https://www.coursera.org/specializations/jhu-data-science 
-Data Camp https://www.datacamp.com/courses/tech:r 
+- Boccardo, Giorgio y Ruiz, Felipe. Uso de RStudio para Estadística Univariada en Ciencias Sociales. 
+- Manual de apoyo docente para la asignatura Estadística Descriptiva. Santiago: Departamento de Sociología, Facultad de Ciencias Sociales, Universidad de Chile. 
+- Grolemund, Garrett y Wickham Hadley. R para Ciencia de Datos. https://es.r4ds.hadley.nz/ 
+- Paradis, E. (2003). R para Principiantes. Francia: Institut des Sciences de l’Évolution. Disponible en: https://cran.r-project.org/doc/contrib/rdebuts_es.pdf 
 
 ---
+
+layout: true
+class: title title-3
+
+# Bibliografía y otros recursos 
+
+**Sitios web útiles**
+- [Sthda](http://www.sthda.com)
+- Cursos online (inglés)
+- [Especialización en Ciencia de Datos Universidad John Hopkins](https://www.coursera.org/specializations/jhu-data-science) 
+- [Data Camp](https://www.datacamp.com/courses/tech:r)
+
+---
+
+layout: true
+class: title title-3
 
 # Evaluaciones
 
 | Evaluación    | Formato       | Fecha |  Ponderación Nota Final   |
 | ------------- |:-------------:| -----:| -------------------:|
-| Tarea         | 4 tareas   | *Hasta Viernes de la semana informada* | 70% (25% c/u)|
-| Investigación | Única entrega | 22 de noviembre  | 30% |
+| Tareas uso de R |    |  | 30% |
+| Prueba      |   |   | 35% |
+| Trabajo final     |   |   | 35% |
 
 
 ---
