@@ -1,6 +1,6 @@
 ---
-title: "Bienvenido/a a R, RStudio y Github"
-linktitle: "1: R, RStudio y Github"
+title: "Introducción al curso de R"
+linktitle: "1: Introducción al curso de R"
 date: "2021-08-09"
 menu:
   example:
@@ -14,278 +14,573 @@ editor_options:
 
 ## 0. Objetivo del práctico
 
-El objetivo del práctico es introducirnos en herramientas que permiten establecer un flujo de trabajo en R. Para ello, aprenderemos cómo abrir un nuevo **script** y a crear un nuevo **proyecto de R (o Rproject)**. Además, utilizaremos GitHub, que es una plataforma que permite alojar los .Rproj y códigos de cada uno de ustedes. De hecho, tal como mostraremos en el práctico, utilizaremos **GitHub***ClassRoom* para que ustedes puedan subir sus tareas. 
+El objetivo del práctico es introducirnos en Rstudio, debemos recordar que **R es un lenguaje orientado a objetos** y Rstudio es un **Ambiente integrado**, en el cual podemos tener muchas funciones, las cuales veremos a continuación:
 
-Previo a esto, deben ver el [Tutorial de instalación de R](https://youtu.be/Zj8yL-nx9vM). 
+## 1. R como calculadora
 
-Ahora aprenderemos a crear scripts, proyectos, colaborar y resolver las tareas. 
+Debemos recordar que R puede generar múltiples operaciones, una de ellas es realizar diversas operaciones estadísticas
 
-## 1. Crear un nuevo script (.R)
 
-Para que empecemos a trabajar en el lenguaje R, lo primero es saber cómo abrir un nuevo script; pero *¡¿qué es un script?!* Dicho en términos simples, el script es la *"hoja"* sobre la cual escribiremos y guardaremos cada uno de los códigos que trabajemos cuando estemos trabajando con datos cuantitativos. Si bien podemos ejecutar los códigos directamente desde la **consola**, estos se eliminarán una vez que cerremos la sesión en RStudio:
 
-<img src="/img/example/consola.png" width="60%" />
+Como primer ejemplo veremos formas de crear objetos, asignandole un número a un vector
 
-Así, cuando escribamos en nuestro **script**, podremos archivar los códigos que vayamos ejecutando, para poder reproducirlos posteriormente, compartirlos con otras personas, entre otros. Ahora, lo que nos convoca: **¿cómo puedo abrir un nuevo script?**
 
-Hacerlo es bastante sencillo. En la sección *superior izquierda* de RStudio, debe hacerse click en la hoja con un signo + verde y, luego, seleccionar la opción **R Script** en el menú desplegado: 
+```r
+x<-5
+```
 
-<img src="/img/example/open-script.png" width="60%" />
+Cómo el objeto queda en el enviroment, después podemos imprimir o llamar al objeto
 
-Otra manera de abrir un nuevo script es hacer click en la opción **File** de la *barra superior*
 
-<img src="/img/example/file.png" width="60%" />
+```r
+x
+```
 
-para, posteriormente seleccionar **New File > R Script** en los menús desplegados:
+```
+## [1] 5
+```
 
-<img src="/img/example/new-script.png" width="60%" />
+Podemos crear los objetos que creamos necesarios, esta vez, crearemos un segundo objeto llamado y
 
-Por último, podemos mantener presionadas las teclas **Ctrl + Shift + N** en Windows, o **⌘ + Shift + N**
-en *Mac*.
- 
-Ya hemos abierto un nuevo script (**¡Genial!**), que se debe ver de la siguiente manera:
 
-<img src="/img/example/script.png" width="60%" />
- 
-Podemos escribir en él los códigos, que se ejecutarán en la **consola** una vez mantengamos presionadas las teclas **Control + Enter** al inicio de la línea
+```r
+y<-10
+```
 
-<img src="/img/example/script-console.png" width="60%" />
+Ahora podemos realizar operaciones con nuestros objetos
 
-Ahora, por supuesto, debemos guardar nuestro script una vez terminemos de trabajar en él, a modo de no perder el trabajo avanzado. Para ello, podemos hacer click en el **disquete** situado en la *barra que se encuentra sobre el código*
 
-<img src="/img/example/save.jpg" width="60%" />
+```r
+x+y
+```
 
-Para luego, elegir el directorio donde deseamos almacenar nuestro script, y asignarle un nombre determinado (en este caso **script1**) que, ojalá, tenga que ver con los procedimientos ejecutados en este (por ejemplo, *procesamiento* o *análisis*). La extensión de los archivos que almacenan scripts es **.R** (*¡no lo olvides!*)
+```
+## [1] 15
+```
 
-<img src="/img/example/save-script.png" width="60%" />
+```r
+x-y
+```
 
-<img src="/img/example/name-script.png" width="60%" />
+```
+## [1] -5
+```
 
-Una vez almacenado en una carpeta, cada vez que clickeemos en los casetes o mantengamos presionadas las teclas **Control + S**, el archivo se actualizará a la última versión que hayamos guardado. 
+```r
+x*y
+```
 
-## 2. Crear un nuevo proyecto de R (.Rproj)
+```
+## [1] 50
+```
 
-¡Todavía nos falta algo para iniciarnos en el flujo de trabajo del curso! debemos crear un nuevo **Proyecto de R o R Project (*.Rproj*)**. ¿Qué es esto, se preguntarán ustedes? en pocas palabras, será la **semilla de nuestra carpeta de trabajo**, es decir, constituye el centro a partir del cual estaremos trabajando el resto de archivos incluidos en nuestro trabajo con los datos, como los *scripts*, los *datos* con los que trabajamos, los *gráficos* que generaremos durante el análisis, y todo aquello vinculado a los procesos que ejecutemos en un trabajo en específico. A lo largo del curso aprenderemos a trabajar adecuadamente con los .Rproj, manteniendo un flujo de trabajo que *facilita la reproductibilidad* de los procesos con los que aprenderemos los contenidos, así como de las tareas que ustedes rendirán durante el semestre. Sin embargo, ahora nos limitaremos a aprender a crear un nuevo proyecto.
+```r
+x/y
+```
 
-¿Cómo lo hacemos? Es bastante sencillo, y se asemeja a la creación de scripts. No obstante, esta vez nos dirigiremos a la sección *superior derecha de RStudio*, donde se encuentra una *R inscrita a un cubo*
+```
+## [1] 0.5
+```
 
-<img src="/img/example/rproj.png" width="60%" />
+También podemos guardar los resultados como objetos
 
-Haremos click en ella, y se desplegará un panel con opciones. Clickearemos en **New Project...**
 
-<img src="/img/example/new-proj.png" width="60%" />
+```r
+z<-x^2 
+z
+```
 
-Emergerá una ventana que nos preguntará en qué carpeta queremos alojar nuestro nuevo proyecto. Podemos elegir crear una nueva carpeta haciendo click en **New Directory**, o elegir una carpeta ya existente en nuestro computador, clickeando en **Existing Directory**
+```
+## [1] 25
+```
 
-<img src="/img/example/new-proj1.png" width="60%" />
+También podemos realizar operaciones lógicas. Para establecer una igualdad usamos doble signo ==
 
-Si optamos por lo primero, se nos preguntará qué tipo de proyecto deseamos crear. En este caso, elegiremos **New Project**
 
-<img src="/img/example/new-proj2.png" width="60%" />
+```r
+x>y 
+```
 
-Aparecerá una ventana que nos pregunta el nombre que queremos asignarle a la nueva carpeta que crearemos, y en qué carpeta se alojará esta. Si hacemos click en *Browse*, podemos buscar un directorio específico en el cual queramos alojar la nueva carpeta
+```
+## [1] FALSE
+```
 
-<img src="/img/example/new-proj3.png" width="60%" />
+```r
+15==x+y 
+```
 
-En caso de elegir lo segundo, se nos solicitará directamente en qué carpeta (ya existente) queremos alojar nuestro proyecto. Una vez más, podemos utilizar *Browse* para navegar entre las carpetas de nuestro computador, hasta hallar aquella en que deseamos alojar este nuevo archivo
+```
+## [1] TRUE
+```
 
-<img src="/img/example/new-proj4.png" width="60%" />
+```r
+16>x+y
+```
 
-¡Listo! ahora sólo debemos ir a nuestra carpeta y buscar el proyecto que hemos creado. Es un archivo de extensión .Rproj, cuyo ícono es una R inscrita en un cubo. 
+```
+## [1] TRUE
+```
 
-<img src="/img/example/new-proj5.png" width="60%" />
+Creación de una variable. "Edad". mediante la función concatenar "c()", podemos crear un objeto que agrupe un conjunto de datos. Para el lenguaje del software esto es un vector, para nosotros una variable, en este caso numérica (numeric): intervalar, continua, cuantitativa.
 
-Es fundamental que, de aquí en adelante, siempre que vayamos a trabajar en alguna tarea con R, **creemos el nuevo proyecto y lo abramos para empezar a trabajar**. Ello setearé nuestro directorio de trabajo directamente en la carpeta donde se encuentra el archivo .Rproj, lo cual nos permitirá trabajar colaborativamente con mayor facilidad (¡algo **fundamental** en el curso!). Además, cada vez que vayamos a retomar nuestro trabajo en algún proyecto, debemos **siempre abrir el proyecto antes que cualquier cosa**, para lo cual debemos hacer doble click sobre su ícono. 
 
-## 3. GitHub
+```r
+Edad<- c(18,25,33,38,67,25,35,57,99)
+summary(Edad)
+```
 
-Es un sistema de control de versiones en línea que rastrea los cambios de códigos, facilita la colaboración y el acceso abierto. En este curso será un programa esencial para el desarrollo tanto de clases como prácticos, por lo que vamos a aprender a utilizarlo repasando aspectos básicos. Esto además será profundizado y detallado en clases.
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   18.00   25.00   35.00   44.11   57.00   99.00
+```
 
+```r
+table(Edad)
+```
 
-### Ventajas:
+```
+## Edad
+## 18 25 33 35 38 57 67 99 
+##  1  2  1  1  1  1  1  1
+```
 
-Las principales ventajas son:
+```r
+class(Edad)
+```
 
-- Facilita el flujo del trabajo y la colaboración entre usuarios 
+```
+## [1] "numeric"
+```
 
-- Es de acceso abierto 
+También podemos realiar operaciones sobre los vectores
 
-- Permite hacer seguimiento a los errores
 
-- Tiene variedades de funciones y plataformas
+```r
+Edad/2
+```
 
+```
+## [1]  9.0 12.5 16.5 19.0 33.5 12.5 17.5 28.5 49.5
+```
 
-No obstante, la plataforma central en el curso será **GitHub Classroom**
+```r
+Edad-1
+```
 
-## 4. Github Classroom
+```
+## [1] 17 24 32 37 66 24 34 56 98
+```
 
-Es una plataforma de Github que facilita la interacción y aprendizaje entre estudiantes y profesores. Utilizaremos esta plataforma a lo largo del curso, principalmente porque permite que las y los estudiantes trabajen individual y colectivamente usando los repositorios de Github. En esta plataforma entregarán sus tareas, recibirán comentarios y retroalimentaciones pudiendo trabajar colaborativamente.
+```r
+Edad2<-Edad-1 #y guardar los resultados
 
-- Pasos para ingresar a Github classroom
+Edad/c(1,2)
+```
 
-1. Crear cuenta: 
+```
+## Warning in Edad/c(1, 2): longitud de objeto mayor no es múltiplo de la longitud
+## de uno menor
+```
 
-2. Dirigirse al [Link](https://n9.cl/954ne ) 
+```
+## [1] 18.0 12.5 33.0 19.0 67.0 12.5 35.0 28.5 99.0
+```
 
-<img src="/img/example/create.png" width="60%" />
+Creación de una variable. "Sexo". Se sigue la misma lógica. Variable cualitativa y nominal, dicotómica. Tipo "Character" Categorías: H=Hombre; M=Mujer.
 
-3. Clickear en “Crea una cuenta”
 
-4. Introduce tu correo electrónico 
+```r
+Sexo<-c("H","H","H","M","H","M","M","M")
 
-5. Crea una contraseña
+summary(Sexo)
+```
 
-6. Introduce el nombre de usuario (similar a su nombre)
+```
+##    Length     Class      Mode 
+##         8 character character
+```
 
-7. Clickear en Crear una cuenta
+```r
+table(Sexo)
+```
 
-<img src="/img/example/capt.png" width="60%" />
+```
+## Sexo
+## H M 
+## 4 4
+```
 
-8. Ve al correo electrónico que pusiste anteriormente 
+```r
+class (Sexo)
+```
 
-9. Copia el código e introdúcelo en la página
+```
+## [1] "character"
+```
 
+También puede expresarse como factor siendo variable dummy (para 1 y 0). 
+Variable cualitativa, nominal.
 
-{{< div "note" >}}
-Recuerda que el correo que uses debe ser el mismo correo que usaste en pasos anteriores. [Ver tutorial 1](https://youtu.be/9YD-F6-ktes).
-{{< /div >}}
 
+```r
+S<-c(1,1,1,0,1,0,0,0,9,9)
 
-## 3. Github Desktop
+#SEXO<-factor(S, levels = c(0,1,9), labels = c("Mujer","Hombre")) #importancia de los errores
+SEXO<-factor(S, levels = c(0,1,9), labels = c("Mujer","Hombre","NC"))
 
-Esta es una aplicación que permite trabajar los repositorios de Github en los computadores, de forma local e intuitiva, facilitando la coordinación entre las modificaciones realizadas a nivel local y en la plataforma web. Para utilizarlo, debemos
+summary(SEXO)
+```
 
-a. Instalar Github Desktop
+```
+##  Mujer Hombre     NC 
+##      4      4      2
+```
 
-b. Dirigirse a [Link](https://desktop.github.com/) 
+```r
+table(SEXO)
+```
 
-<img src="/img/example/deskdown.png" width="60%" />
+```
+## SEXO
+##  Mujer Hombre     NC 
+##      4      4      2
+```
 
-c. Crear una carpeta para los contenidos del curso
+Variable Nivel socioecon?mico. Ordinal, cualitativa.
+NSE: 1=E, 2=D, 3=C3, 4=C2, 5=C1, 6=AB
 
-d. Vincular la dirección de la carpeta
 
-{{< div "note" >}} 
+```r
+P1<-c(1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,5,5,5,6,99,99)
 
-#### Para Windows
+NSE<-factor(P1,levels=c(1,2,3,4,5,6),labels=c("E","D","C3","C2","C1","AB"))
+table(NSE)
+```
 
-   - Clickear en Download for Windows (64bit)
+```
+## NSE
+##  E  D C3 C2 C1 AB 
+## 12  7  6  4  3  1
+```
 
-   - Ejecutar el archivo descargado
+```r
+summary(NSE) #NA son lo perdidos
+```
 
-   - Introduce tu usuario y contraseña
+```
+##    E    D   C3   C2   C1   AB NA's 
+##   12    7    6    4    3    1    2
+```
 
-#### Para Mac
 
-   - Clickear en Download for macOS
+Podemos seleccionar elementos específicos de los vecotres
 
-   - Ejecutar el archivo descargado
 
-   - Introduce tu usuario y contraseña
-   
-{{< /div >}}
+```r
+NSE[4] #pedimos el cuarto elemento
+```
 
+```
+## [1] E
+## Levels: E D C3 C2 C1 AB
+```
 
-## 4. Botones principales en GitHub Desktop:
+```r
+NSE[1:9] #los primeros 9
+```
 
-- **Clone repository**: Copia un repositorio a tu computador
+```
+## [1] E E E E E E E E E
+## Levels: E D C3 C2 C1 AB
+```
 
-- **Create new repository**: crea un nuevo repositorio
+```r
+NSE[c(3,4,5,8,24,31)]
+```
 
-- **Add existing repository**: incorpora un repositorio existente
+```
+## [1] E  E  E  E  C3 C1
+## Levels: E D C3 C2 C1 AB
+```
 
-<img src="/img/example/con1desk.png" width="60%" />
+```r
+NSE[37]
+```
 
-- **Open the repository in Rstudio**: Abre todo el proyecto en RStudio
+```
+## [1] <NA>
+## Levels: E D C3 C2 C1 AB
+```
 
-- **View the files of your repository in explorer**: Muestra los archivos en la carpeta que se encuentra
+```r
+NSE[c(T,F)]
+```
 
-- **Open the repository on Github**: abre el repositorio en la página
+```
+##  [1] E    E    E    E    E    E    D    D    D    D    C3   C3   C3   C2   C2  
+## [16] C1   AB   <NA>
+## Levels: E D C3 C2 C1 AB
+```
 
-- **Commit to master**: forma de guardar los cambios
+```r
+NSE[NSE=="AB"]
+```
 
-- **Push origin**: manda los cambios al repositorio en línea
+```
+## [1] AB   <NA> <NA>
+## Levels: E D C3 C2 C1 AB
+```
 
-<img src="/img/example/con2desk.jpg" width="60%" />
+```r
+length(NSE)
+```
 
+```
+## [1] 35
+```
 
-## 5. Conceptos claves de Github
+```r
+class(NSE)
+```
 
-- **Repositorios**: Es donde se alberga el trabajo; una carpeta que contiene todos los archivos y el historial de cambios realizados. Estos se almacenan en la nube.
+```
+## [1] "factor"
+```
 
-- **Cloning**: Los repositorios pueden clonarse creando copias locales que extraen toda la información y antiguas versiones del repositorio. Posteriormente podemos modificar los archivos del repositorio clonado, para sincronizar la copia local con la copia en Github. 
+Crear listas
 
-- **Commit**: Es la forma de guardar el estado de tu proyecto, como una captura en la que se deja un mensaje informativo.
 
-- **Push**: Esta es la forma en la que se puede incorporar (_subir_) los cambios locales al repositorio de Github.
+```r
+x <- list(u=c(2,3,4), v="abc")
+x #el elemento u de la lista es un vector con 3 números, y el elemento v es abc
+```
 
-- **README**: Se utiliza a modo de presentación o introducción de los repositorios.
+```
+## $u
+## [1] 2 3 4
+## 
+## $v
+## [1] "abc"
+```
 
-- **Pull**: Esta es la forma en la que se puede sincronizar (_bajar_) los cambios del repositorio de Github al repositorio local.
+ver el elemento u, de la lista x
+Pedir elementos
 
-#### Flujo de trabajo colectivo y de acceso abierto
 
-- **Forks**: Es otra forma de copiar un repositorio, permitiendo hacer cambios sin afectar al proyecto original.
+```r
+x$u
+```
 
-- **Pull requests**: Es una forma de solicitar que sean incorporados los cambios que has hecho desde un repositorio local, al repositorio original.
+```
+## [1] 2 3 4
+```
 
-<img src="/img/example/concepclav.png" width="60%" />
+```r
+x[[2]]
+```
 
-## 6. GitHub Class Room del curso (learn-R-UAH)
+```
+## [1] "abc"
+```
 
-**Pasos para las dinámicas del curso**
+```r
+x[[1]][2]
+```
 
-### 6.1 Recibir una tarea 
+```
+## [1] 3
+```
 
-### 6.2 Ingresa el [link](https://classroom.github.com/a/taONcqa7)
+```r
+str(x) #este comando muestra la estructura de un objeto de manera resumida
+```
 
-  a. El link contiene la tarea, ustedes deben aceptar la tarea la cual creará un _**repositorio**_ que contendrá la *información* y las *instrucciones* de la tarea.
+```
+## List of 2
+##  $ u: num [1:3] 2 3 4
+##  $ v: chr "abc"
+```
 
-  
-<img src="/img/example/ingrestarea.png" width="60%" />
-  
-  b. Para eso deben ir a _**GitHub Desktop**_, _**clonar** el respositorio desde internet_.
-  
-<img src="/img/example/paso2tarea.png" width="60%" />
-  
-  c. Luego deben escoger el repositorio de la tarea, escoger la carpeta en la que se encontrará y clonarlo
-  
-<img src="/img/example/paso3tarea.png" width="60%" />
-  
-  d. Después deben abrir el repositorio creado a través de _**RStudio**_, ahí verán el mismo contenido pero en un archivo _**.md**_ 
 
-<img src="/img/example/paso4tarea.png" width="60%" />
-  
-### 6.3 Resolver una tarea
+Crear bases de datos
 
-  a. Ahora resolveremos la **Tarea 0** en conjunto, una vez abierto el [repositorio         clonado](https://classroom.github.com/a/taONcqa7). Recuerden que es en este repositorio donde deben completar y subir la tarea
 
-  b. La tarea se encuentra en un archivo llamado `*README*` con información de los conceptos básicos y el flujo de GitHub, deben leerlo detalladamente.
- 
-  c. Una vez leido deberán ir al final del archivo en **Tarea 0** y responder las preguntas correspondientes
-  
-<img src="/img/example/paso5tarea.png" width="60%" />
-  
-### 6.4 Tarea 0
+```r
+base<-data.frame(Edad,
+           SEXO[1:9],
+           NSE[1:9])
 
-¡Puedes ver las instrucciones de la [tarea en el siguiente link](/assignment/00-tarea/) o en [GitHub Class Room](https://classroom.github.com/a/taONcqa7)
+base
+```
 
-### 6.5 Subir una tarea
+```
+##   Edad SEXO.1.9. NSE.1.9.
+## 1   18    Hombre        E
+## 2   25    Hombre        E
+## 3   33    Hombre        E
+## 4   38     Mujer        E
+## 5   67    Hombre        E
+## 6   25     Mujer        E
+## 7   35     Mujer        E
+## 8   57     Mujer        E
+## 9   99        NC        E
+```
 
-  a. Una vez listo, deberán _**subir**_ la tarea al repositorio remoto a través de GitHub Desktop
-  
-<img src="/img/example/paso6tarea.png" width="60%" />
+Ver nombre de las columnas (variables)
 
-### 6.6 Recibir comentarios 
 
-  a. Les llegará un correo con los comentarios y retroalimentación de su tarea
-  
+```r
+colnames(base)
+```
 
-## 7. Video tutorial en Youtube
+```
+## [1] "Edad"      "SEXO.1.9." "NSE.1.9."
+```
 
-Recuerden que el [video de asociado a este práctico](https://www.youtube.com/watch?v=Zj8yL-nx9vM) y muchos más podrán encontrarlos en el [canal de youtube del curso](https://www.youtube.com/channel/UCqBUeqBttVjS6h8fawK8sWg)
+Cambiar nombre de las columnas (variables)
 
-<div class="embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=Zj8yL-nx9vM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+```r
+colnames(base)<-c("edad","sexo","nse")
+```
+
+Podemos seleccionar variables con el operador $
+
+
+```r
+base$edad #base$variable
+```
+
+```
+## [1] 18 25 33 38 67 25 35 57 99
+```
+
+Tambien podemos usar corchetes base[filas,columnas]
+
+
+```r
+base[5,2]
+```
+
+```
+## [1] Hombre
+## Levels: Mujer Hombre NC
+```
+
+```r
+base[1:5,2]
+```
+
+```
+## [1] Hombre Hombre Hombre Mujer  Hombre
+## Levels: Mujer Hombre NC
+```
+
+```r
+base[1:5,c(1,3)]
+```
+
+```
+##   edad nse
+## 1   18   E
+## 2   25   E
+## 3   33   E
+## 4   38   E
+## 5   67   E
+```
+
+Sobre una columna podemos seleccionar elementos como un un vector
+
+
+```r
+base$edad[1]
+```
+
+```
+## [1] 18
+```
+
+```r
+base$edad[base$sexo=="Hombre"] #podemos usar condiciones lógicas
+```
+
+```
+## [1] 18 25 33 67
+```
+
+Podemos aplicar funciones sobre la base y sobre las variables
+
+
+```r
+head(base)  #entrega los primeros elemntos
+```
+
+```
+##   edad   sexo nse
+## 1   18 Hombre   E
+## 2   25 Hombre   E
+## 3   33 Hombre   E
+## 4   38  Mujer   E
+## 5   67 Hombre   E
+## 6   25  Mujer   E
+```
+
+```r
+View(base) #Permite ver la base
+str(base)
+```
+
+```
+## 'data.frame':	9 obs. of  3 variables:
+##  $ edad: num  18 25 33 38 67 25 35 57 99
+##  $ sexo: Factor w/ 3 levels "Mujer","Hombre",..: 2 2 2 1 2 1 1 1 3
+##  $ nse : Factor w/ 6 levels "E","D","C3","C2",..: 1 1 1 1 1 1 1 1 1
+```
+
+```r
+table(base$sexo)
+```
+
+```
+## 
+##  Mujer Hombre     NC 
+##      4      4      1
+```
+
+```r
+help(table)
+```
+
+```
+## starting httpd help server ... done
+```
+
+```r
+?table
+
+mean(base$edad)
+```
+
+```
+## [1] 44.11111
+```
+
+Podemos guardar la base de datos
+
+
+```r
+save(base, file = "base.RData") #Se indica primero el objeto a guardar 
+                            #y luego el nombre del archivo, entre comillas.
+```
+
+limpiar el ambiente de trabajo
+
+
+```r
+remove(Edad) #borrar un objeto particular
+remove(list = ls()) #Borrar todo
+```
+
+
+
 

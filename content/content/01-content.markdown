@@ -1,7 +1,9 @@
 ---
-title: "Herramientas para el uso de R"
-linktitle: "1: Herramientas para el uso de R"
-date: "Sesion 1"
+title: "Introducción al curso Análisis avanzado de datos II"
+linktitle: "1: Intrpducción al curso Análisis avanzado de datos II"
+date: "2022-03-14"
+start_date: "2022-03-14"
+end_date: "2022-03-18"
 menu:
   content:
     parent: Contenido
@@ -98,10 +100,6 @@ slides: "01-slides"
 **¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-# Video de la clase
-
--   [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/PdLPOrIHkpBVdTkgvXMiOg3qFFleQyGS69Oyw7NscfOm7sp22MOPAuEOzjxr_K95.1FlRHivevPxpmUBc?startTime=1628539312000)
-
 # Materiales de la clase
 
 ## Rprojects
@@ -110,7 +108,7 @@ slides: "01-slides"
 
 -   [<i class="fas fa-laptop-code"></i> Práctico](https://learn-r-uah.netlify.app/example/01-practico/)
 
-# Recomendaciones
+# Recomendaciones (actualizar bibliografía)
 
 -   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
 
@@ -118,5 +116,3 @@ slides: "01-slides"
 
     -   <small>Ver Tutorial N°1 Instalación de softwares</small>
     -   <small>Ver Tutorial N°2 GitHub y GitHub Class Room</small>
-
--   <i class="fas fa-external-link-square-alt"></i> [Contestar reporte de registro](https://learn-r.formr.org)
