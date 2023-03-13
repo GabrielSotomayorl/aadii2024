@@ -116,13 +116,12 @@ El curso profundiza las principales técnicas multivariantes, que permiten anali
 --
 
 .box-4.small.sp-after-half[
-Se enfatizan la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.]
+Se enfatiza la comprensión de procedimientos e interpretación de resultados, así como el uso de herramientas computacionales, principalmente en R y RStudio. Se trabajará en la aplicación de los métodos sin necesidad de estudiar en profundidad los fundamentos matemáticos de todos ellos.]
 
 --
-
-.box-9.small.sp-after-half[
-Al final del curso el alumno deberá ser capaz de realizar análisis descriptivo de los datos tanto primarios como secundarios y poder seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables.]
-
+.box-5.small.sp-after-half[
+Al final del curso podrán realizar análisis descriptivo de los datos tanto primarios como secundarios y seleccionar la técnica estadística adecuada a utilizar cuando se tienen datos multivariables.
+]
 
 ---
 name: outline
@@ -130,8 +129,9 @@ class: title title-inv-8
 
 # Resultados de aprendizaje
 
-.box-8.small.sp-after-half[Resultado general:
+.box-4.small.sp-after-half[Resultado general:]
 
+.box-5.small.sp-after-half[
 - Entregar herramientas al alumno para que pueda abordar el análisis de datos desde la estadística multivariante descriptiva e inferencial, elaborando y probando hipótesis y desarrollando modelos explicativos de determinados fenómenos de estudio. 
 ]
 
@@ -139,9 +139,13 @@ class: title title-inv-8
 name: outline
 class: title title-inv-8
 
-# Resultados específicos
+# Resultados de aprendizaje
 
-.box-8.small.sp-after-half[Manejar bases de datos complejas. 
+.box-5.small.sp-after-half[Resultados espedíficos:]
+
+.box-5.small.sp-after-half[
+
+Manejar bases de datos complejas. 
 
 1. Plantear y estructurar adecuadamente un problema de análisis multivariante. 
 2. Identificar el tipo de técnica adecuada, o combinación de ellas, a aplicar en cada situación concreta. 3. Comprender las herramientas utilizada en cada una de las técnicas estudiadas. 
@@ -170,10 +174,16 @@ Queda pendiente insertar imagen
 name: outline
 class: center middle section-title section-title-8 animated fadeIn
 
+# Evaluaciones
+
+---
+
+name: outline
+class: title title-inv-8
 
 # Evaluaciones
 
-Queda pendiente insertar tabla con kable
+Queda pendiente insertar imagen
 
 ---
 name: outline
@@ -209,7 +219,7 @@ class: title title-inv-8
 
 # Delegado de curso
 
-.small[
+.box-8.small.sp-after-half[
 Las comunicaciones del curso con el equipo docente para temas colectivos deberán gestionarse de manera centralizada mediante un delegado, especialmente considerando que hay alumnos de distintas generaciones. 
 Esto es particularmente relevante para solicitudes respecto a evaluaciones. 
 ]
@@ -219,8 +229,9 @@ class: title title-inv-8
 
 # Objetivos de la sesión
 
-.small[
+.box-8.medium.sp-after-half[
 Reflexionar sobre el uso de software estadístico en ciencias sociales.
+
 Introducir el uso de R y Rstudio para ciencias sociales. 
 
 ]
@@ -232,17 +243,19 @@ class: center middle section-title section-title-1 animated fadeIn
 
 # ¿Donde se sitúa la estadística y el uso de software en el proceso de investigación?
 
+---
+name: outline
+class: title title-inv-1
 
 Queda pendiente insertar imagen
 
 ---
-layout: false
-name: ds-ps
-class: center middle section-title section-title-1 animated fadeIn
+name: outline
+class: title title-inv-1
 
 # Uso de Software en Ciencias Sociales
 
-.box-8.small.sp-after-half[Progresivamente se ha generalizado el uso de software estadístico en ciencias sociales, abriendo grandes posibilidades de realizar análisis más complejos y facilitando su uso.
+.box-1.small.sp-after-half[Progresivamente se ha generalizado el uso de software estadístico en ciencias sociales, abriendo grandes posibilidades de realizar análisis más complejos y facilitando su uso.
 Riesgo de falta de formación estadística y reflexividad (calidad del análisis)
 
 Dos niveles de manejo del software:
@@ -261,15 +274,24 @@ Pendiente img de insertar x2
 ---
 class: title title-1
 
-# 1.1 ¿Qué es R?
+# ¿Qué es R?
 
 .box-1[R enviroment características:]
 
 --
 
-.box-3[ R es un software y un lenguaje de programación, ambos de carácter libre, enfocado principalmente en el análisis y visualización de datos. Es desarrollado por The R Foundation for Statistical Computing.
+.box-inv-1[ R es un software y un lenguaje de programación, ambos de carácter libre, enfocado principalmente en el análisis y visualización de datos. Es desarrollado por The R Foundation for Statistical Computing.]
+
+.box-1[
 Funciona con una lógica de objetos, sobre los que podemos trabajar con operadores y funciones.
 El hecho de que sea un lenguaje de programación nos permite programar funciones, por lo que es posible pasar de ser usuarios a programadores.
+]
+
+---
+class: title title-1
+
+# ¿Qué es R?
+.box-1[
 Instalamos una versión básica y podemos agregar paquetes con nuevas funciones.
 Su interfaz es poco amigable, la solución: R Studio.
 ]
@@ -282,11 +304,23 @@ class: center middle section-title section-title-1 animated fadeIn
 
 # ¿Porqué aprender y usar R y RSTUDIO?
 
+
+---
+
+class: title title-1
+# ¿Porqué aprender y usar R y RSTUDIO?
+
 .box-1-inv.large[imágenes pendientes]
 
 ---
 name: ds-ps
 class: center middle section-title section-title-1 animated fadeIn
+
+# ¿Por qué usar R?
+
+---
+
+class: title title-1
 
 # ¿Por qué usar R?
 
@@ -301,9 +335,9 @@ class: title title-1
 
 # ¿Porqué trabajar con sintaxis?
 
-1. Replicabilidad:  Permite a otros entender como construimos nuestros resultados y replicarlos, cada vez más importante en la ciencia.
-2. Eficiencia:  En condiciones “reales” de trabajo resulta más eficiente que trabajar con botones (aunque ahora pueda parecer contraintuitivo)
-3. Control: Permite tener claridad de todas las etapas de nuestros análisis, cuestión que en otros software son realizadas por defecto.
+1. **Replicabilidad**:  Permite a otros entender como construimos nuestros resultados y replicarlos, cada vez más importante en la ciencia.
+2. **Eficiencia**:  En condiciones “reales” de trabajo resulta más eficiente que trabajar con botones (aunque ahora pueda parecer contraintuitivo)
+3. **Control**: Permite tener claridad de todas las etapas de nuestros análisis, cuestión que en otros software son realizadas por defecto.
 (Elousa, 2009 en Boccardo y Ruiz, 2018: 8-9)
 
 ---
@@ -312,15 +346,42 @@ class: title title-1
 # RStudio
 
 .pull-left.small[
-Es una interfaz gráfica para R que nos permite tener mejor visualización y control de los procesos que realizamos.
+Es una interfaz gráfica para R que nos permite tener mejor visualización y control de los procesos que realizamos.]
+
+---
+class: title title-inv-1
+
+# RStudio
+.pull-left.small[
 Tiene 4 partes principales:
-Editor de Sintaxis: formato de block de notas donde podemos construir nuestra sintaxis.
-Ambiente de trabajo (Environment):  muestra los objetos que hemos creado (memoria temporal – RAM)
-Consola de R: Aquí es donde podemos ver los resultados de nuestros análisis, las operaciones ejecutadas y mensajes de error.
+**Editor de Sintaxis:** formato de block de notas donde podemos construir nuestra sintaxis.]
+
+---
+class: title title-inv-1
+
+# RStudio
+
+.pull-left.small[
+**Ambiente de trabajo (Environment):**  muestra los objetos que hemos creado (memoria temporal – RAM)]
+
+---
+class: title title-inv-1
+
+# RStudio
+
+.pull-left.small[
+**Consola de R:** Aquí es donde podemos ver los resultados de nuestros análisis, las operaciones ejecutadas y mensajes de error.]
+
+---
+class: title title-inv-1
+
+# RStudio
+
+.pull-left.small[
 Panel de visualización: Aquí aparecen los gráficos que ejecutemos, además de tener la pestaña help y nuestro directorio de trabajo.
 ]
 
-img pendiente
+img pendiente para todas
 ---
 class: title title-1
 
@@ -328,15 +389,13 @@ class: title title-1
 
 .pull-middle.small[
 Instalar R
-Podemos encontrar R para Windows, Linux y Mac en https://cloud.r-project.org/ 
-Debemos descargar el paquete base, luego ejecutar el instalador, e instalarlo según las opciones predeterminadas
+- Podemos encontrar R para Windows, Linux y Mac en https://cloud.r-project.org/ 
+- Debemos descargar el paquete base, luego ejecutar el instalador, e instalarlo según las opciones predeterminadas
+- Podemos encontrar R Studio en su sitio web, y bajar la versión gratis, que contiene todas las funciones https://www.rstudio.com/products/rstudio/download/ 
+- Debemos fijarnos en elegir el sistema operativo correcto.
+- Igualmente lo ejecutamos e instalamos según las opciones predeterminadas
+
 ]
-
-Podemos encontrar R Studio en su sitio web, y bajar la versión gratis, que contiene todas las funciones https://www.rstudio.com/products/rstudio/download/ 
-Debemos fijarnos en elegir el sistema operativo correcto.
-Igualmente lo ejecutamos e instalamos según las opciones predeterminadas
-
-
 ---
 name: ds-ps
 class: center middle section-title section-title-1 animated fadeIn
