@@ -8,7 +8,6 @@ type: docs
 weight: 1
 ---
 
-bla
 
 - [(**Slides**)](https://bookdown.org/yihui/rmarkdown/xaringan.html) que es la presentación mostrada en clases. Encontrarás estos botones de modo de facilitar la descarga de la presentación y explorar las presentaciones
 

@@ -39,7 +39,7 @@ xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "share_again", "
 ```
 
 layout: false
-class: center middle main-title section-title-1 top-logo
+class: center middle main-title section-title-inv-2 top-logo
 
 .small[
 # Introducción al curso 
@@ -63,19 +63,18 @@ class: center middle main-title section-title-1 top-logo
 ---
 
 name: outline
-class: title title-inv-1
+class: title title-inv-2
 
 # Contenidos
 
---
 
-.box-1.medium.sp-after-half[Presentación, resultados de aprendizaje y específicos]
+.box-inv-2.medium.sp-after-half[Presentación, resultados de aprendizaje y específicos]
 
---
+
 
 .box-3.medium.sp-after-half[Contenidos, bibliografía y evaluaciones]
 
---
+
 
 .box-inv-1.medium.sp-after-half[Ayudantías]
 
@@ -263,7 +262,9 @@ class: title title-inv-8
 
 # Bibliografía
 
-Queda pendiente insertar imagen
+![](https://github.com/Clases-GabrielSotomayor/pruebapagina/raw/master/static/slides/img/01/Imagen1.png)
+
+
 
 ---
 name: outline
@@ -486,7 +487,7 @@ class: title title-1
 **Instalar R**
 - Podemos encontrar R para Windows, Linux y Mac en https://cloud.r-project.org/ 
 - Debemos descargar el paquete base, luego ejecutar el instalador, e instalarlo según las opciones predeterminadas
-- Podemos encontrar R Studio en su sitio web, y bajar la versión gratis, que contiene todas las funciones https://www.rstudio.com/products/rstudio/download/ 
+- Podemos encontrar R Studio en su sitio web, y bajar la versión gratis, que contiene todas las funciones [link](https://www.rstudio.com/products/rstudio/download/) 
 - Debemos fijarnos en elegir el sistema operativo correcto.
 - Igualmente lo ejecutamos e instalamos según las opciones predeterminadas
 
@@ -581,10 +582,13 @@ class: title title-3
 - [Data Camp](https://www.datacamp.com/courses/tech:r)
 
 ---
+
 layout: true
 class: title title-3
 
 # Evaluaciones
+
+
 
 | Evaluación    |  Fecha |  Ponderación Nota Final   |
 | ------------- | -----:| -------------------:|
@@ -594,6 +598,7 @@ class: title title-3
 
 
 ---
+
 layout: false
 class: center middle main-title section-title-1 top-logo
 

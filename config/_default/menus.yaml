@@ -17,23 +17,16 @@ main:
   - name: Prácticos
     url: /example/
     weight: 4
-  - name: Tareas <i class="fab fa-github"></i>
+  - name: Tareas 
     identifier: assignment
     url: /assignment/
-    weight: 4
-  - name: Tareas
-    parent: assignment
-    url: /assignment/
-    weight: 4
+    weight: 5
   - name: Recursos
     url: /resource/
     weight: 6
-  - name: '<i class="fab fa-slack"></i>'
-    url: "https://join.slack.com/t/learn-r-uah/shared_invite/zt-sh9uysuu-IzEG8~u5k2YYGWgpAFTRFA"
-    weight: 7
   - name: '<i class="fab fa-r-project"></i>'
     url: https://rstudio.cloud/
-    weight: 9
+    weight: 7
 
 content:
   - name: Información general

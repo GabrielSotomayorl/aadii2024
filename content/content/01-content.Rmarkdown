@@ -1,6 +1,6 @@
 ---
 title: "Introducción al curso Análisis avanzado de datos II"
-linktitle: "1: Intrpducción al curso Análisis avanzado de datos II"
+linktitle: "1: Introducción al curso Análisis avanzado de datos II"
 date: "2022-03-14"
 start_date: "2022-03-14"
 end_date: "2022-03-18"
@@ -23,7 +23,8 @@ slide_details <- tibble::tribble(
   "Introducción", "1", TRUE,
    "R enviroment", "15", FALSE,
    "R consulta", "27", FALSE,
-  "R comunicación", "37", FALSE, "Detalles del curso", "54", FALSE
+  "R comunicación", "37", FALSE, 
+  "Detalles del curso", "54", FALSE
 )
 ```
 

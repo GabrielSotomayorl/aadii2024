@@ -1,6 +1,6 @@
 ---
 title: "Introducción al curso Análisis avanzado de datos II"
-linktitle: "1: Intrpducción al curso Análisis avanzado de datos II"
+linktitle: "1: Introducción al curso Análisis avanzado de datos II"
 date: "2022-03-14"
 start_date: "2022-03-14"
 end_date: "2022-03-18"
@@ -102,17 +102,8 @@ slides: "01-slides"
 
 # Materiales de la clase
 
-## Rprojects
+-   [<i class="fas fa-laptop-code"></i> Práctico](https://aadii2023.netlify.app/example/01-practico/)
 
-- [<i class="fas fa-file-archive"></i> `01-class.zip`](https://github.com/learn-R/01-class/raw/main/01-class.zip)
+# Recomendaciones
 
-- [<i class="fas fa-laptop-code"></i> Práctico](https://learn-r-uah.netlify.app/example/01-practico/)
-
-# Recomendaciones (actualizar bibliografía)
-
-- <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
-
-- <i class="fab fa-youtube"></i> Tutoriales, [“Learn-R”](https://www.youtube.com/watch?v=UOoMzaWOQJA)
-
-  - <small>Ver Tutorial N°1 Instalación de softwares</small>
-  - <small>Ver Tutorial N°2 GitHub y GitHub Class Room</small>
+-   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
