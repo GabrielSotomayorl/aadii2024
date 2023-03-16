@@ -21,7 +21,30 @@ library(pander)
 
 `r blogdown::shortcode("courseinfo")`
 
-# Presentación
+# I. Identificación
+
+Código: SOC9035
+
+Créditos: 5
+
+Período Académico: 1º semestre 2023
+
+Requisito: Análisis Avanzado de Datos
+
+Horario: Lunes módulos 2 y 3 10.00 a 11.20 y 11.30 a 12.50
+
+Sala: Laboratorio de computación 2° piso FCSH
+
+Docente: Profesor: Gabriel
+[gabriel.sotomayor\@mail.udp.cl](gabriel.sotomayor@mail.udp.cl)
+
+Ayudante: Anais Herrera
+[anais.herrera\@mail.udp.cl](anais.herrera@mail.udp.cl)
+
+Nicolás Hernández
+[nicolas.hernandez_f\@mail.udp.cl](nicolas.hernandez_f@mail.udp.cl)
+
+# II. Presentación
 
 El curso profundiza las principales técnicas multivariantes, que
 permiten analizar en forma conjunta la interacción de múltiples
@@ -39,7 +62,7 @@ descriptivo de los datos tanto primarios como secundarios y poder
 seleccionar la técnica estadística adecuada a utilizar cuando se tienen
 datos multivariables.
 
-# Resultados de Aprendizaje
+# III. Resultados de Aprendizaje
 
 ## Resultado general
 
@@ -62,7 +85,7 @@ determinados fenómenos de estudio.
 6.  Interpretar los resultados del análisis.
 7.  Redactar correctamente un informe con los resultados del análisis.
 
-# Contenidos.
+# IV. Contenidos.
 
 ## 1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN
 
@@ -109,9 +132,9 @@ determinados fenómenos de estudio.
 
 ## 4. Análisis Factorial Confirmatorio
 
--    Análisis factorial confirmatorio y su aplicación en la
-    investigación sociológica. El análisis confirmatorio frente al
-    análisis exploratorio. Supuestos de la técnica.
+-   Análisis factorial confirmatorio y su aplicación en la investigación
+    sociológica. El análisis confirmatorio frente al análisis
+    exploratorio. Supuestos de la técnica.
 
 -   Especificación e identificación del modelo. Estimación de
     parámetros, evaluación del ajuste y reespecificación.
@@ -124,17 +147,17 @@ determinados fenómenos de estudio.
 
 ## 5. Análisis de Sendero
 
--    Análisis de sendero y su aplicación en la investigación
-    sociológica. Supuestos de la técnica.
+-   Análisis de sendero y su aplicación en la investigación sociológica.
+    Supuestos de la técnica.
 
--    Especificación del modelo
+-   Especificación del modelo
 
 -   Evaluación del modelo de medición y de la capacidad confirmatoria
     del modelo.
 
 -   Ejemplo de análisis de sendero.
 
-## 6. Modelos de Ecuaciones estructurales  
+## 6. Modelos de Ecuaciones estructurales
 
 -   Análisis de ecuaciones estructurales y su aplicación en la
     investigación sociológica.
@@ -151,7 +174,7 @@ determinados fenómenos de estudio.
 
 -   Ejemplos sobre modelamiento de ecuaciones estructurales.
 
-# Metodología del curso
+# V. Metodología del curso
 
 Este curso se desarrolla sobre la base de clases expositivas y talleres
 de aplicación con uso intensivo de software computacionales a partir del
@@ -159,144 +182,310 @@ sitio web del curso, lo cual permite trabajar cada uno de los distintos
 tópicos detallados en el contenido.
 
 Se realizarán 2 sesiones semanales, 1 de clases y otra en forma de
-taller. Durante el curso cada alumno
-desarrollará trabajos de aplicación.
+taller. Durante el curso cada alumno desarrollará trabajos de
+aplicación.
 
-## Recursos principales de aprendizaje
+Adicionalmente se realizarán ayudantías cada 2 semanas aproximadamente,
+centradas especialmente en la aplicación en R de lo aprendido en la
+cátedra.
 
-**1. Sitio web**
+# VI. Evaluación
 
-El curso tiene disponible este sitio web, que he programado pues permite
-integrar texto y código de R, junto con hacer interactuar con otras
-plataformas como el *foro Disqus* y *Github*.
+Se utilizarán distintas formas de evaluación: Tareas, pruebas y trabajos
+de investigación
 
-**2. R, RStudio y RStudio Cloud** <i class="fab fa-r-project"></i>
+• Tareas de uso de R
 
-El software que se utilizará principalmente será R y su interfaz
-RStudio. Ahora bien, muchos usuario/as de R presentan problemas de
-instalación dada la capacidad de sus computadores y sistemas operativos.
-Por ello se promoverá el uso del servicio gratuito de
-[RStudio.cloud](https://rstudio.cloud/) , que permite ejecutar la
-interfaz de RStudio en el navegador web y compartir el código de manera
-sincrónica con la docente. Dado el enfoque *rOpensci*, las plantillas
-para ejemplos, ejercicios y mini proyectos podrán ser implementados en
-esta plataforma. Si bien no es ideal pues tiene limitantes de memoria,
-mientras ustedes asimilan el programa será una buena herramienta.
+• 1 prueba solemne (35 %) (Formas funcionales de los Modelos de
+Regresión y AFE).
 
-**3. Slack** <i class="fab fa-slack"></i>
+• Trabajo final (AFC, Senderos o SEM).
 
-[*Slack*](https://slack.com/intl/es-cl/) es una herramienta de uso
-frecuente en equipos de trabajo que utilizan R pues permite integrar
-script (o *código*) de distintos lenguajes en el chat. Se tendrá un
-espacio de trabajo en la *app Slack* que permite que cualquier persona
-del curso pueda hacer preguntas y cualquiera pueda responder. Esta es
-una de las prácticas que se promoverán en el curso pues es probable que
-los estudiantes tengan dudas similares a las de sus compañeros, por lo
-que las respuestas de la docente, ayudante y otros compañeros serán de
-libre disposición de todo el curso. Dentro del *Slack* se tendrán
-canales para hacer preguntas sobre las sesiones, tareas y proyectos, y
-el link que permite unirse a este estará disponible en el sitio del
-curso.
++-------------------------+-------------------------+---------------+
+|                         | **Ponderación**         | **Fecha       |
+|                         |                         | (semana)**    |
++-------------------------+-------------------------+---------------+
+| Tareas uso de R         | 30%                     | 20 de marzo   |
+|                         |                         |               |
+|                         |                         | 10 de abril   |
+|                         |                         |               |
+|                         |                         | 22 de mayo    |
+|                         |                         |               |
+|                         |                         | 15 de junio   |
++-------------------------+-------------------------+---------------+
+| Prueba                  | 35%                     | 24 de abril   |
++-------------------------+-------------------------+---------------+
+| Trabajo final           | 35%                     | 3 de julio    |
++-------------------------+-------------------------+---------------+
 
-<i class="fab fa-slack"></i> [Guía de uso de
-slack](https://slack.com/intl/es-cl/help/articles/360059928654-C%C3%B3mo-usar-Slack--tu-gu%C3%ADa-de-inicio-r%C3%A1pido)
+La nota de eximición es 5,5 siempre y cuando no se tengan notas bajo 4,0
+en la prueba. La nota mínima en el examen para aprobar el curso es un
+3,5.
 
-<i class="fab fa-slack"></i> [Unirse a Slack de
-curso](https://join.slack.com/t/learn-r-uah/shared_invite/zt-15cyy0t68-VjEeEwq_9vji3_dVdwr3Ug)
+Notas:
 
-**4. GitHub** <i class="fab fa-github"></i>
+1.  Si un estudiante falta a una evaluación, puede presentar ante la
+    Secretaría de Estudios un certificado médico dentro de los cinco
+    días hábiles posteriores a dicha evaluación, para tener derecho a
+    rendir una prueba recuperativa. Las evaluaciones no rendidas tendrán
+    nota 1.0. Los estudiantes tendrán derecho a un máximo de una prueba
+    recuperativa, dicha prueba se realizará la última semana de clases e
+    incluirá toda la materia del semestre
 
-Github es una plataforma online que permite depositar archivos y el
-control de versiones (VCS), por lo que se ha transformado una
-herramienta fácil y popular para corregir, colaborar y compartir códigos
-de distintos lenguajes (no solo R). Utilizaremos esta plataforma para
-subir las tareas, ayudarlos/as de manera directa con su código y darles
-*feedback*.
+## Recorrección
 
-**5. Zotero** <i class="fab fa-zotero"></i>
+Según reglamento, los estudiantes tienen derecho a conocer las notas y
+la pauta de corrección de todas las evaluaciones en un plazo que no
+podrá exceder de 10 días hábiles contados desde la fecha desde que éstas
+fueran rendidas, como también a conocer el resultado de sus evaluaciones
+solemnes o principales, antes de rendir las siguientes de igual
+categoría en una misma asignatura.
 
-Zotero es un gestor bibliográfico que permite sistematizar las
-referencias y archivos utilizados en una investigación o informe.
-Enseñaremos este de manera complementaria pues este software se puede
-integrar en los documentos escritos hechos en R.
+Los estudiantes pueden imputar la corrección de cualquier evaluación
+escrita, en un plazo no superior a 5 días hábiles desde la entrega de la
+nota. Ello, a través de una carta dirigida al secretario de estudios,
+que debe ir acompañada por la prueba, trabajo o informe evaluado y
+además, por las correcciones y comentarios que eventualmente haya
+entregado el/la docente. El académico deberá comunicar al estudiante el
+resultado de la recorrección, fundamentando por escrito sus argumentos,
+en un plazo no superior a los 5 días hábiles
 
-# III. Evaluación de aprendizajes
+# VII. Bibliografía
 
-Las evaluaciones del curso se componen de **tareas** (70% de la nota
-final) y la **entrega de una investigación** (30% de la nota final), en
-dónde en ambos casos la/el estudiante deberá seleccionar datos y temas
-de interés de modo de acercar la aplicación del software a contextos de
-investigación propios de la/el estudiante. En concreto, cada evaluación
-consiste en:
+## VII.1 Bibliografía Obligatoria
 
-**1. Tareas** (*70% de la nota final*): consisten en evaluaciones
-parciales temáticas que buscan poner en práctica los aprendizajes
-expuestos en la sesión de clases y herramientas reforzadas en los
-prácticos. **El promedio de notas las de tareas será calculado solo con
-las cuatro mejores entregas** a partir de la Tarea 1 (*25% c/u*)[^1]. La
-evaluación es **individual** o en **parejas** (la misma durante todo el
-semestre).
++-----+-----------------+-----------+----------+----------+----------+
+| N°  | TÍTULO          | AUTOR     | ED. Y    | E        | ISBN     |
+|     |                 |           | AÑO      | DITORIAL |          |
++=====+=================+===========+==========+==========+==========+
+| 1   | ANALISIS        | DE LA     | 2013     | McG      | 978      |
+|     | ESTADISTICO     | GARZA     |          | raw-Hill | -607-15- |
+|     | MULTIVARIANTE - |           |          |          |          |
+|     | UN ENFOQUE      | GARCIA,   |          |          | 0817-1   |
+|     | TEORICO Y       | JORGE     |          |          |          |
+|     | PRACTICO        |           |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 2   | Análisis de     | Peña,     | 2002     | McG      | 84       |
+|     | datos           | Daniel    |          | raw-Hill | 48136101 |
+|     | multivariantes. |           |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 3   | Análisis        | URIEL Y   | 2005, 1ª | E        | 84       |
+|     | Multivariado    | ALDAS     | Edición  | ditorial | 48136101 |
+|     | Aplicado.       |           |          |          |          |
+|     |                 |           |          | Thomson  |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 4   | Análisis        | LEVI J.P. | 2001     | Prentice | 84-20    |
+|     | Multivariante   | y         |          | Hall.    | 5-3727-6 |
+|     | para las        |           |          |          |          |
+|     | Ciencias        | VARELA    |          |          |          |
+|     | mSociales       | J.;       |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 5   | Modelos de      | B         | 2012, 2º | La       |          |
+|     | Ecuaciones      | at        | ed.      | Muralla  |          |
+|     | Estructurales   | ista,J.M. |          |          |          |
+|     | Cuadernos de    | y         |          |          |          |
+|     | estadística     |           |          |          |          |
+|     |                 | Coenders  |          |          |          |
+|     |                 | G.,       |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 6   | Introducción al | Mo        | 2006, 3º | Con      | 970-2    |
+|     | Análisis de     | ntgomery, | edición. | tinental | 4-0327-8 |
+|     | Regresión       |           |          |          |          |
+|     | Lineal          | Peck y    |          |          |          |
+|     |                 | Vining    |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 7   | El análisis     | Ferrando, | 2010     | Papeles  |          |
+|     | factorial como  | P. J., &  |          | del      |          |
+|     | técnica de      | Anguian   |          | Ps       |          |
+|     | investigación   | o-        |          | icólogo, |          |
+|     | en Psicología   | Carrasco, |          | 31,      |          |
+|     |                 | C.        |          | 18-33    |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 8   | Análisis        | . Bati    | 2004     | Medicina |          |
+|     | factorial       | st        |          | Clínica, |          |
+|     | confirmatorio.  | a-Foguet, |          |          |          |
+|     | Su utilidad en  | J.M.,     |          | 122(     |          |
+|     | la validación   | Coenders, |          | Supl.1). |          |
+|     | de              | G., &     |          |          |          |
+|     | cuestionarios   | Alonso,   |          |          |          |
+|     | relacionados    | J.        |          |          |          |
+|     | con la salud.   |           |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 9   | Modelos de      | Ruiz,     | 2010     | Papeles  |          |
+|     | ecuaciones      | M.A.,     |          | del      |          |
+|     | estructurales   | Pardo,    |          |          |          |
+|     |                 | A., & San |          | Ps       |          |
+|     |                 | Martín,   |          | icólogo, |          |
+|     |                 | R.        |          | Vol. 31, |          |
+|     |                 |           |          | Núm.     |          |
+|     |                 |           |          |          |          |
+|     |                 |           |          | 1, pp.   |          |
+|     |                 |           |          | 34-45    |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 10  | RStudio para    | Boccardo, | 2019     | Depa     |          |
+|     | Estadística     | G. y      |          | rtamento |          |
+|     | Descriptiva en  | Ruiz, F.  |          | de Soc   |          |
+|     | Ciencias        |           |          | iología, |          |
+|     | Sociales.       |           |          | Facultad |          |
+|     | Manual de apoyo |           |          | de       |          |
+|     | docente para la |           |          |          |          |
+|     | as ignatura     |           |          | Ciencias |          |
+|     | Estadística     |           |          | S        |          |
+|     | Descriptiva     |           |          | ociales, |          |
+|     |                 |           |          | Uni      |          |
+|     |                 |           |          | versidad |          |
+|     |                 |           |          | de Chile |          |
++-----+-----------------+-----------+----------+----------+----------+
+| 11  | R para Ciencia  | Wickham,  | 2019     |          |          |
+|     | de Datos        | H         |          |          |          |
+|     | <https:/        |           |          |          |          |
+|     | /es.r4ds.hadley |           |          |          |          |
+|     | .nz/index.html> |           |          |          |          |
++-----+-----------------+-----------+----------+----------+----------+
 
-[^1]: Es decir, a lo largo del semestre deberá entregar 6 tareas: 5
-    calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas
-    restantes, solo las 4 mejores serán consideradas en su promedio de
-    las tareas.
+## VII.2 Bibliografía complementaria
 
-**2. Investigación final** (*30% de la nota final*): consiste en una
-evaluación final que aplica los conocimientos y herramientas entregadas
-a lo largo de curso, a un proyecto de investigación de elección por
-el/la estudiante. La evaluación es **individual**.
++---+-----------+-------------+-----------+-------------+-------------+
+| N | TÍTULO    | AUTOR       | ED. Y AÑO | EDITORIAL   | ISBN        |
+| ° |           |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
+| 1 | Técnicas  | Díaz de     | 2002      | Ra-Ma       | 8478975152  |
+|   | de        | Rada        |           |             |             |
+|   | Análisis  | Iguzquiza,  |           |             |             |
+|   | Mult      | Vidal       |           |             |             |
+|   | ivariante |             |           |             |             |
+|   | para la   |             |           |             |             |
+|   | Inve      |             |           |             |             |
+|   | stigación |             |           |             |             |
+|   | Social y  |             |           |             |             |
+|   | Comercial |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
+| 2 | APPLIED   | HOSMER,     | 2º        | WILEY       | 0-          |
+|   | LOGISTIC  | DAVID -     | edición   |             | 471-35632-8 |
+|   | R         | LEMESHOW,   |           |             |             |
+|   | EGRESSION |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
+| 3 | Métodos   | D.E.        | 2000      | In          | 9687529903  |
+|   | Mult      | Johnson     |           | ternational |             |
+|   | ivariados |             |           | Thomson     |             |
+|   | Aplicados |             |           | Editores    |             |
+|   | al        |             |           |             |             |
+|   | análisis  |             |           |             |             |
+|   | de Datos  |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
+| 5 | Análisis  | B. Escofier | 1994      | Servicio    | 8475853838  |
+|   | fa        | y J. Pagès  |           | Editorial,  |             |
+|   | ctoriales |             |           | Universidad |             |
+|   | simples y |             |           | del País    |             |
+|   | m         |             |           |             |             |
+|   | últiples. |             |           |             |             |
+|   | O         |             |           |             |             |
+|   | bjetivos, |             |           |             |             |
+|   | métodos e |             |           |             |             |
+|   | inter     |             |           |             |             |
+|   | pretación |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
+| 6 | Análisis  | Ato, M. y   | 1996      | Sintesis    | 8477383928  |
+|   | es        | López, J.   |           |             |             |
+|   | tadístico | J.          |           |             |             |
+|   | para      |             |           |             |             |
+|   | datos     |             |           |             |             |
+|   | ca        |             |           |             |             |
+|   | tegóricos |             |           |             |             |
++---+-----------+-------------+-----------+-------------+-------------+
 
-# IV. Calendario de actividades
+# VIII.	Cláusula Ética 
 
-El calendario de actividades se puede revisar con detención en la
-[pestaña planificación](/schedule/). Un resumen breve de las tareas es
+La Escuela establece severas sanciones para las faltas graves que los
+estudiantes realicen, tales como plagio o falsificación de documentos,
+señalados en el Reglamento del Estudiante de Pre-grado en el Título XIII
+de las Conductas Contrarias a los Principios Universitarios.
 
-| Evaluación    |    Formato    |                                  Fecha | Ponderación Nota Final |
-|----------------|:----------------:|---------------:|-----------------------:|
-| Tarea         | 4 tareas[^2]  | *Hasta Viernes de la semana informada* |          70% (25% c/u) |
-| Investigación | Única entrega |                        22 de noviembre |                    30% |
+El Comité de Ética es la instancia responsable de revisar y resolver las
+situaciones que sean contrarias a los principios universitarios, en
+relación al desarrollo de conductas ilícitas que vicien los procesos de
+evaluación. Son definidas como conductas que vician una evaluación,
+todos aquellos actos que implican un rompimiento de los estándares
+éticos que un estudiante debe resguardar en una evaluación,
+distorsionando la apreciación de los conocimientos y habilidades reales
+que el estudiante posee (por ejemplo, copia y uso indebido de documento
+y/o medios electrónicos, modificación o falsificación de documentos,
+plagio en trabajos escritos).
 
-[^2]: Es decir, a lo largo del semestre deberá entregar 6 tareas: 5
-    calificadas (Tarea 1 a Tarea 5) y 1 no (Tarea 0). De las 5 tareas
-    restantes, solo las 4 mejores serán consideradas en su promedio de
-    las tareas.
+Se consideran como fuentes de información que se deben citar, los textos
+e imágenes en formato electrónico o en papel, en todas sus modalidades:
+libros, diarios, documentos de trabajo, artículos académicos, etc.
 
-# V. Recursos pedagógicos
+# IX. Cronograma de trabajo
 
-## 1. Referencias bibliográficas
++---------------+:----------------------------------------------------:+
+| 13 de marzo   | Análisis de datos y uso de R                         |
++---------------+------------------------------------------------------+
+| 20 de marzo   | Análisis de datos y uso de R                         |
+|               |                                                      |
+|               | Cálculo y análisis de deciles de ingreso: Caso Chile |
+|               |                                                      |
+|               | Encuesta CASEN                                       |
++---------------+------------------------------------------------------+
+| 27 de marzo   | Formas funcionales de los Modelos de Regresión       |
++---------------+------------------------------------------------------+
+| 3 de abril    | Formas funcionales de los Modelos de Regresión       |
++---------------+------------------------------------------------------+
+| 10 de abril   | Análisis Factorial Exploratorio                      |
++---------------+------------------------------------------------------+
+| 17 de abril   | Análisis Factorial Exploratorio                      |
++---------------+------------------------------------------------------+
+| 24 de abril   | Prueba 1                                             |
++---------------+------------------------------------------------------+
+| 1 de mayo     | Feriado                                              |
++---------------+------------------------------------------------------+
+| 8 de mayo     | Análisis Factorial Confirmatorio                     |
++---------------+------------------------------------------------------+
+| 15 de mayo    | Análisis Factorial Confirmatorio                     |
++---------------+------------------------------------------------------+
+| 22 de mayo    | Análisis de sendero                                  |
++---------------+------------------------------------------------------+
+| 29 de mayo    | Análisis de sendero                                  |
++---------------+------------------------------------------------------+
+| 5 de junio    | Modelos de ecuaciones estructurales                  |
++---------------+------------------------------------------------------+
+| 12 de junio   | Modelos de ecuaciones estructurales                  |
++---------------+------------------------------------------------------+
+| 19 de junio   | Modelos de ecuaciones estructurales                  |
++---------------+------------------------------------------------------+
+| 26 de junio   | Feriado                                              |
++---------------+------------------------------------------------------+
+| 3 de julio    | Repaso                                               |
++---------------+------------------------------------------------------+
 
--   **Wickham, H., & Grolemund, G. (2016). R for data science: import,
-    tidy, transform, visualize, and model data (First edition).
-    Sebastopol: O'Reilly.** Libro con enfoque en el aprendizaje de R.
-    Disponible en español como ["R para ciencia de
-    datos"](https://es.r4ds.hadley.nz/)
+# 
+X.	NORMATIVA DE PREVEVENCIÓN Y SANCIÓN DE ACCIONES DE DISCRIMINACIÓN, VIOLENCIA SEXUAL Y DE GÉNERO DE LA UNIVERSIDAD DIEGO PORTALES. 
 
--   [**Daniel Lüdecke (2021) Data Visualization for Statistics in Social
-    Science** R package version
-    2.8.7](https://CRAN.R-project.org/package=sjPlot)
+Tal como señala esta normativa:
 
--   [**Wickham et al., (2019). Welcome to the tidyverse.** Journal of
-    Open Source Software, 4(43),
-    1686](https://doi.org/10.21105/joss.01686)
+"La Universidad Diego Portales (UDP) promueve el pluralismo y la
+independencia crítica de quienes la integran y tienen como uno de sus
+principales objetivos el desarrollo integral de las personas que forman
+parte de ella y de la sociedad. En ese marco, la UDP promueve una
+convivencia reflexiva basada en el reconocimiento a la dignidad de las
+personas, la libertad de expresión, la libertad sexual, la identidad y
+expresión de género, y la autonomía."
 
--   [**Yihui Xie, J. J. Allaire, Garrett Grolemund (2021) R Markdown:
-    The Definitive Guide**](https://bookdown.org/yihui/rmarkdown/)
+Por lo tanto:
 
--   [**Bryan, Jenny (2019) Happy Git in R**](https://happygitwithr.com/)
+"Quienes integren la Universidad tienen la obligación de conocer esta
+normativa y los protocolos, sitios web y programas que de ella se
+deriven. Particularmente responsables de su implementación serán las
+autoridades de la Universidad, quienes tendrán la primera obligación de
+hacer frente a situaciones que deñen a sus integrantes. Para lograr
+estos objetivos, se debe realizar la correcta difusión y socialización
+de la normativa."
 
-## 2. Sitios de consulta
+Los detalles de la normativa pueden ser consultados en el siguiente
+enlace:
+[Normativa de prevención y sanción de acciones de violencia
+sexual](https://www.udp.cl/cms/wp-content/uploads/2021/06/RESOLUCIO%CC%81N-DE-RECTORI%CC%81A-No-43-NORMATIVA-PREVENCION-Y-SANCION-ACCIONES-DE-VIOLENCIA-SEXUAL-DIC-2018.pdf)
 
--   [*rOpensci*](https://*rOpensci*.org/) (R Open Scicnce Tools)
--   Laboratorio de Ciencia Social Abierta, Centro de Estudios de
-    Conflicto y Cohesión Social
-    [(LISA-COES)](https://lisa-coes.netlify.app/)
--   [Stackoverflow](https://stackoverflow.com/)
--   [RStudio Community](https://community.rstudio.com/)
--   [RMarkdown](https://rmarkdown.rstudio.com/)
--   [sjPlot](https://strengejacke.github.io/sjPlot/)
--   [tidyverse](https://www.tidyverse.org/)
+# [Descargar programa en pdf](../files/Programa%20Analisis%20de%20datos%20II%20-%202023.pdf/)
 
-# [Descargar programa en pdf](../files/programa-R-uah.pdf/)
-
-<a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/programa-R-uah.pdf/" role="button"><i class="far fa-file-pdf"></i></a>
+<a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/Programa Analisis de datos II - 2023.pdf/" role="button"><i class="far fa-file-pdf"></i></a>
