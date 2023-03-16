@@ -102,7 +102,7 @@ instructor:
   name: Gabriel Sotomayor López
   email: 	gabriel.sotomayor@mail.udp.cl
   twitter: gsotomayorl
-  url: ""
+  url:
   github: GabrielSotomayorl
   contact_policy: >-
     El canal de contacto de preferencia es el mail gabriel.sotomayor@mail.udp.cl
@@ -110,24 +110,22 @@ instructor:
 
 ayudante1: 
   name: Anaís Herrera
-  email: anais.herrera@ug.uchile.cl
+  email: anais.herrera@mail.udp.cl
   github: https://github.com/anaisherrera
-  appointment_url: https://calendly.com/dafne-jaime-vargas/
 
 ayudante2: 
   name: Nicolas Hernández
   email: nicolas.hernandez_f@mail.udp.cl
-  appointment_url: https://calendly.com/nicolas-godoy-m/
 
 course:
-  number: "2255"
+  number: "SOC9035"
   semester: "I° Semestre - 2023"
   days: "Clases: Lunes 10:00-12:50"
   location: "Laboratorio de Computación 2° piso FCSH"
-  dates: "Ayudantía: Lunes 18.00-19.20"
+  dates: "Ayudantía: Lunes 13:00-14:20"
   github: "GabrielSotomayorl"
   copyrightYear: "2023. Web developed by Andrew Heiss and custom by"
-  slack: "http://learn-r-uah.slack.com/"
+  whatsapp: "hhttps://chat.whatsapp.com/HFajJHxCQhPEV8nV4DKMGG"
 
 university: 
   name: Universidad Diego Portales

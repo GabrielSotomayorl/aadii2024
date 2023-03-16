@@ -3,14 +3,14 @@ lessons:
     header: True
 
   - title: '<span class="content-title">Unidad 1. Análisis de datos y uso de R</span>'
-    date: "8-22 de agosto"
-    date_start: "8 Agosto"
-    date_end: "22 Agosto"
+    date: "13-20 de marzo"
+    date_start: "13 marzo"
+    date_end: "20 marzo"
     bg: 1
     
   - title: '1.1 R enviroment: interfaz de RStudio, elementos de script, workspace<br>1.2 Prácticas y herramientas de consulta: CRAN, stackoverflow, Rcommunity<br>1.3 Herramientas para la colaboración y comunicación: Rprojects, GitHub y Slack'
     session: "Sesión 1"
-    date: "8 Agosto"
+    date: "13 marzo"
     content: "01-content"
     example: "01-practico"
     resource: "install"
@@ -18,11 +18,11 @@ lessons:
 
   - title: '1.4 Librerías y funciones para las ciencias sociales: tidyverse y sj (sjmisc y sjPlot)<br>1.5 Construcción de reportes reproducibles e integrados con código: Rmarkdown'
     session: "Sesión 2"
-    date: "22 Agosto"
-    content: "02-content"
-    example: "02-practico"
-    assignment: "00-tarea"
-    resource: "markdown"
+    # date: "20 marzo"
+    # content: "02-content"
+    # example: "02-practico"
+    # assignment: "00-tarea"
+    # resource: "markdown"
     bg: 1
     bottomborder: True
 

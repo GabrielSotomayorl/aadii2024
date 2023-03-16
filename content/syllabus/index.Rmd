@@ -338,9 +338,9 @@ en un plazo no superior a los 5 días hábiles
 +-----+-----------------+-----------+----------+----------+----------+
 | 11  | R para Ciencia  | Wickham,  | 2019     |          |          |
 |     | de Datos        | H         |          |          |          |
-|     | <https:/        |           |          |          |          |
+|     | [link](https:/  |           |          |          |          |
 |     | /es.r4ds.hadley |           |          |          |          |
-|     | .nz/index.html> |           |          |          |          |
+|     | .nz/index.html) |           |          |          |          |
 +-----+-----------------+-----------+----------+----------+----------+
 
 ## VII.2 Bibliografía complementaria
@@ -458,8 +458,7 @@ libros, diarios, documentos de trabajo, artículos académicos, etc.
 | 3 de julio    | Repaso                                               |
 +---------------+------------------------------------------------------+
 
-# 
-X.	NORMATIVA DE PREVEVENCIÓN Y SANCIÓN DE ACCIONES DE DISCRIMINACIÓN, VIOLENCIA SEXUAL Y DE GÉNERO DE LA UNIVERSIDAD DIEGO PORTALES. 
+# X.	NORMATIVA DE PREVEVENCIÓN Y SANCIÓN DE ACCIONES DE DISCRIMINACIÓN, VIOLENCIA SEXUAL Y DE GÉNERO DE LA UNIVERSIDAD DIEGO PORTALES. 
 
 Tal como señala esta normativa:
 
