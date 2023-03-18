@@ -22,7 +22,8 @@ Cuando descargamos e instawlamos R este contiene una cantidad limitada de funcio
 
 En la siguiente práctica queremos usar la base de datos de CASEN, la cuál está disponibel en formato .sav (SPPS) y .dta (STATA), formatos que no son soportados por la versión base de R. Para poder cargar la base de datos como un objeto en R usaremos el paquete **haven**, el cual incluye funciones para cargar datos a R en diversos formatos.  
 
-```{r}
+
+```r
 # install.packages("haven") 
 #este comando nos permite instalar paquetes alojados en CRAN 
 library(haven) #Este comando nos permite ejecutar el paquete
@@ -30,7 +31,8 @@ library(haven) #Este comando nos permite ejecutar el paquete
 
 Una vez cargado el paquete debemos descargar la base de datos y ubicarla en nuestro computador para poder cargarla con la función **read_spss()**. Para esto debemos establecer un **directorio de trabajo**, es decir, la carpeta raíz a partir de la cual R buscará los archivos que queremos cargar en nuestro espacio de trabajo, y donde guardará los output de nuestros análisis.
 
-```{r, eval = FALSE }
+
+```r
 #La sigueitne función nos permite dentificar el irectorio de trabajo actual
 getwd()
 
@@ -42,13 +44,15 @@ setwd("C:/Users/Gabriel/Desktop/Directorio R")
 
 Una vez que hemos fijado nuestro directorio de trabajo podemos cargar nuestra base de datos y asignarla como objeto, para que se guarde en el ambiente  y poder usarla posteriormente en nustros análisis.
 
-```{r, eval = FALSE}
+
+```r
 casen2020<-read_spss("Casen_en_Pandemia_2020_revisada202209.sav")
 ```
 
 Una forma alternativa de realziar este proceso es descargar directamente los datos mediante el uso de código. Esto afrece la ventaja de que nos permite ejecutar el código en otros computadores y obtener automáticamente los datos. Un posible problema de esta forma de cargar los datos es que cuando usamos archivos de gran tamaño puede ser muy poco eficiente.  
 
-```{r load}
+
+```r
 temp <- tempfile() #Creamos un archivo temporal
 download.file("http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Casen_en_Pandemia_2020_revisada202209.sav.zip",temp) #descargamos los datos
 casen <- haven::read_sav(unz(temp, "Casen_en_Pandemia_2020_revisada202209.sav")) #cargamos los datos

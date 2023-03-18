@@ -8,7 +8,7 @@ lessons:
     date_end: "20 marzo"
     bg: 1
     
-  - title: 'Análisis de Datos: Uso de bases de datos en R<br> Introducción a R'
+  - title: '• Análisis de Datos: Uso de bases de datos en R<br> Introducción a R'
     session: "Sesión 1"
     date: "13 marzo"
     content: "01-content"
@@ -32,7 +32,7 @@ lessons:
     date_end: "3 de abril"
     bg: 2
 
-  - title: 'Introducción <br>Modelo Logarítmico bivariado <br>Modelo Logarítmico Multivariado'
+  - title: '• Introducción <br>• Modelo Logarítmico bivariado <br>• Modelo Logarítmico Multivariado'
     session: "Sesión 3"
     date: "27 marzo"
     # content: "03-content"
@@ -62,14 +62,14 @@ lessons:
     date_end: "1 mayo"
     bg: 1
     
-  - title: 'Análisis factorial exploratorio y su aplicación en la investigación sociológica. El concepto de varianza y covarianza. <br>Diferencias entre el análisis de componente principal y de factor común. Supuestos de la técnica'
+  - title: '• Análisis factorial exploratorio y su aplicación en la investigación sociológica. El concepto de varianza y covarianza. <br>• Diferencias entre el análisis de componente principal y de factor común. Supuestos de la técnica'
     session: "Sesión 5"
     date: "10 de abril"
     # content: "05-content"
     # example: "05-practico"
     bg: 1
 
-  - title: 'La extracción de factores comunes. Métodos de extracción de factores, criterios de selección del número de factores y rotación.<br>La matriz factorial y su interpretación. Evaluación del modelo factorial y cálculo de puntuaciones factoriales.'
+  - title: '• La extracción de factores comunes. Métodos de extracción de factores, criterios de selección del número de factores y rotación.<br>• La matriz factorial y su interpretación. Evaluación del modelo factorial y cálculo de puntuaciones factoriales.'
     session: "Sesión 6"
     date: "17 abril"
     # content: "06-content"
@@ -77,12 +77,12 @@ lessons:
     # assignment: "02-tarea"
     bg: 1
     
-  - title: 'Prueba 1'
+  - title: '• Prueba 1'
     session: "Sesión 7"
     date: "24 abril"
     bg: 1
     
-  - title: 'Feriado'
+  - title: '• **Feriado**'
     session: "Sesión -"
     date: "1 de mayo"
     bg: 1
@@ -100,7 +100,7 @@ lessons:
     date_end: "15 mayo"
     bg: 2
 
-  - title: 'Análisis factorial confirmatorio y su aplicación en la investigación sociológica. El análisis confirmatorio frente al análisis exploratorio. Supuestos de la técnica.<br>Especificación e identificación del modelo. Estimación de parámetros, evaluación del ajuste y reespecificación. '
+  - title: '• Análisis factorial confirmatorio y su aplicación en la investigación sociológica. El análisis confirmatorio frente al análisis exploratorio. Supuestos de la técnica.<br>• Especificación e identificación del modelo. Estimación de parámetros, evaluación del ajuste y reespecificación. '
     session: "Sesión 8"
     date: "8 mayo"
     # content: "07-content"
@@ -176,7 +176,7 @@ lessons:
     bottomborder: True
 
 
-  - title: 'Feriado'
+  - title: '**• Feriado**'
     session: "Sesión -"
     date: "26 junio"
     bg: 1

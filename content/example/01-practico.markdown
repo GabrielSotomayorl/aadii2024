@@ -1,6 +1,6 @@
 ---
-title: "Introducción al curso de R"
-linktitle: "1: Introducción al curso de R"
+title: "Introducción a R"
+linktitle: "1: Introducción a R"
 date: "2021-08-09"
 menu:
   example:
@@ -21,6 +21,37 @@ El objetivo del práctico es introducirnos en Rstudio, debemos recordar que **R 
 Debemos recordar que R puede generar múltiples operaciones, una de ellas es realizar diversas operaciones estadísticas
 
 
+```r
+5+2
+```
+
+```
+## [1] 7
+```
+
+```r
+5-2
+```
+
+```
+## [1] 3
+```
+
+```r
+5/2
+```
+
+```
+## [1] 2.5
+```
+
+```r
+5*2
+```
+
+```
+## [1] 10
+```
 
 Como primer ejemplo veremos formas de crear objetos, asignandole un número a un vector
 
