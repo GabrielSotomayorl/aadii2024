@@ -20,7 +20,7 @@ lessons:
     session: "Sesión 2"
     date: "20 marzo"
     # content: "02-content"
-    # example: "02-practico"
+    example: "02-practico"
     # assignment: "00-tarea"
     # resource: "markdown"
     bg: 1
