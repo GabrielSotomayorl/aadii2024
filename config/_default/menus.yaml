@@ -24,9 +24,9 @@ main:
   - name: Recursos
     url: /resource/
     weight: 6
-  - name: '<i class="fab fa-r-project"></i>'
-    url: https://rstudio.cloud/
-    weight: 7
+  # - name: '<i class="fab fa-r-project"></i>'
+  #   url: https://rstudio.cloud/
+  #   weight: 7
 
 content:
   - name: Información general
