@@ -17,10 +17,10 @@ main:
   - name: Prácticos
     url: /example/
     weight: 4
-  - name: Tareas 
-    identifier: assignment
-    url: /assignment/
-    weight: 5
+  # - name: Tareas 
+  #   identifier: assignment
+  #   url: /assignment/
+  #   weight: 5
   - name: Recursos
     url: /resource/
     weight: 6
