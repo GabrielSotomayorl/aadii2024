@@ -12,7 +12,7 @@ type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "03-slides"
+slides: "04-slides"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
@@ -38,30 +38,4 @@ slide_tabs(slide_details, "/slides/04-slides.html")
 {{% div fyi %}}
 **¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
-
-# Video de la clase
-
-- [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/aKaz3bmSVg5iE7Sn8qeDVTrj3zoK_7HBkvMB46hhuH5C0trYK_V6YXqxbRwdpEMu.Y17bJ5f4XEiDn2qT?startTime=1629756672000)
-
-
-
-# Material de la clase
-
-- [<i class="fas fa-file-archive"></i> `04-clase.zip`](https://github.com/learn-R/04-class/raw/main/04-clase.zip)
-
--[<i class="fas fa-<Datos para la clase"></i> `datos`](https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing)
-
-- [<i class="fas fa-laptop-code"></i> Práctico](/example/04-practico/)
-
-
-# Materiales adicionales
-
-- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
-    - [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
-    - [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
-    - [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
-
-- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
-
-- **Actividad con décimas**
 

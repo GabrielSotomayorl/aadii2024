@@ -53,58 +53,138 @@ htmltools::tagList(
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Importar, validar y explorar datos
+# Análisis de regresión logística
 ]
 
 .class-info[
 <br>
 **Sesión N° 4**<br>
-**Análisis de datos estadísticos en R**
+**Análisis Avanzado de Datos II**
 <br>
 
 .pull-right.small[
-**Profesora** Valentina Andrade de la Horra <br>
-**Ayudantes** Dafne Jaime y Nicolás Godoy
+**Profesor** Gabriel Sotomayor López <br>
+**Ayudante** Anaís Herrera
 .tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
 
+
 ---
 class: title title-inv-1
 
-# Contenidos Sesión N°3
+# Contenidos Sesión N°4
 
---
 
-.box-2.medium.sp-after-half[**Importar y exportar datos**]
+.box-2.medium.sp-after-half[**Modelos de probabilidad lineal**]
 
---
+.box-3.medium.sp-after-half[**Modelos lineales generalizados**]
 
-.box-3.medium.sp-after-half[**Validación y limpieza datos**]
+.box-4.medium.sp-after-half[**Modelo de regresión logística binaria**]
 
---
+.box-1.medium.sp-after-half[**Odds y odds ratios**]
 
-.box-4.medium.sp-after-half[**Selección de variables**]
+---
+class: title title-inv-1
 
-???
+# Contenidos Sesión N°4
 
--import
-- valid
-- select
+.box-1.medium.sp-after-half[**Interpretación de coeficientes**]
+
+.box-2.medium.sp-after-half[**Estadísticos de ajuste y selección de modelos**]
+
+.box-3.medium.sp-after-half[**Visualización de resultados**]
+
 
 ---
 
-.center[
-![:scale 80%](https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png)]
+class: center middle main-title section-title-2 top-logo
+
+# Modelos de probabilidad lineal
 
 ---
+
+class: title title-2
+
+# Regresiones para variables dicotómicas
+
+
+
+asdfhkalsdjfklajsdjfñasdkfjakldsfjas asdlkfjalskdjf a asldkfjañlsdkjflaksdjf asldkfjalksdsflkjasdfkj aslkdfjlasd  
+
+aldskjflaksdjf  asdlkfjalsdf jlakdsjf lkasf 
+
+---
+
+class: center middle main-title section-title-3 top-logo
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+
+
+
+
+---
+
+class: center middle main-title section-title-4 top-logo
+
+# Modelo de regresión logística binaria
+
+---
+
+class: title title-4
+
+# Regresión logistica
+
+
+
+
+---
+
 class: center middle main-title section-title-1 top-logo
 
-.center[
-![](https://c.tenor.com/7mxJp29REVkAAAAC/scaryfeet-monstersinc.gif)
-]
+# Odds y odds ratios
+
+---
+
+class: title title-1
+
+# Concepto de Odds
+
+.left[asdfasdfasdfasdf]
+
+.right[![:scale 50%](https://github.com/learn-R/slides/raw/main/img/02/orden-sintaxis.png)]
+---
+
+class: center middle main-title section-title-2 top-logo
+
+# Estadísticos de ajuste y selección de modelos
+
+---
+
+class: title title-2
+
+# Estadísticos de ajuste
+
+---
+
+class: center middle main-title section-title-3 top-logo
+
+# Visualización de resultados
+
+---
+
+class: title title-3
+
+# Regresión logistica
 
 ---
 # Orden de un script
@@ -114,7 +194,7 @@ class: center middle main-title section-title-1 top-logo
 ![:scale 80%](https://github.com/learn-R/slides/raw/main/img/02/orden-sintaxis.png)]
 
 ---
-class: center middle main-title section-title-2 top-logo
+                                                
 
 # Paso 1: Cargar paquetes
 
@@ -353,15 +433,16 @@ class: center middle main-title section-title-1 top-logo
 
 .class-info[
 <br>
-**Clase N°3**<br>
-**Análisis de datos estadísticos en R**
+**Sesión N° 4**<br>
+**Análisis de regresión logística**
 <br>
 
 .pull-right.small[
-**Profesora** Valentina Andrade de la Horra <br>
-**Ayudantes** Dafne Jaime y Nicolás Godoy
-.tiny[Universidad Alberto Hurtado<br>
+**Profesor** Gabriel Sotomayor López <br>
+**Ayudante** Anaís Herrera
+.tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
+

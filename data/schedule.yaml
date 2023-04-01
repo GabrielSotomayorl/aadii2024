@@ -43,7 +43,7 @@ lessons:
   - title: '•	Interpretación de los coeficientes<br> Ejemplos de aplicación en R'
     session: "Sesión 4"
     date: "3 de abril"
-    # content: "04-content"
+    content: "04-content"
     # example: "04-practico"
     bg: 2
     bottomborder: True

@@ -285,14 +285,12 @@ en un plazo no superior a los 5 días hábiles
 |    | mSociales |           |           |           |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 | 5  | Modelos   | B at      | 2012, 2º  | La        |           |
-|    | de        | ista,J.M. | ed.       | Muralla   |           |
-|    | E         | y         |           |           |           |
-|    | cuaciones |           |           |           |           |
-|    | Estr      | Coenders  |           |           |           |
-|    | ucturales | G.,       |           |           |           |
-|    | Cuadernos |           |           |           |           |
-|    | de        |           |           |           |           |
-|    | es        |           |           |           |           |
+|    | de E      | ista,J.M. | ed.       | Muralla   |           |
+|    | cuaciones | y         |           |           |           |
+|    | Estr      |           |           |           |           |
+|    | ucturales | Coenders  |           |           |           |
+|    | Cuadernos | G.,       |           |           |           |
+|    | de es     |           |           |           |           |
 |    | tadística |           |           |           |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 | 6  | Int       | Mo        | 2006, 3º  | Con       | 970-2     |
@@ -308,11 +306,9 @@ en un plazo no superior a los 5 días hábiles
 |    | factorial | Anguian   |           | icólogo,  |           |
 |    | como      | o-        |           | 31, 18-33 |           |
 |    | técnica   | Carrasco, |           |           |           |
-|    | de        | C.        |           |           |           |
-|    | inve      |           |           |           |           |
+|    | de inve   | C.        |           |           |           |
 |    | stigación |           |           |           |           |
-|    | en        |           |           |           |           |
-|    | P         |           |           |           |           |
+|    | en P      |           |           |           |           |
 |    | sicología |           |           |           |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 | 8  | Análisis  | . Bati st | 2004      | Medicina  |           |
@@ -321,11 +317,9 @@ en un plazo no superior a los 5 días hábiles
 |    | rmatorio. | Coenders, |           | 122(      |           |
 |    | Su        | G., &     |           | Supl.1).  |           |
 |    | utilidad  | Alonso,   |           |           |           |
-|    | en la     | J.        |           |           |           |
-|    | v         |           |           |           |           |
+|    | en la v   | J.        |           |           |           |
 |    | alidación |           |           |           |           |
-|    | de        |           |           |           |           |
-|    | cues      |           |           |           |           |
+|    | de cues   |           |           |           |           |
 |    | tionarios |           |           |           |           |
 |    | rel       |           |           |           |           |
 |    | acionados |           |           |           |           |
@@ -333,30 +327,29 @@ en un plazo no superior a los 5 días hábiles
 |    | salud.    |           |           |           |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 | 9  | Modelos   | Ruiz,     | 2010      | Papeles   |           |
-|    | de        | M.A.,     |           | del       |           |
-|    | e         | Pardo,    |           |           |           |
-|    | cuaciones | A., & San |           | Ps        |           |
-|    | estr      | Martín,   |           | icólogo,  |           |
-|    | ucturales | R.        |           | Vol. 31,  |           |
+|    | de e      | M.A.,     |           | del       |           |
+|    | cuaciones | Pardo,    |           |           |           |
+|    | estr      | A., & San |           | Ps        |           |
+|    | ucturales | Martín,   |           | icólogo,  |           |
+|    |           | R.        |           | Vol. 31,  |           |
 |    |           |           |           | Núm.      |           |
 |    |           |           |           |           |           |
 |    |           |           |           | 1, pp.    |           |
 |    |           |           |           | 34-45     |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 | 10 | RStudio   | Boccardo, | 2019      | Depa      |           |
-|    | para      | G. y      |           | rtamento  |           |
-|    | Es        | Ruiz, F.  |           | de Soc    |           |
-|    | tadística |           |           | iología,  |           |
-|    | De        |           |           | Facultad  |           |
-|    | scriptiva |           |           | de        |           |
-|    | en        |           |           |           |           |
-|    | Ciencias  |           |           | Ciencias  |           |
-|    | Sociales. |           |           | S         |           |
-|    | Manual de |           |           | ociales,  |           |
-|    | apoyo     |           |           | Uni       |           |
-|    | docente   |           |           | versidad  |           |
-|    | para la   |           |           | de Chile  |           |
-|    | as        |           |           |           |           |
+|    | para Es   | G. y      |           | rtamento  |           |
+|    | tadística | Ruiz, F.  |           | de Soc    |           |
+|    | De        |           |           | iología,  |           |
+|    | scriptiva |           |           | Facultad  |           |
+|    | en        |           |           | de        |           |
+|    | Ciencias  |           |           |           |           |
+|    | Sociales. |           |           | Ciencias  |           |
+|    | Manual de |           |           | S         |           |
+|    | apoyo     |           |           | ociales,  |           |
+|    | docente   |           |           | Uni       |           |
+|    | para la   |           |           | versidad  |           |
+|    | as        |           |           | de Chile  |           |
 |    | ignatura  |           |           |           |           |
 |    | Es        |           |           |           |           |
 |    | tadística |           |           |           |           |
@@ -366,11 +359,12 @@ en un plazo no superior a los 5 días hábiles
 | 11 | R para    | Wickham,  | 2019      |           |           |
 |    | Ciencia   | H         |           |           |           |
 |    | de Datos  |           |           |           |           |
-|    | [link     |           |           |           |           |
-|    | ](https:/ |           |           |           |           |
+|    | [link](h  |           |           |           |           |
+|    | ttps:/%20 |           |           |           |           |
 |    | %20/es.r4 |           |           |           |           |
-|    | ds.hadley |           |           |           |           |
-|    | %20.nz/in |           |           |           |           |
+|    | %20ds.had |           |           |           |           |
+|    | ley%20%20 |           |           |           |           |
+|    | .nz/in%20 |           |           |           |           |
 |    | dex.html) |           |           |           |           |
 +----+-----------+-----------+-----------+-----------+-----------+
 
