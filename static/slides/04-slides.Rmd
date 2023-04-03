@@ -136,7 +136,7 @@ class: title title-2
 </style>
 
 <div class="left">
-Una opción son los modelos de probabilidad lineal, los cuales consisten en usar una regresión estimada mediante mínimos cuadrados ordinarios para una variable dicotóimica (valores 0 y 1). En estos los valores beta pueden interpretarse como cambios promedio en la probabilidad.
+Una opción son los modelos de probabilidad lineal, los cuales consisten en usar una regresión estimada mediante mínimos cuadrados ordinarios para una variable dicotómica (valores 0 y 1). En estos los valores beta pueden interpretarse como cambios promedio en la probabilidad.
 </div>
 
 <div class="right">
@@ -195,7 +195,7 @@ class: title title-2
 
 # Modelos de probabilidad lineal
 
-A pesar de la simpleza de su interpretación, los modelos de probabildiad lienal cuentan con dos problemas:
+A pesar de la simpleza de su interpretación, los modelos de probabilidad lineal cuentan con dos problemas:
 
 .box-2.sma.sp-after-half[1) Pueden entregar variables predichos más allá del rango 0-1 lo cual no tiene sentido en el caso de una probabilidad]
 
@@ -213,9 +213,9 @@ class: center middle main-title section-title-4 top-logo
 
 class: title title-4
 
-# Regresión logistica
+# Regresión logística
 
-Una solución a los problemas anteriormente revisado es utilizar otro tipo de modelo: un modelo de regresión logística binaria. En lugar de modelar la probabilidad directamente, hacemos una transformación la la varaibles dependeinte: modelamos el logaritmo de los odds (chances).
+Una solución a los problemas anteriormente revisado es utilizar otro tipo de modelo: un modelo de regresión logística binaria. En lugar de modelar la probabilidad directamente, hacemos una transformación la variable dependiente: modelamos el logaritmo de los odds (chances).
 
 .center[![:scale 50%](https://media.licdn.com/dms/image/C4D12AQECoCrreAiteg/article-inline_image-shrink_1000_1488/0/1546295790796?e=1682553600&v=beta&t=uLtnpgp2IFmmzXmBSXTaRSkBTx2vBeifL_KjUY9d9PY)]
 
@@ -269,7 +269,7 @@ En nuestro ejemplo original queremos ver como cambia la probabilidad de que un h
 $$Odds_{JH- Hombre} = 0.076/0.924=0.08225 $$
 
 $$Odds_{JH- Mujer} = 0.114/0.886=0.1286 $$
-Es decir, 8,22 hogares con jefatura masculina de cada 100 se encuentra en situación de pobreza, mientras que 1,86 de cada 100 en aquellos con jefatura femenina.
+Es decir, existen 8,22 hogares con jefatura masculina en situación de pobreza por cada 100 que no lo están, mientras que 12,86 hogares con jefatura femenina en situación de pobreza por cada 100 que no lo están.
 
 ---
 class: title title-1
@@ -310,7 +310,7 @@ glm(pobre~as_factor(sexo),
     family="binomial")
 ```
 
-Especificamos la formula igual que en una regresiónj lineal (la variable dependiente debe estar en formato 0-1). Debemos especificar la familia de modelos (ya que la función glm sirve pára calcular distintos tipos de modelos lienales generalizados). 
+Especificamos la formula igual que en una regresión lineal (la variable dependiente debe estar en formato 0-1). Debemos especificar la familia de modelos (ya que la función glm sirve para calcular distintos tipos de modelos lineales generalizados). 
 ---
 
 
@@ -469,7 +469,7 @@ class: title title-1
 
 En el caso de un modelo de regresión logística con múltiples predictores o variables independientes la interpretación es similar, pero integrando el concepto de control estadístico.
 
-En este caso podemos decir que los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aaquellos con jefatura masculina **controlando por edad**
+En este caso podemos decir que los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aquellos con jefatura masculina **controlando por edad**
 
 En el mismo sentido, los log-odds predichos de ser encontrarse en situación de pobreza disminuyen en 0.03 por cada año más de edad del jefe de hogar, **controlando por sexo**.
 
@@ -486,7 +486,7 @@ class: title title-2
 
 En el caso de los modelos de regresión logística no contamos con una sola medida de ajuste de los modelos y esta suele interpretarse principalmente en términos comparativos.
 
-3 principales paroximaciones
+4 principales aproximaciones
 
 - Devianza
 - Test de Razón de Verosimilitud
@@ -522,7 +522,7 @@ class: title title-2
 
 # Pseudo R2s
 
-.small[Son medidas de la variabilidad explicada por el modelo. No pueden interpretarse como proporción de la varainza explicada, como en le caso de los modelos con variable dependientes continuas.
+.small[Son medidas de la variabilidad explicada por el modelo. No pueden interpretarse como proporción de la varianza explicada, como en le caso de los modelos con variable dependientes continuas.
 
 Existen varios tipos de PseudoR2, cada uno con una interpretación diferente. Uno de los PseudoR2 más comunes es el McFadden's PseudoR2. Se define como: $1−[LL(LM)/LL(L0)]$, donde
 .small[
