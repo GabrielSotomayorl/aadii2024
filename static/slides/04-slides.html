@@ -10,7 +10,7 @@
     <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view-0.2.6/tile-view.js"></script>
     <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x87e653bc1c84bbcae8b8a446e5efac8","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"fc25060dcdf24792aa10382d8bc80b11","expires":14}</script>
     <script src="libs/himalaya-1.1.0/himalaya.js"></script>
     <script src="libs/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="libs/editable-0.2.6/editable.css" rel="stylesheet" />
@@ -408,18 +408,68 @@ Es decir, los odds (chances) de ser pobre para un hogar con jefatura femenina so
 ---
 class: title title-1
 
-# Modelos con múltiples variables independientes
-
-Para poder realizar una interpretación con sentido de los coeficientes del modelo debemos realizar una transformación, de forma que el beta quede expresado como odds. Para esto debemos hacer una **exponenciación** de los coeficientes.
+# .small[Modelos con múltiples variables independientes]
 
 
+&lt;table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;"&gt;
+&lt;caption&gt;Statistical models&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="padding-left: 5px;padding-right: 5px;"&gt;&amp;nbsp;&lt;/th&gt;
+&lt;th style="padding-left: 5px;padding-right: 5px;"&gt;Pobreza según sexo JH&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr style="border-top: 1px solid #000000;"&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Intercepto&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;-1.07 (0.05)&lt;sup&gt;&amp;#42;&amp;#42;&amp;#42;&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Mujer (ref.hombre)&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;0.39 (0.03)&lt;sup&gt;&amp;#42;&amp;#42;&amp;#42;&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Edad&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;-0.03 (0.00)&lt;sup&gt;&amp;#42;&amp;#42;&amp;#42;&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="border-top: 1px solid #000000;"&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;AIC&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;40182.30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;BIC&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;40209.45&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Log Likelihood&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;-20088.15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Deviance&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;40176.30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="border-bottom: 2px solid #000000;"&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;Num. obs.&lt;/td&gt;
+&lt;td style="padding-left: 5px;padding-right: 5px;"&gt;62911&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+&lt;td style="font-size: 0.8em;" colspan="2"&gt;&lt;sup&gt;&amp;#42;&amp;#42;&amp;#42;&lt;/sup&gt;p &amp;lt; 0.001; &lt;sup&gt;&amp;#42;&amp;#42;&lt;/sup&gt;p &amp;lt; 0.01; &lt;sup&gt;&amp;#42;&lt;/sup&gt;p &amp;lt; 0.05&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
 
-```r
-exp(0.41)=1.506818
-```
+---
+class: title title-1
 
-Es decir, los odds (chances) de ser pobre para un hogar con jefatura femenina son 1,506818 veces más que las de uno con jefatura masculina.
+# .small[Modelos con múltiples variables independientes]
 
+En el caso de un modelo de regresión logística con múltiples predictores o variables independientes la interpretación es similar, pero integrando el concepto de control estadístico.
+
+En este caso podemos decir que los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aaquellos con jefatura masculina **controlando por edad**
+
+En el mismo sentido, los log-odds predichos de ser encontrarse en situación de pobreza disminuyen en 0.03 por cada año más de edad del jefe de hogar, **controlando por sexo**.
 
 ---
 class: center middle main-title section-title-2 top-logo
@@ -432,268 +482,25 @@ class: title title-2
 
 # Estadísticos de ajuste
 
----
+En el caso de los modelos de regresión logística no contamos con una sola medida de ajuste de los modelos y esta suele interpretarse principalmente en términos comparativos.
 
-class: center middle main-title section-title-3 top-logo
+3 principales paroximaciones
 
-# Visualización de resultados
-
----
-
-class: title title-3
-
-# Regresión logistica
-
----
-# Orden de un script
-
-
-.center[
-![:scale 80%](https://github.com/learn-R/slides/raw/main/img/02/orden-sintaxis.png)]
-
----
-                                                
-
-# Paso 1: Cargar paquetes
-
----
-class: center middle main-title section-title-2 top-logo
-
-# Cargar paquetes
-
-- Este proceso de compone de dos partes esenciales
-
-(1) Instalar paquetes (`ìnstall.packages()`)
-
-(2) Llamar paquetes (`library()`). Veamos su paso a paso
-
----
-class: title title-2
-
-# Una forma fácil de cargar paquetes: `pacman`
-
-- `pacman` es un paquete que *literalmente* se comió procesos de R `base` y las simplificó en funciones únicas y más intuitivas. 
-
-![:scale 40%](https://github.com/learn-R/slides/raw/main/img/01/pacman.jpg)
----
-class: title title-2
-
-# `p_load()`
-
--  Resume las funciones `library()` e `install.packages()`
-  - optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if `requiere()`), es decir, **¡no te reinicia R si ya está instalada la librería!**
-  
----
-# Paso 1: Cargar paquetes
-
-
-```r
-*pacman::p_load(tidyverse,
-               magrittr,
-               car,
-               sjmisc)
-```
-
-
-
----
-layout: false
-name: renv
-class: center middle section-title section-title-3 animated fadeIn
-
-# Paso 2: Importar datos
-
----
-class: title title-3
-
-# Importar datos
-
-.box-inv-3.center[Una vez que hemos decidido qué datos queremos trabajar]
-
---
-
-.box-inv-3[Un paso evidente es cargar los datos]
-
---
-
-.box-inv-3[¡Y en R no es la excepción! De hecho, hablamos que R facilita el **almacenaje de datos**]
-
----
-class: title title-3
-# Consideraciones antes de importar datos 
-
-Para **importar** los datos en R debemos tener en consideración tres cosas:
-
-1. Cómo se llaman los datos (en nuestro caso Casen en Pandemia 2020 STATA)
-
-2. El formato de nuestros datos (en nuestro caso .sav)
-
-3. El lugar de donde están alojados nuestros datos. 
-
-
----
-class: center middle main-title section-title-3 top-logo
-
-# ¡Vamos a este segundo paso en el script: Cargar datos!
-
----
-
-# ¿Dónde?
-
-.box-inv-1[[Descargar el zip de la clase N°3 el sitio del curso](https://learn-r-uah.netlify.app/content/03-content/)]
-
----
-class: title title-4
-
-# 1. Recursos de la clase N°3 y práctica N°3
-
-- Datos: *Encuesta de Caracterización Socioeconómica (CASEN)* (2020).
-
-- Para ello, deben dirigirse al [siguiente enlace](https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing) y descargar los zip.
-
-
-- [**Libro de códigos**](http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf) antes de trabajar una base de datos.
-
----
-class: title title-4
-
-# Paquetes
-
-1. `pacman`: este facilita y agiliza la lectura de los paquetes a utilizar en R
-
-2. `sjmisc`: explorar datos
-
-3. `tidyverse`: colección de paquetes, del cuál utilizaremos `dplyr` y `haven`
-
-4. `haven`: cargar y exportar bases de datos en formatos .sav y .dta
-
-5. `readxl` y `writexl`: para cargar y exportar bases de datos en formato .xlsx y .xls
-
-6. `dplyr`: nos permite seleccionar variables de un set de datos
-
----
-class: center middle main-title section-title-3 top-logo
-
-# ¡No fue tan difícil!
-
---
-
-# Repasemos algunos **elementos**
-
----
-
-# Consideraciones antes de importar datos 
-
-Para **importar** los datos en R debemos tener en consideración tres cosas:
-
-.can-edit.key-likes[
-1.
-2.
-3.
-]
-
----
-
-# Tipos de variables
-
-| Clase  | Tipo de variable |
-|---------:|:--------|
-| `numeric` | Cuantitativa |
-| `character` | Categórica |
-| `Logic` |  Lógica (TRUE, FALSE, NA) |
-| `factor` | Categórica con niveles y etiquetas |
-
---
-
-A repasar con dos materiales complementarios: [Tipos de variables](resources/r-datatypes)  y [Tipos de variables](resources/r-datatypes-example)
-
----
-layout: false
-class: center section-title section-title-5 animated fadeIn
-
-# En síntesis
-
-
-.box-2.medium.sp-after-half[**Importar y exportar datos**]
-
---
-
-.box-3.medium.sp-after-half[**Validación y limpieza datos**]
-
---
-
-.box-4.medium.sp-after-half[**Selección de variables**]
-
-
----
-class: center middle main-title section-title-4 top-logo
-
-# ¡Y a no olvidar el flujo para el análisis!
-
---
-
-## Nos permite hacernos amigas/os más rápido del programa
----
-
-.center[
-![:scale 80%](https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png)]
-
----
-layout: false
-
-.box-1[¿Y eso era?]
-
---
-
-.box-inv-1[¡Antes! **Dos bonus track**]
-
-
----
-class: title title-8
-
-# Dos bonus track
-
-- ¿Cómo hacer mi propio repositorio en GitHub?
-
---
-
-- ¡Vamos a verlo!
-
----
-class: title title-8
-
-# Dos bonus track: cargar datos en url
-
-- ¿Cómo cargar datos desde una **url**?
-  - Seguir los tres pasos para importar datos
-  - Hint: `funcion(url("ruta_web"))`
-  
---
-
-- Quienes averiguen **como** cargar datos con url tendrán +0.5 décimas para la tarea N°2.
-  - Deben dejar en slack un ejemplo reproducible en el canal `#tareas`
-  - Pueden hacerlo **hasta antes del lunes 30**
-
----
-
-.box-inv-1[¡Ahora si que si! Nos vemos el próximo **lunes** en la clase N°4]
-
-.box-inv-1.small[**No olvides hacer el práctico antes**]
-
-.center[
-![](https://github.com/learn-R/slides/raw/main/img/01/monster-inc-2.gif)]
+- Devianza
+- Pseudo R2s
+- Cirterios de Información (AIC y BIC)
 ---
 layout: false
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Importar, validar y explorar datos
+# Análisis de regresión logística
 ]
 
 .class-info[
 &lt;br&gt;
 **Sesión N° 4**&lt;br&gt;
-**Análisis de regresión logística**
+**Análisis Avanzado de Datos II**
 &lt;br&gt;
 
 .pull-right.small[

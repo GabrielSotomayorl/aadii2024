@@ -1,9 +1,9 @@
 ---
-title: "Importar y explorar datos"
-linktitle: "4: Importar y explorar datos"
-date: "2021-08-23"
-start_date: "2021-08-23"
-end_date: "2021-09-06"
+title: "Regresión Logística Binaria"
+linktitle: "4: Regresión Logística Binaria"
+date: "2023-04-02"
+start_date: "2023-04-02"
+end_date: "2023-04-02"
 menu:
   content:
     parent: Contenido
