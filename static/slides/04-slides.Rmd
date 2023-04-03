@@ -82,7 +82,7 @@ class: title title-inv-1
 
 .box-4.medium.sp-after-half[**Modelo de regresión logística binaria**]
 
-.box-1.medium.sp-after-half[**Odds y odds ratios**]
+.box-1.medium.sp-after-half[**Odds y odds ratio**]
 
 ---
 class: title title-inv-1
@@ -93,7 +93,7 @@ class: title title-inv-1
 
 .box-2.medium.sp-after-half[**Estadísticos de ajuste y selección de modelos**]
 
-.box-3.medium.sp-after-half[**Visualización de resultados**]
+
 
 
 ---
@@ -231,7 +231,7 @@ class: title title-4
 
 class: center middle main-title section-title-1 top-logo
 
-# Odds y odds ratios
+# Odds y odds ratio
 
 ---
 
@@ -280,7 +280,7 @@ Los odds ratio resultan útiles para comparar la asociación entre las chances d
 
 OR de pobreza de un hogar con jefatura masculina / OR de pobreza de un hogar con jefatura masculina
 
-$$Odds\: ratios = {{p_{m}(1-p_{m})}\over p_{h}(1-p_{h})}$$ 
+$$Odds\: ratio = {{p_{m}(1-p_{m})}\over p_{h}(1-p_{h})}$$ 
 $$= {0.114/0.886 \over 0.076/0.924} = {0.1286\over 0.08225}= 1.564 $$ 
 ---
 class: title title-1
@@ -289,7 +289,7 @@ class: title title-1
 
 Las chances de un hogar con jefatura femenina de encontrarse esn situación de pobreza son 1,564 veces mayores a las chanches de un hogar con jefatura masculina.
 
-.box-1.sma.sp-after-half[Los odd ratios nos permiten resumir en un número la relación entre dos variables categóricas]
+.box-1.sma.sp-after-half[Los odds ratio nos permiten resumir en un número la relación entre dos variables categóricas]
 
 Ahora con estos conceptos en mente pasemos a ver como se ajusta un modelo de regresión logística.
 ---
@@ -489,8 +489,50 @@ En el caso de los modelos de regresión logística no contamos con una sola medi
 3 principales paroximaciones
 
 - Devianza
+- Test de Razón de Verosimilitud
 - Pseudo R2s
 - Cirterios de Información (AIC y BIC)
+---
+
+class: title title-2
+
+# Devianza
+
+- La devianza es una medida de ajuste que se utiliza para evaluar la calidad de un modelo de regresión logística binaria. Es la diferencia entre la log-verosimilitud del modelo ajustado y la log-verosimilitud del modelo nulo, multiplicada por -2. Por eso también se conoce como devianza residual.
+
+
+- Formula: **.red[Devianza =-2*log likelihood]**
+
+---
+class: title title-2
+
+# Test de razón de verosimilitud
+
+**Test de razón de verosimilitud:** es un test estadístico utilizado para comparar dos modelos, uno más simple (modelo nulo) y otro más complejo (modelo ajustado). El test de LR se basa en la comparación de la devianza de ambos modelos, y se utiliza para determinar si el modelo ajustado mejora significativamente la predicción en comparación con el modelo nulo.
+
+---
+class: title title-2
+
+# Criterios de información (AIC y BIC)
+
+Criterios de información: son medidas utilizadas para comparar diferentes modelos y seleccionar el modelo más adecuado. Los dos criterios de información más comunes son el Akaike Information Criterion (AIC) y el **Bayesian Information Criterion (BIC)**. Estos criterios toman en cuenta tanto la bondad de ajuste del modelo como la complejidad del modelo. Un modelo con un valor de AIC o BIC más bajo se considera mejor ajustado que un modelo con un valor más alto.  
+
+---
+class: title title-2
+
+# Pseudo R2s
+
+.small[Son medidas de la variabilidad explicada por el modelo. No pueden interpretarse como proporción de la varainza explicada, como en le caso de los modelos con variable dependientes continuas.
+
+Existen varios tipos de PseudoR2, cada uno con una interpretación diferente. Uno de los PseudoR2 más comunes es el McFadden's PseudoR2. Se define como: $1−[LL(LM)/LL(L0)]$, donde
+.small[
+- LL es el log likelihood del modelo
+- LM es el modelo posterior (con más predictores)
+- L0 es el modelo nulo]
+
+Un valor cercano a 1 indica que el modelo explica una gran cantidad de la variabilidad en los datos, mientras que un valor cercano a 0 indica que el modelo no explica mucha variabilidad.]
+
+
 ---
 layout: false
 class: center middle main-title section-title-1 top-logo

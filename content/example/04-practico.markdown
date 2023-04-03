@@ -14,7 +14,7 @@ editor_options:
 <link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
 <link href="/rmarkdown-libs/animate.css/animate.xaringan.css" rel="stylesheet" />
-<script type="application/json" id="xaringanExtra-editable-docid">{"id":"x6998340b33c4fa8bcafeb28b407cda0","expires":14}</script>
+<script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0f141be542044f59ca9b3d68ea7aaed","expires":14}</script>
 <script src="/rmarkdown-libs/himalaya/himalaya.js"></script>
 <script src="/rmarkdown-libs/js-cookie/js.cookie.js"></script>
 <link href="/rmarkdown-libs/editable/editable.css" rel="stylesheet" />
@@ -84,15 +84,17 @@ casen<-casen[casen$pco1==1,]
 
 # 2. Estimación del modelo e interpretación de coeficientes
 
-Para estimar un modelo de regresión logística binaria usaremos el comado **glm**
+Para estimar un modelo de regresión logística binaria se utiliza el comando glm, que estima un modelo lineal generalizado. En este caso, el argumento family = "binomial" especifica que se está ajustando un modelo de regresión logística binaria.
+
+"glm" es la función utilizada para ajustar un modelo de regresión logística en R.
+"pobre" es la variable dependiente, mientras que "sexo" y "edad" son las variables independientes.
+"as_factor" es una función utilizada para convertir la variable categórica "sexo" en un factor.
+"data" especifica el conjunto de datos que se utilizará para ajustar el modelo.
+"family = "binomial"" especifica que se está ajustando un modelo de regresión logística, es decir, que la variable dependiente es binaria.
 
 
 ```r
 library(texreg)
-```
-
-```
-## Warning: package 'texreg' was built under R version 4.2.2
 ```
 
 ```
@@ -163,10 +165,11 @@ htmlreg(glm(pobre~as_factor(sexo)+edad, data=casen, family = "binomial"),
 
 Interpretación: 
 
-Los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aaquellos con jefatura masculina controlando por edad
+Este bloque de código estima un modelo de regresión logística donde la variable dependiente es pobre y las variables independientes son sexo (codificada como una variable factor) y edad. as_factor convierte la variable sexo en una variable factor, para poder utilizarla como variable independiente en el modelo de regresión logística.
 
-En el mismo sentido, los log-odds predichos de ser encontrarse en situación de pobreza disminuyen en 0.03 por cada año más de edad del jefe de hogar, controlando por sexo.
+El modelo ajustado muestra que el log-odds de estar en situación de pobreza aumenta en 0,39 en los hogares con jefatura femenina respecto a aquellos con jefatura masculina, controlando por edad. Además, los log-odds de estar en situación de pobreza disminuyen en 0,03 por cada año más de edad del jefe de hogar, controlando por sexo.
 
+Es importante destacar que los coeficientes estimados en el modelo logístico no pueden ser interpretados directamente como los coeficientes en un modelo lineal.
 
 
 ```r
@@ -229,11 +232,17 @@ htmlreg(or,
 </tfoot>
 </table>
 
+A continuación, se utilizan las funciones "texreg::extract" y "exp" para obtener los ORs (odds ratios) y sus intervalos de confianza del modelo y, posteriormente, se utiliza la función "htmlreg" para mostrar los resultados en formato HTML.
 
 
 # 3. Ajuste del modelo
 
 Como vimos durante la clase, la interpretación de ajuste de los modelos de regresión logística tiene una orientación principalmente comparativa. 
+
+A continuación, se comparan los modelos utilizando el criterio estadístico de la prueba de razón de verosimilitud, utilizando la función "anova". Para esto debemos guardar los modelos estimados como objetos. 
+
+"modelonulo" es un modelo nulo que sólo incluye el intercepto.
+"anova" se utiliza para comparar modelos ajustados y obtener la prueba de razón de verosimilitud. En este caso, se están comparando los modelos "modelonulo" y "modelo1", y se especifica el test utilizado como "Chisq".
 
 
 ```r
@@ -256,6 +265,7 @@ anova(modelonulo,modelo1, test ="Chisq")
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
+En este caso, se están comparando los modelos "modelo1" y "modelo2".
 
 
 ```r
@@ -274,6 +284,7 @@ anova(modelo1,modelo2, test ="Chisq")
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
+Por último, se utiliza la función "PseudoR2" del paquete "DescTools" para obtener los pseudo-R cuadrados de McFadden para cada modelo.
 
 
 ```r
@@ -299,6 +310,15 @@ PseudoR2(modelo2,which="McFadden")
 
 # 4. Visualización de resultados
 
+El código anterior utiliza la función plot_model() de la librería sjPlot para generar un gráfico de visualización de los resultados del modelo de regresión logística modelo2 ajustado previamente.
+
+La función plot_model() utiliza por defecto el tipo de gráfico "int" que muestra la interacción entre las variables predictoras en el eje X y la probabilidad ajustada de la variable respuesta en el eje Y. En este caso, la variable respuesta es la pobreza y las variables predictoras son el sexo y la edad.
+
+Además, el código establece el color de la línea vertical para el valor medio de la variable edad en "grey".
+
+El gráfico muestra dos líneas: una para cada valor de la variable sexo (0 y 1), que representan la probabilidad ajustada de pobreza para cada valor de edad, controlando por la variable sexo. El gráfico permite visualizar la relación entre las variables predictoras y la variable respuesta de una manera más intuitiva. Por ejemplo, se puede ver que la probabilidad de pobreza es mayor para las mujeres en todas las edades, pero la brecha de género se reduce a medida que aumenta la edad.
+
+En resumen, el código utiliza la función plot_model() para generar un gráfico que permite visualizar de manera intuitiva los resultados del modelo de regresión logística ajustado anteriormente.
 
 
 ```r
