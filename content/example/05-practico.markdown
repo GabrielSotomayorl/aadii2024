@@ -12,9 +12,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r set up, echo = F}
-knitr::opts_knit$set(sql.max.print = 10)
-```
+
 
 ## 0. Objetivo del práctico
 

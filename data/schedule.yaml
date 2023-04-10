@@ -44,7 +44,7 @@ lessons:
     session: "Sesión 4"
     date: "3 de abril"
     content: "04-content"
-    # example: "04-practico"
+    example: "04-practico"
     bg: 2
     bottomborder: True
 
@@ -65,8 +65,8 @@ lessons:
   - title: '• Análisis factorial exploratorio y su aplicación en la investigación sociológica. El concepto de varianza y covarianza. <br>• Diferencias entre el análisis de componente principal y de factor común. Supuestos de la técnica'
     session: "Sesión 5"
     date: "10 de abril"
-    # content: "05-content"
-    # example: "05-practico"
+    content: "05-content"
+    example: "05-practico"
     bg: 1
 
   - title: '• La extracción de factores comunes. Métodos de extracción de factores, criterios de selección del número de factores y rotación.<br>• La matriz factorial y su interpretación. Evaluación del modelo factorial y cálculo de puntuaciones factoriales.'
