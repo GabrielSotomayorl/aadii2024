@@ -161,9 +161,9 @@ Tiene dos objetivos principales:
 class: title title-2
 
 # Análisis Factorial Exploratorio
-![:scale 60%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/ecua.png)
-
-.small [Cada variable observada X¡ se expresa mediante una combinación lineal de un número pequeño de factores comunes latentes y un factor único, también latente. Estos últimos representan la parte de la varianza de la variable observada que “no” es explicada por los factores comunes. La elección de la letra “e” para denotar al factor único procede de su consideración como “término de error”.]
+.center[![:scale 60%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/ecua.png)]
+  
+.small[Cada variable observada X¡ se expresa mediante una combinación lineal de un número pequeño de factores comunes latentes y un factor único, también latente. Estos últimos representan la parte de la varianza de la variable observada que “no” es explicada por los factores comunes. La elección de la letra “e” para denotar al factor único procede de su consideración como “término de error”.]
 ---
 class: title title-2
 
@@ -180,13 +180,21 @@ class: center middle main-title section-title-4 top-logo
 # Etapas del Análisis Factorial Exploratorio 
 
 ---
-
-class: title title-4
-
-# .small[Etapas del Análisis Factorial Exploratorio]
+.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/esquema.png)]
 ---
 
+class: center middle main-title section-title-1 top-logo
 
+# Preparación de los datos y evaluación de supuestos
+
+---
+class: title title-1
+
+# Supuestos del AFE
+
+
+
+---
 class: center middle main-title section-title-1 top-logo
 
 .small[
