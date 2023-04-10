@@ -21,12 +21,20 @@ El objetivo de este práctico es revisar como realizar la comprobación de supue
 
 ## 1. Carga y gestión de datos
 
+En primer lugar cargaremos una base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. 
+
+![](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/Practico.png)
+
+Estos datos están en formato csv (comma separated value), por lo cual podemos leerlos con la función *read.csv2* incluida con r base.
 
 
 ```r
 #cargamos los datos 
 datos <- read.csv2("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EjemploAF.csv")
 ```
+
+
+En primer lugar revisamos los datos y daremos por perdidos los valores no sabe y no responde. 
 
 
 ```r
@@ -84,6 +92,8 @@ summary(datos)
 ##  NA's   :16      NA's   :17      NA's   :23      NA's   :34
 ```
 
+Acontinuación exploramos los datos para conocer sus medias y distribución. En este punto es relvante revisar si existe mucha difderencia en sus niveles de variabilidad porque estos afectara los resutlado del Análisis Factorial Exploratorio.
+
 
 ```r
 #   4.    ANALISIS DESCRIPTIVO DE LAS VARIABLES. 
@@ -139,6 +149,8 @@ library(psych)
 library(MVN)
 ```
 
+Para la comprobación de supuestos partiremos por generar una base de datos listwise, es decir, en al que se eliminan todos los casos que tienen valores perdidos en alguno de los ítem. Esto es posible en este caso por el bajo número de perdidos existentes. 
+
 
 ```r
 #   5a.   Crear una base solo con listwise (para test de Mardia)
@@ -178,6 +190,9 @@ dim(datosLW)
 ```
 ## [1] 1632    9
 ```
+
+A continuación revisaremos la existencia de casos atípicos multivariantes a partir del cálculo y evaluación de la distancia de Mahalanobis. 
+
 
 ```r
 #Tratamiento de casos atipicos
@@ -230,13 +245,15 @@ datosLW<-datosLW[which(datosLW$sigmahala>0.01),]#dar por perdido o eliminar caso
 datosLW$sigmahala<-NULL
 ```
 
+A continuación utilizamos el test de Mardia para evaluar la existencia de normalidad multivariabnte en nuestros datos.  
+
 
 ```r
   #Test de Mardia.
 MVN::mvn(datosLW,mvnTest	= "mardia",multivariatePlot="qq")
 ```
 
-<img src="/example/05-practico_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="/example/05-practico_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 ```
 ## $multivariateNormality
@@ -270,6 +287,8 @@ MVN::mvn(datosLW,mvnTest	= "mardia",multivariatePlot="qq")
 ## PROYE 1250 4.4184 1.519075      5   1   7    4    6 -0.49027569 -0.2352500
 ```
 
+A nivel univariado debemos comprobar que existan niveles moderados de asimetria en nuestra varaibles de interés. 
+
 
 ```r
 #   5b.   Observar asimetria
@@ -284,6 +303,8 @@ s7<-skew(datosLW$MEDIO, type=2, na.rm=T)
 s8<-skew(datosLW$LIBER, type=2, na.rm=T)
 s9<-skew(datosLW$PROYE, type=2, na.rm=T)
 ```
+
+El test KS nos permite evaluar la existencia de normalidad en nuestras variables. 
 
 
 ```r
@@ -316,6 +337,8 @@ ks.test(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm=T), sd(datosLW$SALUD,n
 # ks.test(datosLW$LIBER, "pnorm", mean(datosLW$LIBER, na.rm=T), sd(datosLW$LIBER,na.rm=T))
 # ks.test(datosLW$PROYE, "pnorm", mean(datosLW$PROYE, na.rm=T), sd(datosLW$PROYE,na.rm=T))
 ```
+
+A cotninuación calculamos la matriz de correlaciones para evaluar la existencia de colinealdiad. Esto es relevante porque es necesario qeu exista suficiente varianza común entre las variables para la extracción de factores comunes. 
 
 
 ```r
@@ -358,10 +381,11 @@ print(det(cor_datos))#Cercano a 0 correlacion multivariante
 ```
 
 
+
+
 ```r
 #Probar con matriz policlorica en caso de estar trabajando con variables ordinales.
-
-polychoric (datosLW)
+polychoric(datosLW)
 ```
 
 ```
@@ -390,6 +414,8 @@ polychoric (datosLW)
 ## LIBER -1.44 -1.14 -0.648 -0.022 0.70 1.5
 ## PROYE -1.53 -1.22 -0.693 -0.056 0.67 1.5
 ```
+
+Por último chequeamos la existencia de multicolinealidad.
 
 
 ```r
