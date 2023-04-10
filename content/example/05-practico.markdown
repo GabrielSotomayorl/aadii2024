@@ -21,7 +21,7 @@ El objetivo de este práctico es revisar como realizar la comprobación de supue
 
 ## 1. Carga y gestión de datos
 
-En primer lugar cargaremos una base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. 
+En primer lugar, cargaremos una base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. 
 
 ![](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/Practico.png)
 
@@ -34,7 +34,7 @@ datos <- read.csv2("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pr
 ```
 
 
-En primer lugar revisamos los datos y daremos por perdidos los valores no sabe y no responde. 
+A continuación, revisamos los datos y daremos por perdidos los valores no sabe y no responde. 
 
 
 ```r
@@ -92,7 +92,7 @@ summary(datos)
 ##  NA's   :16      NA's   :17      NA's   :23      NA's   :34
 ```
 
-Acontinuación exploramos los datos para conocer sus medias y distribución. En este punto es relvante revisar si existe mucha difderencia en sus niveles de variabilidad porque estos afectara los resutlado del Análisis Factorial Exploratorio.
+A continuación, exploramos los datos para conocer sus medias y distribución. En este punto es relevante revisar si existe mucha diferencia en sus niveles de variabilidad, ya que esto afectara los resultados del Análisis Factorial Exploratorio.
 
 
 ```r
@@ -143,13 +143,15 @@ summary(datos)
 
 ##  2.  Comprobación de supuestos
 
+En este bloque de código, se cargan las bibliotecas necesarias para realizar la comprobación de supuestos.
+
 
 ```r
 library(psych)
 library(MVN)
 ```
 
-Para la comprobación de supuestos partiremos por generar una base de datos listwise, es decir, en al que se eliminan todos los casos que tienen valores perdidos en alguno de los ítem. Esto es posible en este caso por el bajo número de perdidos existentes. 
+Para la comprobación de supuestos partiremos por generar una base de datos listwise, es decir, en la que se eliminan todos los casos que tienen valores perdidos en alguno de los ítem. Esto es posible en este caso por el bajo número de perdidos existentes. 
 
 
 ```r
@@ -191,7 +193,7 @@ dim(datosLW)
 ## [1] 1632    9
 ```
 
-A continuación revisaremos la existencia de casos atípicos multivariantes a partir del cálculo y evaluación de la distancia de Mahalanobis. 
+A continuación, revisaremos la existencia de casos atípicos multivariantes a partir del cálculo y evaluación de la distancia de Mahalanobis. 
 
 
 ```r
@@ -245,7 +247,7 @@ datosLW<-datosLW[which(datosLW$sigmahala>0.01),]#dar por perdido o eliminar caso
 datosLW$sigmahala<-NULL
 ```
 
-A continuación utilizamos el test de Mardia para evaluar la existencia de normalidad multivariabnte en nuestros datos.  
+A continuación, utilizamos el test de Mardia para evaluar la existencia de normalidad multivariante en nuestros datos.  
 
 
 ```r
@@ -287,7 +289,7 @@ MVN::mvn(datosLW,mvnTest	= "mardia",multivariatePlot="qq")
 ## PROYE 1250 4.4184 1.519075      5   1   7    4    6 -0.49027569 -0.2352500
 ```
 
-A nivel univariado debemos comprobar que existan niveles moderados de asimetria en nuestra varaibles de interés. 
+A nivel univariado debemos comprobar que existan niveles moderados de asimetría en nuestra variables de interés. 
 
 
 ```r
@@ -304,7 +306,7 @@ s8<-skew(datosLW$LIBER, type=2, na.rm=T)
 s9<-skew(datosLW$PROYE, type=2, na.rm=T)
 ```
 
-El test KS nos permite evaluar la existencia de normalidad en nuestras variables. 
+El test KS nos permite evaluar la existencia de normalidad en cada una de las variables. 
 
 
 ```r
@@ -314,13 +316,13 @@ ks.test(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm=T), sd(datosLW$SALUD,n
 ```
 
 ```
-## Warning in ks.test.default(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm =
-## T), : ties should not be present for the Kolmogorov-Smirnov test
+## Warning in ks.test(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm = T), :
+## ties should not be present for the Kolmogorov-Smirnov test
 ```
 
 ```
 ## 
-## 	Asymptotic one-sample Kolmogorov-Smirnov test
+## 	One-sample Kolmogorov-Smirnov test
 ## 
 ## data:  datosLW$SALUD
 ## D = 0.15107, p-value < 2.2e-16
@@ -338,7 +340,7 @@ ks.test(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm=T), sd(datosLW$SALUD,n
 # ks.test(datosLW$PROYE, "pnorm", mean(datosLW$PROYE, na.rm=T), sd(datosLW$PROYE,na.rm=T))
 ```
 
-A cotninuación calculamos la matriz de correlaciones para evaluar la existencia de colinealdiad. Esto es relevante porque es necesario qeu exista suficiente varianza común entre las variables para la extracción de factores comunes. 
+A continuación calculamos la matriz de correlaciones para evaluar la existencia de colinealidad. Esto es relevante porque es necesario que exista suficiente varianza común entre las variables para la extracción de factores comunes. 
 
 
 ```r
@@ -415,12 +417,12 @@ polychoric(datosLW)
 ## PROYE -1.53 -1.22 -0.693 -0.056 0.67 1.5
 ```
 
-Por último chequeamos la existencia de multicolinealidad.
+Por último, chequeamos la existencia de multicolinealidad.
 
 
 ```r
 #   5c.   MULTICOLINEALIDAD
-#Test de esfericidad de Bartlett.Contrastar la hipotesis Nula de Igualdad con Matriz identidad
+#Test de esfericidad de Bartlett. Contrastar la hipotesis Nula de Igualdad con Matriz identidad
 
 print(cortest.bartlett(cor_datos,n = nrow(datosLW)))
 ```
@@ -450,5 +452,3 @@ KMO(datosLW)
 ## SALUD  INGR  TRAB  EDUC  VIVI SEGUR MEDIO LIBER PROYE 
 ##  0.96  0.94  0.96  0.95  0.96  0.94  0.95  0.90  0.92
 ```
-
-
