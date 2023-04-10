@@ -25,20 +25,12 @@ El objetivo de este práctico es revisar como realizar la comprobación de supue
 
 
 ```{r}
-
-#   1.    DEFINIR DIRECTORIO DE TRABAJO
-#         Cambiar seg?n directorio en computador
-
-setwd("C:")
-
-#   2.    LEER DATOS. Leemos datos desde archivo "UDP 2015 castigo.csv". 
-
-datos <- read.csv2("EjemploAF.csv")
+#cargamos los datos 
+datos <- read.csv2("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EjemploAF.csv")
 ```
 
 ```{r}
 #   3.    DEFINIR VALORES PERDIDOS para Las variables, intervalares discretas de 7 categorias de las base de Datos PNUD 2015
-View(datos)
 summary(datos)
 
 #Categorizar como NA 8 y 9 (NS/NR).
@@ -61,12 +53,8 @@ summary(datos)
 
 ##  2.  Comprobación de supuestos
 
-```{r}
-s
-
-install.packages("psych")
+```{r,warning= F}
 library(psych)
-install.packages("MVN")
 library(MVN)
 ```
 
@@ -84,21 +72,16 @@ mean
 Sx<-cov(datosLW[1:9]) #matriz de varianza covariaza 
 Sx
 D2<-mahalanobis(datosLW[1:9],mean,Sx)
-D2
-
-(1-pchisq(D2, 3))
 
 datosLW$sigmahala=(1-pchisq(D2, 3))  
 
 datosLW<-datosLW[which(datosLW$sigmahala>0.01),]#dar por perdido o eliminar caso atipico
 datosLW$sigmahala<-NULL
-datosLW
 ```
 
 ```{r}
   #Test de Mardia.
-
-mardiaTest(datosLW, qqplot=T)
+MVN::mvn(datosLW,mvnTest	= "mardia",multivariatePlot="qq")
 
 ```
 
@@ -120,14 +103,14 @@ s9<-skew(datosLW$PROYE, type=2, na.rm=T)
 #Test de KS
 
 ks.test(datosLW$SALUD, "pnorm", mean(datosLW$SALUD, na.rm=T), sd(datosLW$SALUD,na.rm=T))
-ks.test(datosLW$INGR, "pnorm", mean(datosLW$INGR, na.rm=T), sd(datosLW$INGR,na.rm=T))
-ks.test(datosLW$TRAB, "pnorm", mean(datosLW$TRAB, na.rm=T), sd(datosLW$TRAB,na.rm=T))
-ks.test(datosLW$EDUC, "pnorm", mean(datosLW$EDUC, na.rm=T), sd(datosLW$EDUC,na.rm=T))
-ks.test(datosLW$VIVI, "pnorm", mean(datosLW$VIVI, na.rm=T), sd(datosLW$VIVI,na.rm=T))
-ks.test(datosLW$SEGUR, "pnorm", mean(datosLW$SEGUR, na.rm=T), sd(datosLW$SEGUR,na.rm=T))
-ks.test(datosLW$MEDIO, "pnorm", mean(datosLW$MEDIO, na.rm=T), sd(datosLW$MEDIO,na.rm=T))
-ks.test(datosLW$LIBER, "pnorm", mean(datosLW$LIBER, na.rm=T), sd(datosLW$LIBER,na.rm=T))
-ks.test(datosLW$PROYE, "pnorm", mean(datosLW$PROYE, na.rm=T), sd(datosLW$PROYE,na.rm=T))
+# ks.test(datosLW$INGR, "pnorm", mean(datosLW$INGR, na.rm=T), sd(datosLW$INGR,na.rm=T))
+# ks.test(datosLW$TRAB, "pnorm", mean(datosLW$TRAB, na.rm=T), sd(datosLW$TRAB,na.rm=T))
+# ks.test(datosLW$EDUC, "pnorm", mean(datosLW$EDUC, na.rm=T), sd(datosLW$EDUC,na.rm=T))
+# ks.test(datosLW$VIVI, "pnorm", mean(datosLW$VIVI, na.rm=T), sd(datosLW$VIVI,na.rm=T))
+# ks.test(datosLW$SEGUR, "pnorm", mean(datosLW$SEGUR, na.rm=T), sd(datosLW$SEGUR,na.rm=T))
+# ks.test(datosLW$MEDIO, "pnorm", mean(datosLW$MEDIO, na.rm=T), sd(datosLW$MEDIO,na.rm=T))
+# ks.test(datosLW$LIBER, "pnorm", mean(datosLW$LIBER, na.rm=T), sd(datosLW$LIBER,na.rm=T))
+# ks.test(datosLW$PROYE, "pnorm", mean(datosLW$PROYE, na.rm=T), sd(datosLW$PROYE,na.rm=T))
 ```
 
 ```{r}
@@ -136,7 +119,7 @@ ks.test(datosLW$PROYE, "pnorm", mean(datosLW$PROYE, na.rm=T), sd(datosLW$PROYE,n
 
 cor_datos<- cor(datosLW)
 print(cor_datos)
-print(det(cor_datos))#Cercano a 0 correlaci?n multivariante
+print(det(cor_datos))#Cercano a 0 correlacion multivariante
 ```
 
 ```{r}
