@@ -161,12 +161,9 @@ Tiene dos objetivos principales:
 class: title title-2
 
 # Análisis Factorial Exploratorio
+![:scale 60%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/ecua.png)
 
-Tiene dos objetivos principales:  
-
-1. Analizar la correlación existente en una serie de variables, con el propósito de descubrir si comparten alguna estructura latente (no directamente observable).  
- 
-2. La obtención de puntuaciones factoriales, variables típicas o, en su caso, variables sucedáneas, para cada factor. Éstas actuarán en representación de los factores o componentes en análisis posteriores.
+.small [Cada variable observada X¡ se expresa mediante una combinación lineal de un número pequeño de factores comunes latentes y un factor único, también latente. Estos últimos representan la parte de la varianza de la variable observada que “no” es explicada por los factores comunes. La elección de la letra “e” para denotar al factor único procede de su consideración como “término de error”.]
 ---
 class: title title-2
 
