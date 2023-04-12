@@ -32,15 +32,15 @@ lessons:
     date_end: "3 de abril"
     bg: 2
 
-  - title: '• Introducción <br>• Modelo Logarítmico bivariado <br>• Modelo Logarítmico Multivariado'
+  - title: '• Regresión Lineal Múltiple'
     session: "Sesión 3"
     date: "27 marzo"
     # content: "03-content"
-    # example: "03-practico"
+    example: "03-practico"
     # resource: "r-datatypes"
     bg: 2
 
-  - title: '•	Interpretación de los coeficientes<br> Ejemplos de aplicación en R'
+  - title: '• Modelo Logarítmico bivariado <br>•	Interpretación de los coeficientes<br> Ejemplos de aplicación en R'
     session: "Sesión 4"
     date: "3 de abril"
     content: "04-content"

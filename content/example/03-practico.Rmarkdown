@@ -1,7 +1,7 @@
 ---
-title: "Tipos de datos"
-linktitle: "3: Tipos de datos"
-date: "2021-08-16"
+title: "3. Análisis de Regresión Lineal Múltiple"
+linktitle: "3. Análisis de Regresión Lineal Múltiple"
+date: "2023-03-27"
 menu:
   example:
     parent: Ejemplos
@@ -14,147 +14,155 @@ editor_options:
 
 # 0. Objetivo del práctico
 
-El objetivo de este práctico es presentar una introducción a los tipos de datos que podemos encontrarnos trabajando con R. Esto constituye uno de los pilares fundamentales para el correcto procesamiento, análisis y presentación de resultados. 
+El objetivo de este práctico es presentar una introducción al Análisis de Regresión Lineal Múltiple,visualizar sus resultados y evaluar el ajuste de los modelos y el cumplimiento de los supuestos de la técnica.   
 
-##  Materiales de la sesión
+Para esto haremos uso de la encuesta [CASEN (2020)](http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020), la mayor encuesta de hogares realizada en Chile, a cargo del Ministerio de Desarrollo Social, de carácter transversal y multipropósito, es el principal instrumento de medición socioeconómica para el diseño y evaluación de la política social. Permite conocer periódicamente la situación socioeconómica de los hogares y de la población que reside en viviendas particulares, a través de preguntas referidas a composición familiar, educación, salud, vivienda, trabajo e ingresos, entre otros aspectos. 
 
-En este práctico trabajaremos con datos de la **Encuesta Suplementaria de Ingresos (*ESI*)** desarrollada por el **Instituto Nacional de Estadísticas** en el año 2020. Esta es "un módulo complementario que se aplica dentro de la Encuesta Nacional de Empleo (ENE) (...) Su objetivo principal es caracterizar los ingresos laborales de las personas que son clasificadas como ocupadas en la ENE y otras fuentes de ingresos de los hogares", contando con un diseño muestral probabilístico, estratificado y bietápico. Pueden encontrar más información [aquí](https://www.ine.cl/estadisticas/sociales/ingresos-y-gastos/encuesta-suplementaria-de-ingresos). 
+## Cargar paquetes a utilizar
+Para iniciar se cargan los paquetes necesarios para realizar el análisis de regresión. Al utilizar la función p_load() del paquete "pacman", si alguno de los paquetes no está instalado, se instalará automáticamente con la función install.packages(). Los paquetes utilizados son:
 
-Recuerden que los archivos asociados a este práctico se pueden descargar aquí:
+haven: para cargar archivos SPSS en R.
+texreg: para crear tablas de resumen de regresión.
+corrplot: para visualizar las correlaciones entre variables.
+coefplot: para crear gráficos de coeficientes de regresión.
+ggplot2: para crear gráficos.
+sjPlot: para crear tablas de resumen de regresión y gráficos.
+summarytools: para crear resúmenes de variables.
+dplyr: para manipulación de datos.
+lmtest: para pruebas de diagnóstico de regresión.
+sandwich: para estimar errores robustos en regresiones.
 
-- [<i class="fas fa-file-archive"></i> `03-class.zip`](https://github.com/learn-R/03-class-datatypes-/raw/main/03-clase.zip) 
 
-## 1. Tipos de datos 
+```{r}
+# Cargar paquetes a utilizar
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(haven,texreg,corrplot,coefplot,ggplot2,sjPlot,summarytools,dplyr,
+               lmtest,sandwich)
+```
 
-### a) ¿Qué son?
+## Importar datos 
+A continuación se carga la base de datos de CASEN 2020. La base de datos se encuentra en la página web del Observatorio Social. La función read_spss() del paquete haven se utiliza para cargar la base de datos.
 
-Tanto en R como en la mayoría de lenguajes de programación, contamos con datos de *diversos tipos*, en razón de los cuales podemos ejecutar determinados procedimientos de tratamiento o análisis. 
+Primero, se descarga un archivo comprimido que contiene la base de datos desde la página web utilizando la función download.file(). Luego, se descomprime el archivo utilizando la función unz() y se carga la base de datos utilizando la función read_sav(). Finalmente, se elimina el archivo temporal que se creó durante el proceso de descarga y descompresión utilizando la función unlink() y remove().
 
-Los tipos de datos están **íntimamente relacionados con el *nivel de medición* de las variables** a las cuales corresponden. Como habrán aprendido en sus cursos de estadística, la teoría de los niveles de medición contempla cuatro de ellos: 
+```{r}
+temp <- tempfile() #Creamos un archivo temporal
+download.file("http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Casen_en_Pandemia_2020_revisada202209.sav.zip",temp) #descargamos los datos
+base <- haven::read_sav(unz(temp, "Casen_en_Pandemia_2020_revisada202209.sav")) #cargamos los datos
+unlink(temp); remove(temp) #eliminamos el archivo temporal
+```
 
-1. **Nominal**: para variables categóricas o cualitativas. Los números asignados permiten dividir los datos en diferentes grupos, sin la asignación de un orden específico para las categorías entre las cuales se dispersan los datos. Un ejemplo de variable nominal es la comuna de residencia o el género. 
+## Análisis previos
 
-1. **Ordinal**: para variables categóricas o cualitativas. Los números asignados permiten dividir los datos en diferentes grupos y, a la vez, establecer un *orden no exacto* entre ellos. Ello quiere decir que un número más bajo (alto) indicará una menor (mayor) presencia del atributo. Sin embargo, los números no indican distancias concretas: por ejemplo, la distancia entre las categorías 1 y 2 **no necesariamente** es la misma que aquella que existe entre las categorías 2 y 3. Para ilustrarlo más claramente, las escalas Likert representan un ejemplo clásico de variables ordinales: el/la informante puede declarar un mayor o menor grado de acuerdo con las medidas adoptadas por el gobierno durante la pandemia. Sin embargo, no sabemos **cuán más de acuerdo se encuentran**: sólo sabemos que se encuentran más o menos de acuerdo con aquellas medidas en relación con otro/a informante.
+El análisis de regresón lineal requiere una variable dependiente continua, mientras que las varaibles independientes pueden corresponder a cualquier nivel de medición. Podemos revisar el tipo de datos  de las variables que utilizaremos con la función "class()"
+```{r}
+class(base$yautcor)
+class(base$esc)
+class(base$edad)
+class(as_factor(base$sexo))
+```
 
-1. **Intervalar**: para variables numéricas o cuantitativas. Aquí es posible clasificar y ordenar los datos, estableciendo además distancias concretas entre un valor y otro. Por ello, las variables intervalares nos permiten **ejecutar operaciones aritméticas** y, por lo tanto, es posible calcular estadísticos como la media de una distribución. Un ejemplo de variable intervalar puede ser la cantidad de jugadoras/es presentes en una cancha de basketball durante un partido. 
+Se utiliza la función dfSummary() del paquete summarytools para crear un resumen de las variables yautcor, esc, edad y sexo de la base de datos. El resumen incluye estadísticas descriptivas y de frecuencia.
 
-1. **De razón**: para variables numéricas o cuantitativas. La mayor diferencia con las variables de nivel intervalar es que **incluyen un cero absoluto** que indica **ausencia del atributo**. En el caso anterior, podríamos señalar que, teóricamente, no puede haber cero jugadoras/es en una cancha de basketball durante un partido, pues de ser así no estaría ocurriendo el partido. Sin embargo, sí podemos decir que una persona propietaria de un emprendimiento tiene 2, 4 o 0 trabajadores/as contratados/as. En este caso, el 0 indicaría que *no ha contratado a ningún/a trabajador/a*, y la distancia entre 0 y 2 trabajadores/as es la misma que la que existe entre 2 y 4 trabajadores/as (es decir, una diferencia de 2 trabajadores/as para cada caso).
+```{r}
 
-En la sección **Recursos** de la página web del curso podrán encontrar un artículo explicativo referente a los [tipos de variables](https://learn-r-uah.netlify.app/resource/r-datatypes-example/), donde se presentan además algunos ejemplos para cada una de ellas. 
+print(dfSummary(base[,c("yautcor","esc","edad","sexo")], headings = FALSE, method = "render"))
+```
 
-### b) ¿Qué tipos de datos podemos encontrarnos en R?
+A continuación realizamos un análisis de correlaciones bivariadas con el fin de revisar si existe una relación lineal entre la varaible dependiente y las variables independientes, además de comprobar que no existan problemas de colinealidad entre estas últimas.
 
-Para responder a esta pregunta ¡metamos las manos en la masa! (o en los datos). Como se señaló anteriormente, trabajaremos con la Encuesta Suplementaria de Ingresos en su versión 2020.
-
-```{r packages}
-pacman::p_load(sjPlot, sjmisc)
+```{r}
+#correlaciones
+cor(base[,c("yautcor","esc","edad","sexo")], use="complete.obs")
+mc<-cor(base[,c("yautcor","esc","edad","sexo")], use="complete.obs")
+corrplot(mc, method = 'number', type = 'upper')
 ```
 
 
-```{r read_data, include=FALSE}
-data <- readRDS(url("https://github.com/learn-R/www-learn-R-uah/raw/master/content/example/input/data/esi_proc.rds"))
+```{r, warning=FALSE}
+g=ggplot(base, aes(x=log(yautcor), y=esc)) +
+  geom_point()+ geom_smooth(method=lm, se=FALSE)
+g
+
 ```
 
-Estos datos ya han sido procesados para ajustarse a los contenidos del curso. Por ello, contamos con 5 variables que permitirán ilustrar los contenidos que atañen a este práctico
-
-```{r data_summary}
-view_df(data, encoding = "LATIN1")
+```{r}
+modelo1 <- lm(yautcor~ esc,data = base)
+summary(modelo1)
 ```
 
-¡Vamos a revisar cada una de ellas!
-
-#### I) character
-
-Los datos `character` están directamente asociados a las variables cualitativas (o categóricas). En general, estos datos incluyen palabras, aunque también pueden incorporar números que no representen una variable numérica, como puede ser el RUT de los/as informantes: es un número que no denota una distancia clara entre la inscripción de una persona a la de otra. Suelen ser utilizadas para variables de texto abierto, como es el caso de la variable **a6_otro**, que detalla otras razones por las cuales las/os informantes declararon ausentarse al trabajo durante la semana pasada, más allá de aquellas especificadas en las alternativas de respuesta de la pregunta original. 
-
-Para saber cuál es el tipo de una variable en específico, utilizaremos la función `class()` del paquete base de R
-
-```{r class_chr, echo=TRUE}
-class(data$a6_otro)
+```{r}
+1-var(modelo1$residuals)/
+  var(base$yautcor[!is.na(base$esc)&!is.na(base$edad)&!is.na(base$sexo)],na.rm=T)
 ```
 
-Si deseamos trabajar con texto abierto, o manipular ese texto ¡debemos trabajar con character! sin embargo, estas variables no tienden a ser las mejores a la hora de presentar nuestros resultados, entre otras razones, porque no nos permiten especificar un orden distinto al alfabético. Para solucionarlo, tenemos las variables de tipo **Factor**
+```{r}
+modelo2 <- lm(yautcor~ esc+ edad+ as_factor(sexo),data = base)
+modelo3 <- lm(yautcor~ esc+ edad+ as_factor(sexo),data = base,weights = expr)
 
-#### II) Factor
-
-Las variables de tipo `Factor` son las ideales a la hora de trabajar con variables de tipo nominal u ordinal. Esto se debe a dos motivos: en primer lugar, su comptabilidad con librerías como `sjPlot`, `sjmisc` o `ggplot2`, que nos permiten presentar de manera cómoda estos datos; así como su compatibilidad con funciones dedicadas a la generación de distintos modelos estadísticos, como modelos de análisis de clases latentes o de regresión. En segundo término, porque cabe la posibilidad de **establecer un orden (distinto al alfabético)** entre las categorías de la variable, lo cual es *fundamental* si trabajamos con variables ordinales, como el **nivel educacional** de las/os informantes
-
-```{r class_factor, echo = T}
-class(data$nivel)
 ```
 
-```{r frq_factor, echo = F}
-frq(data$nivel)
+```{r,results = 'asis'}
+htmlreg(list(modelo1,modelo2,modelo3), custom.coef.names = c("Intercepto","Escolaridad","Edad","Sexo (ref. Hombre)"))
+
 ```
 
-¿Cómo podemos ordenar los factores de una variable de este tipo? ¡Calma! en el práctico 6 profundizaremos como corresponde en la transformación de variables. 
+```{r}
+coefplot(modelo3)+scale_y_discrete(labels=c("Intercepto","Escolaridad","Edad","Sexo","Sexo (ref. Hombre)"))+
+  labs(title = "Gráfico de coeficientes",subtitle = "Modelo 3")+ylab("Coeficientes")
 
-#### III) numeric
-
-Como su nombre lo indica, este tipo de variables nos permiten trabajar con variables con un nivel de medición cuantitativo 
-
-```{r class_numeric, echo = T}
-class(data$ingresos)
 ```
 
-Mientras R arroja un error al, por ejemplo, intentar calcular el promedio de nivel educacional
+## Revisión de supuestos 
 
-```{r mean_factor, echo=TRUE}
-mean(data$nivel)
+```{r,results = 'asis'}
+#Casos influyentes
+n<- nobs(modelo3) #n de observaciones
+k<- length(coef(modelo3)) # n de parametros
+dcook<- 4/(n-k-1) #punt de corte
+
+
+final <- broom::augment_columns(modelo3,data = base)
+final$id <- as.numeric(row.names(final))
+# identify obs with Cook's D above cutoff
+ggplot(final, aes(id, .cooksd))+
+  geom_bar(stat="identity", position="identity")+
+  xlab("Obs. Number")+ylab("Cook's distance")+
+  geom_hline(yintercept=dcook)+
+  geom_text(aes(label=ifelse((.cooksd>dcook),id,"")),
+            vjust=-0.2, hjust=0.5)
+
+ident<- final %>% filter(.cooksd>dcook)
+base2<- final %>% filter(!(id %in% ident$id))
+
+modelo4<-lm(yautcor~ esc+ edad+ as_factor(sexo),data = base2,weights = expr)
+htmlreg(list(modelo3,modelo4), custom.coef.names = c("Intercepto","Escolaridad","Edad","Sexo (ref. Hombre)"))
 ```
 
-¡Si podemos calcular la media de ingresos por sueldos y salarios!
-
-```{r mean_num, echo = T}
-mean(data$ingresos)
+```{r}
+#Linealidad
+ggplot(modelo4, aes(.fitted, .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0) +
+  geom_smooth(se = TRUE)
 ```
 
-¡Mucho cuidado! muchas veces, los datos incluyen variables de tipo `numeric` que, teóricamente, no son variables numéricas (por ejemplo, variables donde 1 == Si, y 2 == No). Por ello, es fundamental que **revisen detalladamente la documentación anexa** de sus datos, a modo de determinar cuáles variables corresponden su tipo de dato con su nivel de medición, y cuáles no. 
+```{r,results = 'asis'}
+#homogenidad de varianza
+car::ncvTest(modelo4)
 
-#### IV) dbl + lbl (números etiquetados)
-
-Es bastante usual (como veremos en el siguiente práctico) que, aunque estemos trabajando en lenguaje R, los datos que emplearemos estén en formato SPSS (.sav) o Stata (.dta). En ambos casos, los datos (sobre todo las variables categóricas) presentan una estructura de números etiquetados, donde el valor principal de la variable es un número, pero el cual presenta una etiqueta en palabras que identifica a qué refiere cada una de las categorías de la variable. En general, cuando preguntamos sobre la clase de una variable dbl+lbl, obtendremos algo así:
-
-```{r class_dbllbl, echo = T}
-class(data$a6)
+model_robust<- coeftest(modelo4, vcov=vcovHC)
+htmlreg(list(modelo4,model_robust), custom.coef.names = c("Intercepto","Escolaridad","Edad","Sexo (ref. Hombre)"))
 ```
 
-```{r frq_dbllbl, echo = F}
-frq(data$a6)
+```{r}
+#multicolinealidad
+car::vif(modelo4) #Se espera que no existan valores mayores a 2.5
+
 ```
 
-En este caso, cada número se asocia con una razón por la cual el/la informante se ausentó del trabajo la semana anterior. Por supuesto, es una variable ordinal. 
+```{r}
+#Normalidad de los residuos
+hist(modelo4$residuals)
 
-La mayor parte de las veces, sobre todo por la compatibilidad con librerías de representación gráfica, buscaremos que nuestros números etiquetados se conviertan en factores ¡el práctico 6 se encargará de profundizar en ello!
-
-#### V) logical
-
-¡El último tipo de dato! Los valores lógicos (`logical`) son bastante frecuentes al estar trabajando con datos
-
-```{r class_logical, echo = T}
-class(data$afp)
 ```
-
-```{r frq_logical, echo = F}
-frq(data$afp)
-```
-
-Los datos de clase `logical` presentan tres posibles valores: `TRUE` (verdadero), `FALSE` (falso) y `NA` (valor nulo, ausencia de dato). En este caso, las personas con valor `TRUE` están empleados por alguien que si paga cotizaciones en previsión, mientras que las personas con valor `FALSE` no tienen tal característica
-
-## 4. Resumen
-
-¡Aprendimos los posibles tipos de datos con los cuales nos enfrentaremos a trabajar en R! Como resumen:
-
-- Variables cualitativas: `character`, `Factor` o `dbl + lbl`
-- Variables cuantitativas: `numeric`
-- Valores lógicos: `logical`
-
-Recuerden que es fundamental que se apoyen en la **documentación anexa** a la hora de trabajar con datos ¡así evitarán calcular el promedio de las religiones que declaran las/os informantes!
-
-## 5. Recursos
-
-- [RMarkdown en Ciencia de Datos - Hadley Whickham](https://es.r4ds.hadley.nz/r-markdown.html)
-- [R Markdown](https://rmarkdown.rstudio.com/) 
-- [Tutoriales Markdown](https://rmarkdown.rstudio.com/lesson-1.html) 
-- [cheatsheets](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-- Para practicar ir a [Tutorial de Markdown](https://www.markdowntutorial.com/es/)
