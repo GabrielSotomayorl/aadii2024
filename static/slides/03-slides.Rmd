@@ -133,31 +133,43 @@ class: title title-3
 
 # Varianza
 
-.sma[**Varianza:** es el promedio de las distancias de los casos al promedio, tomando en cuenta los signos (eleva al cuadrado todas las distancias al promediarlas)]
+.small[**Varianza:** es el promedio de las distancias de los casos al promedio, tomando en cuenta los signos (eleva al cuadrado todas las distancias al promediarlas)]
 
 .center[![:scale 20%](https://www.calculadoraconversor.com/wp-content/uploads/2016/11/formula-varianza-muestral.png)]
 
-.sma[**Desviación estándar:** Es la raíz cuadrada de la varianza. Es la que mejor da cuenta de la dispersión (es decir de las distancias de los casos al promedio]
+.small[**Desviación estándar:** Es la raíz cuadrada de la varianza. Es la que mejor da cuenta de la dispersión (es decir de las distancias de los casos al promedio]
 
-.center[![:scale 20%](https://revistachilenadeanestesia.cl/img/Rev%20Chil%20Anest%202014;%2043%20116-121.xml_image14.jpg)]
-
----
-
-class: title title-3
-
-# Modelos lineales generalizados
+.center[![:scale 30%](https://revistachilenadeanestesia.cl/img/Rev%20Chil%20Anest%202014;%2043%20116-121.xml_image14.jpg)]
 
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Covarianza
+
+.sma[La covarianza da cuenta del a variación conjunta de dos variables respecto de sus medias.  
+Puede tomar valores positivos, dando cuenta de una relación directa (por ejemplo a mayor educación, mayores ingresos) o valores negativos, dando cuenta de una relación inversa (por ejemplo a menores horas de trabajo, mayor satisfacción con la vida).]
+.center[![:scale 50%](https://economipedia.com/wp-content/uploads/2017/10/F%C3%B3rmula-de-la-Covarianza-tama%C3%B1o-extenso.jpg)]
 
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Correlación
+
+La correlación (correlación de Pearson) corresponde a un valor estandarizado de la covarianza que puede tomar valores ente -1 y 1.
+  
+
+.center[![:scale 55%](https://www.questionpro.com/blog/wp-content/uploads/2019/07/analisis-de-correlacion-2-450x122.jpg)]
+.center[![:scale 20%](https://economipedia.com/wp-content/uploads/2015/12/formula-correlaci%C3%B3n.png)]
+
+---
+
+class: title title-3
+
+# Correlación
+
+.center[![:scale 75%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/corr.png)]
 
 ---
 
