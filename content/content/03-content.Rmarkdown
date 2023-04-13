@@ -1,6 +1,6 @@
 ---
-title: "Tipos de datos en R"
-linktitle: "3: Tipos de datos en R"
+title: "3. Regersión Lineal Múltiple"
+linktitle: "3. Regersión Lineal Múltiple"
 date: "2022-03-28"
 start_date: "2022-03-28"
 end_date: "2022-04-01"
@@ -12,7 +12,7 @@ type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "03-slides-22"
+slides: "03-slides"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
@@ -32,7 +32,7 @@ slide_details <- tibble::tribble(
 `r blogdown::shortcode("slide-buttons")`
 
 ```{r show-slide-tabs, echo=FALSE, results="asis"}
-slide_tabs(slide_details, "/slides/03-slides-22.html")
+slide_tabs(slide_details, "/slides/03-slides.html")
 ```
 
 {{% div fyi %}}
@@ -41,20 +41,4 @@ slide_tabs(slide_details, "/slides/03-slides-22.html")
 
 
 
-# Material de la clase
-
-- [<i class="fas fa-file-archive"></i> `03-clase.zip`](https://github.com/learn-R/03-class/raw/main/03-clase.zip)
-
-
-- [<i class="fas fa-laptop-code"></i> Práctico](/example/03-practico/)
-
-
-# Materiales adicionales
-
-- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
-    - [<i class="fas fa-file-o"></i> Descomprimir archivos](/resource/unzipping)
-    - [<i class="fas fa-file-o"></i> Tipos de datos en R](/resource/r-data-types-example)
-    - [<i class="fas fa-file-o"></i> Tipos de variables](/resource/r-data-types)
-
-- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
 

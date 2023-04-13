@@ -35,7 +35,7 @@ lessons:
   - title: '• Regresión Lineal Múltiple'
     session: "Sesión 3"
     date: "27 marzo"
-    # content: "03-content"
+    content: "03-content"
     example: "03-practico"
     # resource: "r-datatypes"
     bg: 2
