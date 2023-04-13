@@ -1,6 +1,6 @@
 ---
-title: "Análisis Facotrial Exploratorio I"
-linktitle: "5: Análisis Facotrial Exploratorio I"
+title: "Análisis Factorial Exploratorio I"
+linktitle: "5: Análisis Factorial Exploratorio I"
 date: "2022-04-10"
 start_date: "2022-04-10"
 end_date: "2022-04-10"

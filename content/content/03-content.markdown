@@ -1,9 +1,9 @@
 ---
 title: "3. Regersión Lineal Múltiple"
 linktitle: "3. Regersión Lineal Múltiple"
-date: "2022-03-28"
-start_date: "2022-03-28"
-end_date: "2022-04-01"
+date: "2023-03-27"
+start_date: "2023-03-27"
+end_date: "2023-03-27"
 menu:
   content:
     parent: Contenido
