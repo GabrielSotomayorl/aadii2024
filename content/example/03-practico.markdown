@@ -14,7 +14,7 @@ editor_options:
 
 # 0. Objetivo del práctico
 
-El objetivo de este práctico es presentar una introducción al Análisis de Regresión Lineal Múltiple,visualizar sus resultados y evaluar el ajuste de los modelos y el cumplimiento de los supuestos de la técnica.   
+El objetivo de este práctico es presentar una introducción al Análisis de Regresión Lineal Múltiple, visualizar sus resultados y evaluar el ajuste de los modelos y el cumplimiento de los supuestos de la técnica.   
 
 Para esto haremos uso de la encuesta [CASEN (2020)](http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020), la mayor encuesta de hogares realizada en Chile, a cargo del Ministerio de Desarrollo Social, de carácter transversal y multipropósito, es el principal instrumento de medición socioeconómica para el diseño y evaluación de la política social. Permite conocer periódicamente la situación socioeconómica de los hogares y de la población que reside en viviendas particulares, a través de preguntas referidas a composición familiar, educación, salud, vivienda, trabajo e ingresos, entre otros aspectos. 
 
@@ -67,7 +67,7 @@ unlink(temp); remove(temp) #eliminamos el archivo temporal
 
 ## Análisis previos
 
-El análisis de regresón lineal requiere una variable dependiente continua, mientras que las varaibles independientes pueden corresponder a cualquier nivel de medición. Podemos revisar el tipo de datos  de las variables que utilizaremos con la función "class()"
+El análisis de regresión lineal requiere una variable dependiente continua, mientras que las variables independientes pueden corresponder a cualquier nivel de medición. Podemos revisar el tipo de datos de las variables que utilizaremos con la función "class()"
 
 ```r
 class(base$yautcor)
@@ -137,7 +137,7 @@ print(dfSummary(base[,c("yautcor","esc","edad","sexo")], headings = FALSE, metho
 ## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
-Realizamos un análisis de correlaciones bivariadas con el fin de revisar si existe una relación lineal entre la varaible dependiente y las variables independientes, además de comprobar que no existan problemas de colinealidad entre estas últimas. Se calcula la matriz de correlaciones entre las variables yautcor, esc, edad y sexo utilizando la función cor(). La opción use="complete.obs" se utiliza para omitir cualquier fila que contenga valores faltantes (NA). Luego, se asigna la matriz de correlaciones al objeto mc.
+Realizamos un análisis de correlaciones bivariadas con el fin de revisar si existe una relación lineal entre la variable dependiente y las variables independientes, además de comprobar que no existan problemas de colinealidad entre estas últimas. Se calcula la matriz de correlaciones entre las variables yautcor, esc, edad y sexo utilizando la función cor(). La opción use="complete.obs" se utiliza para omitir cualquier fila que contenga valores faltantes (NA). Luego, se asigna la matriz de correlaciones al objeto mc.
 
 
 ```r
@@ -166,7 +166,7 @@ corrplot(mc, method = 'number', type = 'upper')
 
 <img src="/example/03-practico_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
-A continuación usamos el pquete ggplot para obtener un gráfico que nos muestre la distribución de el ingreso autonomo de acuerdo a la escolaridad. Dado que el ingreso tiene muchos casos extremos, aplicamos una transformación logarítmica log() para visualizar de mejor manera la relación entre las variables. Este gráfico nos permite observar la existencia de relación lineal entre las variables. Dicha visualización es relevante porque en algunos casos, dos varaibles pueden tener una baja correlación, pero estar relacionadas de manera no lineal, lo cual puede observarse mediante la visualización. El gráfico muestra que hay una relación lineal positiva entre yautcor y esc.
+A continuación, usamos el paquete ggplot para obtener un gráfico que nos muestre la distribución del ingreso autónomo de acuerdo con la escolaridad. Dado que el ingreso tiene muchos casos extremos, aplicamos una transformación logarítmica log() para visualizar de mejor manera la relación entre las variables. Este gráfico nos permite observar la existencia de relación lineal entre las variables. Dicha visualización es relevante porque en algunos casos, dos variables pueden tener una baja correlación, pero estar relacionadas de manera no lineal, lo cual puede observarse mediante la visualización. El gráfico muestra que hay una relación lineal positiva entre yautcor y esc.
 
 
 ```r
@@ -568,7 +568,8 @@ htmlreg(list(modelo4,model_robust), custom.coef.names = c("Intercepto","Escolari
 </tr>
 </tfoot>
 </table>
-### Multicolinealidad
+### Multicolinealidad  
+
 En esta sección se verifica la suposición de multicolinealidad mediante el cálculo del factor de inflación de la varianza (VIF) para cada variable independiente del modelo. 
 
 VIF (variance inflation factor) es una medida de la multicolinealidad en un modelo de regresión. Mide el grado en que los predictores están correlacionados entre sí. Un valor VIF de 1 indica que no hay multicolinealidad, mientras que un valor VIF mayor que 1 indica que los predictores están correlacionados y se inflan los errores estándar de los coeficientes. Los valores comúnmente aceptados para el VIF son menores de 2.5 o 5. Valores mayores a estos pueden indicar problemas de multicolinealidad en el modelo.
@@ -582,6 +583,7 @@ car::vif(modelo4) #Se espera que no existan valores mayores a 2.5
 ##             esc            edad as_factor(sexo) 
 ##        1.232273        1.230670        1.003348
 ```
+
 ### Normalidad de los residuos
 En esta sección se verifica la suposición de normalidad de los residuos mediante un histograma de los mismos. Se utiliza la función hist de R para crear el histograma.
 

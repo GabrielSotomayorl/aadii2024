@@ -53,24 +53,35 @@ htmltools::tagList(
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Análisis de regresión logística
+# Análisis de regresión lineal múltiple
 ]
 
 .class-info[
 <br>
-**Sesión N° 4**<br>
+**Sesión N° 3**<br>
 **Análisis Avanzado de Datos II**
 <br>
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudante** Anaís Herrera
+**Ayudante** AAnaís Herrera  
+           Francisco Meneses
 .tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
 
+---
+class: title title-inv-1
+
+# Objetivos de la sesión
+
+- Introducir el uso de modelos en ciencias sociales
+
+- Introducir el análisis de regresión lineal simple y múltiple 
+
+- Revisar la ejecución de modelos de regresión en R 
 
 ---
 class: title title-inv-1
@@ -78,47 +89,103 @@ class: title title-inv-1
 # Contenidos Sesión N°4
 
 
-.box-2.medium.sp-after-half[**Modelos de probabilidad lineal**]
+.box-2.medium.sp-after-half[**Uso de modelos en ciencias sociales**]
 
-.box-3.medium.sp-after-half[**Modelos lineales generalizados**]
+.box-3.medium.sp-after-half[**Introducción a regresión lineal**]
 
-.box-4.medium.sp-after-half[**Modelo de regresión logística binaria**]
+.box-4.medium.sp-after-half[**Regresión lineal múltiple**]
 
-.box-1.medium.sp-after-half[**Odds y odds ratios**]
-
----
-class: title title-inv-1
-
-# Contenidos Sesión N°4
-
-.box-1.medium.sp-after-half[**Interpretación de coeficientes**]
-
-.box-2.medium.sp-after-half[**Estadísticos de ajuste y selección de modelos**]
-
-.box-3.medium.sp-after-half[**Visualización de resultados**]
+.box-1.medium.sp-after-half[**Supuestos del modelo de regresión**]
 
 
 ---
 
 class: center middle main-title section-title-2 top-logo
 
-# Modelos de probabilidad lineal
+# Uso de modelos en ciencias sociales
 
 ---
 
 class: title title-2
 
-# Regresiones para variables dicotómicas
+# .small[¿Por qué usamos modelos en ciencias sociales?]  
+--
 
+Los modelos son formalismos lógicos o matemáticos que buscan describir la realidad.
+Nos permiten simultáneamente capturar la complejidad de la realidad(social) y reducirla, de manera de hacerla inteligible: producir conocimiento. 
 
-
-asdfhkalsdjfklajsdjfñasdkfjakldsfjas asdlkfjalskdjf a asldkfjañlsdkjflaksdjf asldkfjalksdsflkjasdfkj aslkdfjlasd  
-
-aldskjflaksdjf  asdlkfjalsdf jlakdsjf lkasf 
+Permiten:
+- Formalizar, dando precisión y permitiendo poner teorías a prueba.
+- Develar relaciones entre variables y mecanismo causales
+- Predecir
+- Simular
+ 
 
 ---
 
 class: center middle main-title section-title-3 top-logo
+
+# Introducción a regresión lineal
+
+---
+
+class: title title-3
+
+# Varianza
+
+.sma[**Varianza:** es el promedio de las distancias de los casos al promedio, tomando en cuenta los signos (eleva al cuadrado todas las distancias al promediarlas)]
+
+.center[![:scale 20%](https://www.calculadoraconversor.com/wp-content/uploads/2016/11/formula-varianza-muestral.png)]
+
+.sma[**Desviación estándar:** Es la raíz cuadrada de la varianza. Es la que mejor da cuenta de la dispersión (es decir de las distancias de los casos al promedio]
+
+.center[![:scale 20%](https://revistachilenadeanestesia.cl/img/Rev%20Chil%20Anest%202014;%2043%20116-121.xml_image14.jpg)]
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
+
+# Modelos lineales generalizados
+
+---
+
+class: title title-3
 
 # Modelos lineales generalizados
 
@@ -129,320 +196,53 @@ class: title title-3
 # Modelos lineales generalizados
 
 
-
-
-
 ---
 
 class: center middle main-title section-title-4 top-logo
 
-# Modelo de regresión logística binaria
+# Regresión lineal múltiple
 
 ---
 
 class: title title-4
 
-# Regresión logistica
-
-
-
+# Modelos lineales generalizados
 
 ---
 
 class: center middle main-title section-title-1 top-logo
 
-# Odds y odds ratios
+# Supuestos del modelo de regresión
 
 ---
 
 class: title title-1
 
-# Concepto de Odds
-
-.left[asdfasdfasdfasdf]
-
-.right[![:scale 50%](https://github.com/learn-R/slides/raw/main/img/02/orden-sintaxis.png)]
----
-
-class: center middle main-title section-title-2 top-logo
-
-# Estadísticos de ajuste y selección de modelos
-
----
-
-class: title title-2
-
-# Estadísticos de ajuste
-
----
-
-class: center middle main-title section-title-3 top-logo
-
-# Visualización de resultados
-
----
-
-class: title title-3
-
-# Regresión logistica
-
----
-# Orden de un script
+# Modelos lineales generalizados
 
 
-.center[
-![:scale 80%](https://github.com/learn-R/slides/raw/main/img/02/orden-sintaxis.png)]
-
----
-                                                
-
-# Paso 1: Cargar paquetes
-
----
-class: center middle main-title section-title-2 top-logo
-
-# Cargar paquetes
-
-- Este proceso de compone de dos partes esenciales
-
-(1) Instalar paquetes (`ìnstall.packages()`)
-
-(2) Llamar paquetes (`library()`). Veamos su paso a paso
-
----
-class: title title-2
-
-# Una forma fácil de cargar paquetes: `pacman`
-
-- `pacman` es un paquete que *literalmente* se comió procesos de R `base` y las simplificó en funciones únicas y más intuitivas. 
-
-![:scale 40%](https://github.com/learn-R/slides/raw/main/img/01/pacman.jpg)
----
-class: title title-2
-
-# `p_load()`
-
--  Resume las funciones `library()` e `install.packages()`
-  - optimiza esta relación entre ambas pues solo las aplica cuando son necesarias (if `requiere()`), es decir, **¡no te reinicia R si ya está instalada la librería!**
-  
----
-# Paso 1: Cargar paquetes
-
-```{r}
-pacman::p_load(tidyverse, #<<
-               magrittr,
-               car,
-               sjmisc)
-```
 
 
 
 ---
-layout: false
-name: renv
-class: center middle section-title section-title-3 animated fadeIn
-
-# Paso 2: Importar datos
-
----
-class: title title-3
-
-# Importar datos
-
-.box-inv-3.center[Una vez que hemos decidido qué datos queremos trabajar]
-
---
-
-.box-inv-3[Un paso evidente es cargar los datos]
-
---
-
-.box-inv-3[¡Y en R no es la excepción! De hecho, hablamos que R facilita el **almacenaje de datos**]
-
----
-class: title title-3
-# Consideraciones antes de importar datos 
-
-Para **importar** los datos en R debemos tener en consideración tres cosas:
-
-1. Cómo se llaman los datos (en nuestro caso Casen en Pandemia 2020 STATA)
-
-2. El formato de nuestros datos (en nuestro caso .sav)
-
-3. El lugar de donde están alojados nuestros datos. 
-
-
----
-class: center middle main-title section-title-3 top-logo
-
-# ¡Vamos a este segundo paso en el script: Cargar datos!
-
----
-
-# ¿Dónde?
-
-.box-inv-1[[Descargar el zip de la clase N°3 el sitio del curso](https://learn-r-uah.netlify.app/content/03-content/)]
-
----
-class: title title-4
-
-# 1. Recursos de la clase N°3 y práctica N°3
-
-- Datos: *Encuesta de Caracterización Socioeconómica (CASEN)* (2020).
-
-- Para ello, deben dirigirse al [siguiente enlace](https://drive.google.com/drive/folders/1Orgb3Qb9LcjTfjYMdIdy7SWd3xDMrTbG?usp=sharing) y descargar los zip.
-
-
-- [**Libro de códigos**](http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf) antes de trabajar una base de datos.
-
----
-class: title title-4
-
-# Paquetes
-
-1. `pacman`: este facilita y agiliza la lectura de los paquetes a utilizar en R
-
-2. `sjmisc`: explorar datos
-
-3. `tidyverse`: colección de paquetes, del cuál utilizaremos `dplyr` y `haven`
-
-4. `haven`: cargar y exportar bases de datos en formatos .sav y .dta
-
-5. `readxl` y `writexl`: para cargar y exportar bases de datos en formato .xlsx y .xls
-
-6. `dplyr`: nos permite seleccionar variables de un set de datos
-
----
-class: center middle main-title section-title-3 top-logo
-
-# ¡No fue tan difícil!
-
---
-
-# Repasemos algunos **elementos**
-
----
-
-# Consideraciones antes de importar datos 
-
-Para **importar** los datos en R debemos tener en consideración tres cosas:
-
-.can-edit.key-likes[
-1.
-2.
-3.
-]
-
----
-
-# Tipos de variables
-
-| Clase  | Tipo de variable |
-|---------:|:--------|
-| `numeric` | Cuantitativa |
-| `character` | Categórica |
-| `Logic` |  Lógica (TRUE, FALSE, NA) |
-| `factor` | Categórica con niveles y etiquetas |
-
---
-
-A repasar con dos materiales complementarios: [Tipos de variables](resources/r-datatypes)  y [Tipos de variables](resources/r-datatypes-example)
-
----
-layout: false
-class: center section-title section-title-5 animated fadeIn
-
-# En síntesis
-
-
-.box-2.medium.sp-after-half[**Importar y exportar datos**]
-
---
-
-.box-3.medium.sp-after-half[**Validación y limpieza datos**]
-
---
-
-.box-4.medium.sp-after-half[**Selección de variables**]
-
-
----
-class: center middle main-title section-title-4 top-logo
-
-# ¡Y a no olvidar el flujo para el análisis!
-
---
-
-## Nos permite hacernos amigas/os más rápido del programa
----
-
-.center[
-![:scale 80%](https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png)]
-
----
-layout: false
-
-.box-1[¿Y eso era?]
-
---
-
-.box-inv-1[¡Antes! **Dos bonus track**]
-
-
----
-class: title title-8
-
-# Dos bonus track
-
-- ¿Cómo hacer mi propio repositorio en GitHub?
-
---
-
-- ¡Vamos a verlo!
-
----
-class: title title-8
-
-# Dos bonus track: cargar datos en url
-
-- ¿Cómo cargar datos desde una **url**?
-  - Seguir los tres pasos para importar datos
-  - Hint: `funcion(url("ruta_web"))`
-  
---
-
-- Quienes averiguen **como** cargar datos con url tendrán +0.5 décimas para la tarea N°2.
-  - Deben dejar en slack un ejemplo reproducible en el canal `#tareas`
-  - Pueden hacerlo **hasta antes del lunes 30**
-
----
-
-.box-inv-1[¡Ahora si que si! Nos vemos el próximo **lunes** en la clase N°4]
-
-.box-inv-1.small[**No olvides hacer el práctico antes**]
-
-.center[
-![](https://github.com/learn-R/slides/raw/main/img/01/monster-inc-2.gif)]
----
-layout: false
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Importar, validar y explorar datos
+# Análisis de regresión lineal múltiple
 ]
 
 .class-info[
 <br>
-**Sesión N° 4**<br>
-**Análisis de regresión logística**
+**Sesión N° 3**<br>
+**Análisis Avanzado de Datos II**
 <br>
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudante** Anaís Herrera
+**Ayudante** AAnaís Herrera  
+           Francisco Meneses
 .tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
-

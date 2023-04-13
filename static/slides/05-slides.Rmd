@@ -1,6 +1,6 @@
 ---
-title: "Análisis de datos estadísticos en R"
-author: "Valentina Andrade"
+title: "Análisis Factorial Exploratorio"
+author: "Gabriel Sotomayor"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
