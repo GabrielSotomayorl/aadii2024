@@ -43,6 +43,10 @@ if (!require("pacman")) install.packages("pacman")
 ## Loading required package: pacman
 ```
 
+```
+## Warning: package 'pacman' was built under R version 4.2.2
+```
+
 ```r
 pacman::p_load(haven,texreg,corrplot,coefplot,ggplot2,sjPlot,summarytools,dplyr,
                lmtest,sandwich)
@@ -133,7 +137,7 @@ print(dfSummary(base[,c("yautcor","esc","edad","sexo")], headings = FALSE, metho
 ## -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
-A continuación realizamos un análisis de correlaciones bivariadas con el fin de revisar si existe una relación lineal entre la varaible dependiente y las variables independientes, además de comprobar que no existan problemas de colinealidad entre estas últimas.
+Realizamos un análisis de correlaciones bivariadas con el fin de revisar si existe una relación lineal entre la varaible dependiente y las variables independientes, además de comprobar que no existan problemas de colinealidad entre estas últimas. Se calcula la matriz de correlaciones entre las variables yautcor, esc, edad y sexo utilizando la función cor(). La opción use="complete.obs" se utiliza para omitir cualquier fila que contenga valores faltantes (NA). Luego, se asigna la matriz de correlaciones al objeto mc.
 
 
 ```r
@@ -151,16 +155,23 @@ cor(base[,c("yautcor","esc","edad","sexo")], use="complete.obs")
 
 ```r
 mc<-cor(base[,c("yautcor","esc","edad","sexo")], use="complete.obs")
-corrplot(mc, method = 'number', type = 'upper')
 ```
 
-<img src="/example/03-practico_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-
+Para visualizar las correlaciones de manera más clara, se utiliza la función corrplot() del paquete corrplot. La opción method = 'number' indica que se deben mostrar los valores de correlación en cada celda y type = 'upper' indica que solo se deben mostrar las celdas de la parte superior de la matriz (ya que la matriz es simétrica).
 
 
 ```r
-g=ggplot(base, aes(x=log(yautcor), y=esc)) +
-  geom_point()+ geom_smooth(method=lm, se=FALSE)
+corrplot(mc, method = 'number', type = 'upper')
+```
+
+<img src="/example/03-practico_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
+A continuación usamos el pquete ggplot para obtener un gráfico que nos muestre la distribución de el ingreso autonomo de acuerdo a la escolaridad. Dado que el ingreso tiene muchos casos extremos, aplicamos una transformación logarítmica log() para visualizar de mejor manera la relación entre las variables. Este gráfico nos permite observar la existencia de relación lineal entre las variables. Dicha visualización es relevante porque en algunos casos, dos varaibles pueden tener una baja correlación, pero estar relacionadas de manera no lineal, lo cual puede observarse mediante la visualización. El gráfico muestra que hay una relación lineal positiva entre yautcor y esc.
+
+
+```r
+g=ggplot(base, aes(x=esc, y=log(yautcor))) +
+  geom_point()+ geom_smooth(method="lm", se=FALSE)
 g
 ```
 
@@ -168,7 +179,13 @@ g
 ## `geom_smooth()` using formula = 'y ~ x'
 ```
 
-<img src="/example/03-practico_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="/example/03-practico_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+## Estimación del modelo
+
+A continuación, se estima un modelo de regresión lineal simple (modelo1) que explique el ingreso autónomo en función de la escolaridad. Se utiliza la función lm() y se asigna el resultado a la variable modelo1. Luego, se utiliza la función summary() para obtener un resumen de los resultados.
+
+Las variables del modelo de regresión deben presentarse como una formula, en que la variable dependiente se separa de las independientes con el caracter "~".
 
 
 ```r
@@ -198,6 +215,8 @@ summary(modelo1)
 ## F-statistic:  6315 on 1 and 97031 DF,  p-value: < 2.2e-16
 ```
 
+A continuación se calcula el coeficiente de determinación del modelo (R2).
+
 
 ```r
 1-var(modelo1$residuals)/
@@ -208,11 +227,15 @@ summary(modelo1)
 ## [1] 0.06110465
 ```
 
+Luego estimamos modelos de regresión lineal múltiple. El modelo 2 incluye las variables independientes de escolaridad, edad y sexo codificado como factor. El modelo 3 es idéntico al modelo 2, excepto que se incluyen los factores de expansión de la encuesta.
+
 
 ```r
 modelo2 <- lm(yautcor~ esc+ edad+ as_factor(sexo),data = base)
 modelo3 <- lm(yautcor~ esc+ edad+ as_factor(sexo),data = base,weights = expr)
 ```
+
+Luego, se utiliza la función htmlreg del paquete "texreg" para mostrar los resultados de los tres modelos en una tabla HTML (al usar esta función en la consola de R **remplace la función htmlreg por screenreg**). En la llamada de la función htmlreg, se especifica una lista de modelos a mostrar como una lista (list(modelo1, modelo2, modelo3)) y un vector de nombres personalizados para los coeficientes de regresión (custom.coef.names = c("Intercepto","Escolaridad","Edad","Sexo (ref. Hombre)"))
 
 
 ```r
@@ -304,19 +327,39 @@ htmlreg(list(modelo1,modelo2,modelo3), custom.coef.names = c("Intercepto","Escol
 </tfoot>
 </table>
 
+Se presenta a continuación la interpretación de los coeficientes del modelo 3.
+
+- Intercepto: El valor del intercepto (-674540.62) no siempre tiene una interpretación significativa, en tanto indica el valor predicho por el modelo para la variable dependiente cuando todas las variables independientes tienen valor 0.
+
+- Escolaridad: El coeficiente para la variable escolaridad (87210.88) indica que, manteniendo constantes las otras variables del modelo, por cada año adicional de escolaridad, se espera un aumento promedio en los ingresos autónomos de $87210.88.
+
+- Edad: El coeficiente para la variable edad (6726.08) indica que, manteniendo constantes las otras variables del modelo, por cada año adicional de edad, se espera un aumento promedio en los ingresos autónomos de $6726.08.
+
+- Sexo (ref. Hombre): El coeficiente para la variable sexo (ref. Hombre) (-243306.54) indica que, manteniendo constantes las otras variables del modelo, se espera que los ingresos autónomos promedio de una persona del sexo femenino sean en promedio $243306.54 menos que para una persona del sexo masculino en las mismas condiciones.
+
+- R2: El coeficiente de determinación (R2) indica que el modelo explica el 10% de la variabilidad de los ingresos autónomos.
+
+- Adj. R2: El coeficiente de determinación ajustado (Adj. R2) también indica que el modelo explica el 10% de la variabilidad de los ingresos autónomos, teniendo en cuenta el número de variables incluidas en el modelo.
+
+Finalmente, se utiliza la función coefplot del paquete "coefplot" para mostrar un gráfico de los coeficientes del modelo 3. Se especifica una escala de etiquetas para los ejes Y (scale_y_discrete) y se agregan títulos (labs) al gráfico.
+
 
 ```r
 coefplot(modelo3)+scale_y_discrete(labels=c("Intercepto","Escolaridad","Edad","Sexo","Sexo (ref. Hombre)"))+
   labs(title = "Gráfico de coeficientes",subtitle = "Modelo 3")+ylab("Coeficientes")
 ```
 
-<img src="/example/03-practico_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="/example/03-practico_files/figure-html/coefplot-1.png" width="672" />
 
 ## Revisión de supuestos 
 
+A continuación se explica como comprobar los supuestos de los modelos de regresión lineal múltiple en R.
+
+### Casos influyentes
+En esta sección se buscan observaciones influyentes utilizando la medida de distancia de Cook's D. Se establece un punto de corte de Cook's D utilizando la fórmula de 4/(n-k-1), donde n es el número de observaciones y k es el número de parámetros del modelo. Se utiliza la función augment_columns del paquete broom para crear una tabla con todas las variables del modelo junto con los residuos estandarizados y la distancia de Cook. Luego, se crea un gráfico de barras que muestra la distancia de Cook para cada observación, y se agrega una línea horizontal en el valor de corte y etiquetas para las observaciones que superan este valor. Finalmente, se filtran las observaciones influyentes utilizando el valor de corte y se crea un nuevo modelo de regresión sin ellas. Se utiliza la función htmlreg del paquete htmlreg para mostrar la tabla comparativa de los modelos original y el nuevo sin las observaciones influyentes.
+
 
 ```r
-#Casos influyentes
 n<- nobs(modelo3) #n de observaciones
 k<- length(coef(modelo3)) # n de parametros
 dcook<- 4/(n-k-1) #punt de corte
@@ -338,7 +381,10 @@ ggplot(final, aes(id, .cooksd))+
 ```r
 ident<- final %>% filter(.cooksd>dcook)
 base2<- final %>% filter(!(id %in% ident$id))
+```
 
+
+```r
 modelo4<-lm(yautcor~ esc+ edad+ as_factor(sexo),data = base2,weights = expr)
 htmlreg(list(modelo3,modelo4), custom.coef.names = c("Intercepto","Escolaridad","Edad","Sexo (ref. Hombre)"))
 ```
@@ -416,9 +462,11 @@ htmlreg(list(modelo3,modelo4), custom.coef.names = c("Intercepto","Escolaridad",
 </tfoot>
 </table>
 
+### Linealidad
+En esta sección se verifica la suposición de linealidad mediante un gráfico de dispersión de los valores ajustados contra los residuos. Se utiliza la función ggplot del paquete ggplot2 para crear el gráfico, y se agregan una línea horizontal en y=0 y una curva suavizada de los residuos estandarizados.
+
 
 ```r
-#Linealidad
 ggplot(modelo4, aes(.fitted, .resid)) +
   geom_point() +
   geom_hline(yintercept = 0) +
@@ -429,11 +477,13 @@ ggplot(modelo4, aes(.fitted, .resid)) +
 ## `geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
 ```
 
-<img src="/example/03-practico_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="/example/03-practico_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+
+### Homogeneidad de varianza
+En esta sección se verifica la suposición de homogeneidad de varianza mediante el test de Breusch-Pagan. Se utiliza la función ncvTest del paquete car para realizar el test y se muestra el resultado. Luego, se utiliza la función coeftest del paquete lmtest para crear una versión robusta del modelo utilizando la matriz de covarianza de Huber-White y se muestra una tabla comparativa de los coeficientes del modelo original y el modelo robusto utilizando la función htmlreg.
 
 
 ```r
-#homogenidad de varianza
 car::ncvTest(modelo4)
 ```
 
@@ -518,10 +568,13 @@ htmlreg(list(modelo4,model_robust), custom.coef.names = c("Intercepto","Escolari
 </tr>
 </tfoot>
 </table>
+### Multicolinealidad
+En esta sección se verifica la suposición de multicolinealidad mediante el cálculo del factor de inflación de la varianza (VIF) para cada variable independiente del modelo. 
+
+VIF (variance inflation factor) es una medida de la multicolinealidad en un modelo de regresión. Mide el grado en que los predictores están correlacionados entre sí. Un valor VIF de 1 indica que no hay multicolinealidad, mientras que un valor VIF mayor que 1 indica que los predictores están correlacionados y se inflan los errores estándar de los coeficientes. Los valores comúnmente aceptados para el VIF son menores de 2.5 o 5. Valores mayores a estos pueden indicar problemas de multicolinealidad en el modelo.
 
 
 ```r
-#multicolinealidad
 car::vif(modelo4) #Se espera que no existan valores mayores a 2.5
 ```
 
@@ -529,6 +582,8 @@ car::vif(modelo4) #Se espera que no existan valores mayores a 2.5
 ##             esc            edad as_factor(sexo) 
 ##        1.232273        1.230670        1.003348
 ```
+### Normalidad de los residuos
+En esta sección se verifica la suposición de normalidad de los residuos mediante un histograma de los mismos. Se utiliza la función hist de R para crear el histograma.
 
 
 ```r
@@ -536,4 +591,4 @@ car::vif(modelo4) #Se espera que no existan valores mayores a 2.5
 hist(modelo4$residuals)
 ```
 
-<img src="/example/03-practico_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+<img src="/example/03-practico_files/figure-html/unnamed-chunk-17-1.png" width="672" />
