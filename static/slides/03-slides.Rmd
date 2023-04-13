@@ -214,19 +214,25 @@ class: title title-3
 
 # Coeficientes de la ecuación  
 
+Constante o intercepto 
+Valor esperado de Y cuando la variable independiente tiene el valor 0
+
+.center[![:scale 30%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/B0.jpg)]
+
+
+Coeficiente de regresión (β)
+Cambio en Y por cada aumento en una unidad de X, indica la relación entre X e Y
+
+.center[![:scale 30%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/B1.jpg)]
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Coeficiente de determinación R2
 
----
+Estadístico de ajuste que describe la proporción de la varianza de Y que se relaciona con las variables independientes del modelo.
 
-class: title title-3
-
-# Modelos lineales generalizados
-
-
+.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/R2.jpg)]
 ---
 
 class: center middle main-title section-title-4 top-logo
