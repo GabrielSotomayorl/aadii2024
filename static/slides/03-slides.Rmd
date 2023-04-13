@@ -175,25 +175,44 @@ class: title title-3
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Regresión lineal
+
+.small[La regresión lineal es una técnica de análisis estadístico que nos permite estimar los efectos de ciertas variables (independientes o predictores) en una variable cuantitativa (dependiente o predicha).  
+
+Nos permite conocer la variación de una variable dependiente respecto a la variación de una o más variables independientes. Esto nos puede permitir predecir el valor que asume la variable dependiente á partir del valor de las independientes.   
+
+Al igual que las pruebas estadística bivariadas revisadas en la clases pasadas, nos permite hacer inferencia estadística, es decir, determinar si las relaciones observadas en el modelo de regresión son estadísticamente significativas.]
 
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Recta de regresión
+
+La covariación de Y respecto de X puede expresarse a partir de una recta. 
+
+.center[𝑌=𝛼+𝛽𝑋]
+
+  
+.small[𝑌 =  Valor estimado de la variable dependiente  
+𝛼 = El intercepto (valor que asume Y cuando X es 0)  
+𝛽 = el coeficiente de regresión o pendiente es decir, el efecto en Y de un aumento de 1 en X   
+X = la variable independiente.]
 
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# .small[Estimación de mínimos cuadrados ordinarios]
+.center[![:scale 62%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/mco.png)]
+
+.tiny[Para estimar dicha recta se utiliza la estimación de mínimos cuadrados ordinarios (Ordinary Least Squares OLS). Esta busca minimizar al suma de los residuos al cuadrado, siendo estos últimos la diferencia entre los valores predichos por el modelo (la recta) y cada valor observado.]
 
 ---
 
 class: title title-3
 
-# Modelos lineales generalizados
+# Coeficientes de la ecuación  
 
 ---
 
