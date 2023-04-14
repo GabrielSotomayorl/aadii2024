@@ -207,17 +207,7 @@ class: title title-1
 El AFE requiere que las variables sean continuas, o variables ordinales que trataremos como tales. Esto puede resolverse también con el tipo de matriz de correlaciones a utilizar]
 
 ---
-class: title title-1
 
-# Tamaño Muestral
-
-Como piso mínimo se requieren 5 casos por cada variable que se incluya en el análisis, sin embargo, es preferible contar con al menos 20. Tamaños muestrales mayores ayudarán a obtener estimaciones muestrales estables.  
-
-Cómo mínimo se esprean unos 200 o 300 casos en total.  
-
-Debe considerarse los casos periddos y aquellos que puedan ser eliminados por ser casos atípicos. 
-
----
 class: title title-1
 
 # Tamaño Muestral
@@ -256,7 +246,7 @@ class: title title-1
 
 # Correlaciones policoricas 
 
-Las correlaciones policóricas son una medida de asociación entre variables ordinales que se basa en la teoría de correlación de Pearson y tiene en cuenta la naturaleza discreta de los datos. Se utilizan comúnmente en estudios que involucran variables ordinales con un gran número de categorías o niveles.
+Las correlaciones policóricas son una medida de asociación entre variables ordinales que se basa en la teoría de correlación de Pearson y tiene en cuenta la naturaleza discreta de los datos.
 
 Supone una variable subyacente continua y teóricamente normal.
 
@@ -273,8 +263,22 @@ class: title title-1
 
 Además de las correlaciones bivariadas existen pruebas estadísticas que nos permiten establecer la existencia de multicolinealidad en el conjunto de variables.
 
-- Test de esfericidad de Barlett
-- KMO
+.small[**Test de esfericidad de Barlett**: Esta prueba se utiliza para determinar la existencia de multicolinealidad en un conjunto de datos. Si el valor-p es significativo (generalmente <0,05), entonces se rechaza la hipótesis nula de que la matriz de correlación es igual a una matriz de identidad, lo que indica la presencia de multicolinealidad. **Su correcta interpretación requiere de la existencia de normalidad multivariante**, por lo que en caso de que esta no exista, debe priorizarse la interpretación de la prueba KMO.]
+
+---
+class: title title-1
+
+# Multicolinealidad: KMO
+
+.small[La **prueba KMO (Kaiser-Meyer-Olkin)** se utiliza para evaluar la presencia de multicolinealidad en un conjunto de variables. La prueba produce un valor de MSA (Medida de adecuación de la muestra) para el conjunto de datos y para cada variable individual en el conjunto de datos.
+
+Existen diferentes criterios para interpretar los valores del índice KMO en el AFE , pero algunos de los umbrales comúnmente utilizados son:
+.small[- Excelente adecuación: KMO mayor que 0,9.
+- Buena adecuación: KMO entre 0,8 y 0,9.
+- Adecuación aceptable: KMO entre 0,7 y 0,8.
+- Inadecuada adecuación: KMO menor que 0,7.  
+
+Es importante tener en cuenta que estos umbrales son solo una guía general y que la interpretación de los resultados del AFE debe basarse en varios criterios, incluyendo el juicio del investigador, la coherencia con la teoría y la interpretación de los patrones de carga factorial.]]
 
 ---
 class: title title-1

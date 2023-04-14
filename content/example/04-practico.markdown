@@ -14,7 +14,7 @@ editor_options:
 <link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
 <link href="/rmarkdown-libs/animate.css/animate.xaringan.css" rel="stylesheet" />
-<script type="application/json" id="xaringanExtra-editable-docid">{"id":"db747441bcaa480895349466e6a2dc4b","expires":14}</script>
+<script type="application/json" id="xaringanExtra-editable-docid">{"id":"xee609836275498da3959e109224cca3","expires":14}</script>
 <script src="/rmarkdown-libs/himalaya/himalaya.js"></script>
 <script src="/rmarkdown-libs/js-cookie/js.cookie.js"></script>
 <link href="/rmarkdown-libs/editable/editable.css" rel="stylesheet" />
@@ -95,18 +95,7 @@ Para estimar un modelo de regresión logística binaria se utiliza el comando gl
 
 ```r
 library(texreg)
-```
 
-```
-## Version:  1.38.6
-## Date:     2022-04-06
-## Author:   Philip Leifeld (University of Essex)
-## 
-## Consider submitting praise using the praise or praise_interactive functions.
-## Please cite the JSS article in your publications -- see citation("texreg").
-```
-
-```r
 #para ver el output en la consola de R, reemplazar función htmlreg por screenreg
 
 htmlreg(glm(pobre~as_factor(sexo)+edad, data=casen, family = "binomial"),
@@ -167,7 +156,7 @@ Interpretación:
 
 Este bloque de código estima un modelo de regresión logística que busca predecir la probabilidad de que un hogar se encuentre en situación de pobreza, en función de características del jefe de hogar, en particular sexo (codificada como una variable factor) y edad. as_factor convierte la variable sexo en una variable factor, para poder utilizarla como variable independiente en el modelo de regresión logística.
 
-La variable "Mujer" (ref.hombre) tiene un coeficiente de 0.39 (0.03)***, lo que indica que las mujeres tienen mayores probabilidades de encontrarse en situación de pobreza que los hombres. En concreto, las odds (razón de probabilidades) de pobreza para una mujer son exp(0.39) = 1.48 veces mayores que las de un hombre, manteniendo constantes el resto de variables.
+La variable "Mujer" (ref.hombre) tiene un coeficiente de 0.39 (0.03)***, lo que indica que los hogares con jefatura femenina tienen mayores probabilidades de encontrarse en situación de pobreza que los con jefatura masculina. En concreto, las odds (razón de probabilidades) de pobreza para una hogar con jefatura femenina son exp(0.39) = 1.48 veces mayores que las de uno con jefatura masculina, manteniendo constantes el resto de variables.
 
 La variable "Edad" tiene un coeficiente de -0.03 (0.00)***, lo que indica que a medida que aumenta la edad del jefe de hogar, disminuyen las probabilidades de que el hogar se encuentre en situación de pobreza. En concreto, las odds de pobreza disminuyen en un factor de exp(-0.03) = 0.97, es decir en un 3%, por cada año de aumento en la edad del jefe de hogar, manteniendo constantes las demás variables.
 
