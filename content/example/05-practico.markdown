@@ -297,6 +297,8 @@ La matriz de correlaciones da cuenta de un alto nivel de correlación entre las 
 
 El determinante de la matriz de correlaciones se calcula con la función det(). Un determinante cercano a 0 indica que existe correlación multivariante entre las variables. En este caso, el determinante es 0.0001593243, lo que sugiere que hay  colinealidad entre las variables.
 
+A continuación se presenta como calcular una matriz de correlaciones policóricas para el caso de estar trabajando con variables ordinales. En caso de variable dicotómicas (0-1) corresponde usar correlaciones tetracóricas mediante la función 'tetrachoric()'.
+
 
 ```r
 #Probar con matriz policlorica en caso de estar trabajando con variables ordinales.
