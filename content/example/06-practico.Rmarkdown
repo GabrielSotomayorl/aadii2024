@@ -60,41 +60,40 @@ scree(datosLW)
 Para decidir cuántos factores incluir en el análisis factorial, utilizaremos la función fa.parallel() de la librería psych. Esta función utiliza análisis paralelos para determinar cuántos factores se deben retener.
 
 ```{r}
-nofactor <- fa.parallel(datosLW, fm="ml", fa="fa")
+nofactor <- fa.parallel(datosLW, fa="fa")
 nofactor$fa.values
-sum(nofactor$fa.values > 1.0)
-sum(nofactor$fa.values > 0.7)
 ```
 
-En este caso, el análisis paralelo sugiere retener 4 factores (valores propios mayores a 1) o 2 factores (valores propios mayores a 0.7).
+En este caso, el análisis paralelo sugiere retener 4 factores.
 
 3.4 Análisis factorial exploratorio con diferentes configuraciones
 Ahora realizaremos el análisis factorial exploratorio utilizando diferentes configuraciones, como el número de factores, rotaciones y correlaciones. Esto nos permitirá comparar y seleccionar el mejor modelo.
 
 ```{r}
 # Prueba de Modelos segun parallel y grafico
-fa(datosLW, nfactors=4, rotate="none")
-fa(datosLW, nfactors=1, rotate="none")
+fa(datosLW,nfactors=4, fm="minres",rotate="none")
 
-# Prueba con 2 y 3 factores y correlación polychoric
+# Prueba con 4 factores y correlación polychoric
 fa(datosLW, nfactors=4, rotate="none", cor = "poly")
-fa(datosLW, nfactors=2, rotate="none", cor = "poly")
 
 # Prueba con 3 factores y rotación varimax y promax
-fa(datosLW, nfactors=4, rotate="varimax")
-fa(datosLW, nfactors=4, rotate="promax")
-
-# Prueba con 3 factores, rotación y correlación polychoric
-fa(datosLW, nfactors=2, rotate="varimax", cor = "poly")
+fa(datosLW, nfactors=4, rotate="varimax", cor = "poly")
 fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
-
-# Decidimos 3 por los valores en loading, pero SEGUR queda sola (es recomendable que 3 o más)
-fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
-fa(datosLW, nfactors=2, rotate="promax", cor = "poly")
 
 # Modelo final
-FINAL  <- fa(datosLW, nfactors=2, rotate="promax", cor = "poly")
-Final2 <- fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
+modelofinal <- fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
 ```
 
-Después de comparar los resultados, decidimos utilizar un modelo con 2 factores y rotación promax. También se puede probar con 4 factores, según las neces
+Después de comparar los resultados, decidimos utilizar un modelo con 4 factores y rotación promax.
+
+# Cálculo de puntuaciones factoriales
+
+
+```{r}
+#Extracción de puntuaciones factoriales
+
+#modelofinal$scores 
+
+datosLWPF<-modelofinal$scores
+
+```
