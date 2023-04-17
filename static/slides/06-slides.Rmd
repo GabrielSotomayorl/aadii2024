@@ -121,8 +121,7 @@ class: title title-3
 4. **Interpretación teórica:** Retener los factores que se ajustan a las expectativas teóricas y proporcionan una solución interpretable.  
 A menudo, es útil considerar varios criterios al tomar esta decisión.]
 ---
-
-![](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/06/Sedimentaci%C3%B3n.png)
+.center[![:scale 80%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/06/Sedimentaci%C3%B3n.png)]
 
 ---
 
@@ -262,7 +261,7 @@ class: center middle main-title section-title-1 top-logo
 
 .class-info[
 <br>
-**Sesión N° 5**<br>
+**Sesión N° 6**<br>
 **Análisis Avanzado de Datos II**
 <br>
 
