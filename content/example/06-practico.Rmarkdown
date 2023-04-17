@@ -43,7 +43,7 @@ Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial e
 
 ```{r}
 library(psych)
-
+library(GPArotation)
 ```
 
 ## 2. Análisis factorial exploratorio
