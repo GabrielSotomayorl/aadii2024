@@ -50,7 +50,7 @@ colnames(datosLW)<-c("SALUD" ,"INGR" , "TRAB",  "EDUC"  ,"VIVI" , "SEGUR","MEDIO
 
 Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial exporatorio (AFE), "GPArotation" para poder hacer rotación promax, y "dplyr()" para gestión de datos.
 
-```{r}
+```{r, warning=FALSE,message=FALSE}
 library(psych)
 library(GPArotation)
 library(dplyr)

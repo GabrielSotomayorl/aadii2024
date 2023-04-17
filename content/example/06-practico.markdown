@@ -54,50 +54,8 @@ Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial e
 
 ```r
 library(psych)
-```
-
-```
-## Warning: package 'psych' was built under R version 4.2.2
-```
-
-```r
 library(GPArotation)
-```
-
-```
-## Warning: package 'GPArotation' was built under R version 4.2.3
-```
-
-```
-## 
-## Attaching package: 'GPArotation'
-```
-
-```
-## The following objects are masked from 'package:psych':
-## 
-##     equamax, varimin
-```
-
-```r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
 ```
 
 ## 2. Análisis factorial exploratorio
@@ -127,7 +85,7 @@ nofactor <- fa.parallel(datosLW, fa="fa")
 <img src="/example/06-practico_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 ```
-## Parallel analysis suggests that the number of factors =  4  and the number of components =  NA
+## Parallel analysis suggests that the number of factors =  3  and the number of components =  NA
 ```
 
 ```r

@@ -115,10 +115,19 @@ class: title title-3
 # .small[Criterios de selección del número de factores]
 
 .small[Existen diferentes criterios para determinar el número óptimo de factores a extraer. Algunos de los más comunes son:
-1. **Regla del codo (scree plot)**: Se grafican los autovalores de los factores en función del número de factores. Se busca el punto en el que la curva cambia de pendiente, el "codo".
-2. **Criterio de Kaiser**: Se extraen solo los factores con autovalores mayores a 1. En el caso de AFE estamos trabajando solo con la varianza común, por lo que se consideran los que tienen un autovalor mayor a la varianza común promedio.  
-3. **Criterios de ajuste (solo aplicable a ML)**: Se comparan diferentes modelos con distintos números de factores utilizando índices de ajuste como el AIC, BIC, RMSEA.
-4. **Interpretación teórica:** Retener los factores que se ajustan a las expectativas teóricas y proporcionan una solución interpretable.  
+- **Regla del codo (scree plot)**: Se grafican los autovalores de los factores en función del número de factores. Se busca el punto en el que la curva cambia de pendiente, el "codo".
+- **Criterio de Kaiser**: Se extraen solo los factores con autovalores mayores a 1. En el caso de AFE estamos trabajando solo con la varianza común, por lo que se consideran los que tienen un autovalor mayor a la varianza común promedio.  
+- **Criterios de ajuste (solo aplicable a ML)**: Se comparan diferentes modelos con distintos números de factores utilizando índices de ajuste como el AIC, BIC, RMSEA.]
+
+---
+
+class: title title-3
+
+# .small[Criterios de selección del número de factores]
+
+.small[Existen diferentes criterios para determinar el número óptimo de factores a extraer. Algunos de los más comunes son:
+- **Criterio de análisis paralelo**: Este enfoque compara los autovalores observados en los datos con los autovalores generados a partir de datos aleatorios con las mismas dimensiones. Los factores se retienen si los autovalores observados son mayores que los autovalores esperados por azar.
+- **Interpretación teórica:** Retener los factores que se ajustan a las expectativas teóricas y proporcionan una solución interpretable.  
 A menudo, es útil considerar varios criterios al tomar esta decisión.]
 ---
 .center[![:scale 80%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/06/Sedimentaci%C3%B3n.png)]
