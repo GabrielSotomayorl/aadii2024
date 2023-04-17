@@ -1,6 +1,6 @@
 ---
-title: "Análisis Factorial Exploratorio II (en construcción)"
-linktitle: "6: Análisis Factorial Exploratorio II (en construcción)"
+title: "Análisis Factorial Exploratorio II"
+linktitle: "6: Análisis Factorial Exploratorio II"
 date: "2021-08-30"
 menu:
   example:
@@ -19,13 +19,16 @@ El objetivo de este práctico revisar como realizar un Análisis factorial Explo
 
 ## 1. Carga y gestión de datos y librerias
 
-Cargamos nuevamente la base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. Además eliminamos los casos perdidos y atípicos. Para los detalles eestas decisiones, revisar el práctico anterior. 
+Cargamos nuevamente la base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. Además eliminamos los casos perdidos y atípicos. Para los detalles estas decisiones, revisar el práctico anterior. 
 
 ![](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/Practico.png)
 
 
 ```r
-datos <- read.csv2("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EjemploAF.csv")
+datosog <- read.csv("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EDH_2013_csv.csv")
+
+datos<-datosog[,c("cor","P25a","P25b","P25c","P25d","P25e","P25f","P25g","P25h","P25i")]
+ 
 #Codificar perdidos como NA
 datos[datos==9] <- NA
 datos[datos==8] <- NA
@@ -38,9 +41,15 @@ D2<-mahalanobis(datosLW[1:9],mean,Sx)
 datosLW$sigmahala=(1-pchisq(D2, 3))  
 datosLW<-datosLW[which(datosLW$sigmahala>0.001),]#dar por perdido o eliminar caso atipico
 datosLW$sigmahala<-NULL
+
+#guardar id para hacer el merge luego con otras variables
+id<-datosLW$cor
+datosLW$cor<-NULL
+
+colnames(datosLW)<-c("SALUD" ,"INGR" , "TRAB",  "EDUC"  ,"VIVI" , "SEGUR","MEDIO" ,"LIBER" ,"PROYE")
 ```
 
-Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial exporatorio (AFE), así como otras funciones útiles para determinar el número de factores, calcular la matriz de correlaciones, ejecutar el análisis, visualizarlo, entre otras.
+Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial exporatorio (AFE), "GPArotation" para poder hacer rotación promax, y "dplyr()" para gestión de datos.
 
 
 ```r
@@ -70,11 +79,34 @@ library(GPArotation)
 ##     equamax, varimin
 ```
 
+```r
+library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
 ## 2. Análisis factorial exploratorio
 
 
-3.2 Gráfico de sedimentación
+### Gráfico de sedimentación
 El gráfico de sedimentación (scree plot) nos ayuda a decidir cuántos factores mantener en el análisis. Para ello, utilizaremos la función scree() de la librería psych.
+
+El gráfico de sedimentación muestra la proporción de varianza explicada por cada factor en el eje Y y el número de factores en el eje X. Se busca identificar un punto de inflexión en la gráfica, donde la pendiente de la curva se aplana. Este punto indica la cantidad de factores que se deben retener.
 
 
 ```r
@@ -83,18 +115,19 @@ scree(datosLW)
 
 <img src="/example/06-practico_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
-3.3 Selección del número de factores
+### Selección del número de factores
 Para decidir cuántos factores incluir en el análisis factorial, utilizaremos la función fa.parallel() de la librería psych. Esta función utiliza análisis paralelos para determinar cuántos factores se deben retener.
 
 
+
 ```r
-nofactor <- fa.parallel(datosLW, fm="ml", fa="fa")
+nofactor <- fa.parallel(datosLW, fa="fa")
 ```
 
 <img src="/example/06-practico_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 ```
-## Parallel analysis suggests that the number of factors =  3  and the number of components =  NA
+## Parallel analysis suggests that the number of factors =  4  and the number of components =  NA
 ```
 
 ```r
@@ -102,130 +135,71 @@ nofactor$fa.values
 ```
 
 ```
-## [1]  6.30354064  0.29785640  0.09923415  0.04915881 -0.03041516 -0.03421303
-## [7] -0.07018558 -0.15279026 -0.16218210
+## [1]  6.16459264  0.30104369  0.11682746  0.05037410 -0.03516097 -0.03677260
+## [7] -0.06750294 -0.15161530 -0.17719329
 ```
 
-```r
-sum(nofactor$fa.values > 1.0)
-```
+En este caso, el análisis paralelo sugiere retener 4 factores.
 
-```
-## [1] 1
-```
+### Análisis factorial exploratorio con diferentes configuraciones
+Ahora realizaremos el análisis factorial exploratorio utilizando diferentes configuraciones, como el número de factores, rotaciones y correlaciones. Esto nos permitirá comparar y seleccionar el mejor modelo.  
 
-```r
-sum(nofactor$fa.values > 0.7)
-```
+Cuando se trabaja con variables ordinales o categóricas en un análisis factorial exploratorio, es más apropiado utilizar correlaciones policóricas, ya que tienen en cuenta la naturaleza no lineal y discreta de los datos. Dado que nuestras variables tienen 7 categorías probamos ambos tipos de correlaciones para ver el nivel de ajuste. El análisis con correlaciones policóricas explica una mayor proporción de la varianza por lo que se seguirá con estas.
 
-```
-## [1] 1
-```
-
-En este caso, el análisis paralelo sugiere retener 4 factores (valores propios mayores a 1) o 2 factores (valores propios mayores a 0.7).
-
-3.4 Análisis factorial exploratorio con diferentes configuraciones
-Ahora realizaremos el análisis factorial exploratorio utilizando diferentes configuraciones, como el número de factores, rotaciones y correlaciones. Esto nos permitirá comparar y seleccionar el mejor modelo.
 
 
 ```r
-# Prueba de Modelos segun parallel y grafico
-fa(datosLW, nfactors=4, rotate="none")
+# Prueba de Modelos segun parallel 
+fa(datosLW,nfactors=4, fm="minres",rotate="none")
 ```
 
 ```
 ## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 4, rotate = "none")
+## Call: fa(r = datosLW, nfactors = 4, rotate = "none", fm = "minres")
 ## Standardized loadings (pattern matrix) based upon correlation matrix
-##        MR1   MR2   MR3   MR4   h2    u2 com
-## SALUD 0.80  0.11 -0.14  0.00 0.68 0.325 1.1
-## INGR  0.84  0.38 -0.18  0.26 0.95 0.045 1.7
-## TRAB  0.86 -0.02 -0.15 -0.11 0.77 0.228 1.1
-## EDUC  0.89  0.05 -0.07 -0.20 0.84 0.156 1.1
-## VIVI  0.89  0.01 -0.01 -0.18 0.82 0.182 1.1
-## SEGUR 0.76  0.31  0.40 -0.01 0.84 0.164 1.9
-## MEDIO 0.83 -0.11  0.14  0.05 0.72 0.276 1.1
-## LIBER 0.88 -0.42  0.07  0.18 0.98 0.024 1.5
-## PROYE 0.85 -0.27 -0.01  0.03 0.79 0.210 1.2
+##        MR1   MR2   MR3   MR4   h2     u2 com
+## SALUD 0.80  0.12 -0.08 -0.02 0.66 0.3441 1.1
+## INGR  0.84  0.44 -0.14  0.27 1.00 0.0045 1.8
+## TRAB  0.86  0.01 -0.17 -0.14 0.78 0.2168 1.1
+## EDUC  0.89  0.06 -0.03 -0.20 0.83 0.1655 1.1
+## VIVI  0.88  0.02  0.04 -0.18 0.81 0.1865 1.1
+## SEGUR 0.74  0.21  0.35  0.01 0.72 0.2794 1.6
+## MEDIO 0.82 -0.14  0.18  0.07 0.73 0.2742 1.2
+## LIBER 0.87 -0.45  0.00  0.20 1.00 0.0037 1.6
+## PROYE 0.82 -0.24 -0.11  0.01 0.74 0.2629 1.2
 ## 
 ##                        MR1  MR2  MR3  MR4
-## SS loadings           6.42 0.52 0.27 0.19
-## Proportion Var        0.71 0.06 0.03 0.02
-## Cumulative Var        0.71 0.77 0.80 0.82
-## Proportion Explained  0.87 0.07 0.04 0.03
+## SS loadings           6.28 0.54 0.23 0.21
+## Proportion Var        0.70 0.06 0.03 0.02
+## Cumulative Var        0.70 0.76 0.78 0.81
+## Proportion Explained  0.87 0.07 0.03 0.03
 ## Cumulative Proportion 0.87 0.94 0.97 1.00
 ## 
 ## Mean item complexity =  1.3
 ## Test of the hypothesis that 4 factors are sufficient.
 ## 
-## The degrees of freedom for the null model are  36  and the objective function was  8.74 with Chi Square of  12305.07
+## The degrees of freedom for the null model are  36  and the objective function was  8.31 with Chi Square of  12155.21
 ## The degrees of freedom for the model are 6  and the objective function was  0.02 
 ## 
-## The root mean square of the residuals (RMSR) is  0 
+## The root mean square of the residuals (RMSR) is  0.01 
 ## The df corrected root mean square of the residuals is  0.01 
 ## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.95  with prob <  0.92 
-## The total number of observations was  1412  with Likelihood Chi Square =  27.31  with prob <  0.00013 
+## The harmonic number of observations is  1467 with the empirical chi square  2.82  with prob <  0.83 
+## The total number of observations was  1467  with Likelihood Chi Square =  30.64  with prob <  3e-05 
 ## 
-## Tucker Lewis Index of factoring reliability =  0.99
-## RMSEA index =  0.05  and the 90 % confidence intervals are  0.032 0.07
-## BIC =  -16.2
+## Tucker Lewis Index of factoring reliability =  0.988
+## RMSEA index =  0.053  and the 90 % confidence intervals are  0.035 0.072
+## BIC =  -13.11
 ## Fit based upon off diagonal values = 1
 ## Measures of factor score adequacy             
-##                                                    MR1  MR2  MR3  MR4
-## Correlation of (regression) scores with factors   0.99 0.95 0.80 0.82
-## Multiple R square of scores with factors          0.98 0.90 0.64 0.68
-## Minimum correlation of possible factor scores     0.96 0.81 0.28 0.36
+##                                                    MR1  MR2   MR3  MR4
+## Correlation of (regression) scores with factors   0.99 0.99  0.70 0.87
+## Multiple R square of scores with factors          0.98 0.98  0.50 0.76
+## Minimum correlation of possible factor scores     0.96 0.96 -0.01 0.52
 ```
 
 ```r
-fa(datosLW, nfactors=1, rotate="none")
-```
-
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 1, rotate = "none")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##        MR1   h2   u2 com
-## SALUD 0.81 0.65 0.35   1
-## INGR  0.81 0.65 0.35   1
-## TRAB  0.86 0.74 0.26   1
-## EDUC  0.89 0.80 0.20   1
-## VIVI  0.89 0.79 0.21   1
-## SEGUR 0.73 0.53 0.47   1
-## MEDIO 0.83 0.70 0.30   1
-## LIBER 0.85 0.72 0.28   1
-## PROYE 0.84 0.71 0.29   1
-## 
-##                MR1
-## SS loadings    6.3
-## Proportion Var 0.7
-## 
-## Mean item complexity =  1
-## Test of the hypothesis that 1 factor is sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  8.74 with Chi Square of  12305.07
-## The degrees of freedom for the model are 27  and the objective function was  0.78 
-## 
-## The root mean square of the residuals (RMSR) is  0.05 
-## The df corrected root mean square of the residuals is  0.05 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  222.17  with prob <  1.4e-32 
-## The total number of observations was  1412  with Likelihood Chi Square =  1097.41  with prob <  5.2e-214 
-## 
-## Tucker Lewis Index of factoring reliability =  0.884
-## RMSEA index =  0.168  and the 90 % confidence intervals are  0.159 0.176
-## BIC =  901.58
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1
-## Correlation of (regression) scores with factors   0.98
-## Multiple R square of scores with factors          0.96
-## Minimum correlation of possible factor scores     0.92
-```
-
-```r
-# Prueba con 2 y 3 factores y correlación polychoric
+# Prueba con 4 factores y correlación polychoric
 fa(datosLW, nfactors=4, rotate="none", cor = "poly")
 ```
 
@@ -234,249 +208,99 @@ fa(datosLW, nfactors=4, rotate="none", cor = "poly")
 ## Call: fa(r = datosLW, nfactors = 4, rotate = "none", cor = "poly")
 ## Standardized loadings (pattern matrix) based upon correlation matrix
 ##        MR1   MR2   MR3   MR4   h2     u2 com
-## SALUD 0.81  0.12 -0.16  0.02 0.70 0.2966 1.1
-## INGR  0.86  0.36 -0.17  0.25 0.96 0.0423 1.6
-## TRAB  0.87 -0.02 -0.16 -0.10 0.80 0.2011 1.1
-## EDUC  0.91  0.05 -0.09 -0.19 0.87 0.1250 1.1
-## VIVI  0.90  0.02 -0.02 -0.18 0.85 0.1532 1.1
-## SEGUR 0.79  0.31  0.41 -0.02 0.90 0.1029 1.8
-## MEDIO 0.85 -0.12  0.14  0.05 0.76 0.2401 1.1
-## LIBER 0.89 -0.41  0.08  0.15 1.00 0.0049 1.5
-## PROYE 0.87 -0.27  0.00  0.02 0.82 0.1757 1.2
+## SALUD 0.81  0.13 -0.10  0.00 0.68 0.3188 1.1
+## INGR  0.86  0.42 -0.11  0.27 1.00 0.0046 1.7
+## TRAB  0.87  0.01 -0.19 -0.11 0.81 0.1907 1.1
+## EDUC  0.91  0.06 -0.06 -0.19 0.87 0.1335 1.1
+## VIVI  0.90  0.03  0.02 -0.19 0.84 0.1565 1.1
+## SEGUR 0.78  0.21  0.36 -0.03 0.78 0.2187 1.6
+## MEDIO 0.84 -0.15  0.19  0.05 0.76 0.2368 1.2
+## LIBER 0.88 -0.44  0.02  0.17 1.00 0.0026 1.6
+## PROYE 0.84 -0.25 -0.10  0.02 0.78 0.2249 1.2
 ## 
 ##                        MR1  MR2  MR3  MR4
-## SS loadings           6.71 0.50 0.28 0.17
-## Proportion Var        0.75 0.06 0.03 0.02
-## Cumulative Var        0.75 0.80 0.83 0.85
-## Proportion Explained  0.88 0.07 0.04 0.02
-## Cumulative Proportion 0.88 0.94 0.98 1.00
+## SS loadings           6.57 0.52 0.24 0.19
+## Proportion Var        0.73 0.06 0.03 0.02
+## Cumulative Var        0.73 0.79 0.81 0.83
+## Proportion Explained  0.87 0.07 0.03 0.03
+## Cumulative Proportion 0.87 0.94 0.97 1.00
 ## 
 ## Mean item complexity =  1.3
 ## Test of the hypothesis that 4 factors are sufficient.
 ## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
+## The degrees of freedom for the null model are  36  and the objective function was  9.37 with Chi Square of  13698.35
 ## The degrees of freedom for the model are 6  and the objective function was  0.03 
 ## 
-## The root mean square of the residuals (RMSR) is  0 
+## The root mean square of the residuals (RMSR) is  0.01 
 ## The df corrected root mean square of the residuals is  0.01 
 ## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.82  with prob <  0.94 
-## The total number of observations was  1412  with Likelihood Chi Square =  36.01  with prob <  2.7e-06 
+## The harmonic number of observations is  1467 with the empirical chi square  2.72  with prob <  0.84 
+## The total number of observations was  1467  with Likelihood Chi Square =  38.74  with prob <  8.1e-07 
 ## 
-## Tucker Lewis Index of factoring reliability =  0.987
-## RMSEA index =  0.06  and the 90 % confidence intervals are  0.042 0.079
-## BIC =  -7.51
+## Tucker Lewis Index of factoring reliability =  0.986
+## RMSEA index =  0.061  and the 90 % confidence intervals are  0.044 0.08
+## BIC =  -5.01
 ## Fit based upon off diagonal values = 1
 ## Measures of factor score adequacy             
 ##                                                    MR1  MR2  MR3  MR4
-## Correlation of (regression) scores with factors   0.99 0.97 0.85 0.84
-## Multiple R square of scores with factors          0.99 0.94 0.73 0.71
-## Minimum correlation of possible factor scores     0.97 0.88 0.46 0.41
+## Correlation of (regression) scores with factors   0.99 0.99 0.74 0.88
+## Multiple R square of scores with factors          0.99 0.98 0.54 0.78
+## Minimum correlation of possible factor scores     0.97 0.96 0.09 0.56
 ```
 
-```r
-fa(datosLW, nfactors=2, rotate="none", cor = "poly")
-```
+La rotación de factores es un paso importante en el AFE, ya que facilita la interpretación de los resultados. La rotación puede ser ortogonal o oblicua. La rotación ortogonal (e.g. varimax) asume que los factores no están correlacionados, mientras que la rotación oblicua (e.g. promax) permite que los factores estén correlacionados.
 
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 2, rotate = "none", cor = "poly")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##        MR1   MR2   h2    u2 com
-## SALUD 0.82  0.17 0.70 0.302 1.1
-## INGR  0.84  0.30 0.80 0.203 1.2
-## TRAB  0.87  0.04 0.76 0.236 1.0
-## EDUC  0.91  0.10 0.84 0.164 1.0
-## VIVI  0.90  0.06 0.82 0.181 1.0
-## SEGUR 0.76  0.17 0.61 0.388 1.1
-## MEDIO 0.85 -0.12 0.74 0.259 1.0
-## LIBER 0.89 -0.40 0.95 0.048 1.4
-## PROYE 0.87 -0.27 0.84 0.163 1.2
-## 
-##                        MR1  MR2
-## SS loadings           6.64 0.41
-## Proportion Var        0.74 0.05
-## Cumulative Var        0.74 0.78
-## Proportion Explained  0.94 0.06
-## Cumulative Proportion 0.94 1.00
-## 
-## Mean item complexity =  1.1
-## Test of the hypothesis that 2 factors are sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
-## The degrees of freedom for the model are 19  and the objective function was  0.33 
-## 
-## The root mean square of the residuals (RMSR) is  0.02 
-## The df corrected root mean square of the residuals is  0.03 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  52.98  with prob <  4.7e-05 
-## The total number of observations was  1412  with Likelihood Chi Square =  465.38  with prob <  1e-86 
-## 
-## Tucker Lewis Index of factoring reliability =  0.939
-## RMSEA index =  0.129  and the 90 % confidence intervals are  0.119 0.139
-## BIC =  327.58
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1  MR2
-## Correlation of (regression) scores with factors   0.99 0.89
-## Multiple R square of scores with factors          0.97 0.79
-## Minimum correlation of possible factor scores     0.95 0.59
-```
+Para decidir qué rotación utilizar, es útil explorar la correlación entre los factores. Si las correlaciones son bajas (menores a 0.3), la rotación ortogonal es apropiada. Si las correlaciones son altas, se recomienda utilizar la rotación oblicua.
+
 
 ```r
 # Prueba con 3 factores y rotación varimax y promax
-fa(datosLW, nfactors=4, rotate="varimax")
+fa(datosLW, nfactors=4, rotate="varimax", cor = "poly")
 ```
 
 ```
 ## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 4, rotate = "varimax")
+## Call: fa(r = datosLW, nfactors = 4, rotate = "varimax", cor = "poly")
 ## Standardized loadings (pattern matrix) based upon correlation matrix
-##        MR2  MR1  MR4  MR3   h2    u2 com
-## SALUD 0.39 0.47 0.48 0.26 0.68 0.325 3.5
-## INGR  0.28 0.32 0.81 0.35 0.95 0.045 2.0
-## TRAB  0.48 0.59 0.38 0.23 0.77 0.228 3.1
-## EDUC  0.42 0.65 0.35 0.35 0.84 0.156 3.0
-## VIVI  0.46 0.60 0.31 0.38 0.82 0.182 3.2
-## SEGUR 0.27 0.27 0.31 0.77 0.84 0.164 1.9
-## MEDIO 0.61 0.34 0.27 0.40 0.72 0.276 2.9
-## LIBER 0.89 0.28 0.24 0.22 0.98 0.024 1.5
-## PROYE 0.71 0.41 0.26 0.22 0.79 0.210 2.2
+##        MR2  MR1  MR4  MR3   h2     u2 com
+## SALUD 0.37 0.47 0.48 0.30 0.68 0.3188 3.6
+## INGR  0.27 0.33 0.83 0.35 1.00 0.0046 1.9
+## TRAB  0.46 0.62 0.40 0.24 0.81 0.1907 3.0
+## EDUC  0.42 0.64 0.36 0.38 0.87 0.1335 3.1
+## VIVI  0.44 0.60 0.31 0.44 0.84 0.1565 3.4
+## SEGUR 0.28 0.29 0.35 0.70 0.78 0.2187 2.2
+## MEDIO 0.61 0.30 0.27 0.48 0.76 0.2368 2.8
+## LIBER 0.89 0.29 0.23 0.25 1.00 0.0026 1.5
+## PROYE 0.68 0.44 0.28 0.21 0.78 0.2249 2.3
 ## 
 ##                        MR2  MR1  MR4  MR3
-## SS loadings           2.59 1.89 1.54 1.36
-## Proportion Var        0.29 0.21 0.17 0.15
-## Cumulative Var        0.29 0.50 0.67 0.82
-## Proportion Explained  0.35 0.26 0.21 0.18
-## Cumulative Proportion 0.35 0.61 0.82 1.00
+## SS loadings           2.51 1.92 1.65 1.44
+## Proportion Var        0.28 0.21 0.18 0.16
+## Cumulative Var        0.28 0.49 0.67 0.83
+## Proportion Explained  0.33 0.26 0.22 0.19
+## Cumulative Proportion 0.33 0.59 0.81 1.00
 ## 
-## Mean item complexity =  2.6
+## Mean item complexity =  2.7
 ## Test of the hypothesis that 4 factors are sufficient.
 ## 
-## The degrees of freedom for the null model are  36  and the objective function was  8.74 with Chi Square of  12305.07
-## The degrees of freedom for the model are 6  and the objective function was  0.02 
+## The degrees of freedom for the null model are  36  and the objective function was  9.37 with Chi Square of  13698.35
+## The degrees of freedom for the model are 6  and the objective function was  0.03 
 ## 
-## The root mean square of the residuals (RMSR) is  0 
+## The root mean square of the residuals (RMSR) is  0.01 
 ## The df corrected root mean square of the residuals is  0.01 
 ## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.95  with prob <  0.92 
-## The total number of observations was  1412  with Likelihood Chi Square =  27.31  with prob <  0.00013 
+## The harmonic number of observations is  1467 with the empirical chi square  2.72  with prob <  0.84 
+## The total number of observations was  1467  with Likelihood Chi Square =  38.74  with prob <  8.1e-07 
 ## 
-## Tucker Lewis Index of factoring reliability =  0.99
-## RMSEA index =  0.05  and the 90 % confidence intervals are  0.032 0.07
-## BIC =  -16.2
+## Tucker Lewis Index of factoring reliability =  0.986
+## RMSEA index =  0.061  and the 90 % confidence intervals are  0.044 0.08
+## BIC =  -5.01
 ## Fit based upon off diagonal values = 1
 ## Measures of factor score adequacy             
 ##                                                    MR2  MR1  MR4  MR3
-## Correlation of (regression) scores with factors   0.97 0.84 0.93 0.84
-## Multiple R square of scores with factors          0.94 0.70 0.86 0.70
-## Minimum correlation of possible factor scores     0.88 0.41 0.71 0.40
-```
-
-```r
-fa(datosLW, nfactors=4, rotate="promax")
-```
-
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 4, rotate = "promax")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##         MR1   MR2   MR4   MR3   h2    u2 com
-## SALUD  0.46  0.10  0.34 -0.02 0.68 0.325 2.0
-## INGR   0.00  0.00  0.92  0.08 0.95 0.045 1.0
-## TRAB   0.72  0.16  0.11 -0.09 0.77 0.228 1.2
-## EDUC   0.85  0.01  0.00  0.08 0.84 0.156 1.0
-## VIVI   0.75  0.10 -0.06  0.14 0.82 0.182 1.1
-## SEGUR  0.03 -0.02  0.06  0.86 0.84 0.164 1.0
-## MEDIO  0.13  0.54  0.02  0.25 0.72 0.276 1.5
-## LIBER -0.09  1.08  0.01 -0.04 0.98 0.024 1.0
-## PROYE  0.28  0.69  0.00 -0.06 0.79 0.210 1.3
-## 
-##                        MR1  MR2  MR4  MR3
-## SS loadings           2.72 2.37 1.25 1.05
-## Proportion Var        0.30 0.26 0.14 0.12
-## Cumulative Var        0.30 0.57 0.70 0.82
-## Proportion Explained  0.37 0.32 0.17 0.14
-## Cumulative Proportion 0.37 0.69 0.86 1.00
-## 
-##  With factor correlations of 
-##      MR1  MR2  MR4  MR3
-## MR1 1.00 0.82 0.79 0.73
-## MR2 0.82 1.00 0.65 0.65
-## MR4 0.79 0.65 1.00 0.69
-## MR3 0.73 0.65 0.69 1.00
-## 
-## Mean item complexity =  1.2
-## Test of the hypothesis that 4 factors are sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  8.74 with Chi Square of  12305.07
-## The degrees of freedom for the model are 6  and the objective function was  0.02 
-## 
-## The root mean square of the residuals (RMSR) is  0 
-## The df corrected root mean square of the residuals is  0.01 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.95  with prob <  0.92 
-## The total number of observations was  1412  with Likelihood Chi Square =  27.31  with prob <  0.00013 
-## 
-## Tucker Lewis Index of factoring reliability =  0.99
-## RMSEA index =  0.05  and the 90 % confidence intervals are  0.032 0.07
-## BIC =  -16.2
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1  MR2  MR4  MR3
-## Correlation of (regression) scores with factors   0.97 0.99 0.98 0.93
-## Multiple R square of scores with factors          0.94 0.98 0.95 0.86
-## Minimum correlation of possible factor scores     0.88 0.96 0.91 0.73
-```
-
-```r
-# Prueba con 3 factores, rotación y correlación polychoric
-fa(datosLW, nfactors=2, rotate="varimax", cor = "poly")
-```
-
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 2, rotate = "varimax", cor = "poly")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##        MR1  MR2   h2    u2 com
-## SALUD 0.72 0.42 0.70 0.302 1.6
-## INGR  0.82 0.35 0.80 0.203 1.3
-## TRAB  0.67 0.56 0.76 0.236 1.9
-## EDUC  0.74 0.54 0.84 0.164 1.8
-## VIVI  0.71 0.57 0.82 0.181 1.9
-## SEGUR 0.68 0.39 0.61 0.388 1.6
-## MEDIO 0.55 0.66 0.74 0.259 1.9
-## LIBER 0.39 0.89 0.95 0.048 1.4
-## PROYE 0.46 0.79 0.84 0.163 1.6
-## 
-##                        MR1  MR2
-## SS loadings           3.82 3.24
-## Proportion Var        0.42 0.36
-## Cumulative Var        0.42 0.78
-## Proportion Explained  0.54 0.46
-## Cumulative Proportion 0.54 1.00
-## 
-## Mean item complexity =  1.7
-## Test of the hypothesis that 2 factors are sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
-## The degrees of freedom for the model are 19  and the objective function was  0.33 
-## 
-## The root mean square of the residuals (RMSR) is  0.02 
-## The df corrected root mean square of the residuals is  0.03 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  52.98  with prob <  4.7e-05 
-## The total number of observations was  1412  with Likelihood Chi Square =  465.38  with prob <  1e-86 
-## 
-## Tucker Lewis Index of factoring reliability =  0.939
-## RMSEA index =  0.129  and the 90 % confidence intervals are  0.119 0.139
-## BIC =  327.58
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1  MR2
-## Correlation of (regression) scores with factors   0.93 0.95
-## Multiple R square of scores with factors          0.86 0.90
-## Minimum correlation of possible factor scores     0.72 0.81
+## Correlation of (regression) scores with factors   0.99 0.86 0.97 0.79
+## Multiple R square of scores with factors          0.98 0.73 0.95 0.63
+## Minimum correlation of possible factor scores     0.96 0.47 0.90 0.26
 ```
 
 ```r
@@ -488,168 +312,127 @@ fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
 ## Call: fa(r = datosLW, nfactors = 4, rotate = "promax", cor = "poly")
 ## Standardized loadings (pattern matrix) based upon correlation matrix
 ##         MR1   MR2   MR4   MR3   h2     u2 com
-## SALUD  0.42  0.09  0.41 -0.03 0.70 0.2966 2.1
-## INGR  -0.01  0.00  0.92  0.09 0.96 0.0423 1.0
-## TRAB   0.68  0.18  0.15 -0.09 0.80 0.2011 1.3
-## EDUC   0.84  0.03  0.02  0.07 0.87 0.1250 1.0
-## VIVI   0.74  0.11 -0.04  0.15 0.85 0.1532 1.1
-## SEGUR  0.04 -0.02  0.06  0.89 0.90 0.1029 1.0
-## MEDIO  0.10  0.57  0.03  0.25 0.76 0.2401 1.4
-## LIBER -0.08  1.08  0.01 -0.04 1.00 0.0049 1.0
-## PROYE  0.26  0.71  0.00 -0.05 0.82 0.1757 1.3
+## SALUD  0.45  0.09  0.31  0.05 0.68 0.3188 1.9
+## INGR   0.02  0.00  0.92  0.09 1.00 0.0046 1.0
+## TRAB   0.76  0.14  0.12 -0.10 0.81 0.1907 1.2
+## EDUC   0.81  0.02  0.00  0.13 0.87 0.1335 1.1
+## VIVI   0.71  0.07 -0.07  0.25 0.84 0.1565 1.3
+## SEGUR  0.06 -0.04  0.10  0.79 0.78 0.2187 1.0
+## MEDIO  0.03  0.54  0.00  0.38 0.76 0.2368 1.8
+## LIBER -0.06  1.05  0.01 -0.02 1.00 0.0026 1.0
+## PROYE  0.36  0.63  0.02 -0.10 0.78 0.2249 1.7
 ## 
 ##                        MR1  MR2  MR4  MR3
-## SS loadings           2.63 2.51 1.40 1.11
-## Proportion Var        0.29 0.28 0.16 0.12
-## Cumulative Var        0.29 0.57 0.73 0.85
-## Proportion Explained  0.34 0.33 0.18 0.15
-## Cumulative Proportion 0.34 0.67 0.85 1.00
+## SS loadings           2.76 2.24 1.27 1.24
+## Proportion Var        0.31 0.25 0.14 0.14
+## Cumulative Var        0.31 0.56 0.70 0.83
+## Proportion Explained  0.37 0.30 0.17 0.17
+## Cumulative Proportion 0.37 0.67 0.83 1.00
 ## 
 ##  With factor correlations of 
 ##      MR1  MR2  MR4  MR3
-## MR1 1.00 0.83 0.81 0.73
-## MR2 0.83 1.00 0.68 0.66
-## MR4 0.81 0.68 1.00 0.70
-## MR3 0.73 0.66 0.70 1.00
+## MR1 1.00 0.80 0.78 0.76
+## MR2 0.80 1.00 0.62 0.69
+## MR4 0.78 0.62 1.00 0.70
+## MR3 0.76 0.69 0.70 1.00
 ## 
 ## Mean item complexity =  1.3
 ## Test of the hypothesis that 4 factors are sufficient.
 ## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
+## The degrees of freedom for the null model are  36  and the objective function was  9.37 with Chi Square of  13698.35
 ## The degrees of freedom for the model are 6  and the objective function was  0.03 
 ## 
-## The root mean square of the residuals (RMSR) is  0 
+## The root mean square of the residuals (RMSR) is  0.01 
 ## The df corrected root mean square of the residuals is  0.01 
 ## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.82  with prob <  0.94 
-## The total number of observations was  1412  with Likelihood Chi Square =  36.01  with prob <  2.7e-06 
+## The harmonic number of observations is  1467 with the empirical chi square  2.72  with prob <  0.84 
+## The total number of observations was  1467  with Likelihood Chi Square =  38.74  with prob <  8.1e-07 
 ## 
-## Tucker Lewis Index of factoring reliability =  0.987
-## RMSEA index =  0.06  and the 90 % confidence intervals are  0.042 0.079
-## BIC =  -7.51
+## Tucker Lewis Index of factoring reliability =  0.986
+## RMSEA index =  0.061  and the 90 % confidence intervals are  0.044 0.08
+## BIC =  -5.01
 ## Fit based upon off diagonal values = 1
 ## Measures of factor score adequacy             
-##                                                    MR1  MR2  MR4  MR3
-## Correlation of (regression) scores with factors   0.97 1.00 0.98 0.95
-## Multiple R square of scores with factors          0.94 1.00 0.96 0.90
-## Minimum correlation of possible factor scores     0.89 0.99 0.92 0.81
-```
-
-```r
-# Decidimos 3 por los valores en loading, pero SEGUR queda sola (es recomendable que 3 o más)
-fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
-```
-
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 4, rotate = "promax", cor = "poly")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##         MR1   MR2   MR4   MR3   h2     u2 com
-## SALUD  0.42  0.09  0.41 -0.03 0.70 0.2966 2.1
-## INGR  -0.01  0.00  0.92  0.09 0.96 0.0423 1.0
-## TRAB   0.68  0.18  0.15 -0.09 0.80 0.2011 1.3
-## EDUC   0.84  0.03  0.02  0.07 0.87 0.1250 1.0
-## VIVI   0.74  0.11 -0.04  0.15 0.85 0.1532 1.1
-## SEGUR  0.04 -0.02  0.06  0.89 0.90 0.1029 1.0
-## MEDIO  0.10  0.57  0.03  0.25 0.76 0.2401 1.4
-## LIBER -0.08  1.08  0.01 -0.04 1.00 0.0049 1.0
-## PROYE  0.26  0.71  0.00 -0.05 0.82 0.1757 1.3
-## 
-##                        MR1  MR2  MR4  MR3
-## SS loadings           2.63 2.51 1.40 1.11
-## Proportion Var        0.29 0.28 0.16 0.12
-## Cumulative Var        0.29 0.57 0.73 0.85
-## Proportion Explained  0.34 0.33 0.18 0.15
-## Cumulative Proportion 0.34 0.67 0.85 1.00
-## 
-##  With factor correlations of 
-##      MR1  MR2  MR4  MR3
-## MR1 1.00 0.83 0.81 0.73
-## MR2 0.83 1.00 0.68 0.66
-## MR4 0.81 0.68 1.00 0.70
-## MR3 0.73 0.66 0.70 1.00
-## 
-## Mean item complexity =  1.3
-## Test of the hypothesis that 4 factors are sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
-## The degrees of freedom for the model are 6  and the objective function was  0.03 
-## 
-## The root mean square of the residuals (RMSR) is  0 
-## The df corrected root mean square of the residuals is  0.01 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  1.82  with prob <  0.94 
-## The total number of observations was  1412  with Likelihood Chi Square =  36.01  with prob <  2.7e-06 
-## 
-## Tucker Lewis Index of factoring reliability =  0.987
-## RMSEA index =  0.06  and the 90 % confidence intervals are  0.042 0.079
-## BIC =  -7.51
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1  MR2  MR4  MR3
-## Correlation of (regression) scores with factors   0.97 1.00 0.98 0.95
-## Multiple R square of scores with factors          0.94 1.00 0.96 0.90
-## Minimum correlation of possible factor scores     0.89 0.99 0.92 0.81
-```
-
-```r
-fa(datosLW, nfactors=2, rotate="promax", cor = "poly")
-```
-
-```
-## Factor Analysis using method =  minres
-## Call: fa(r = datosLW, nfactors = 2, rotate = "promax", cor = "poly")
-## Standardized loadings (pattern matrix) based upon correlation matrix
-##         MR1   MR2   h2    u2 com
-## SALUD  0.77  0.08 0.70 0.302 1.0
-## INGR   0.98 -0.11 0.80 0.203 1.0
-## TRAB   0.59  0.33 0.76 0.236 1.6
-## EDUC   0.71  0.24 0.84 0.164 1.2
-## VIVI   0.64  0.31 0.82 0.181 1.4
-## SEGUR  0.73  0.06 0.61 0.388 1.0
-## MEDIO  0.32  0.58 0.74 0.259 1.6
-## LIBER -0.09  1.04 0.95 0.048 1.0
-## PROYE  0.10  0.83 0.84 0.163 1.0
-## 
-##                        MR1  MR2
-## SS loadings           4.05 3.00
-## Proportion Var        0.45 0.33
-## Cumulative Var        0.45 0.78
-## Proportion Explained  0.57 0.43
-## Cumulative Proportion 0.57 1.00
-## 
-##  With factor correlations of 
-##      MR1  MR2
-## MR1 1.00 0.81
-## MR2 0.81 1.00
-## 
-## Mean item complexity =  1.2
-## Test of the hypothesis that 2 factors are sufficient.
-## 
-## The degrees of freedom for the null model are  36  and the objective function was  9.86 with Chi Square of  13879.23
-## The degrees of freedom for the model are 19  and the objective function was  0.33 
-## 
-## The root mean square of the residuals (RMSR) is  0.02 
-## The df corrected root mean square of the residuals is  0.03 
-## 
-## The harmonic number of observations is  1412 with the empirical chi square  52.98  with prob <  4.7e-05 
-## The total number of observations was  1412  with Likelihood Chi Square =  465.38  with prob <  1e-86 
-## 
-## Tucker Lewis Index of factoring reliability =  0.939
-## RMSEA index =  0.129  and the 90 % confidence intervals are  0.119 0.139
-## BIC =  327.58
-## Fit based upon off diagonal values = 1
-## Measures of factor score adequacy             
-##                                                    MR1  MR2
-## Correlation of (regression) scores with factors   0.97 0.99
-## Multiple R square of scores with factors          0.95 0.97
-## Minimum correlation of possible factor scores     0.89 0.94
+##                                                    MR1 MR2  MR4  MR3
+## Correlation of (regression) scores with factors   0.97   1 1.00 0.92
+## Multiple R square of scores with factors          0.94   1 0.99 0.85
+## Minimum correlation of possible factor scores     0.88   1 0.99 0.71
 ```
 
 ```r
 # Modelo final
-FINAL  <- fa(datosLW, nfactors=2, rotate="promax", cor = "poly")
-Final2 <- fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
+modelofinal <- fa(datosLW, nfactors=4, rotate="promax", cor = "poly")
 ```
 
-Después de comparar los resultados, decidimos utilizar un modelo con 2 factores y rotación promax. También se puede probar con 4 factores, según las neces
+Después de comparar los resultados, decidimos utilizar un modelo con 4 factores y rotación promax.
+
+# Visualización de resultados
+
+Podemos observar los resultados del análisis con el comando fa.diagram(), que nos muestra las cargas factoriales de los ítems del modelo con cada uno de los factores latentes. 
+
+
+```r
+fa.diagram(modelofinal)
+```
+
+<img src="/example/06-practico_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+# Cálculo de puntuaciones factoriales
+
+Finalmente, podemos calcular las puntuaciones factoriales para cada individuo en nuestra muestra utilizando la función factor.scores(). Estas puntuaciones pueden ser utilizadas en análisis posteriores o como variables en otros modelos
+
+
+```r
+#Extracción de puntuaciones factoriales
+
+#Extraemos las puntuaciones facotriales del objeto del modelo final
+summary(modelofinal$scores)
+```
+
+```
+##       MR1                MR2               MR4               MR3           
+##  Min.   :-1.97980   Min.   :-2.1845   Min.   :-1.5535   Min.   :-1.838369  
+##  1st Qu.:-0.68995   1st Qu.:-0.6839   1st Qu.:-0.8592   1st Qu.:-0.711958  
+##  Median : 0.05109   Median : 0.1777   Median :-0.2056   Median : 0.005353  
+##  Mean   : 0.00000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.000000  
+##  3rd Qu.: 0.71403   3rd Qu.: 0.6565   3rd Qu.: 0.8679   3rd Qu.: 0.693281  
+##  Max.   : 2.06091   Max.   : 1.8364   Max.   : 2.1276   Max.   : 2.200736
+```
+
+```r
+#Guardamos los puntajes en la base
+basefinal<-cbind(datosLW,modelofinal$scores )
+
+#Pegamos la variable GSE de la base de datos original
+datosog<-filter(datosog, datosog$cor%in% id) 
+basefinal<-cbind(basefinal,datosog$GSEo)
+basefinal$gse<-factor(basefinal$`datosog$GSEo`,1:4,labels = c("ABC1"  , "C2" ,  "C3"  ,  "D"))
+
+#Comparamos el
+aggregate(basefinal$MR1,list(basefinal$gse),mean) #Derechos sociales
+```
+
+```
+##   Group.1           x
+## 1    ABC1  0.70051863
+## 2      C2  0.09371833
+## 3      C3 -0.12322170
+## 4       D -0.12702080
+```
+
+```r
+aggregate(basefinal$MR2,list(basefinal$gse),mean) #Derechos individuales
+```
+
+```
+##   Group.1          x
+## 1    ABC1  0.6721192
+## 2      C2  0.1465837
+## 3      C3 -0.1287113
+## 4       D -0.1370771
+```
+
+```r
+#aggregate(basefinal$MR3,list(basefinal$gse),mean) #Jubilación
+#aggregate(basefinal$MR4,list(basefinal$gse),mean) #Seguridad
+```
