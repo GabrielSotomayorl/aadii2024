@@ -15,8 +15,6 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Análisis Factorial Confirmatorio
-
 Este análisis se lleva a cabo con el objetivo de verificar la estructura factorial sugerida por una teoría o un modelo en particular.
 
 Primero, debemos asegurarnos de tener todos los paquetes necesarios instalados y cargados. Utilizaremos haven para importar datos, lavaan para estimar el Modelo de Ecuaciones Estructurales (SEM), semPlot para crear gráficos de SEM y semTable para producir tablas de SEM.
@@ -33,7 +31,10 @@ Posteriormente, importamos los datos que vamos a analizar. En este caso, los dat
 
 ```{r}
 # Importar datos
-datos <- read_spss("base_ideologia_afc.sav")
+#datos <- read_spss("base_ideologia_afc.sav")
+
+datos <- read_sav(url("https://github.com/Clases-GabrielSotomayor/pruebapagina/raw/master/content/example/input/data/base_ideologia_afc.sav"))
+
 ```
 
 A continuación, definimos el modelo de medición para nuestro Análisis Factorial Confirmatorio (AFC). Estamos definiendo dos factores latentes ("autoritarismo" y "dominancia") y tres ítems observables para cada factor. El operador =~ se utiliza para indicar las relaciones entre los factores y los ítems.
@@ -89,7 +90,7 @@ mod_conf_afc_std <- cfa(mod_conf,
                         data = datos.std)
 ```
 Después, creamos y guardamos una tabla de los resultados en formato HTML utilizando la función semTable().
-```{r}
+```{r,results = 'asis'}
 ## Crear y guardar tabla en formato html
 semTable(mod_conf_afc_std, type = "html", 
          file = "resultados_cfa_ideologia",
@@ -97,9 +98,8 @@ semTable(mod_conf_afc_std, type = "html",
                        "latentcovariances", 
                        "fits"))
 ```
-Puedes ver la tabla abriendo el archivo HTML generado o utilizando la función browseURL().
-```{r}
-# Puedes ver la tabla en html
+Desde la consola de R puedes ver la tabla abriendo el archivo HTML generado o utilizando la función browseURL().
+```{r eval=FALSE}
 browseURL("resultados_afc_ideologia.html") 
 ```
 El siguiente paso es calcular las comunalidades, que representan la proporción de la varianza de cada variable observable explicada por los factores. Para esto, utilizamos la función inspect() con el argumento what = "rsquare".
