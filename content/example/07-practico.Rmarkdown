@@ -1,7 +1,7 @@
 ---
-title: "Análisis descriptivo univariado"
-linktitle: "7: Análisis descriptivo univariado"
-date: "2021-09-13"
+title: "Análisis Factorial Confirmatorio con R"
+linktitle: "7: Análisis Factorial Confirmatorio con R"
+date: "2023-05-05"
 menu:
   example:
     parent: Ejemplos
@@ -11,344 +11,105 @@ toc: true
 editor_options: 
   chunk_output_type: console
 ---
-
-#  0. Objetivo del práctico
-
-El objetivo del práctico es avanzar en el análisis de los datos a través del uso de **estadísticos descriptivos**. Para esto ya debemos contar con datos previamente [procesados del práctico N°6](https://learn-r-uah.netlify.app/example/06-practico/). Previo a eso, **siempre es importante** que recordemos en qué parte del proceso estamos
-
-![](https://github.com/learn-R/slides/raw/main/img/01/flow-rproject.png)
-
-
-En este práctico veremos tanto la _estimación puntual_ de estadísticos descriptivos, como su _visualización_ para reportes, ya sea a través de tablas o de gráficos. 
-
-
-##  Recursos del práctico
-
-En este práctico utilizamos los **datos** procesados *CASEN 2020*, que proviene de los datos originales de la [**Encuesta de Caracterización Socioeconómica (CASEN)**](http://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-en-pandemia-2020). Recuerden _**siempre**_ consultar el [**libro códigos**](http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Libro_de_codigos_Base_de_Datos_Casen_en_Pandemia_2020.pdf) antes de trabajar datos.
-
-#  1. Paquetes a utilizar
-
-Para este práctico utilizaremos, principalmente, las librerías `sjmisc` y `sjPlot`. 
-
-`sjmisc`: esta paquete tiene múltiples funciones, desde la transformación de datos y variables. Este paquete suele complementar a `dplyr` de `tidyverse` en sus funciones. 
-
-`sjPlot`: su principal función es la visualización de datos para estadística en ciencias sociales mediante tablas y gráficos.
-
-Cargaremos los paquetes con `pacman`, si aún tienes dudas sobre cómo trabajar con `pacman` puedes [revisar el práctico 2](https://learn-r-uah.netlify.app/example/02-practico/#paso-1-instalaci%C3%B3n-de-paquetes)
-
-```{r librerias, echo=TRUE, results='hide'}
-pacman::p_load(sjmisc,
-               sjPlot,
-               tidyverse,
-               magrittr)
-```
-
-#  2. Importar datos
-
-Una vez cargados los paquetes a utilizar, debemos continuar cargar los datos. Como indicamos al inicio, seguiremos utilizando los datos **CASEN** que fueron procesados en el práctico anterior, pero incorporando una nueva variable.
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-datos_proc <- readRDS(url("https://github.com/learn-R/07-class/raw/main/input/data/datos_proc.rds"))
-
 ```
 
-```{r, eval = F }
-datos_proc <- readRDS("input/data/datos_proc.rds")
+# Análisis Factorial Confirmatorio
+
+Este análisis se lleva a cabo con el objetivo de verificar la estructura factorial sugerida por una teoría o un modelo en particular.
+
+Primero, debemos asegurarnos de tener todos los paquetes necesarios instalados y cargados. Utilizaremos haven para importar datos, lavaan para estimar el Modelo de Ecuaciones Estructurales (SEM), semPlot para crear gráficos de SEM y semTable para producir tablas de SEM.
+
+```{r}
+# Carga paquetes
+library(haven) # importar SPSS, Stata, etc.
+library(lavaan) # estimar SEM
+library(semPlot) # graficar SEM
+library(semTable) # tablas SEM
 ```
 
-#  3. Explorar datos
+Posteriormente, importamos los datos que vamos a analizar. En este caso, los datos están almacenados en un archivo .sav de SPSS llamado "base_ideologia_afc.sav". Lo importamos utilizando la función read_spss() del paquete haven.
 
-Pero ¿cómo sabremos cuales son las nuevas variables que componen la base de datos procesada?, ¡Simple! usaremos dos códigos que vimos en el [práctico 4](https://learn-r-uah.netlify.app/example/04-practico/#2-cargar-base-de-datos) para conocer los **datos procesados** que usaremos en esta ocasión:
-
-Primero, usaremos el código `names`, que nos entrega los nombres de las variables que componen los datos
-
-```{r names, echo=TRUE, results='markup'}
-names(datos_proc)
+```{r}
+# Importar datos
+datos <- read_spss("base_ideologia_afc.sav")
 ```
 
-Mientras que la función `head` nos entrega el nombre y las primeras 10 filas que lo componen.
+A continuación, definimos el modelo de medición para nuestro Análisis Factorial Confirmatorio (AFC). Estamos definiendo dos factores latentes ("autoritarismo" y "dominancia") y tres ítems observables para cada factor. El operador =~ se utiliza para indicar las relaciones entre los factores y los ítems.
 
-```{r head, echo=TRUE, results='markup', warning=F}
-head(datos_proc)
+```{r}
+# Definir modelo de medición
+mod_conf <- 'autoritarismo =~ aut1 + aut2 + aut3
+             dominancia    =~ dom1 + dom2 + dom3'
 ```
-
-Estos códigos nos permiten establecer una aproximación a los datos con los cuales trabajaremos, como los posibles valores que pueden adoptar, el tipo de dato para cada variable, entre otros. No obstante, por prácticos anteriores sabemos que podemos explorar nuestros datos con `sjPlot::view_df()`
-
-```{r echo=TRUE, message=FALSE, warning=FALSE}
-sjPlot::view_df(datos_proc,
-                encoding = "UTF-8")
+Una vez definido el modelo, lo ajustamos utilizando la función cfa() del paquete lavaan. Como argumentos, le pasamos el modelo y los datos.
+```{r}
+# Ajustar modelo CFA
+mod_conf_afc <- cfa(mod_conf, data = datos)
 ```
-
-#  4. Descripción de variables
-
-Una vez conocidas las variables que incluye nuestros datos procesados ¿cómo podemos realizar un análisis descriptivo univariado para algún informe o reporte? Veamos algunas de las más comunes
-
-## 4.1. Medidas de tendencia central
-
-Para conocer las medidas de tendencia central de las variables hay dos opciones. Por una parte, podemos calcular un estadístico directamente a través de código, obteniendo el valor directamente en la consola (o en nuestro .Rmd, si hemos configurado adecuadamente el chunk respectivo). Por otra, podemos generar un código que presente directamente una tabla resumen de los datos.  
-
-### Media
-
-Para conocer la media de una variable se utiliza la función `mean()`, cuya estructura es:
-
-```{r ejemplo mean, eval=FALSE, include=TRUE}
-mean(datos$variable, na.rm=TRUE)
-```
-
-
-El argumento `na.rm=TRUE` excluye del cálculo a los casos perdidos. Si deséaramos estimar la media de `ing_pc`, debemos codificar lo siguiente
-
-```{r casen mean, echo=TRUE, results='markup'}
-mean(datos_proc$ing_pc, na.rm=TRUE)
-```
-
-### Media recortada
-
-Pero, ¿qué pasa si, dada la distribución de los valores de la variable `ing_pc`, su media se ve fuertemente afectadas por casos atípicos o fuera de rango (por ejemplo, que esta adopte un valor más alto producto de una alta concentración de ingresos)? En tal caso, una buena manera de evitar el efecto de casos influyentes en la estimación pasa por calcular la media recortada, incorporando el argumento `trim` para excluir al 5% de la muestra en la estimación (es decir, el 2.5% de cada extremo)
-
-```{r casen mean trim, echo=TRUE, results='markup'}
-mean(datos_proc$ing_pc, na.rm=TRUE, trim = 0.025)
-```
-
-¿Ven cómo se modifica el valor que obtenemos a partir de esta estimación? La diferencia entre la media y la media recortada al 5% de los ingresos per cápita es de `r mean(datos_proc$ing_pc, na.rm=TRUE)- mean(datos_proc$ing_pc, na.rm=TRUE, trim = 0.025)`.
-
-Una vez conocemos el valor medio de la variable `ing_pc`, podemos tener una idea más clara de cómo se caracterizan los ingresos per cápita del país a nivel general entre quienes fueron encuestada/os en CASEN. Sin embargo, hay otros estadísticos que nos permitirán generar una representación más clara de los ingresos de los hogares chilenos ¡vamos a estimar la mediana! 
-
-### Mediana
-
-¿Cuál es el ingreso per cápita máximo al que puede acceder el 50% de los hogares chilenos en el momento en que se recolectaron los datos de CASEN 2020? Para el cálculo de la mediana se utiliza la función `median()`, que presenta una estructura similar a la de `mean()`:
-
-```{r ejemplo median, eval=FALSE, include=TRUE}
-median(datos$variable, na.rm =TRUE)
-```
-
-```{r casen median, echo=TRUE, results='markup'}
-median(datos_proc$ing_pc, na.rm =TRUE)
-```
-
-Ahora ya sabemos que un 50% de los hogares en Chile tiene un ingreso per cápita de `r median(datos_proc$ing_pc, na.rm =TRUE)` o menos.
-
-Ya tenemos los estadísticos principales, pero ¿cómo los reportamos? ¿debemos estimar la media y la mediana de cada todas nuestras variables *una por una*? **¡No!**, para ello `sjmisc` tiene diferentes funciones que nos permitirán estimar y presentar gráficamente tales estimaciones, y las conoceremos a continuación:
-
-
-## Un resumen
-
-Por ello ocuparemos la función `descr()` de `sjmisc`, que nos presenta un resumen de los estadísticos básicos, incluyendo las etiquetas de cada variable.
-
-```{r, message=FALSE, warning=FALSE, eval=FALSE, include=TRUE}
-sjmisc::descr(datos_proc$ing_pc,
-        show = "all",
-        out = "viewer",
-        encoding = "UTF-8",
-        file = "output/figures/tabla-ingreso.doc")
-```
-
-```{r echo=FALSE}
-sjmisc::descr(datos_proc$ing_pc)
-```
-
-**¡Atención!** utilizaremos la función `descr()` **sólo para variables de clase `numeric`** ¿Qué sentido tiene calcular el promedio de equipos de futbol, o de religiones que existen?
-
-Como ya adelantamos anteriorme, `sjmisc` dialoga con el universo `tidyverse`, por lo cual es posible complementar con funciones como `select()` de `dplyr`, seleccionando más de una variable a la vez para nuestras estimaciones de estadísticos de resumen. Además, el argumento `file =` nos permite **exportar** la tabla de estadísticos que acabamos de generar en formato .doc (¡y otros!). 
-
-```{r,  eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
-datos_proc %>%
-select(ing_pc, ytoth, tot_per) %>% 
-sjmisc::descr(
-  show = "all",
-  out = "viewer",
-  encoding = "UTF-8",
-  file = "output/figures/tabla1.doc")
-```
-
-```{r, echo=FALSE}
-datos_proc %>% 
-  select(ing_pc, ytoth, tot_per) %>% 
-  sjmisc::descr()
-```
-
-Como podemos ver, `descr()` nos presenta diversa información, como el nombre de la variable en `var`; su tipo en `type`; su etiqueta en `label`; los casos válidos en `n`; el porcentaje de casos perdidos en `NA.prc`; y las diversas medidas de tendencia central, posición de dispersión para cada una de nuestra variables, como la media y la mediana, los cuartiles, la desviación estándar, y muchas otras.
-
-
-## 4.3. Frecuencias 
-
-### Frecuencias absolutas
-
-Podemos utilizar la función `table()` del paquete `base` de R, que presenta la frecuencia absoluta de cada un de los valores que puede alcanzar alguna de nuestras variables categóricas.
-
-```{r casen table, echo=TRUE, results='markup'}
-table(datos_proc$sexo) 
-```
-
-También podemos emplear la función `flat_table()`, que permite agrupar la frecuencia absoluta de las categorías de dos o más de nuestras variables categóricas.
-
-```{r casen flat_table, echo=TRUE, results='markup'}
-flat_table(datos_proc, sexo, ocupacion, ife)
-```
-
-No obstante, el output de ambas funciones **no se resulta visualmente atractivo** ¿cómo podríamos reportar las frecuencias absolutas (y relativas) en nuestros informes? Si queremos una tabla general usaremos la función `frq()` de `sjmisc`, cuyo output es una tabla de frecuencia que presenta. Esta función devuelve una tabla de frecuencias absolutas y relativas para nuestras variables categóricas (**¡genial!**). Además, si nuestros datos son números etiquetados (`dbl + lbl`), presenta tanto los valores numéricos como las etiquetas asociadas a cada uno de ellos (¡`table()` sólo presenta los valores numéricos! no incluye metadata en su output)
-
-```{r casen frq error, eval = F, results='markup'}
-sjmisc::frq(datos_proc$sexo,
-        out = "viewer",
-        title = "Frecuencias",
-        encoding = "UTF-8",
-        file = "output/figures/tabla2.doc") 
-```
-
-```{r include=F}
-sjmisc::frq(datos_proc$sexo,
-        out = "viewer",
-        title = "Frecuencias",
-        encoding = "UTF-8") 
-```
-
-
-#  5. Visualización
-
-Ahora que ya sabemos cómo obtener todos los estadísticos necesarios para escribir nuestros reportes, viene el segundo paso: *visualizar tales estadísticos*. ¡Siempre es mejor presentar un buen gráfico, antes de mostrar un número y ya! Para ello, emplearemos la librería `sjPlot`
-
-Para visualizar las frecuencias usaremos la función `plot_frq`, que se estructura de la siguiente manera
-
-```{r ejemplo_frecuencias, eval=FALSE, message=FALSE, warning=FALSE, include=TRUE}
-plot_frq(datos,  #base
-  ...,          #variable
-  title = "",   # título
-  type = c("bar", "dot", "histogram", "line", "density", "boxplot", "violin") #tipo de gráfico a especificar 
-  
-```
-
-Para los gráficos, tenemos los siguientes códigos
-
-1. Gráfico de barras de frecuencias simple
-
-Si quisiéramos presentar gráficos que entreguen la frecuencia de cada categoría de respuesta, podemos presentarla de la siguiente forma:
-
-
-```{r casen_barras_simple, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-plot_frq(datos_proc, sexo,
-          title = "Gráfico de frecuencias, barras",
-          type = "bar")
-```
-
-{{< div "note" >}}
-
-Además de la visualización es importante el guardar los datos que se producen y `sjPlot` tiene su propio código para hacerlo a través de la función `save_plot()`, su estructura es esta:
-
-```{r ejemplo_save, eval=FALSE, include=TRUE}
-save_plot("ruta/imagen.jpg", fig = last_plot())  #se deja el formato del archivo (.png, .jpg, .svg o .tif) y la ruta de la carpeta
-```
-
-Así guardaríamos el gráfico anterior
-
-```{r eval=F, include=TRUE}
-save_plot("output/figures/tab.png", fig = last_plot())
-```
-{{< /div >}}
-
-
-2. Gráfico de puntos
-
-¡Podemos presentar un gráfico de puntos!
-
-```{r casen_puntos_simple, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-plot_frq(datos_proc, sexo,
-          title = "Gráfico de frecuencias, puntos",
-          type = "dot")
-```
-
-También podemos cambiar el orden de los ejes *x* e *y*
-
-```{r casen_puntos cambiados, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-plot_frq(datos_proc$sexo_edad_tramo, type = "dot", show.ci = TRUE, sort.frq = "desc",
-  coord.flip = TRUE, expand.grid = TRUE, vjust = "bottom", hjust = "left", title = "Gráfico de frecuencias, puntos cambiado"
-)
-```
-    
-Pero, ¿cuál es el argumento que hace esto?
-
-A la hora de trabajar en R, siempre debemos conocer los argumentos que utilizamos en nuestros códigos, puede que un argumento sea innecesario o esté generando un error, para eso debemos consultar en la sección **Help**. Los pasos son los siguientes:
-
-a. Escribe en la consola anteponiendo un `?` en la función que quieres conocer, en este caso será `plot_frq?`, quedando así:
-
-![](https://github.com/learn-R/07-class/raw/main/input/img/image.png)
-
-
-b. Una vez le des a *Enter*, en la sección **Help** aparecerá información sobre la función, cómo se usa y qué se puede hacer con ella. En **Arguments** explicará la función de cada argumento
-
-![](https://github.com/learn-R/07-class/raw/main/input/img/image2.png)
-
-¡Ahora podrán definir, con completo conocimiento, cómo están personalizando sus gráficos!
-
-3. Histogramas        
-       
-Otra función que podemos hacer es graficar histogramas. Sin embargo, como ya hemos visto, la variable `ing_pc` tiene casos fuera de rango que distorsionan la imagen que nos podemos hacer de la distribución de la variable en la muestra. Para solucionar esto, ocuparemos lo aprendido en [el práctico anterior](https://learn-r-udp.netlify.app/example/03-practico/) y filtraremos la variable, eliminando de la presentación los ingresos mayores a `$2.000.000`, con la función `filter` de `dplyr`
-
-```{r casen_histograma, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-datos_proc %>%  filter(ing_pc <= 2000000) %>% 
-plot_frq(., ing_pc,
-          title = "Histograma",
-          type = "histogram")
-```
-
-4. Densidad
-
-Ahora que vemos la distribución del histograma ¿cómo podemos graficar su densidad? es muy simple: podemos generar un gráfico de densidad con el siguiente código
-
-```{r casen_densidad, echo=TRUE, results='markup'}
-datos_proc %>%  filter(ing_pc <= 2000000) %>%
-plot_frq(., ing_pc,
-          title = "Gráfico de densidad",
-          type = "density")
-```
-
-
-5. Gráfico de líneas
-        
-¿Que pasa si me piden un gráfico de lineas?, también hay una función para eso. En esta ocasión queremos graficar la variable `ife`, para lo que usaremos este código:
-
-```{r casen_lineas, echo=TRUE, results='markup'}
-plot_frq(datos_proc, tot_per,
-          title = "Gráfico de líneas",
-          type = "line")
+Para ver un resumen de los resultados del modelo, utilizamos la función summary(). Hemos establecido standardized = TRUE para obtener las cargas factoriales estandarizadas, que son independientes de la escala de las variables observables. Además, fit.measures = TRUE se utiliza para mostrar los índices de ajuste del modelo, que nos indican cuán bien nuestro modelo especificado se ajusta a los datos.
+```{r}
+# Resultados
+## Salida general
+summary(mod_conf_afc,
+        standardized = TRUE, # mostrar cargas estandarizadas
+        fit.measures = TRUE) # mostrar índices de ajuste extendidos
 
 ```
-
-6. Gráfico de cajas
-
-Para graficar algunas medidas de posición de una variable y, en específico, los cuartiles de esta, podemos elaborar un gráfico de cajas, para lo cual usaremos este código:
-
-```{r casen box, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-datos_proc %>%  filter(ing_pc <= 2000000) %>%
-plot_frq(., ing_pc,
-          title = "Gráfico de caja",
-          type = "boxplot")
+Además, podemos utilizar la función fitmeasures() para ver solo los índices de ajuste específicos que nos interesan.
+```{r}
+# Ver solo índices de ajuste
+fitmeasures(mod_conf_afc,
+            fit.measures = c("chisq", "df", "pvalue",
+                             "cfi", "rmsea"))
 ```
-
-          
-7. Gráfico de violín
-
-Finalmente, si queremos presentar gráficos de violín, usamos este código
-          
-```{r casen violin, echo=TRUE, message=FALSE, warning=FALSE, results='markup'}
-datos_proc %>%  filter(ing_pc <= 2000000) %>%
-    plot_frq(., ing_pc,
-          title = "Gráfico de violín",
-          type = "violin")
+Después, creamos un diagrama de nuestro modelo con la función semPaths() del paquete semPlot.
+```{r}
+# Diagrama modelo
+semPaths(mod_conf_afc, # modelo ajustado
+         what = "std",  # mostrar cargas estandarizadas
+         label.cex = 1, edge.label.cex = 1, # tamaño flechas y caracteres
+         residuals = FALSE, # no mostrar residuos
+         edge.color = "black") # color flechas
 ```
-          
-Como pueden ver, el único argumento que se modificaba era `type = `: es decir, para hacer diversos gráficos, sólo se debe especificar el tipo de gráfico que queremos, y luego personalizarlo según nuestro requerimientos, especificando el resto de argumentos.
+En el gráfico anterior, las flechas representan las relaciones causales sugeridas por el modelo y las cargas factoriales estandarizadas se muestran a lo largo de las flechas.
 
-
-# 6. Resumen del práctico
-
-¡Eso es todo por este práctico! Hoy aprendimos a:
-
-- Estimar estadísticos de medidas de tendencia central, posición y dispersión para variables cuantitativas
-- Calcular las frecuencias absolutas y relativas para cada una de las categorías de respuesta con variables cualitativas
-- Presentar ambas estimaciones
-- Generar y personalizar gráficos descriptivos univariados para variables categóricas y continuas
-
-
+A continuación, estandarizamos las variables observadas utilizando la función scale(), lo que permite hacer comparaciones más justas entre las variables.
+```{r}
+# Estandarizar variables observadas
+datos.std <- scale(datos)
+```
+Luego ajustamos nuevamente el modelo CFA, pero esta vez utilizando los datos estandarizados.
+```{r}
+## Crear objeto con mismo modelo pero estandarizado
+mod_conf_afc_std <- cfa(mod_conf,
+                        std.lv = TRUE,
+                        meanstructure = TRUE,
+                        data = datos.std)
+```
+Después, creamos y guardamos una tabla de los resultados en formato HTML utilizando la función semTable().
+```{r}
+## Crear y guardar tabla en formato html
+semTable(mod_conf_afc_std, type = "html", 
+         file = "resultados_cfa_ideologia",
+         paramSets = c("loadings", 
+                       "latentcovariances", 
+                       "fits"))
+```
+Puedes ver la tabla abriendo el archivo HTML generado o utilizando la función browseURL().
+```{r}
+# Puedes ver la tabla en html
+browseURL("resultados_afc_ideologia.html") 
+```
+El siguiente paso es calcular las comunalidades, que representan la proporción de la varianza de cada variable observable explicada por los factores. Para esto, utilizamos la función inspect() con el argumento what = "rsquare".
+```{r}
+# Comunalidades
+inspect(mod_conf_afc, what = "rsquare")
+```
+Por último, revisamos los índices de modificación, que nos dan sugerencias sobre cómo mejorar el ajuste del modelo. Mostramos los índices en orden decreciente para identificar primero los cambios potencialmente más impactantes.
+```{r}
+# Índices de modificación
+## Mostrar 'mi' en orden decreciente
+modificationindices(mod_conf_afc, sort. = T)
+```

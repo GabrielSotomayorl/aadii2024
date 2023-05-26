@@ -103,7 +103,7 @@ lessons:
   - title: '• Análisis factorial confirmatorio y su aplicación en la investigación sociológica. El análisis confirmatorio frente al análisis exploratorio. Supuestos de la técnica.<br>• Especificación e identificación del modelo. Estimación de parámetros, evaluación del ajuste y reespecificación. '
     session: "Sesión 8"
     date: "8 mayo"
-    # content: "07-content"
+    content: "07-content"
     # example: "07-practico"
     # assignment: "03-tarea"
     bg: 2
@@ -112,7 +112,7 @@ lessons:
   - title: '•	Fiabilidad y validez de los modelos de medida. Validez convergente y validez discriminante. Evaluación de la capacidad confirmatoria del modelo.<br>Ejemplo de análisis factorial confirmatorio.'
     session: "Sesión 9"
     date: "15 mayo"
-    # content: "08-content"
+    content: "08-content"
     # example: "08-practico"
     bg: 2
     bottomborder: True
@@ -127,7 +127,7 @@ lessons:
   - title: '•	Análisis de sendero y su aplicación en la investigación sociológica. Supuestos de la técnica.<br>•	Especificación del modelo.'
     session: "Sesión 10"
     date: "22 mayo"
-    # content: "09-content"
+    content: "09-content"
     # example: "09-practico"
     # assignment: "04-tarea"
     bg: 1
