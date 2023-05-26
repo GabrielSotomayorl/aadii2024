@@ -20,11 +20,7 @@ source(here::here("R", "slide-tabs.R"))
 
 slide_details <- tibble::tribble(
   ~title, ~slide, ~active,
-  "Introducción", "1", TRUE,
-   "R enviroment", "15", FALSE,
-   "R consulta", "27", FALSE,
-  "R comunicación", "37", FALSE, 
-  "Detalles del curso", "54", FALSE
+  "Introducción al curso Análisis avanzado de datos II", "1", TRUE
 )
 ```
 

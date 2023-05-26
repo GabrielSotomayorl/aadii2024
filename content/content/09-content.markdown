@@ -21,7 +21,7 @@ slides: "clase-pa"
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="muestreo-complejo-tab" data-toggle="tab" href="#muestreo-complejo" role="tab" aria-controls="muestreo-complejo" aria-selected="true">Muestreo complejo</a>
+<a class="nav-link active" id="análisis-de-senderos-i-tab" data-toggle="tab" href="#análisis-de-senderos-i" role="tab" aria-controls="análisis-de-senderos-i" aria-selected="true">Análisis de Senderos I</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="-tab" data-toggle="tab" href="#" role="tab" aria-controls="" aria-selected="false"></a>
@@ -33,7 +33,7 @@ slides: "clase-pa"
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="muestreo-complejo" class="tab-pane fade show active" role="tabpanel" aria-labelledby="muestreo-complejo-tab">
+<div id="análisis-de-senderos-i" class="tab-pane fade show active" role="tabpanel" aria-labelledby="análisis-de-senderos-i-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 

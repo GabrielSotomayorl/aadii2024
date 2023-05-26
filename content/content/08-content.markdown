@@ -21,45 +21,17 @@ slides: "clase-8"
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="tendencia-central-tab" data-toggle="tab" href="#tendencia-central" role="tab" aria-controls="tendencia-central" aria-selected="true">Tendencia central</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="frecuencias-tab" data-toggle="tab" href="#frecuencias" role="tab" aria-controls="frecuencias" aria-selected="false">Frecuencias</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="visualización-tab" data-toggle="tab" href="#visualización" role="tab" aria-controls="visualización" aria-selected="false">Visualización</a>
+<a class="nav-link active" id="análisis-factorial-confirmatorio-ii-tab" data-toggle="tab" href="#análisis-factorial-confirmatorio-ii" role="tab" aria-controls="análisis-factorial-confirmatorio-ii" aria-selected="true">Análisis Factorial Confirmatorio II</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="tendencia-central" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tendencia-central-tab">
+<div id="análisis-factorial-confirmatorio-ii" class="tab-pane fade show active" role="tabpanel" aria-labelledby="análisis-factorial-confirmatorio-ii-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
 <iframe class="embed-responsive-item" src="/slides/clase-8.html#1">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="frecuencias" class="tab-pane fade" role="tabpanel" aria-labelledby="frecuencias-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/clase-8.html#14">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="visualización" class="tab-pane fade" role="tabpanel" aria-labelledby="visualización-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/clase-8.html#29">
 </iframe>
 
 </div>

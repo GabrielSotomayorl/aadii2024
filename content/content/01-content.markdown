@@ -21,73 +21,17 @@ slides: "01-slides"
 
 <ul class="nav nav-tabs" id="slide-tabs" role="tablist">
 <li class="nav-item">
-<a class="nav-link active" id="introducción-tab" data-toggle="tab" href="#introducción" role="tab" aria-controls="introducción" aria-selected="true">Introducción</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="r-enviroment-tab" data-toggle="tab" href="#r-enviroment" role="tab" aria-controls="r-enviroment" aria-selected="false">R enviroment</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="r-consulta-tab" data-toggle="tab" href="#r-consulta" role="tab" aria-controls="r-consulta" aria-selected="false">R consulta</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="r-comunicación-tab" data-toggle="tab" href="#r-comunicación" role="tab" aria-controls="r-comunicación" aria-selected="false">R comunicación</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" id="detalles-del-curso-tab" data-toggle="tab" href="#detalles-del-curso" role="tab" aria-controls="detalles-del-curso" aria-selected="false">Detalles del curso</a>
+<a class="nav-link active" id="introducción-al-curso-análisis-avanzado-de-datos-ii-tab" data-toggle="tab" href="#introducción-al-curso-análisis-avanzado-de-datos-ii" role="tab" aria-controls="introducción-al-curso-análisis-avanzado-de-datos-ii" aria-selected="true">Introducción al curso Análisis avanzado de datos II</a>
 </li>
 </ul>
 
 <div id="slide-tabs" class="tab-content">
 
-<div id="introducción" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introducción-tab">
+<div id="introducción-al-curso-análisis-avanzado-de-datos-ii" class="tab-pane fade show active" role="tabpanel" aria-labelledby="introducción-al-curso-análisis-avanzado-de-datos-ii-tab">
 
 <div class="embed-responsive embed-responsive-16by9">
 
 <iframe class="embed-responsive-item" src="/slides/01-slides.html#1">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="r-enviroment" class="tab-pane fade" role="tabpanel" aria-labelledby="r-enviroment-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/01-slides.html#15">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="r-consulta" class="tab-pane fade" role="tabpanel" aria-labelledby="r-consulta-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/01-slides.html#27">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="r-comunicación" class="tab-pane fade" role="tabpanel" aria-labelledby="r-comunicación-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/01-slides.html#37">
-</iframe>
-
-</div>
-
-</div>
-
-<div id="detalles-del-curso" class="tab-pane fade" role="tabpanel" aria-labelledby="detalles-del-curso-tab">
-
-<div class="embed-responsive embed-responsive-16by9">
-
-<iframe class="embed-responsive-item" src="/slides/01-slides.html#54">
 </iframe>
 
 </div>
@@ -102,8 +46,8 @@ slides: "01-slides"
 
 # Materiales de la clase
 
--   [<i class="fas fa-laptop-code"></i> Práctico](https://aadii2023.netlify.app/example/01-practico/)
+- [<i class="fas fa-laptop-code"></i> Práctico](https://aadii2023.netlify.app/example/01-practico/)
 
 # Recomendaciones
 
--   <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)
+- <i class="fas fa-book"></i> Hadley Wickham, [“Data Science: How is it Different To Statistics?”](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/)

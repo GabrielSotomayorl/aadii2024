@@ -20,10 +20,7 @@ source(here::here("R", "slide-tabs.R"))
 
 slide_details <- tibble::tribble(
   ~title, ~slide, ~active,
-  "Importar", "import", TRUE,
-   "Validar", "renv", FALSE,
-   "Seleccionar", "rcom", FALSE,
-  "Exportar", "exp", FALSE
+  "Regresión Logística Binaria", "1", TRUE
 )
 ```
 

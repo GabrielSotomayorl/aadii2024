@@ -20,13 +20,7 @@ source(here::here("R", "slide-tabs.R"))
 
 slide_details <- tibble::tribble(
   ~title, ~slide, ~active,
-  "Básicos", "1", TRUE,
-   "Procesar datos", "14", FALSE,
-   "Operadores", "29", FALSE,
-  "Seleccionar", "35", FALSE,
-  "Filtrar", "45", FALSE,
-  "Crear variables", "52", FALSE,
-    "Pipe", "55", FALSE
+  "Análisis Factorial Exploratorio I", "1", TRUE
 )
 ```
 
