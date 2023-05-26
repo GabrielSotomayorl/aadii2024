@@ -222,6 +222,25 @@ semTable(mod_conf_afc_std, type = "html",
 <tr><td colspan = '5'; align = 'left'><sup>+</sup>Fixed parameter</td></tr>
 </table><br>
  
+
+Primero, examinamos las cargas factoriales (o "Factor Loadings"), que representan las correlaciones entre cada ítem y el factor correspondiente. Los valores varían entre -1 y +1, donde los valores más cercanos a +1 o -1 indican una relación más fuerte entre el ítem y el factor.
+
+Para "autoritarismo", todos los ítems (aut1, aut2, aut3) tienen cargas factoriales altas, entre 0.80 y 0.90, lo que indica que están fuertemente relacionados con el factor "autoritarismo". Todos estos resultados son estadísticamente significativos (p < .000).
+
+Para "dominancia", los ítems (dom1, dom2, dom3) también muestran cargas factoriales relativamente altas, variando de 0.68 a 0.92, sugiriendo una fuerte relación con el factor "dominancia". De nuevo, todos los resultados son estadísticamente significativos (p < .001).
+
+En segundo lugar, examinamos la covarianza entre los factores latentes (o "Latent Covariances"). Aquí, la covarianza entre "autoritarismo" y "dominancia" es de 0.34. Esto sugiere una relación positiva moderada entre los dos factores, y este resultado es estadísticamente significativo (p < .001).
+
+Finalmente, examinamos los índices de ajuste del modelo (o "Fit Indices"). Estos índices evalúan qué tan bien nuestro modelo se ajusta a los datos observados. Los índices incluyen el chi cuadrado (χ2), el Índice de Ajuste Comparativo (CFI), el Índice de Ajuste no Normado (TLI) y el Error Cuadrático Medio de Aproximación (RMSEA).
+
+El valor de χ2 es de 12.33 con 8 grados de libertad y un p-valor de 0.137. Un p-valor superior a 0.05 sugiere que el modelo se ajusta bien a los datos.
+
+El CFI y el TLI son ambos 0.99. Estos índices varían de 0 a 1, y los valores superiores a 0.95 generalmente indican un buen ajuste del modelo a los datos.
+
+El RMSEA es de 0.06. Los valores de RMSEA menores a 0.08 suelen considerarse como una indicación de un buen ajuste del modelo.
+
+En resumen, los resultados sugieren que el modelo propuesto se ajusta bien a los datos, y las cargas factoriales indican que cada ítem se relaciona fuertemente con el factor correspondiente. 
+
 Desde la consola de R puedes ver la tabla abriendo el archivo HTML generado o utilizando la función browseURL().
 
 ```r
