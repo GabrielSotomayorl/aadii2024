@@ -137,7 +137,7 @@ lessons:
     session: "Sesión 11"
     date: "29 mayo"
     # content: "10-content"
-    # example: "10-practico"
+    example: "10-practico"
     bg: 1
     bottomborder: True
 

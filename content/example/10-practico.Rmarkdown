@@ -1,0 +1,114 @@
+---
+title: "Análisis de Senderos"
+linktitle: "10: Análisis de Senderos"
+date: "2023-05-29"
+menu:
+  example:
+    parent: Ejemplos
+    weight: 10
+type: docs
+toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+El análisis de senderos es una técnica estadística que permite descomponer correlaciones en diferentes componentes causales para entender las relaciones directas e indirectas entre diferentes variables. Esta técnica es especialmente útil cuando queremos entender el efecto de una variable sobre otra a través de una o más variables intermedias (o "mediadoras").
+
+En esta guía trabajaremos con el ejemplo de Análisis de Senderos presentado por la Dra. Monica Gereber en su taller de [Análisis de Ecuaciones estructurales](https://www.youtube.com/watch?v=Ijg8NQe95W0&ab_channel=CentroCOES). En este se busca medir el efecto indirecto de la posición políticas en el nivel de acuerdo con castigos severos contra aquellos que cometen delitos, siendo la variables intermedia el autoritarismo de derechas. En modelo planteado puede verse en el siguiente esquema:
+
+```{r}
+# Carga las bibliotecas necesarias
+library(haven)
+library(MVN)
+library(lavaan)
+library(semPlot) 
+library(semTable)
+```
+
+Las bibliotecas necesarias son haven para la importación de datos, MVN para la evaluación de la normalidad multivariante, lavaan para realizar análisis de senderos, semPlot para la visualización del modelo y semTable para la presentación de los resultados.
+
+```{r}
+# Importar datos
+datos <- read_sav(url("https://github.com/Clases-GabrielSotomayor/pruebapagina/raw/master/content/example/input/data/elsoc2016.sav"))
+
+```
+
+Los datos se importan de una URL utilizando la función read_sav de la biblioteca haven.
+
+```{r}
+# Comprobación de supuestos
+dim(datos)
+cor(datos,use = "complete.obs")
+summary(datos)
+mvn(datos[,c("castigo_media","rwa_media","derecha", "izquierda" , "centro")])
+
+```
+
+Aquí se revisan varios supuestos antes de ajustar el modelo de senderos. dim(datos) muestra las dimensiones de los datos, cor(datos,use = "complete.obs") muestra las correlaciones entre variables, summary(datos) ofrece un resumen estadístico de las variables, y mvn(datos) evalúa la normalidad multivariante, que es un supuesto clave en el análisis de senderos.
+
+```{r}
+# Especificar y ajustar el modelo de senderos
+mod_sendero <-    'castigo_media ~ rwa_media
+                   rwa_media ~ derecha + izquierda + centro'
+ajus_sendero <- sem(mod_sendero, data=datos)
+```
+
+Este bloque de código define y ajusta el modelo de senderos. La función sem() del paquete lavaan se utiliza para ajustar el modelo. En este modelo, 'castigo_media' se modela como una función de 'rwa_media', y 'rwa_media' se modela como una función de 'derecha', 'izquierda', y 'centro'.
+
+```{r}
+# Resumen de los resultados del modelo de senderos
+summary(ajus_sendero, fit.measures = T, standardized = T, rsquare = T, modindices = T)
+
+```
+
+La función summary() proporciona un resumen de los resultados, incluyendo varias medidas de ajuste, coeficientes estandarizados, los coeficientes de determinación (R^2) y los índices de modificación.
+
+```{r,results='asis'}
+# Crear una tabla de resultados en formato APA
+semTable(ajus_sendero, type = "html", paramSets = c("loadings", "slopes", "latentcovariances", 
+                                                    "fits", "constructed"), file = "resultados_sendero")
+
+
+```
+
+Aquí usamos semTable() para generar una tabla con los resultados principales del modelo. Esta tabla incluye las cargas factoriales ("loadings"), los coeficientes de las rutas ("slopes"), las covarianzas latentes ("latentcovariances"), las medidas de ajuste ("fits") y los índices construidos ("constructed"). Los resultados se guardan en un archivo HTML con el nombre "resultados_sendero".
+
+```{r,eval=FALSE}
+# Mostrar la tabla de resultados en un navegador
+browseURL("resultados_sendero.html")
+
+```
+
+Aquí utilizamos browseURL() para abrir el archivo HTML generado en el navegador por defecto. Es una manera eficaz de visualizar la tabla de resultados.
+
+```{r}
+# Especificar y ajustar el modelo de senderos con efectos indirectos
+mod_sendero3 <-    'castigo_media ~ a* rwa_media + c*derecha
+                    rwa_media ~ b* derecha + izquierda + centro
+                    ind_derecha_rwa := a*b
+                    total_derecha_rwa := (a*b)+c'
+ajus_sendero3 <- sem(mod_sendero3, data=datos)
+
+```
+
+Este bloque de código define y ajusta un modelo de senderos que incluye efectos indirectos. Aquí se está modelando 'castigo_media' como una función de 'rwa_media' y 'derecha', y 'rwa_media' como una función de 'derecha', 'izquierda', y 'centro'. Además, se introducen dos parámetros nuevos, 'ind_derecha_rwa' y 'total_derecha_rwa', que representan los efectos indirectos y totales de 'derecha' sobre 'castigo_media' a través de 'rwa_media', respectivamente.
+
+```{r}
+# Resumen de los resultados del modelo de senderos con efectos indirectos
+summary(ajus_sendero3, fit.measures = T, standardized = T, rsquare = T, modindices = T)
+```
+
+Por último, se utiliza summary() para proporcionar un resumen de los resultados del modelo que incluye los efectos indirectos. Esto incluirá las mismas estadísticas que antes, pero ahora también incluirá los efectos indirectos y totales que hemos especificado.
+
+```{r}
+# Diagrama del modelo de senderos
+semPaths(ajus_sendero3, # modelo ajustado
+         what = "std",  # mostrar cargas estandarizadas
+         label.cex = 1, edge.label.cex = 1, # tamaño de las etiquetas y caracteres
+         residuals = FALSE, # no mostrar residuos
+         edge.color = "black") # color de las flechas
+```
+
+Aquí usamos semPaths() para generar un diagrama del modelo de senderos que hemos ajustado. Los argumentos de esta función son similares a los que hemos usado antes. ajus_sendero3 es el modelo ajustado, what = "std" indica que se deben mostrar las cargas estandarizadas en lugar de las no estandarizadas, label.cex = 1 y edge.label.cex = 1 controlan el tamaño de las etiquetas y de las flechas respectivamente, residuals = FALSE indica que no se deben mostrar los residuos en el diagrama, y edge.color = "black" establece el color de las flechas a negro.
+
+Este diagrama proporciona una representación visual del modelo de senderos que hemos ajustado, lo que puede facilitar su interpretación. En el diagrama, las variables observables se representan como rectángulos, las variables latentes (si las hay) como óvalos, y las relaciones entre variables como flechas. Las cargas factoriales o coeficientes de las rutas se representan junto a las flechas correspondientes.
