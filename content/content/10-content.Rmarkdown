@@ -1,9 +1,9 @@
 ---
-title: "Regresiones logísticas"
-linktitle: "10: Regresiones lineales y logísticas"
+title: "Análisis de Senderos II"
+linktitle: "10: Análisis de Senderos II"
 date: "2021-10-25"
-start_date: "2021-09-27"
-end_date: "2021-11-08"
+start_date: "2023-05-29"
+end_date: "2023-05-29"
 menu:
   content:
     parent: Contenido
@@ -12,7 +12,7 @@ type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "10-slides"
+slides: "clase-paii"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
@@ -20,10 +20,9 @@ source(here::here("R", "slide-tabs.R"))
 
 slide_details <- tibble::tribble(
   ~title, ~slide, ~active,
-  "Repaso", "1", TRUE,
-   "glm() y svyglm()", "10", FALSE,
-   "Extraer elementos", "26", FALSE,
-   "Exponenciación", "26", FALSE,
+  "Análisis de Senderos II", "1", TRUE,
+   "", "14", FALSE,
+   "", "29", FALSE
 )
 ```
 
@@ -32,34 +31,11 @@ slide_details <- tibble::tribble(
 `r blogdown::shortcode("slide-buttons")`
 
 ```{r show-slide-tabs, echo=FALSE, results="asis"}
-slide_tabs(slide_details, "/slides/10-slides.html")
+slide_tabs(slide_details, "/slides/clase-paii.html")
 ```
 
 {{% div fyi %}}
 **¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-# Video de la clase
-
-- [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/H6L3mr-CE-sMeJRQ4CLua3IT95mPl9ougKki3ndIca2s9JpkNQnCmnoYVVbaIKB4.UrcbRJYeE8F3JVM4?startTime=1635190195000)
-
-- - [<i class="fas fa-video"></i> `Video del práctico`](https://zoom.us/rec/share/83hcyjS5wOZ57QhBGiyCsb8wzakRyw6pAcyW0ZzjuKWCpIsHdU6ZsNp56obYnCgW.GI1qpKtgu7_HnDHo?startTime=1635195951000)
-
-
-# Material de la clase
-
-- [<i class="fas fa-file-archive"></i> `10.1-clase.zip`](https://github.com/learn-R/10.1-class/raw/main/10.1-clase.zip)
-
-- [<i class="fas fa-file-archive"></i> `10.2-clase.zip`](https://github.com/learn-R/10.2-class/raw/main/10.2-clase.zip)
-
-- [<i class="fas fa-laptop-code"></i> Práctico](/example/10.1-practico/)
-
-- [<i class="fas fa-laptop-code"></i> Práctico](/example/10.2-practico/)
-
-
-# Tareas
-
-- Tarea N°5 (entrega viernes a las 23.59)
-
-- Bonus (entrega miércoles a las 20.00 horas)
 

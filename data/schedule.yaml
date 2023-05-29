@@ -136,7 +136,7 @@ lessons:
   - title: '•	Evaluación del modelo de medición y de la capacidad confirmatoria del modelo.<br>•	Ejemplo de análisis de sendero.'
     session: "Sesión 11"
     date: "29 mayo"
-    # content: "10-content"
+    content: "10-content"
     example: "10-practico"
     bg: 1
     bottomborder: True
