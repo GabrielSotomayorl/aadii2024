@@ -267,7 +267,7 @@ RMSEA: Es una medida de ajuste absoluto que indica el error de aproximación en 
 
 SRMR: Es la media cuadrática de los residuos estandarizados, una medida del ajuste promedio del modelo. Valores por debajo de 0.08 se consideran buenos. En este caso, el SRMR es 0.021, lo que indica un muy buen ajuste.
 
-Luego revisamos los coeficientes path en el modelo. Cada coeficiente indica la magnitud y dirección del efecto de una variable sobre otra. En este caso, vemos que "autoritarismo de derechas" tiene un efecto positivo significativo en "castigo severo" (coeficiente = 0.284, p < 0.001), "derecha" tiene un efecto positivo significativo en "autoritarismo de derechas" (coeficiente = 0.182, p < 0.001), "izquierda" tiene un efecto negativo significativo en "autoritarismo de derechas" (coeficiente = -0.404, p < 0.001), y "centro" tiene un efecto negativo significativo en "autoritarismo de derechas" (coeficiente = -0.094, p = 0.005).
+Luego revisamos los coeficientes path en el modelo. Cada coeficiente indica la magnitud y dirección del efecto de una variable sobre otra. En este caso, vemos que "autoritarismo de derechas" tiene un efecto positivo significativo en "castigo severo" (coeficiente = 0.284, p < 0.001), ser de "derecha" (respecto a ser independiente) tiene un efecto positivo significativo en "autoritarismo de derechas" (coeficiente = 0.182, p < 0.001), ser de "izquierda" (respecto a ser independiente) tiene un efecto negativo significativo en "autoritarismo de derechas" (coeficiente = -0.404, p < 0.001), y ser de "centro" (respecto a ser independiente) tiene un efecto negativo significativo en "autoritarismo de derechas" (coeficiente = -0.094, p = 0.005).
 
 El R-cuadrado para cada una de las variables dependientes ("castigo severo" y "autoritarismo de derechas") proporciona la cantidad de varianza explicada por las variables independientes en el modelo. En este caso, el 8% de la varianza en "castigo severo" se explica por "autoritarismo de derechas", y el 4.4% de la varianza en "autoritarismo de derechas" se explica por "derecha", "izquierda" y "centro".
 
@@ -296,7 +296,7 @@ semTable(ajus_sendero, type = "html", paramSets = c("loadings", "slopes", "laten
 </table><br>
  
 
-Aquí usamos semTable() para generar una tabla con los resultados principales del modelo. Esta tabla incluye las cargas factoriales ("loadings"), los coeficientes de las rutas ("slopes"), las covarianzas latentes ("latentcovariances"), las medidas de ajuste ("fits") y los índices construidos ("constructed"). Los resultados se guardan en un archivo HTML con el nombre "resultados_sendero".
+Aquí usamos semTable() para generar una tabla con los resultados principales del modelo.
 
 
 ```r
@@ -432,7 +432,7 @@ Por último, se utiliza summary() para proporcionar un resumen de los resultados
 
 ind_derecha_rwa: El efecto indirecto de "derecha" en "castigo severo" a través de "autoritarismo de derechas" es significativo y positivo (Estimate = 0.051, p < 0.000). Esto significa que, manteniendo todo lo demás constante, ser de derecha (respecto de ser independiente) incrementa la puntuación en "castigo severo" a través de su efecto en "autoritarismo de derechas".
 
-total_derecha_rwa: El efecto total de "derecha" en "castigo severo" es también significativo y positivo (Estimate = 0.160, p < 0.000). Esto implica que un incremento en la puntuación de "derecha" incrementa la puntuación en "castigo severo" tanto directamente como indirectamente a través de su efecto en "autoritarismo de derechas".
+total_derecha_rwa: El efecto total de "derecha" en "castigo severo" es también significativo y positivo (Estimate = 0.160, p < 0.000). Esto significa que, manteniendo todo lo demás constante, ser de derecha (respecto de ser independiente) incrementa la puntuación en "castigo severo" tanto directamente como indirectamente a través de su efecto en "autoritarismo de derechas".
 
 
 ```r
