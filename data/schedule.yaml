@@ -152,7 +152,7 @@ lessons:
   - title: '•	Análisis de ecuaciones estructurales y su aplicación en la investigación sociológica.<br>•	La obtención de un modelo de ecuaciones estructurales: la estructura del modelo. Supuestos de la técnica.'
     session: "Sesión 12"
     date: "5 junio"
-    # content: "11-content"
+    content: "11-content"
     # example: "11-practico"
     # assignment: "04-tarea"
     bg: 2

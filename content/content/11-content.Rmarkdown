@@ -1,6 +1,6 @@
 ---
-title: "Calidad de modelos y otras técnicas"
-linktitle: "11: Calidad de modelos y otras técnicas"
+title: "Análisis de Senderos (Taller)"
+linktitle: "11: Análisis de Senderos (Taller)"
 date: "2021-11-08"
 start_date: "2021-09-27"
 end_date: "2021-11-08"
@@ -12,7 +12,7 @@ type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "11-slides"
+slides: "clase pa taller"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
@@ -30,30 +30,11 @@ slide_details <- tibble::tribble(
 `r blogdown::shortcode("slide-buttons")`
 
 ```{r show-slide-tabs, echo=FALSE, results="asis"}
-slide_tabs(slide_details, "/slides/11-slides.html")
+slide_tabs(slide_details, "/slides/clase pa taller.html")
 ```
 
 {{% div fyi %}}
 **¿Cómo ocupar**: Si presionas <kbd>?</kbd> (o <kbd>shift</kbd> + <kbd>/</kbd>) mientras estas viendo las slides, podrás ver los comandos específicos para navegar en ellas.
 {{% /div %}}
 
-# Video de la clase
 
-- [<i class="fas fa-video"></i> `Video de la clase`]()
-
-
-
-# Material de la clase
-
-- [<i class="fas fa-file-archive"></i> `11-clase.zip`](https://github.com/learn-R/11-class/raw/main/11-clase.zip)
-
-
-- [<i class="fas fa-laptop-code"></i> Práctico](/example/11-practico/)
-
-
-# Examen
-
-[Instrucciones](https://learn-r-uah.netlify.app/assignment/)
-
-- 22 de noviembre 23.59 horas
-- Individual y obligatorio
