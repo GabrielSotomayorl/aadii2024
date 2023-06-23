@@ -161,7 +161,7 @@ lessons:
   - title: '•	Estimación del modelo empírico.<br>•	Evaluación del modelo.'
     session: "Sesión 13"
     date: "12 junio"
-    # content: "12-content"
+    content: "12-content"
     # example: "12-practico"
     bg: 2
     bottomborder: True
