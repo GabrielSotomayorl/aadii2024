@@ -1,5 +1,5 @@
 ---
-title: "Instalación de R, RStudio y Slack"
+title: "Instalación de R, RStudio"
 date: "2021-08-11"
 menu:
   resource:
@@ -178,79 +178,6 @@ Para poder compartir nuestros proyectos, debemos hacer click en los *tres puntos
 knitr::include_graphics("/img/tutorial/install/cloud9.png", error = F)
 ```
 
-## 3. Slack
-
-Este software será el principal medio de comunicación en el marco del curso. Allí, las y los estudiantes podrán plantear todas sus dudas, para que estas puedan ser respondidas de forma colectiva, tanto por parte del equipo docente, como de otras y otros estudiantes.  
-
-Primero, debemos descargar el instalador de **Slack**, dependiendo de nuestro sistema operativo: 
-
-- [Windows](https://slack.com/intl/es-cl/downloads/windows)
-- [macOS](https://slack.com/intl/es-cl/downloads/mac)
-- [Linux](https://slack.com/intl/es-cl/downloads/linux)
-
-En la siguiente imagen, está el ejemplo de *Windows* (64 bits)
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack1.png", error = F)
-```
-
-Una vez descargado el archivo, debemos ejecutarlo, y seguir el proceso de instalación. Tal como en el resto de los software instalados, recomendamos mantener todas las opciones de instalación *por defecto*.
-
-Luego, debemos crear una *cuenta de Slack*, dirigiéndose a la [siguiente página web](https://slack.com/get-started#/create). Se recomienda usar la *dirección de correo que usen de forma cotidiana*, a modo de estar al tanto de la actividad en el canal de Slack. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack2.png", error = F)
-```
-
-Posteriormente, deben confirmar su correo electrónico y, por último, han de hacer click en el link **Unirse a slack de curso**, presente en el apartado *Syllabus* de la página web. Ello redireccionará a la aplicación, abriendo allí el espacio de trabajo del curso. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack3.png", error = F)
-```
-
-Una vez realizado aquello, debemos permitir que la página web abra la aplicación de Slack, y se nos redirigirá al **espacio de trabajo** del curso. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack4.png", error = F)
-```
-
-A la izquierda, encontraremos los diversos *canales* asignados para distintas actividades. Aquellos que tengan a la izquierda un **#**, son canales abiertos a todas y todos quienes integren el espacio de trabajo; mientras que aquellos que tengan un **candado** a su izquierda son canales privados. Haciendo click en **añadir canales**, podemos crear *nuevos canales* (lo cual pueden hacer cuando, en el futuro, utilicen Slack para sus trabajos personales).
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack5.png", error = F)
-```
-
-Bajo los canales encontraremos la sección de **mensajes directos**, donde podremos enviar mensajes privados a cualquier persona que integre el espacio de trabajo. No olviden que pueden comunicarnos todas sus dudas, inquietudes y sugerencias respecto del curso. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack6.png", error = F)
-```
-
-En la sección superior derecha encontraremos nuestro usuario.
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack7.png", error = F)
-```
-
-Si hacemos click, se abrirá una pestaña emergente, donde podremos acceder a diversas configuraciones.
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack8.png", error = F)
-```
-
-En **Modificar tu perfil**, podemos cambiar nuestro nombre, describir a qué nos dedicamos, definir nuestros pronombres, entre otros elementos. También, podemos seleccionar una foto de perfil, para que el resto de las personas que integren el espacio de trabajo puedan (re)conocernos. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack9.png", error = F)
-```
-
-En la sección de **Preferencias**, podremos establecer diferentes configuraciones referentes, por ejemplo, a las *notificaciones*, la *barra lateral*, o seleccionar distintos *temas*, para personalizar la apariencia de nuestro espacio de trabajo. 
-
-```{r, echo=FALSE, out.width="60%"}
-knitr::include_graphics("/img/tutorial/install/slack10.png", error = F)
-```
-
-### Una vez realizado todo lo anterior ¡Ya estamos listas y listos para empezar a trabajar en el curso!
 
 ## 4. Video tutorial en Youtube
 
