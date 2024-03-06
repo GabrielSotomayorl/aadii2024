@@ -1,7 +1,7 @@
 ---
 title: "Introducción a R"
 linktitle: "1: Introducción a R"
-date: "2021-08-09"
+date: "2024-08-09"
 menu:
   example:
     parent: Ejemplos
@@ -14,11 +14,11 @@ editor_options:
 
 ## 0. Objetivo del práctico
 
-El objetivo del práctico es introducirnos en Rstudio, debemos recordar que **R es un lenguaje orientado a objetos** y Rstudio es un **Ambiente integrado**, en el cual podemos tener muchas funciones, las cuales veremos a continuación:
+El propósito de este práctico es familiarizarnos con R y RStudio. **R es un lenguaje de programación orientado a objetos**, especialmente diseñado para el análisis estadístico y la visualización de datos. RStudio, por otro lado, proporciona un **entorno integrado de desarrollo (IDE)** que facilita el uso de R ofreciendo numerosas herramientas útiles en un solo lugar.
 
 ## 1. R como calculadora
 
-Debemos recordar que R puede generar múltiples operaciones, una de ellas es realizar diversas operaciones estadísticas
+R no solo es útil para análisis estadísticos complejos, sino también para operaciones matemáticas básicas, que luego nos permitirán trabajr con nuestras variables. A continuación, demostramos cómo usar R como calculadora:
 
 
 ```r
@@ -53,14 +53,16 @@ Debemos recordar que R puede generar múltiples operaciones, una de ellas es rea
 ## [1] 10
 ```
 
-Como primer ejemplo veremos formas de crear objetos, asignandole un número a un vector
+## 2. Creación y manipulación de objetos
+
+En R, podemos crear objetos para almacenar datos. A continuación, se muestra cómo asignar un valor a un objeto y cómo interactuar con él
 
 
 ```r
-x<-5
+x <- 5
 ```
 
-Cómo el objeto queda en el enviroment, después podemos imprimir o llamar al objeto
+Cómo el objeto queda en el ambiente/environment, después podemos imprimir o llamar al objeto
 
 
 ```r
@@ -75,14 +77,14 @@ Podemos crear los objetos que creamos necesarios, esta vez, crearemos un segundo
 
 
 ```r
-y<-10
+y <- 10
 ```
 
 Ahora podemos realizar operaciones con nuestros objetos
 
 
 ```r
-x+y
+x + y
 ```
 
 ```
@@ -90,7 +92,7 @@ x+y
 ```
 
 ```r
-x-y
+x - y
 ```
 
 ```
@@ -98,7 +100,7 @@ x-y
 ```
 
 ```r
-x*y
+x * y
 ```
 
 ```
@@ -106,7 +108,7 @@ x*y
 ```
 
 ```r
-x/y
+x / y
 ```
 
 ```
@@ -117,7 +119,7 @@ También podemos guardar los resultados como objetos
 
 
 ```r
-z<-x^2 
+z <- x^2 
 z
 ```
 
@@ -125,11 +127,13 @@ z
 ## [1] 25
 ```
 
+## 3. Operaciones lógicas
+
 También podemos realizar operaciones lógicas. Para establecer una igualdad usamos doble signo ==
 
 
 ```r
-x>y 
+x > y 
 ```
 
 ```
@@ -137,7 +141,7 @@ x>y
 ```
 
 ```r
-15==x+y 
+15 == x + y 
 ```
 
 ```
@@ -145,14 +149,16 @@ x>y
 ```
 
 ```r
-16>x+y
+16 > x + y
 ```
 
 ```
 ## [1] TRUE
 ```
 
-Creación de una variable. "Edad". mediante la función concatenar "c()", podemos crear un objeto que agrupe un conjunto de datos. Para el lenguaje del software esto es un vector, para nosotros una variable, en este caso numérica (numeric): intervalar, continua, cuantitativa.
+## 4. Vectores
+
+Un vector en R es una secuencia de elementos del mismo tipo. Crearemos una variable llamada Edad. Mediante la función concatenar "c()", podemos crear un objeto que agrupe un conjunto de datos. Para el lenguaje del software esto es un vector, para nosotros una variable, en este caso numérica (numeric): intervalar, continua, cuantitativa.
 
 
 ```r
@@ -183,7 +189,9 @@ class(Edad)
 ## [1] "numeric"
 ```
 
-También podemos realiar operaciones sobre los vectores
+También podemos realizar operaciones sobre los vectores. R aplicará la operación a cada uno de los elementos del vector y nos devolverá un vector con los resultados.  
+
+Si aplicamos 
 
 
 ```r
@@ -303,8 +311,9 @@ summary(NSE) #NA son lo perdidos
 ##   12    7    6    4    3    1    2
 ```
 
+## 5. Selección de elementos de un objeto
 
-Podemos seleccionar elementos específicos de los vecotres
+Podemos seleccionar elementos específicos de los vectores
 
 
 ```r
@@ -378,7 +387,9 @@ class(NSE)
 ## [1] "factor"
 ```
 
-Crear listas
+## 6. Listas
+
+Para agrupar elementos de distintos tipos en un objeto debemos utilizar listas. Un caso particular de las listas, como veremos son los data frame o marcos de datos (comunmente llamados bases de datos).
 
 
 ```r
@@ -394,8 +405,7 @@ x #el elemento u de la lista es un vector con 3 números, y el elemento v es abc
 ## [1] "abc"
 ```
 
-ver el elemento u, de la lista x
-Pedir elementos
+Existen distintas formas de selecciones elementos de una lista, a partir del nombre de cada elemento con el operador **$**, o a partir de su posición dentro de la lista, ocupando corchetes dobles.  
 
 
 ```r
@@ -432,8 +442,9 @@ str(x) #este comando muestra la estructura de un objeto de manera resumida
 ##  $ v: chr "abc"
 ```
 
+## 7. Data frames
 
-Crear bases de datos
+Un data frame es una tabla en la que cada columna es un vector de valores del mismo tipo. Los data frames son fundamentales para el manejo de datos en R.
 
 
 ```r
@@ -539,7 +550,8 @@ base$edad[base$sexo=="Hombre"] #podemos usar condiciones lógicas
 ## [1] 18 25 33 67
 ```
 
-Podemos aplicar funciones sobre la base y sobre las variables
+Funciones útiles y manejo de datos
+R ofrece numerosas funciones para el análisis y manejo de datos, en las cuales iremos profundizando a lo larago del curso. Aquí introducimos algunas básicas.
 
 
 ```r
@@ -604,7 +616,8 @@ save(base, file = "base.RData") #Se indica primero el objeto a guardar
                             #y luego el nombre del archivo, entre comillas.
 ```
 
-limpiar el ambiente de trabajo
+## 8. Limpieza del entorno de trabajo
+Es importante mantener un entorno de trabajo organizado, guardando y eliminando objetos según sea necesario. Podemos hacer esto a partir de la función remove().
 
 
 ```r
