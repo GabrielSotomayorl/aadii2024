@@ -17,4 +17,4 @@ design:
 
 {{< courseinfo >}}
 
-{{< figure src="/img/eval-flowchart.png" alt="Course map" >}}
+

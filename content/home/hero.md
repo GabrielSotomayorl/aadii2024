@@ -13,14 +13,14 @@ hero_media: logo.png
 design:
   background:
     # Background gradient
-    gradient_start: '#C85568'
-    gradient_end: '#5271ff'
+    gradient_start: '#40E0D0'
+    gradient_end: '#40E0D0'
 
     # Text color (true=light or false=dark).
     text_color_light: true
 
 cta_note:
-  label: Profesor Gabriel Sotomayor • I° Semestre 2023<br>Sociología • Universidad Diego Portales
+  label: Profesor Gabriel Sotomayor • I° Semestre 2024<br>Sociología • Universidad Diego Portales
 ---
 
 Introducción al procesamiento, análisis y visualización para **Ciencias Sociales**

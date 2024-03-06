@@ -71,7 +71,7 @@ privacy_pack: false
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
 edit_page:
-  repo_url: 'https://github.com/Clases-GabrielSotomayor/pruebapagina' 
+  repo_url: 'https://github.com/GabrielSotomayorl/aadii2024' 
   content_dir: ''
   repo_branch: master
   editable:
@@ -109,23 +109,23 @@ instructor:
 
 
 ayudante1: 
-  name: Anaís Herrera
-  email: anais.herrera@mail.udp.cl
-  github: https://github.com/anaisherrera
+  name: Patricio Alarcón
+  email: patricio.alarcon@mail.udp.cl
+  github: 
 
 ayudante2: 
-  name: Francsico Meneses
-  email: francisco.meneses1@mail.udp.cl
+  name: Fernanda Hurtado
+  email: fernanda.hurtado@mail.udp.cl 
 
 course:
   number: "SOC9035"
-  semester: "I° Semestre - 2023"
+  semester: "I° Semestre - 2024"
   days: "Clases: Lunes 10:00-12:50"
   location: "Laboratorio de Computación 2° piso FCSH"
   dates: "Ayudantía: Lunes 13:00-14:20"
   github: "GabrielSotomayorl"
-  copyrightYear: "2023. Web developed by Andrew Heiss and custom by"
-  whatsapp: "hhttps://chat.whatsapp.com/HFajJHxCQhPEV8nV4DKMGG"
+  copyrightYear: "2024. Web developed by Andrew Heiss and custom by"
+  whatsapp: "https://chat.whatsapp.com/LLRtnrLRsu8HPJs5F2ELGM"
 
 university: 
   name: Universidad Diego Portales
