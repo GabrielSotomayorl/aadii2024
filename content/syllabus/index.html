@@ -25,12 +25,13 @@ editor_options:
 </ul></li>
 <li><a href="#iv.-contenidos." id="toc-iv.-contenidos.">IV. Contenidos.</a>
 <ul>
-<li><a href="#análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen" id="toc-análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen">1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN</a></li>
-<li><a href="#formas-funcionales-de-los-modelos-de-regresión" id="toc-formas-funcionales-de-los-modelos-de-regresión">2. Formas funcionales de los Modelos de Regresión</a></li>
-<li><a href="#análisis-factorial-exploratorio" id="toc-análisis-factorial-exploratorio">3. Análisis Factorial Exploratorio</a></li>
-<li><a href="#análisis-factorial-confirmatorio" id="toc-análisis-factorial-confirmatorio">4. Análisis Factorial Confirmatorio</a></li>
-<li><a href="#análisis-de-sendero" id="toc-análisis-de-sendero">5. Análisis de Sendero</a></li>
-<li><a href="#modelos-de-ecuaciones-estructurales" id="toc-modelos-de-ecuaciones-estructurales">6. Modelos de Ecuaciones estructurales</a></li>
+<li><a href="#gestión-de-datos-con-r" id="toc-gestión-de-datos-con-r">1. Gestión de datos con R</a></li>
+<li><a href="#introducción-a-los-modelos-multivariados" id="toc-introducción-a-los-modelos-multivariados">2. Introducción a los modelos multivariados</a></li>
+<li><a href="#formas-funcionales-de-los-modelos-de-regresión" id="toc-formas-funcionales-de-los-modelos-de-regresión">3. Formas funcionales de los Modelos de Regresión</a></li>
+<li><a href="#análisis-factorial-exploratorio" id="toc-análisis-factorial-exploratorio">4. Análisis Factorial Exploratorio</a></li>
+<li><a href="#análisis-factorial-confirmatorio" id="toc-análisis-factorial-confirmatorio">5. Análisis Factorial Confirmatorio</a></li>
+<li><a href="#análisis-de-sendero" id="toc-análisis-de-sendero">6. Análisis de Sendero</a></li>
+<li><a href="#modelos-de-ecuaciones-estructurales" id="toc-modelos-de-ecuaciones-estructurales">7. Modelos de Ecuaciones estructurales</a></li>
 </ul></li>
 <li><a href="#v.-metodología-del-curso" id="toc-v.-metodología-del-curso">V. Metodología del curso</a></li>
 <li><a href="#vi.-evaluación" id="toc-vi.-evaluación">VI. Evaluación</a>
@@ -45,7 +46,7 @@ editor_options:
 <li><a href="#viii.-cláusula-ética" id="toc-viii.-cláusula-ética">VIII. Cláusula Ética</a></li>
 <li><a href="#ix.-cronograma-de-trabajo" id="toc-ix.-cronograma-de-trabajo">IX. Cronograma de trabajo</a></li>
 <li><a href="#x.-normativa-de-prevevención-y-sanción-de-acciones-de-discriminación-violencia-sexual-y-de-género-de-la-universidad-diego-portales." id="toc-x.-normativa-de-prevevención-y-sanción-de-acciones-de-discriminación-violencia-sexual-y-de-género-de-la-universidad-diego-portales.">X. NORMATIVA DE PREVEVENCIÓN Y SANCIÓN DE ACCIONES DE DISCRIMINACIÓN, VIOLENCIA SEXUAL Y DE GÉNERO DE LA UNIVERSIDAD DIEGO PORTALES.</a></li>
-<li><a href="#descargar-programa-en-pdf" id="toc-descargar-programa-en-pdf"><span>Descargar programa en pdf</span></a></li>
+<li><a href="#descargar-programa-en-pdf" id="toc-descargar-programa-en-pdf">Descargar programa en pdf</a></li>
 </ul>
 </div>
 
@@ -54,16 +55,16 @@ editor_options:
 <h1>I. Identificación</h1>
 <p>Código: SOC9035</p>
 <p>Créditos: 5</p>
-<p>Período Académico: 1º semestre 2023</p>
+<p>Período Académico: 1º semestre 2024</p>
 <p>Requisito: Análisis Avanzado de Datos</p>
 <p>Horario: Lunes módulos 2 y 3 10.00 a 11.20 y 11.30 a 12.50</p>
 <p>Sala: Laboratorio de computación 2° piso FCSH</p>
 <p>Docente: Profesor: Gabriel
 <a href="gabriel.sotomayor@mail.udp.cl">gabriel.sotomayor@mail.udp.cl</a></p>
-<p>Ayudante: Anais Herrera
-<a href="anais.herrera@mail.udp.cl">anais.herrera@mail.udp.cl</a></p>
-<p>Nicolás Hernández
-<a href="nicolas.hernandez_f@mail.udp.cl">nicolas.hernandez_f@mail.udp.cl</a></p>
+<p>Ayudante: Patricio Alarcón
+<a href="patricio.alarcon@mail.udp.cl">anais.herrera@mail.udp.cl</a></p>
+<p>Fernanda Hurtado
+<a href="fernanda.hurtado@mail.udp.cl">nicolas.hernandez_f@mail.udp.cl</a></p>
 </div>
 <div id="ii.-presentación" class="section level1">
 <h1>II. Presentación</h1>
@@ -109,83 +110,71 @@ aplicar los distintos modelos estudiados, particularmente R.</li>
 </div>
 <div id="iv.-contenidos." class="section level1">
 <h1>IV. Contenidos.</h1>
-<div id="análisis-de-datos-uso-de-bases-de-datos-en-r-el-ejemplo-de-casen" class="section level2">
-<h2>1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN</h2>
-<ul>
-<li><p>Análisis Univariado de los datos o Frecuencias o Media, Mediana,
-deciles o Gráficos (R base y ggplot2)</p></li>
-<li><p>Calculo y análisis de deciles de ingreso: Caso Chile – Encuesta
-CASEN o Creación de variables en bases de datos</p></li>
-<li><p>Construcción de deciles o Mediciones de desigualdad y CASEN o
-Metodología de cálculo de la pobreza en Chile</p>
-<ul>
-<li><p>Cálculo de la línea de pobreza según ingresos</p></li>
-<li><p>Medición de pobreza multidimensional</p></li>
-<li><p>Construcción en R</p></li>
-</ul></li>
-</ul>
+<div id="gestión-de-datos-con-r" class="section level2">
+<h2>1. Gestión de datos con R</h2>
+<p>• Introducción a R y Rstudio<br />
+• Gestión de datos con tidyverse.<br />
+• Cálculo de estadísticos descriptivos.<br />
+• Visualización de datos con ggplot.</p>
+</div>
+<div id="introducción-a-los-modelos-multivariados" class="section level2">
+<h2>2. Introducción a los modelos multivariados</h2>
+<p>• Uso de modelos en ciencias sociales<br />
+• Modelos exploratorios y modelos confirmatorios<br />
+• Repaso de conceptos estadísticos: covarianza, correlación e
+inferencia.<br />
+• Supuestos de análisis.</p>
 </div>
 <div id="formas-funcionales-de-los-modelos-de-regresión" class="section level2">
-<h2>2. Formas funcionales de los Modelos de Regresión</h2>
-<ul>
-<li><p>Introducción</p></li>
-<li><p>Modelo Logarítmico bivariado</p></li>
-<li><p>Modelo Logarítmico Multivariado</p></li>
-<li><p>Interpretación de los coeficientes</p></li>
-<li><p>Ejemplos de aplicación en R.</p></li>
-</ul>
+<h2>3. Formas funcionales de los Modelos de Regresión</h2>
+<p>• Introducción<br />
+• Modelo Logarítmico bivariado<br />
+• Modelo Logarítmico Multivariado<br />
+• Interpretación de los coeficientes<br />
+• Ejemplos de aplicación en R.</p>
 </div>
 <div id="análisis-factorial-exploratorio" class="section level2">
-<h2>3. Análisis Factorial Exploratorio</h2>
-<ul>
-<li><p>Análisis factorial exploratorio y su aplicación en la investigación
-sociológica. El concepto de varianza y covarianza.</p></li>
-<li><p>Diferencias entre el análisis de componente principal y de factor
-común. Supuestos de la técnica.</p></li>
-<li><p>La extracción de factores comunes. Métodos de extracción de
-factores, criterios de selección del número de factores y rotación.</p></li>
-<li><p>La matriz factorial y su interpretación. Evaluación del modelo
-factorial y cálculo de puntuaciones factoriales.</p></li>
-</ul>
+<h2>4. Análisis Factorial Exploratorio</h2>
+<p>• Análisis factorial exploratorio y su aplicación en la investigación
+sociológica. El concepto de varianza y covarianza.<br />
+• Diferencias entre el análisis de componente principal y de factor
+común. Supuestos de la técnica.<br />
+• La extracción de factores comunes. Métodos de extracción de factores,
+criterios de selección del número de factores y rotación.<br />
+• La matriz factorial y su interpretación. Evaluación del modelo
+factorial y cálculo de puntuaciones factoriales.</p>
 </div>
 <div id="análisis-factorial-confirmatorio" class="section level2">
-<h2>4. Análisis Factorial Confirmatorio</h2>
-<ul>
-<li><p>Análisis factorial confirmatorio y su aplicación en la investigación
-sociológica. El análisis confirmatorio frente al análisis
-exploratorio. Supuestos de la técnica.</p></li>
-<li><p>Especificación e identificación del modelo. Estimación de
-parámetros, evaluación del ajuste y reespecificación.</p></li>
-<li><p>Fiabilidad y validez de los modelos de medida. Validez convergente y
+<h2>5. Análisis Factorial Confirmatorio</h2>
+<p>• Análisis factorial confirmatorio y su aplicación en la investigación
+sociológica. El análisis confirmatorio frente al análisis exploratorio.
+Supuestos de la técnica.<br />
+• Especificación e identificación del modelo. Estimación de parámetros,
+evaluación del ajuste y reespecificación.<br />
+• Fiabilidad y validez de los modelos de medida. Validez convergente y
 validez discriminante. Evaluación de la capacidad confirmatoria del
-modelo.</p></li>
-<li><p>Ejemplo de análisis factorial confirmatorio.</p></li>
-</ul>
+modelo.<br />
+• Ejemplo de análisis factorial confirmatorio.</p>
 </div>
 <div id="análisis-de-sendero" class="section level2">
-<h2>5. Análisis de Sendero</h2>
-<ul>
-<li><p>Análisis de sendero y su aplicación en la investigación sociológica.
-Supuestos de la técnica.</p></li>
-<li><p>Especificación del modelo</p></li>
-<li><p>Evaluación del modelo de medición y de la capacidad confirmatoria
-del modelo.</p></li>
-<li><p>Ejemplo de análisis de sendero.</p></li>
-</ul>
+<h2>6. Análisis de Sendero</h2>
+<p>• Análisis de sendero y su aplicación en la investigación sociológica.
+Supuestos de la técnica.<br />
+• Especificación del modelo.<br />
+• Evaluación del modelo de medición y de la capacidad confirmatoria del
+modelo. • Ejemplo de análisis de sendero.</p>
 </div>
 <div id="modelos-de-ecuaciones-estructurales" class="section level2">
-<h2>6. Modelos de Ecuaciones estructurales</h2>
-<ul>
-<li><p>Análisis de ecuaciones estructurales y su aplicación en la
-investigación sociológica.</p></li>
-<li><p>La obtención de un modelo de ecuaciones estructurales: la estructura
-del modelo. Supuestos de la técnica.</p></li>
-<li><p>Estimación del modelo empírico.</p></li>
-<li><p>Evaluación del modelo</p></li>
-<li><p>Introducción de modificaciones y/o conclusión del análisis.
-Evaluación de la capacidad confirmatoria del modelo.</p></li>
-<li><p>Ejemplos sobre modelamiento de ecuaciones estructurales.</p></li>
-</ul>
+<h2>7. Modelos de Ecuaciones estructurales</h2>
+<p>• Análisis de ecuaciones estructurales y su aplicación en la
+investigación sociológica.<br />
+• La obtención de un modelo de ecuaciones estructurales: la estructura
+del modelo. Supuestos de la técnica.<br />
+• Estimación del modelo empírico.<br />
+• Evaluación del modelo.<br />
+• Introducción de modificaciones y/o conclusión del análisis. Evaluación
+de la capacidad confirmatoria del modelo.<br />
+• Ejemplos sobre modelamiento de ecuaciones estructurales.</p>
 </div>
 </div>
 <div id="v.-metodología-del-curso" class="section level1">
@@ -209,35 +198,39 @@ de investigación</p>
 <p>• 1 prueba solemne (35 %) (Formas funcionales de los Modelos de
 Regresión y AFE).</p>
 <p>• Trabajo final (AFC, Senderos o SEM).</p>
-<table style="width:79%;">
+<table style="width:75%;">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="29%" />
+<col width="23%" />
+<col width="23%" />
+<col width="27%" />
 </colgroup>
 <tbody>
 <tr class="odd">
 <td></td>
-<td><strong>Ponderación</strong></td>
-<td><strong>Fecha (semana)</strong></td>
+<td><ul>
+<li>*Ponderación**</li>
+</ul></td>
+<td><strong>Fecha
+(semana)</strong></td>
 </tr>
 <tr class="even">
-<td>Tareas uso de R</td>
+<td>Tareas uso de
+R</td>
 <td>30%</td>
-<td><p>20 de marzo</p>
-<p>10 de abril</p>
-<p>22 de mayo</p>
-<p>15 de junio</p></td>
+<td><p>25 de marzo</p>
+<p>15 de abril</p>
+<p>27 de mayo</p>
+<p>17 de junio</p></td>
 </tr>
 <tr class="odd">
 <td>Prueba</td>
 <td>35%</td>
-<td>24 de abril</td>
+<td>29 de abril</td>
 </tr>
 <tr class="even">
 <td>Trabajo final</td>
 <td>35%</td>
-<td>3 de julio</td>
+<td>1 de julio</td>
 </tr>
 </tbody>
 </table>
@@ -276,336 +269,484 @@ en un plazo no superior a los 5 días hábiles</p>
 <h1>VII. Bibliografía</h1>
 <div id="vii.1-bibliografía-obligatoria" class="section level2">
 <h2>VII.1 Bibliografía Obligatoria</h2>
-<table style="width:90%;">
+<table style="width:83%;">
 <colgroup>
-<col width="6%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th>N°</th>
 <th>TÍTULO</th>
 <th>AUTOR</th>
-<th>ED. Y AÑO</th>
+<th>ED. Y
+AÑO</th>
 <th>E
-DITORIAL</th>
+D
+ITORIAL</th>
 <th>ISBN</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>ANALISIS
+<td>A
+NALISIS
 ES
-TADISTICO
+TA
+DISTICO
 MULTIV
-ARIANTE -
+AR
+IANTE -
 UN
 ENFOQUE
-TEORICO Y
-PRACTICO</td>
+TEORICO
+Y
+P
+RACTICO</td>
 <td><p>DE LA
 GARZA</p>
 <p>GARCIA,
 JORGE</p></td>
 <td>2013</td>
 <td>McG
-raw-Hill</td>
-<td><p>978
--607-15-</p>
+r
+aw-Hill</td>
+<td><h2 id="section">978</h2>
+<p>607-15-</p>
 <p>0817-1</p></td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Análisis
-de datos
+<td>A
+nálisis
+de
+datos
 multiv
-ariantes.</td>
+ar
+iantes.</td>
 <td>Peña,
 Daniel</td>
 <td>2002</td>
 <td>McG
-raw-Hill</td>
+r
+aw-Hill</td>
 <td>84
-48136101</td>
+4
+8136101</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Análisis
+<td>A
+nálisis
 Mul
-tivariado
-Aplicado.</td>
+ti
+variado
+Ap
+licado.</td>
 <td>URIEL Y
 ALDAS</td>
-<td>2005, 1ª
+<td>2005,
+1ª
 Edición</td>
 <td><p>E
-ditorial</p>
+d
+itorial</p>
 <p>Thomson</p></td>
 <td>84
-48136101</td>
+4
+8136101</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Análisis
+<td>A
+nálisis
 Mult
-ivariante
-para las
-Ciencias
-mSociales</td>
-<td><p>LEVI J.P.
-y</p>
+iv
+ariante
+para
+las
+C
+iencias
+mS
+ociales</td>
+<td><p>LEVI
+J.P. y</p>
 <p>VARELA
 J.;</p></td>
 <td>2001</td>
-<td>Prentice
+<td>P
+rentice
 Hall.</td>
 <td>84-20
-5-3727-6</td>
+5
+-3727-6</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>Modelos
-de
-E
-cuaciones
+de E
+cu
+aciones
 Estr
-ucturales
-Cuadernos
-de
-es
-tadística</td>
+uc
+turales
+Cu
+adernos
+de es
+ta
+dística</td>
 <td><p>B at
-ista,J.M.
+is
+ta,J.M.
 y</p>
-<p>Coenders
+<p>C
+oenders
 G.,</p></td>
-<td>2012, 2º
-ed.</td>
+<td>2012,
+2º ed.</td>
 <td>La
 Muralla</td>
-<td> </td>
+<td></td>
 </tr>
 <tr class="even">
 <td>6</td>
 <td>Int
-roducción
+ro
+ducción
 al
-Análisis
+A
+nálisis
 de
-Regresión
+Re
+gresión
 Lineal</td>
 <td><p>Mo
-ntgomery,</p>
+nt
+gomery,</p>
 <p>Peck y
 Vining</p></td>
-<td>2006, 3º
-edición.</td>
+<td>2006,
+3º
+e
+dición.</td>
 <td>Con
-tinental</td>
+t
+inental</td>
 <td>970-2
-4-0327-8</td>
+4
+-0327-8</td>
 </tr>
 <tr class="odd">
 <td>7</td>
 <td>El
-análisis
-factorial
+a
+nálisis
+fa
+ctorial
 como
 técnica
-de
-inve
-stigación
-en
-P
-sicología</td>
-<td>Ferrando,
-P. J., &amp;
+de inve
+st
+igación
+en P
+si
+cología</td>
+<td>Fe
+rrando,
+P. J.,
+&amp;
 Anguian
 o-
-Carrasco,
+Ca
+rrasco,
 C.</td>
 <td>2010</td>
 <td>Papeles
 del Ps
-icólogo,
-31, 18-33</td>
-<td> </td>
+i
+cólogo,
+31,
+18-33</td>
+<td></td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Análisis
-factorial
+<td>A
+nálisis
+fa
+ctorial
 confi
-rmatorio.
+rm
+atorio.
 Su
-utilidad
-en la
-v
-alidación
-de
-cues
-tionarios
+u
+tilidad
+en la v
+al
+idación
+de cues
+ti
+onarios
 rel
-acionados
+ac
+ionados
 con la
 salud.</td>
-<td>. Bati st
-a-Foguet,
+<td>. Bati
+st
+a-
+Foguet,
 J.M.,
-Coenders,
+Co
+enders,
 G., &amp;
 Alonso,
 J.</td>
 <td>2004</td>
-<td><p>Medicina
-Clínica,</p>
+<td><p>M
+edicina
+C
+línica,</p>
 <p>122(
-Supl.1).</p></td>
-<td> </td>
+S
+upl.1).</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>9</td>
 <td>Modelos
-de
-e
-cuaciones
+de e
+cu
+aciones
 estr
-ucturales</td>
+uc
+turales</td>
 <td>Ruiz,
 M.A.,
 Pardo,
-A., &amp; San
+A., &amp;
+San
 Martín,
 R.</td>
 <td>2010</td>
 <td><p>Papeles
 del</p>
 <p>Ps
-icólogo,
-Vol. 31,
+i
+cólogo,
+Vol.
+31,
 Núm.</p>
 <p>1, pp.
 34-45</p></td>
-<td> </td>
+<td></td>
 </tr>
 <tr class="even">
 <td>10</td>
 <td>RStudio
-para
-Es
-tadística
+para Es
+ta
+dística
 De
-scriptiva
+sc
+riptiva
 en
-Ciencias
-Sociales.
-Manual de
+C
+iencias
+So
+ciales.
+Manual
+de
 apoyo
 docente
 para la
 as
-ignatura
+i
+gnatura
 Es
-tadística
+ta
+dística
 De
-scriptiva</td>
-<td>Boccardo,
+sc
+riptiva</td>
+<td>Bo
+ccardo,
 G. y
-Ruiz, F.</td>
+Ruiz,
+F.</td>
 <td>2019</td>
 <td><p>Depa
-rtamento
+r
+tamento
 de Soc
-iología,
-Facultad
+i
+ología,
+F
+acultad
 de</p>
-<p>Ciencias
+<p>C
+iencias
 S
-ociales,
+o
+ciales,
 Uni
-versidad
-de Chile</p></td>
-<td> </td>
+v
+ersidad
+de
+Chile</p></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>11</td>
 <td>R para
 Ciencia
-de Datos
-<a href="https:/%20%20/es.r4%20ds.hadley%20%20.nz/in%20dex.html">link</a></td>
-<td>Wickham,
+de
+Datos
+[link]
+(h%20%2
+0ttps:/
+%20%20%
+20%20%2
+0/es.r4
+%20%20%
+20ds.ha
+d%20%20
+ley%20%
+20%20%2
+0.nz%20
+/in%20%
+20%20de
+x.html)</td>
+<td>W
+ickham,
 H</td>
 <td>2019</td>
-<td> </td>
-<td> </td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="vii.2-bibliografía-complementaria" class="section level2">
 <h2>VII.2 Bibliografía complementaria</h2>
-<table style="width:100%;">
+<table style="width:94%;">
 <colgroup>
-<col width="2%" />
-<col width="43%" />
-<col width="16%" />
-<col width="6%" />
-<col width="22%" />
-<col width="8%" />
+<col width="12%" />
+<col width="31%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>N °</td>
 <td>TÍTULO</td>
 <td>AUTOR</td>
-<td>ED. Y AÑO</td>
-<td>EDITORIAL</td>
+<td>ED. Y
+AÑO</td>
+<td>EDI
+TORIAL</td>
 <td>ISBN</td>
 </tr>
 <tr class="even">
 <td>1</td>
-<td>Técnicas de Análisis Mult ivariante para la Inve stigación Social y Comercial</td>
-<td>Díaz de Rada Iguzquiza, Vidal</td>
+<td>Técnicas de Análisis
+Mult ivariante para
+la Inve stigación
+Social y Comercial</td>
+<td>Díaz
+de
+Rada
+Iguz
+quiza,
+Vidal</td>
 <td>2002</td>
 <td>Ra-Ma</td>
-<td>8478975152</td>
+<td>8478
+975152</td>
 </tr>
 <tr class="odd">
 <td>2</td>
-<td>APPLIED LOGISTIC R EGRESSION</td>
-<td>HOSMER, DAVID - LEMESHOW,</td>
-<td>2º edición</td>
+<td>APPLIED LOGISTIC R
+EGRESSION</td>
+<td>H
+OSMER,
+D
+AVID -
+LEM
+ESHOW,</td>
+<td>2º
+e
+dición</td>
 <td>WILEY</td>
-<td>0- 471-35632-8</td>
+<td>0-
+471-3
+5632-8</td>
 </tr>
 <tr class="even">
 <td>3</td>
-<td>Métodos Mult ivariados Aplicados al análisis de Datos</td>
-<td>D.E. Johnson</td>
+<td>Métodos Mult
+ivariados Aplicados
+al análisis de Datos</td>
+<td>D.E.
+J
+ohnson</td>
 <td>2000</td>
-<td>In ternational Thomson Editores</td>
-<td>9687529903</td>
+<td>In
+terna
+tional
+T
+homson
+Ed
+itores</td>
+<td>9687
+529903</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>Análisis fa ctoriales simples y m últiples. O bjetivos, métodos e inter pretación</td>
-<td>B. Escofier y J. Pagès</td>
+<td>Análisis fa
+ctoriales simples y
+m últiples. O
+bjetivos, métodos e
+inter pretación</td>
+<td><ol start="2" style="list-style-type: upper-alpha">
+<li>Es
+cofier
+y J.
+Pagès</li>
+</ol></td>
 <td>1994</td>
-<td>Servicio Editorial, Universidad del País</td>
-<td>8475853838</td>
+<td>Se
+rvicio
+Edit
+orial,
+Unive
+rsidad
+del
+País</td>
+<td>8475
+853838</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>Análisis es tadístico para datos ca tegóricos</td>
-<td>Ato, M. y López, J. J.</td>
+<td>Análisis es
+tadístico para datos
+ca tegóricos</td>
+<td>Ato,
+M. y
+López,
+J. J.</td>
 <td>1996</td>
-<td>Sintesis</td>
-<td>8477383928</td>
+<td>Si
+ntesis</td>
+<td>8477
+383928</td>
 </tr>
 </tbody>
 </table>
@@ -633,81 +774,79 @@ libros, diarios, documentos de trabajo, artículos académicos, etc.</p>
 </div>
 <div id="ix.-cronograma-de-trabajo" class="section level1">
 <h1>IX. Cronograma de trabajo</h1>
-<table style="width:96%;">
+<table style="width:92%;">
 <colgroup>
-<col width="19%" />
-<col width="76%" />
+<col width="20%" />
+<col width="70%" />
 </colgroup>
 <tbody>
 <tr class="odd">
-<td>13 de marzo</td>
-<td align="center">Análisis de datos y uso de R</td>
+<td>11 de marzo</td>
+<td>Análisis de datos y uso de R</td>
 </tr>
 <tr class="even">
-<td>20 de marzo</td>
-<td align="center"><p>Análisis de datos y uso de R</p>
-<p>Cálculo y análisis de deciles de ingreso: Caso Chile</p>
-<p>Encuesta CASEN</p></td>
+<td>18 de marzo</td>
+<td>Análisis de datos y uso de R</td>
 </tr>
 <tr class="odd">
-<td>27 de marzo</td>
-<td align="center">Formas funcionales de los Modelos de Regresión</td>
+<td>25 de marzo</td>
+<td>Introducción a los modelos multivariados</td>
 </tr>
 <tr class="even">
-<td>3 de abril</td>
-<td align="center">Formas funcionales de los Modelos de Regresión</td>
+<td>1 de abril</td>
+<td>Formas funcionales de los Modelos de Regresión</td>
 </tr>
 <tr class="odd">
-<td>10 de abril</td>
-<td align="center">Análisis Factorial Exploratorio</td>
+<td>8 de abril</td>
+<td>Formas funcionales de los Modelos de Regresión</td>
 </tr>
 <tr class="even">
-<td>17 de abril</td>
-<td align="center">Análisis Factorial Exploratorio</td>
+<td>15 de abril</td>
+<td>Análisis Factorial Exploratorio</td>
 </tr>
 <tr class="odd">
-<td>24 de abril</td>
-<td align="center">Prueba 1</td>
+<td>22 de abril</td>
+<td>Análisis Factorial Exploratorio</td>
 </tr>
 <tr class="even">
-<td>1 de mayo</td>
-<td align="center">Feriado</td>
+<td>29 de abril</td>
+<td>Prueba 1</td>
 </tr>
 <tr class="odd">
-<td>8 de mayo</td>
-<td align="center">Análisis Factorial Confirmatorio</td>
+<td>6 de mayo</td>
+<td>Receso</td>
 </tr>
 <tr class="even">
-<td>15 de mayo</td>
-<td align="center">Análisis Factorial Confirmatorio</td>
+<td>13 de mayo</td>
+<td>Análisis Factorial Confirmatorio</td>
 </tr>
 <tr class="odd">
-<td>22 de mayo</td>
-<td align="center">Análisis de sendero</td>
+<td>20 de mayo</td>
+<td>Análisis Factorial Confirmatorio</td>
 </tr>
 <tr class="even">
-<td>29 de mayo</td>
-<td align="center">Análisis de sendero</td>
+<td>27 de mayo</td>
+<td>Análisis de sendero</td>
 </tr>
 <tr class="odd">
-<td>5 de junio</td>
-<td align="center">Modelos de ecuaciones estructurales</td>
+<td>3 de junio</td>
+<td>Análisis de sendero</td>
 </tr>
 <tr class="even">
-<td>12 de junio</td>
-<td align="center">Modelos de ecuaciones estructurales</td>
+<td>10 de junio</td>
+<td>Modelos de ecuaciones estructurales</td>
 </tr>
 <tr class="odd">
-<td>19 de junio</td>
-<td align="center">Modelos de ecuaciones estructurales</td>
+<td>17 de junio</td>
+<td>Modelos de ecuaciones estructurales</td>
 </tr>
 <tr class="even">
-<td>26 de junio</td>
-<td align="center">Feriado</td>
+<td>24 de junio</td>
+<td>Modelos de ecuaciones estructurales</td>
 </tr>
 <tr class="odd">
-<td>3 de julio</td>
-<td align="center">Repaso</td>
+<td>1 de julio</td>
+<td>Repaso</td>
 </tr>
 </tbody>
 </table>
@@ -735,6 +874,6 @@ enlace: <a href="https://www.udp.cl/cms/wp-content/uploads/2021/06/RESOLUCIO%CC%
 sexual</a></p>
 </div>
 <div id="descargar-programa-en-pdf" class="section level1">
-<h1><a href="../files/Programa%20Analisis%20de%20datos%20II%20-%202023.pdf/">Descargar programa en pdf</a></h1>
-<p><a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/Programa Analisis de datos II - 2023.pdf/" role="button"><i class="far fa-file-pdf"></i></a></p>
+<h1><a href="../files/Programa%20Analisis%20de%20datos%20II%20-%202024.pdf/">Descargar programa en pdf</a></h1>
+<p><a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/Programa Analisis de datos II - 2024.pdf/" role="button"><i class="far fa-file-pdf"></i></a></p>
 </div>

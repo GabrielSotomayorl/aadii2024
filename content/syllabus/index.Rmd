@@ -38,11 +38,11 @@ Sala: Laboratorio de computación 2° piso FCSH
 Docente: Profesor: Gabriel
 [gabriel.sotomayor\@mail.udp.cl](gabriel.sotomayor@mail.udp.cl)
 
-Ayudante: Anais Herrera
-[anais.herrera\@mail.udp.cl](anais.herrera@mail.udp.cl)
+Ayudante: Patricio Alarcón
+[anais.herrera\@mail.udp.cl](patricio.alarcon@mail.udp.cl)
 
-Nicolás Hernández
-[nicolas.hernandez_f\@mail.udp.cl](nicolas.hernandez_f@mail.udp.cl)
+Fernanda Hurtado
+[nicolas.hernandez_f\@mail.udp.cl](fernanda.hurtado@mail.udp.cl)
 
 # II. Presentación
 
@@ -87,92 +87,71 @@ determinados fenómenos de estudio.
 
 # IV. Contenidos.
 
-## 1. Análisis de Datos: Uso de bases de datos en R, el ejemplo de CASEN
+## 1. Gestión de datos con R
 
--   Análisis Univariado de los datos o Frecuencias o Media, Mediana,
-    deciles o Gráficos (R base y ggplot2)
+• Introducción a R y Rstudio\
+• Gestión de datos con tidyverse.\
+• Cálculo de estadísticos descriptivos.\
+• Visualización de datos con ggplot.
 
--   Calculo y análisis de deciles de ingreso: Caso Chile -- Encuesta
-    CASEN o Creación de variables en bases de datos
+## 2. Introducción a los modelos multivariados
 
--   Construcción de deciles o Mediciones de desigualdad y CASEN o
-    Metodología de cálculo de la pobreza en Chile
+• Uso de modelos en ciencias sociales\
+• Modelos exploratorios y modelos confirmatorios\
+• Repaso de conceptos estadísticos: covarianza, correlación e
+inferencia.\
+• Supuestos de análisis.
 
-    -   Cálculo de la línea de pobreza según ingresos
+## 3. Formas funcionales de los Modelos de Regresión
 
-    -   Medición de pobreza multidimensional
+• Introducción\
+• Modelo Logarítmico bivariado\
+• Modelo Logarítmico Multivariado\
+• Interpretación de los coeficientes\
+• Ejemplos de aplicación en R.
 
-    -   Construcción en R
+## 4. Análisis Factorial Exploratorio
 
-## 2. Formas funcionales de los Modelos de Regresión
+• Análisis factorial exploratorio y su aplicación en la investigación
+sociológica. El concepto de varianza y covarianza.\
+• Diferencias entre el análisis de componente principal y de factor
+común. Supuestos de la técnica.\
+• La extracción de factores comunes. Métodos de extracción de factores,
+criterios de selección del número de factores y rotación.\
+• La matriz factorial y su interpretación. Evaluación del modelo
+factorial y cálculo de puntuaciones factoriales.
 
--   Introducción
+## 5. Análisis Factorial Confirmatorio
 
--   Modelo Logarítmico bivariado
+• Análisis factorial confirmatorio y su aplicación en la investigación
+sociológica. El análisis confirmatorio frente al análisis exploratorio.
+Supuestos de la técnica.\
+• Especificación e identificación del modelo. Estimación de parámetros,
+evaluación del ajuste y reespecificación.\
+• Fiabilidad y validez de los modelos de medida. Validez convergente y
+validez discriminante. Evaluación de la capacidad confirmatoria del
+modelo.\
+• Ejemplo de análisis factorial confirmatorio.
 
--   Modelo Logarítmico Multivariado
+## 6. Análisis de Sendero
 
--   Interpretación de los coeficientes
+• Análisis de sendero y su aplicación en la investigación sociológica.
+Supuestos de la técnica.\
+• Especificación del modelo.\
+• Evaluación del modelo de medición y de la capacidad confirmatoria del
+modelo. • Ejemplo de análisis de sendero.
 
--   Ejemplos de aplicación en R.
+## 7. Modelos de Ecuaciones estructurales
 
-## 3. Análisis Factorial Exploratorio
-
--   Análisis factorial exploratorio y su aplicación en la investigación
-    sociológica. El concepto de varianza y covarianza.
-
--   Diferencias entre el análisis de componente principal y de factor
-    común. Supuestos de la técnica.
-
--   La extracción de factores comunes. Métodos de extracción de
-    factores, criterios de selección del número de factores y rotación.
-
--   La matriz factorial y su interpretación. Evaluación del modelo
-    factorial y cálculo de puntuaciones factoriales.
-
-## 4. Análisis Factorial Confirmatorio
-
--   Análisis factorial confirmatorio y su aplicación en la investigación
-    sociológica. El análisis confirmatorio frente al análisis
-    exploratorio. Supuestos de la técnica.
-
--   Especificación e identificación del modelo. Estimación de
-    parámetros, evaluación del ajuste y reespecificación.
-
--   Fiabilidad y validez de los modelos de medida. Validez convergente y
-    validez discriminante. Evaluación de la capacidad confirmatoria del
-    modelo.
-
--   Ejemplo de análisis factorial confirmatorio.
-
-## 5. Análisis de Sendero
-
--   Análisis de sendero y su aplicación en la investigación sociológica.
-    Supuestos de la técnica.
-
--   Especificación del modelo
-
--   Evaluación del modelo de medición y de la capacidad confirmatoria
-    del modelo.
-
--   Ejemplo de análisis de sendero.
-
-## 6. Modelos de Ecuaciones estructurales
-
--   Análisis de ecuaciones estructurales y su aplicación en la
-    investigación sociológica.
-
--   La obtención de un modelo de ecuaciones estructurales: la estructura
-    del modelo. Supuestos de la técnica.
-
--   Estimación del modelo empírico.
-
--   Evaluación del modelo
-
--   Introducción de modificaciones y/o conclusión del análisis.
-    Evaluación de la capacidad confirmatoria del modelo.
-
--   Ejemplos sobre modelamiento de ecuaciones estructurales.
+• Análisis de ecuaciones estructurales y su aplicación en la
+investigación sociológica.\
+• La obtención de un modelo de ecuaciones estructurales: la estructura
+del modelo. Supuestos de la técnica.\
+• Estimación del modelo empírico.\
+• Evaluación del modelo.\
+• Introducción de modificaciones y/o conclusión del análisis. Evaluación
+de la capacidad confirmatoria del modelo.\
+• Ejemplos sobre modelamiento de ecuaciones estructurales.
 
 # V. Metodología del curso
 
@@ -201,21 +180,22 @@ Regresión y AFE).
 
 • Trabajo final (AFC, Senderos o SEM).
 
-+-----------------+-----------------+--------------------+
-|                 | **Ponderación** | **Fecha (semana)** |
-+-----------------+-----------------+--------------------+
-| Tareas uso de R | 30%             | 20 de marzo        |
-|                 |                 |                    |
-|                 |                 | 10 de abril        |
-|                 |                 |                    |
-|                 |                 | 22 de mayo         |
-|                 |                 |                    |
-|                 |                 | 15 de junio        |
-+-----------------+-----------------+--------------------+
-| Prueba          | 35%             | 24 de abril        |
-+-----------------+-----------------+--------------------+
-| Trabajo final   | 35%             | 3 de julio         |
-+-----------------+-----------------+--------------------+
++----------------+----------------+-------------------+
+|                | *              | **Fecha           |
+|                | *Ponderación** | (semana)**        |
++----------------+----------------+-------------------+
+| Tareas uso de  | 30%            | 25 de marzo       |
+| R              |                |                   |
+|                |                | 15 de abril       |
+|                |                |                   |
+|                |                | 27 de mayo        |
+|                |                |                   |
+|                |                | 17 de junio       |
++----------------+----------------+-------------------+
+| Prueba         | 35%            | 29 de abril       |
++----------------+----------------+-------------------+
+| Trabajo final  | 35%            | 1 de julio        |
++----------------+----------------+-------------------+
 
 La nota de eximición es 5,5 siempre y cuando no se tengan notas bajo 4,0
 en la prueba. La nota mínima en el examen para aprobar el curso es un
@@ -253,133 +233,217 @@ en un plazo no superior a los 5 días hábiles
 
 ## VII.1 Bibliografía Obligatoria
 
-+----+-----------+-----------+-----------+-----------+-----------+
-| N° | TÍTULO    | AUTOR     | ED. Y AÑO | E         | ISBN      |
-|    |           |           |           | DITORIAL  |           |
-+====+===========+===========+===========+===========+===========+
-| 1  | ANALISIS  | DE LA     | 2013      | McG       | 978       |
-|    | ES        | GARZA     |           | raw-Hill  | -607-15-  |
-|    | TADISTICO |           |           |           |           |
-|    | MULTIV    | GARCIA,   |           |           | 0817-1    |
-|    | ARIANTE - | JORGE     |           |           |           |
-|    | UN        |           |           |           |           |
-|    | ENFOQUE   |           |           |           |           |
-|    | TEORICO Y |           |           |           |           |
-|    | PRACTICO  |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 2  | Análisis  | Peña,     | 2002      | McG       | 84        |
-|    | de datos  | Daniel    |           | raw-Hill  | 48136101  |
-|    | multiv    |           |           |           |           |
-|    | ariantes. |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 3  | Análisis  | URIEL Y   | 2005, 1ª  | E         | 84        |
-|    | Mul       | ALDAS     | Edición   | ditorial  | 48136101  |
-|    | tivariado |           |           |           |           |
-|    | Aplicado. |           |           | Thomson   |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 4  | Análisis  | LEVI J.P. | 2001      | Prentice  | 84-20     |
-|    | Mult      | y         |           | Hall.     | 5-3727-6  |
-|    | ivariante |           |           |           |           |
-|    | para las  | VARELA    |           |           |           |
-|    | Ciencias  | J.;       |           |           |           |
-|    | mSociales |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 5  | Modelos   | B at      | 2012, 2º  | La        |           |
-|    | de E      | ista,J.M. | ed.       | Muralla   |           |
-|    | cuaciones | y         |           |           |           |
-|    | Estr      |           |           |           |           |
-|    | ucturales | Coenders  |           |           |           |
-|    | Cuadernos | G.,       |           |           |           |
-|    | de es     |           |           |           |           |
-|    | tadística |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 6  | Int       | Mo        | 2006, 3º  | Con       | 970-2     |
-|    | roducción | ntgomery, | edición.  | tinental  | 4-0327-8  |
-|    | al        |           |           |           |           |
-|    | Análisis  | Peck y    |           |           |           |
-|    | de        | Vining    |           |           |           |
-|    | Regresión |           |           |           |           |
-|    | Lineal    |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 7  | El        | Ferrando, | 2010      | Papeles   |           |
-|    | análisis  | P. J., &  |           | del Ps    |           |
-|    | factorial | Anguian   |           | icólogo,  |           |
-|    | como      | o-        |           | 31, 18-33 |           |
-|    | técnica   | Carrasco, |           |           |           |
-|    | de inve   | C.        |           |           |           |
-|    | stigación |           |           |           |           |
-|    | en P      |           |           |           |           |
-|    | sicología |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 8  | Análisis  | . Bati st | 2004      | Medicina  |           |
-|    | factorial | a-Foguet, |           | Clínica,  |           |
-|    | confi     | J.M.,     |           |           |           |
-|    | rmatorio. | Coenders, |           | 122(      |           |
-|    | Su        | G., &     |           | Supl.1).  |           |
-|    | utilidad  | Alonso,   |           |           |           |
-|    | en la v   | J.        |           |           |           |
-|    | alidación |           |           |           |           |
-|    | de cues   |           |           |           |           |
-|    | tionarios |           |           |           |           |
-|    | rel       |           |           |           |           |
-|    | acionados |           |           |           |           |
-|    | con la    |           |           |           |           |
-|    | salud.    |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 9  | Modelos   | Ruiz,     | 2010      | Papeles   |           |
-|    | de e      | M.A.,     |           | del       |           |
-|    | cuaciones | Pardo,    |           |           |           |
-|    | estr      | A., & San |           | Ps        |           |
-|    | ucturales | Martín,   |           | icólogo,  |           |
-|    |           | R.        |           | Vol. 31,  |           |
-|    |           |           |           | Núm.      |           |
-|    |           |           |           |           |           |
-|    |           |           |           | 1, pp.    |           |
-|    |           |           |           | 34-45     |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 10 | RStudio   | Boccardo, | 2019      | Depa      |           |
-|    | para Es   | G. y      |           | rtamento  |           |
-|    | tadística | Ruiz, F.  |           | de Soc    |           |
-|    | De        |           |           | iología,  |           |
-|    | scriptiva |           |           | Facultad  |           |
-|    | en        |           |           | de        |           |
-|    | Ciencias  |           |           |           |           |
-|    | Sociales. |           |           | Ciencias  |           |
-|    | Manual de |           |           | S         |           |
-|    | apoyo     |           |           | ociales,  |           |
-|    | docente   |           |           | Uni       |           |
-|    | para la   |           |           | versidad  |           |
-|    | as        |           |           | de Chile  |           |
-|    | ignatura  |           |           |           |           |
-|    | Es        |           |           |           |           |
-|    | tadística |           |           |           |           |
-|    | De        |           |           |           |           |
-|    | scriptiva |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
-| 11 | R para    | Wickham,  | 2019      |           |           |
-|    | Ciencia   | H         |           |           |           |
-|    | de Datos  |           |           |           |           |
-|    | [link](h  |           |           |           |           |
-|    | %20ttps:/ |           |           |           |           |
-|    | %20%20%20 |           |           |           |           |
-|    | /es.r4%20 |           |           |           |           |
-|    | %20ds.had |           |           |           |           |
-|    | %20ley%20 |           |           |           |           |
-|    | %20%20.nz |           |           |           |           |
-|    | /in%20%20 |           |           |           |           |
-|    | dex.html) |           |           |           |           |
-+----+-----------+-----------+-----------+-----------+-----------+
++---------+---------+---------+---------+---------+---------+
+| N°      | TÍTULO  | AUTOR   | ED. Y   | E       | ISBN    |
+|         |         |         | AÑO     | D       |         |
+|         |         |         |         | ITORIAL |         |
++=========+=========+=========+=========+=========+=========+
+| 1       | A       | DE LA   | 2013    | McG     | 978     |
+|         | NALISIS | GARZA   |         | r       | -       |
+|         | ES      |         |         | aw-Hill | 607-15- |
+|         | TA      | GARCIA, |         |         |         |
+|         | DISTICO | JORGE   |         |         | 0817-1  |
+|         | MULTIV  |         |         |         |         |
+|         | AR      |         |         |         |         |
+|         | IANTE - |         |         |         |         |
+|         | UN      |         |         |         |         |
+|         | ENFOQUE |         |         |         |         |
+|         | TEORICO |         |         |         |         |
+|         | Y       |         |         |         |         |
+|         | P       |         |         |         |         |
+|         | RACTICO |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 2       | A       | Peña,   | 2002    | McG     | 84      |
+|         | nálisis | Daniel  |         | r       | 4       |
+|         | de      |         |         | aw-Hill | 8136101 |
+|         | datos   |         |         |         |         |
+|         | multiv  |         |         |         |         |
+|         | ar      |         |         |         |         |
+|         | iantes. |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 3       | A       | URIEL Y | 2005,   | E       | 84      |
+|         | nálisis | ALDAS   | 1ª      | d       | 4       |
+|         | Mul     |         | Edición | itorial | 8136101 |
+|         | ti      |         |         |         |         |
+|         | variado |         |         | Thomson |         |
+|         | Ap      |         |         |         |         |
+|         | licado. |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 4       | A       | LEVI    | 2001    | P       | 84-20   |
+|         | nálisis | J.P. y  |         | rentice | 5       |
+|         | Mult    |         |         | Hall.   | -3727-6 |
+|         | iv      | VARELA  |         |         |         |
+|         | ariante | J.;     |         |         |         |
+|         | para    |         |         |         |         |
+|         | las     |         |         |         |         |
+|         | C       |         |         |         |         |
+|         | iencias |         |         |         |         |
+|         | mS      |         |         |         |         |
+|         | ociales |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 5       | Modelos | B at    | 2012,   | La      |         |
+|         | de E    | is      | 2º ed.  | Muralla |         |
+|         | cu      | ta,J.M. |         |         |         |
+|         | aciones | y       |         |         |         |
+|         | Estr    |         |         |         |         |
+|         | uc      | C       |         |         |         |
+|         | turales | oenders |         |         |         |
+|         | Cu      | G.,     |         |         |         |
+|         | adernos |         |         |         |         |
+|         | de es   |         |         |         |         |
+|         | ta      |         |         |         |         |
+|         | dística |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 6       | Int     | Mo      | 2006,   | Con     | 970-2   |
+|         | ro      | nt      | 3º      | t       | 4       |
+|         | ducción | gomery, | e       | inental | -0327-8 |
+|         | al      |         | dición. |         |         |
+|         | A       | Peck y  |         |         |         |
+|         | nálisis | Vining  |         |         |         |
+|         | de      |         |         |         |         |
+|         | Re      |         |         |         |         |
+|         | gresión |         |         |         |         |
+|         | Lineal  |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 7       | El      | Fe      | 2010    | Papeles |         |
+|         | a       | rrando, |         | del Ps  |         |
+|         | nálisis | P. J.,  |         | i       |         |
+|         | fa      | &       |         | cólogo, |         |
+|         | ctorial | Anguian |         | 31,     |         |
+|         | como    | o-      |         | 18-33   |         |
+|         | técnica | Ca      |         |         |         |
+|         | de inve | rrasco, |         |         |         |
+|         | st      | C.      |         |         |         |
+|         | igación |         |         |         |         |
+|         | en P    |         |         |         |         |
+|         | si      |         |         |         |         |
+|         | cología |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 8       | A       | . Bati  | 2004    | M       |         |
+|         | nálisis | st      |         | edicina |         |
+|         | fa      | a-      |         | C       |         |
+|         | ctorial | Foguet, |         | línica, |         |
+|         | confi   | J.M.,   |         |         |         |
+|         | rm      | Co      |         | 122(    |         |
+|         | atorio. | enders, |         | S       |         |
+|         | Su      | G., &   |         | upl.1). |         |
+|         | u       | Alonso, |         |         |         |
+|         | tilidad | J.      |         |         |         |
+|         | en la v |         |         |         |         |
+|         | al      |         |         |         |         |
+|         | idación |         |         |         |         |
+|         | de cues |         |         |         |         |
+|         | ti      |         |         |         |         |
+|         | onarios |         |         |         |         |
+|         | rel     |         |         |         |         |
+|         | ac      |         |         |         |         |
+|         | ionados |         |         |         |         |
+|         | con la  |         |         |         |         |
+|         | salud.  |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 9       | Modelos | Ruiz,   | 2010    | Papeles |         |
+|         | de e    | M.A.,   |         | del     |         |
+|         | cu      | Pardo,  |         |         |         |
+|         | aciones | A., &   |         | Ps      |         |
+|         | estr    | San     |         | i       |         |
+|         | uc      | Martín, |         | cólogo, |         |
+|         | turales | R.      |         | Vol.    |         |
+|         |         |         |         | 31,     |         |
+|         |         |         |         | Núm.    |         |
+|         |         |         |         |         |         |
+|         |         |         |         | 1, pp.  |         |
+|         |         |         |         | 34-45   |         |
++---------+---------+---------+---------+---------+---------+
+| 10      | RStudio | Bo      | 2019    | Depa    |         |
+|         | para Es | ccardo, |         | r       |         |
+|         | ta      | G. y    |         | tamento |         |
+|         | dística | Ruiz,   |         | de Soc  |         |
+|         | De      | F.      |         | i       |         |
+|         | sc      |         |         | ología, |         |
+|         | riptiva |         |         | F       |         |
+|         | en      |         |         | acultad |         |
+|         | C       |         |         | de      |         |
+|         | iencias |         |         |         |         |
+|         | So      |         |         | C       |         |
+|         | ciales. |         |         | iencias |         |
+|         | Manual  |         |         | S       |         |
+|         | de      |         |         | o       |         |
+|         | apoyo   |         |         | ciales, |         |
+|         | docente |         |         | Uni     |         |
+|         | para la |         |         | v       |         |
+|         | as      |         |         | ersidad |         |
+|         | i       |         |         | de      |         |
+|         | gnatura |         |         | Chile   |         |
+|         | Es      |         |         |         |         |
+|         | ta      |         |         |         |         |
+|         | dística |         |         |         |         |
+|         | De      |         |         |         |         |
+|         | sc      |         |         |         |         |
+|         | riptiva |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
+| 11      | R para  | W       | 2019    |         |         |
+|         | Ciencia | ickham, |         |         |         |
+|         | de      | H       |         |         |         |
+|         | Datos   |         |         |         |         |
+|         | [link]  |         |         |         |         |
+|         | (h%20%2 |         |         |         |         |
+|         | 0ttps:/ |         |         |         |         |
+|         | %20%20% |         |         |         |         |
+|         | 20%20%2 |         |         |         |         |
+|         | 0/es.r4 |         |         |         |         |
+|         | %20%20% |         |         |         |         |
+|         | 20ds.ha |         |         |         |         |
+|         | d%20%20 |         |         |         |         |
+|         | ley%20% |         |         |         |         |
+|         | 20%20%2 |         |         |         |         |
+|         | 0.nz%20 |         |         |         |         |
+|         | /in%20% |         |         |         |         |
+|         | 20%20de |         |         |         |         |
+|         | x.html) |         |         |         |         |
++---------+---------+---------+---------+---------+---------+
 
 ## VII.2 Bibliografía complementaria
 
-|     |                                                                                   |                               |            |                                          |                |
-|-----|-----------------------------------------------------------------------------------|-------------------------------|------------|------------------------------------------|----------------|
-| N ° | TÍTULO                                                                            | AUTOR                         | ED. Y AÑO  | EDITORIAL                                | ISBN           |
-| 1   | Técnicas de Análisis Mult ivariante para la Inve stigación Social y Comercial     | Díaz de Rada Iguzquiza, Vidal | 2002       | Ra-Ma                                    | 8478975152     |
-| 2   | APPLIED LOGISTIC R EGRESSION                                                      | HOSMER, DAVID - LEMESHOW,     | 2º edición | WILEY                                    | 0- 471-35632-8 |
-| 3   | Métodos Mult ivariados Aplicados al análisis de Datos                             | D.E. Johnson                  | 2000       | In ternational Thomson Editores          | 9687529903     |
-| 5   | Análisis fa ctoriales simples y m últiples. O bjetivos, métodos e inter pretación | B. Escofier y J. Pagès        | 1994       | Servicio Editorial, Universidad del País | 8475853838     |
-| 6   | Análisis es tadístico para datos ca tegóricos                                     | Ato, M. y López, J. J.        | 1996       | Sintesis                                 | 8477383928     |
++--------+----------------------+--------+--------+--------+--------+
+| N °    | TÍTULO               | AUTOR  | ED. Y  | EDI    | ISBN   |
+|        |                      |        | AÑO    | TORIAL |        |
++--------+----------------------+--------+--------+--------+--------+
+| 1      | Técnicas de Análisis | Díaz   | 2002   | Ra-Ma  | 8478   |
+|        | Mult ivariante para  | de     |        |        | 975152 |
+|        | la Inve stigación    | Rada   |        |        |        |
+|        | Social y Comercial   | Iguz   |        |        |        |
+|        |                      | quiza, |        |        |        |
+|        |                      | Vidal  |        |        |        |
++--------+----------------------+--------+--------+--------+--------+
+| 2      | APPLIED LOGISTIC R   | H      | 2º     | WILEY  | 0-     |
+|        | EGRESSION            | OSMER, | e      |        | 471-3  |
+|        |                      | D      | dición |        | 5632-8 |
+|        |                      | AVID - |        |        |        |
+|        |                      | LEM    |        |        |        |
+|        |                      | ESHOW, |        |        |        |
++--------+----------------------+--------+--------+--------+--------+
+| 3      | Métodos Mult         | D.E.   | 2000   | In     | 9687   |
+|        | ivariados Aplicados  | J      |        | terna  | 529903 |
+|        | al análisis de Datos | ohnson |        | tional |        |
+|        |                      |        |        | T      |        |
+|        |                      |        |        | homson |        |
+|        |                      |        |        | Ed     |        |
+|        |                      |        |        | itores |        |
++--------+----------------------+--------+--------+--------+--------+
+| 5      | Análisis fa          | B.     | 1994   | Se     | 8475   |
+|        | ctoriales simples y  | Es     |        | rvicio | 853838 |
+|        | m últiples. O        | cofier |        | Edit   |        |
+|        | bjetivos, métodos e  | y J.   |        | orial, |        |
+|        | inter pretación      | Pagès  |        | Unive  |        |
+|        |                      |        |        | rsidad |        |
+|        |                      |        |        | del    |        |
+|        |                      |        |        | País   |        |
++--------+----------------------+--------+--------+--------+--------+
+| 6      | Análisis es          | Ato,   | 1996   | Si     | 8477   |
+|        | tadístico para datos | M. y   |        | ntesis | 383928 |
+|        | ca tegóricos         | López, |        |        |        |
+|        |                      | J. J.  |        |        |        |
++--------+----------------------+--------+--------+--------+--------+
 
 # VIII. Cláusula Ética
 
@@ -405,45 +469,41 @@ libros, diarios, documentos de trabajo, artículos académicos, etc.
 
 # IX. Cronograma de trabajo
 
-+-------------+:----------------------------------------------------:+
-| 13 de marzo | Análisis de datos y uso de R                         |
-+-------------+------------------------------------------------------+
-| 20 de marzo | Análisis de datos y uso de R                         |
-|             |                                                      |
-|             | Cálculo y análisis de deciles de ingreso: Caso Chile |
-|             |                                                      |
-|             | Encuesta CASEN                                       |
-+-------------+------------------------------------------------------+
-| 27 de marzo | Formas funcionales de los Modelos de Regresión       |
-+-------------+------------------------------------------------------+
-| 3 de abril  | Formas funcionales de los Modelos de Regresión       |
-+-------------+------------------------------------------------------+
-| 10 de abril | Análisis Factorial Exploratorio                      |
-+-------------+------------------------------------------------------+
-| 17 de abril | Análisis Factorial Exploratorio                      |
-+-------------+------------------------------------------------------+
-| 24 de abril | Prueba 1                                             |
-+-------------+------------------------------------------------------+
-| 1 de mayo   | Feriado                                              |
-+-------------+------------------------------------------------------+
-| 8 de mayo   | Análisis Factorial Confirmatorio                     |
-+-------------+------------------------------------------------------+
-| 15 de mayo  | Análisis Factorial Confirmatorio                     |
-+-------------+------------------------------------------------------+
-| 22 de mayo  | Análisis de sendero                                  |
-+-------------+------------------------------------------------------+
-| 29 de mayo  | Análisis de sendero                                  |
-+-------------+------------------------------------------------------+
-| 5 de junio  | Modelos de ecuaciones estructurales                  |
-+-------------+------------------------------------------------------+
-| 12 de junio | Modelos de ecuaciones estructurales                  |
-+-------------+------------------------------------------------------+
-| 19 de junio | Modelos de ecuaciones estructurales                  |
-+-------------+------------------------------------------------------+
-| 26 de junio | Feriado                                              |
-+-------------+------------------------------------------------------+
-| 3 de julio  | Repaso                                               |
-+-------------+------------------------------------------------------+
++--------------+--------------------------------------------------+
+| 11 de marzo  | Análisis de datos y uso de R                     |
++--------------+--------------------------------------------------+
+| 18 de marzo  | Análisis de datos y uso de R                     |
++--------------+--------------------------------------------------+
+| 25 de marzo  | Introducción a los modelos multivariados         |
++--------------+--------------------------------------------------+
+| 1 de abril   | Formas funcionales de los Modelos de Regresión   |
++--------------+--------------------------------------------------+
+| 8 de abril   | Formas funcionales de los Modelos de Regresión   |
++--------------+--------------------------------------------------+
+| 15 de abril  | Análisis Factorial Exploratorio                  |
++--------------+--------------------------------------------------+
+| 22 de abril  | Análisis Factorial Exploratorio                  |
++--------------+--------------------------------------------------+
+| 29 de abril  | Prueba 1                                         |
++--------------+--------------------------------------------------+
+| 6 de mayo    | Receso                                           |
++--------------+--------------------------------------------------+
+| 13 de mayo   | Análisis Factorial Confirmatorio                 |
++--------------+--------------------------------------------------+
+| 20 de mayo   | Análisis Factorial Confirmatorio                 |
++--------------+--------------------------------------------------+
+| 27 de mayo   | Análisis de sendero                              |
++--------------+--------------------------------------------------+
+| 3 de junio   | Análisis de sendero                              |
++--------------+--------------------------------------------------+
+| 10 de junio  | Modelos de ecuaciones estructurales              |
++--------------+--------------------------------------------------+
+| 17 de junio  | Modelos de ecuaciones estructurales              |
++--------------+--------------------------------------------------+
+| 24 de junio  | Modelos de ecuaciones estructurales              |
++--------------+--------------------------------------------------+
+| 1 de julio   | Repaso                                           |
++--------------+--------------------------------------------------+
 
 # X. NORMATIVA DE PREVEVENCIÓN Y SANCIÓN DE ACCIONES DE DISCRIMINACIÓN, VIOLENCIA SEXUAL Y DE GÉNERO DE LA UNIVERSIDAD DIEGO PORTALES.
 
@@ -471,6 +531,6 @@ Los detalles de la normativa pueden ser consultados en el siguiente
 enlace: [Normativa de prevención y sanción de acciones de violencia
 sexual](https://www.udp.cl/cms/wp-content/uploads/2021/06/RESOLUCIO%CC%81N-DE-RECTORI%CC%81A-No-43-NORMATIVA-PREVENCION-Y-SANCION-ACCIONES-DE-VIOLENCIA-SEXUAL-DIC-2018.pdf)
 
-# [Descargar programa en pdf](../files/Programa%20Analisis%20de%20datos%20II%20-%202023.pdf/)
+# [Descargar programa en pdf](../files/Programa%20Analisis%20de%20datos%20II%20-%202024.pdf/)
 
-<a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/Programa Analisis de datos II - 2023.pdf/" role="button"><i class="far fa-file-pdf"></i></a>
+<a Puedes descargar el programa apretando el siguiente botón class="btn btn-primary" href="../files/Programa Analisis de datos II - 2024.pdf/" role="button"><i class="far fa-file-pdf"></i></a>
