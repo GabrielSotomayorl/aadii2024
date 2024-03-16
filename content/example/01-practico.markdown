@@ -162,8 +162,8 @@ Un vector en R es una secuencia de elementos del mismo tipo. Crearemos una varia
 
 
 ```r
-Edad<- c(18,25,33,38,67,25,35,57,99)
-summary(Edad)
+edad<- c(18,25,33,38,67,25,35,57,99)
+summary(edad)
 ```
 
 ```
@@ -172,17 +172,17 @@ summary(Edad)
 ```
 
 ```r
-table(Edad)
+table(edad)
 ```
 
 ```
-## Edad
+## edad
 ## 18 25 33 35 38 57 67 99 
 ##  1  2  1  1  1  1  1  1
 ```
 
 ```r
-class(Edad)
+class(edad)
 ```
 
 ```
@@ -195,7 +195,7 @@ Si aplicamos
 
 
 ```r
-Edad/2
+edad/2
 ```
 
 ```
@@ -203,7 +203,7 @@ Edad/2
 ```
 
 ```r
-Edad-1
+edad-1
 ```
 
 ```
@@ -211,13 +211,14 @@ Edad-1
 ```
 
 ```r
-Edad2<-Edad-1 #y guardar los resultados
+edad2<-edad-1 #y guardar los resultados
 
-Edad/c(1,2)
+#También podemos realziar operaciones entre vectores. 
+edad/c(1,2)
 ```
 
 ```
-## Warning in Edad/c(1, 2): longitud de objeto mayor no es múltiplo de la longitud
+## Warning in edad/c(1, 2): longitud de objeto mayor no es múltiplo de la longitud
 ## de uno menor
 ```
 
@@ -229,9 +230,9 @@ Creación de una variable. "Sexo". Se sigue la misma lógica. Variable cualitati
 
 
 ```r
-Sexo<-c("H","H","H","M","H","M","M","M")
+sexo<-c("H","H","H","M","H","M","M","M")
 
-summary(Sexo)
+summary(sexo)
 ```
 
 ```
@@ -240,17 +241,17 @@ summary(Sexo)
 ```
 
 ```r
-table(Sexo)
+table(sexo)
 ```
 
 ```
-## Sexo
+## sexo
 ## H M 
 ## 4 4
 ```
 
 ```r
-class (Sexo)
+class(sexo)
 ```
 
 ```
@@ -262,27 +263,27 @@ Variable cualitativa, nominal.
 
 
 ```r
-S<-c(1,1,1,0,1,0,0,0,9,9)
+s<-c(1,1,1,0,1,0,0,0,9)
 
-#SEXO<-factor(S, levels = c(0,1,9), labels = c("Mujer","Hombre")) #importancia de los errores
-SEXO<-factor(S, levels = c(0,1,9), labels = c("Mujer","Hombre","NC"))
+#SEXO<-factor(s, levels = c(0,1,9), labels = c("Mujer","Hombre")) #importancia de los errores
+sexof<-factor(s, levels = c(0,1,9), labels = c("Mujer","Hombre","NC"))
 
-summary(SEXO)
+summary(sexof)
 ```
 
 ```
 ##  Mujer Hombre     NC 
-##      4      4      2
+##      4      4      1
 ```
 
 ```r
-table(SEXO)
+table(sexof)
 ```
 
 ```
-## SEXO
+## sexof
 ##  Mujer Hombre     NC 
-##      4      4      2
+##      4      4      1
 ```
 
 Variable Nivel socioecon?mico. Ordinal, cualitativa.
@@ -290,25 +291,25 @@ NSE: 1=E, 2=D, 3=C3, 4=C2, 5=C1, 6=AB
 
 
 ```r
-P1<-c(1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,5,5,5,6,99,99)
+p1<-c(1,2,2,3,4,5,5,6,99)
 
-NSE<-factor(P1,levels=c(1,2,3,4,5,6),labels=c("E","D","C3","C2","C1","AB"))
-table(NSE)
+nse<-factor(p1,levels=c(1,2,3,4,5,6),labels=c("E","D","C3","C2","C1","AB"))
+table(nse)
 ```
 
 ```
-## NSE
+## nse
 ##  E  D C3 C2 C1 AB 
-## 12  7  6  4  3  1
+##  1  2  1  1  2  1
 ```
 
 ```r
-summary(NSE) #NA son lo perdidos
+summary(nse) #NA son lo perdidos
 ```
 
 ```
 ##    E    D   C3   C2   C1   AB NA's 
-##   12    7    6    4    3    1    2
+##    1    2    1    1    2    1    1
 ```
 
 ## 5. Selección de elementos de un objeto
@@ -317,34 +318,34 @@ Podemos seleccionar elementos específicos de los vectores
 
 
 ```r
-NSE[4] #pedimos el cuarto elemento
+nse[4] #pedimos el cuarto elemento
 ```
 
 ```
-## [1] E
+## [1] C3
 ## Levels: E D C3 C2 C1 AB
 ```
 
 ```r
-NSE[1:9] #los primeros 9
+nse[1:3] #los primeros 3
 ```
 
 ```
-## [1] E E E E E E E E E
+## [1] E D D
 ## Levels: E D C3 C2 C1 AB
 ```
 
 ```r
-NSE[c(3,4,5,8,24,31)]
+nse[c(1, 3, 5)] #elementos especificos
 ```
 
 ```
-## [1] E  E  E  E  C3 C1
+## [1] E  D  C2
 ## Levels: E D C3 C2 C1 AB
 ```
 
 ```r
-NSE[37]
+nse[37] #no existe
 ```
 
 ```
@@ -353,34 +354,33 @@ NSE[37]
 ```
 
 ```r
-NSE[c(T,F)]
+nse[c(T,F)] #Podemos seleccionar con vectores lógicos, en este caso nos dará elemento por medio
 ```
 
 ```
-##  [1] E    E    E    E    E    E    D    D    D    D    C3   C3   C3   C2   C2  
-## [16] C1   AB   <NA>
+## [1] E    D    C2   C1   <NA>
 ## Levels: E D C3 C2 C1 AB
 ```
 
 ```r
-NSE[NSE=="AB"]
+nse[nse=="AB"] #Seleccionar a los que cumplan ciertas características
 ```
 
 ```
-## [1] AB   <NA> <NA>
+## [1] AB   <NA>
 ## Levels: E D C3 C2 C1 AB
 ```
 
 ```r
-length(NSE)
+length(nse)
 ```
 
 ```
-## [1] 35
+## [1] 9
 ```
 
 ```r
-class(NSE)
+class(nse)
 ```
 
 ```
@@ -448,24 +448,24 @@ Un data frame es una tabla en la que cada columna es un vector de valores del mi
 
 
 ```r
-base<-data.frame(Edad,
-           SEXO[1:9],
-           NSE[1:9])
+base<-data.frame(edad,
+           sexof,
+           nse)
 
 base
 ```
 
 ```
-##   Edad SEXO.1.9. NSE.1.9.
-## 1   18    Hombre        E
-## 2   25    Hombre        E
-## 3   33    Hombre        E
-## 4   38     Mujer        E
-## 5   67    Hombre        E
-## 6   25     Mujer        E
-## 7   35     Mujer        E
-## 8   57     Mujer        E
-## 9   99        NC        E
+##   edad  sexof  nse
+## 1   18 Hombre    E
+## 2   25 Hombre    D
+## 3   33 Hombre    D
+## 4   38  Mujer   C3
+## 5   67 Hombre   C2
+## 6   25  Mujer   C1
+## 7   35  Mujer   C1
+## 8   57  Mujer   AB
+## 9   99     NC <NA>
 ```
 
 Ver nombre de las columnas (variables)
@@ -476,7 +476,7 @@ colnames(base)
 ```
 
 ```
-## [1] "Edad"      "SEXO.1.9." "NSE.1.9."
+## [1] "edad"  "sexof" "nse"
 ```
 
 Cambiar nombre de las columnas (variables)
@@ -525,10 +525,10 @@ base[1:5,c(1,3)]
 ```
 ##   edad nse
 ## 1   18   E
-## 2   25   E
-## 3   33   E
-## 4   38   E
-## 5   67   E
+## 2   25   D
+## 3   33   D
+## 4   38  C3
+## 5   67  C2
 ```
 
 Sobre una columna podemos seleccionar elementos como un un vector
@@ -543,11 +543,11 @@ base$edad[1]
 ```
 
 ```r
-base$edad[base$sexo=="Hombre"] #podemos usar condiciones lógicas
+base$edad[base$sexof=="Hombre"] #podemos usar condiciones lógicas
 ```
 
 ```
-## [1] 18 25 33 67
+## numeric(0)
 ```
 
 Funciones útiles y manejo de datos
@@ -555,33 +555,33 @@ R ofrece numerosas funciones para el análisis y manejo de datos, en las cuales 
 
 
 ```r
-head(base)  #entrega los primeros elemntos
+head(base)  #entrega los primeros elementos
 ```
 
 ```
 ##   edad   sexo nse
 ## 1   18 Hombre   E
-## 2   25 Hombre   E
-## 3   33 Hombre   E
-## 4   38  Mujer   E
-## 5   67 Hombre   E
-## 6   25  Mujer   E
+## 2   25 Hombre   D
+## 3   33 Hombre   D
+## 4   38  Mujer  C3
+## 5   67 Hombre  C2
+## 6   25  Mujer  C1
 ```
 
 ```r
 View(base) #Permite ver la base
-str(base)
+str(base) #Nos muestra la estructura de un objeto
 ```
 
 ```
 ## 'data.frame':	9 obs. of  3 variables:
 ##  $ edad: num  18 25 33 38 67 25 35 57 99
 ##  $ sexo: Factor w/ 3 levels "Mujer","Hombre",..: 2 2 2 1 2 1 1 1 3
-##  $ nse : Factor w/ 6 levels "E","D","C3","C2",..: 1 1 1 1 1 1 1 1 1
+##  $ nse : Factor w/ 6 levels "E","D","C3","C2",..: 1 2 2 3 4 5 5 6 NA
 ```
 
 ```r
-table(base$sexo)
+table(base$sexo) #tabla de frecuencias
 ```
 
 ```
@@ -591,7 +591,7 @@ table(base$sexo)
 ```
 
 ```r
-help(table)
+help(table) #ayuda sobre una función
 ```
 
 ```
@@ -599,7 +599,7 @@ help(table)
 ```
 
 ```r
-?table
+?table #Equivalente a lo anterior
 
 mean(base$edad)
 ```
@@ -622,6 +622,13 @@ Es importante mantener un entorno de trabajo organizado, guardando y eliminando 
 
 ```r
 remove(Edad) #borrar un objeto particular
+```
+
+```
+## Warning in remove(Edad): objeto 'Edad' no encontrado
+```
+
+```r
 remove(list = ls()) #Borrar todo
 ```
 
