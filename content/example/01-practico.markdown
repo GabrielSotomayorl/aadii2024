@@ -543,11 +543,11 @@ base$edad[1]
 ```
 
 ```r
-base$edad[base$sexof=="Hombre"] #podemos usar condiciones lógicas
+base$edad[base$sexo=="Hombre"] #podemos usar condiciones lógicas
 ```
 
 ```
-## numeric(0)
+## [1] 18 25 33 67
 ```
 
 Funciones útiles y manejo de datos
@@ -621,14 +621,7 @@ Es importante mantener un entorno de trabajo organizado, guardando y eliminando 
 
 
 ```r
-remove(Edad) #borrar un objeto particular
-```
-
-```
-## Warning in remove(Edad): objeto 'Edad' no encontrado
-```
-
-```r
+remove(edad) #borrar un objeto particular
 remove(list = ls()) #Borrar todo
 ```
 

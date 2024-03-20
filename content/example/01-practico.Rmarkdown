@@ -206,7 +206,7 @@ Sobre una columna podemos seleccionar elementos como un un vector
 
 ```{r}
 base$edad[1]
-base$edad[base$sexof=="Hombre"] #podemos usar condiciones lógicas
+base$edad[base$sexo=="Hombre"] #podemos usar condiciones lógicas
 ```
 
 Funciones útiles y manejo de datos
@@ -236,7 +236,7 @@ save(base, file = "base.RData") #Se indica primero el objeto a guardar
 Es importante mantener un entorno de trabajo organizado, guardando y eliminando objetos según sea necesario. Podemos hacer esto a partir de la función remove().
 
 ```{r}
-remove(Edad) #borrar un objeto particular
+remove(edad) #borrar un objeto particular
 remove(list = ls()) #Borrar todo
 ```
 

@@ -30,6 +30,10 @@ En la siguiente práctica queremos usar la base de datos de CASEN, la cuál est�
 library(haven) #Este comando nos permite ejecutar el paquete
 ```
 
+```
+## Warning: package 'haven' was built under R version 4.3.1
+```
+
 Una vez cargado el paquete debemos descargar la base de datos y ubicarla en nuestro computador para poder cargarla con la función **read_spss()**. Para esto debemos establecer un **directorio de trabajo**, es decir, la carpeta raíz a partir de la cual R buscará los archivos que queremos cargar en nuestro espacio de trabajo, y donde guardará los output de nuestros análisis.
 
 
@@ -47,7 +51,7 @@ Una vez que hemos fijado nuestro directorio de trabajo podemos cargar nuestra ba
 
 
 ```r
-casen2020<-read_spss("Base de datos Casen 2022 SPSS.sav")
+casen <- read_spss("Base de datos Casen 2022 SPSS.sav")
 ```
 
 Una forma alternativa de realizar este proceso es descargar directamente los datos mediante el uso de código. Esto ofrece la ventaja de que nos permite ejecutar el código en otros computadores y obtener automáticamente los datos. Un posible problema de esta forma de cargar los datos es que cuando usamos archivos de gran tamaño puede ser muy poco eficiente.  
