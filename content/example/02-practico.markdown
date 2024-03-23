@@ -30,10 +30,6 @@ En la siguiente práctica queremos usar la base de datos de CASEN, la cuál est�
 library(haven) #Este comando nos permite ejecutar el paquete
 ```
 
-```
-## Warning: package 'haven' was built under R version 4.3.1
-```
-
 Una vez cargado el paquete debemos descargar la base de datos y ubicarla en nuestro computador para poder cargarla con la función **read_spss()**. Para esto debemos establecer un **directorio de trabajo**, es decir, la carpeta raíz a partir de la cual R buscará los archivos que queremos cargar en nuestro espacio de trabajo, y donde guardará los output de nuestros análisis.
 
 
@@ -416,7 +412,257 @@ boxplot(casen$edad, main = "Gráfico de cajas edad",
 
 <img src="/example/02-practico_files/figure-html/unnamed-chunk-12-3.png" width="672" />
 
+# 5. Visualización de datos con ggplot2
 
-Una mejor herramienta para la visualización de datos en R es el paquete **ggplot2**. Para una introducción básica a este pueden revisar la siguiente [Introducción al uso del paquete ggplot2](https://bookdown.org/gboccardo/manual-ED-UCH/construccion-de-graficos-usando-rstudio-funcionalidades-basicas-y-uso-del-paquete-ggplot2.html#introduccion-al-uso-del-paquete-ggplot2). Para una revisión más profunda pueden revisar los capítulos 3 y 28 del libro [R para ciencia de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html) 
+Una mejor herramienta para la visualización de datos en R es el paquete **ggplot2**.  A continuación revisaremos paso a paso la estructura de la gramática de gráficos.
+
+En primer lugar, debemos asegurarnos de tener instalado y cargado el paquete ggplot2. En este caso no es necesario ya que previamente cargamos el tidyverse, lo cual incluye ggplot2.
+
+En primer lugar tenemos que seleccionar un conjunto de datos sobre el que trabajaremos. Podemos hacer esto de manera integrada con el flujo de trabajo del pipeline que vimos para dplyr. 
 
 
+```r
+#install.packages("ggplot2")
+library(ggplot2)
+
+casen %>% 
+  ggplot() 
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+
+El resultado de entregar solo una base de datos a ggplot será un gráfico vació, sin información en sus ejes, ni representaciones gráficas de los datos. El siguiente paso es definir la estética o aesthetics, mediante la función aes(), en la cual indicaremos cuales son las variables que constituirán los ejes de nuestro gráfico. En este caso construiremos un gráfico con una sola variable, por lo que pondremos la edad en el eje x. 
+
+Cada capa adicional que vayamos agregando a nuestro gráfico en ggplot 2 debe agregarse mediante un "+". No confundir con el trabajo con el pipeline. 
+
+
+```r
+casen %>% 
+  ggplot() + 
+  aes(x = edad)
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+
+Por último, necesitamos decirle a ggplot como representar nuestros datos en el eje señalado mediante un geom, es decir, el objeto geométrico que se utilizará para representar los datos. Para esto hay múltiple funciones que empiezan con "geom_", como geom_bar, geom_point o geom_line. En este caso queremos contruir un histograma así que usaremos geom_histogram. 
+
+
+```r
+casen %>% 
+  ggplot() + 
+  aes(x = edad) +
+  geom_histogram()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+
+Ya tenemos una visualización básica. Ahora introduciremos algunos elementos adicionales para mejorar la apariencia de nuestro gráfico.
+
+- labs(): Se añaden un título, un subtítulo y una nota al pie (caption) para proporcionar contexto y citar la fuente de los datos. Esto mejora la comprensión del gráfico por parte del espectador.
+
+theme_minimal(): Se aplica un tema minimalista al gráfico para un aspecto limpio y moderno.
+
+theme(): Se personalizan varios elementos del gráfico, incluyendo el estilo del título, subtítulo, nota al pie, y el tamaño del texto de los ejes y las etiquetas de los ejes. Esto mejora la legibilidad y la presentación visual del gráfico.
+
+- labs(): Se añaden un título, un subtítulo y una nota al pie (caption) para proporcionar contexto y citar la fuente de los datos. Esto mejora la comprensión del gráfico por parte del espectador.
+
+- theme_minimal(): Se aplica un tema minimalista al gráfico para un aspecto limpio y moderno.
+
+- theme(): Se personalizan varios elementos del gráfico, incluyendo el estilo del título, subtítulo, nota al pie, y el tamaño del texto de los ejes y las etiquetas de los ejes. Esto mejora la legibilidad y la presentación visual del gráfico.
+
+
+```r
+casen %>%
+  ggplot() + 
+  aes(x = edad) +
+  geom_histogram(fill = "#40E0D0", color = "white", bins = 30) +  # Ajusta la cantidad de barras con bins
+  labs(title = "Distribución de Edades en la Encuesta Casen 2022",
+       subtitle = "Histograma de edades de los encuestados",
+       x = "Edad",
+       y = "Frecuencia",
+       caption = "Fuente: Encuesta Casen 2022") +
+  theme_minimal() +
+  theme(plot.title = element_text(face = "bold", size = 20),  # Ajusta el estilo del título
+        plot.subtitle = element_text(face = "italic", size = 16),  # Estilo del subtítulo
+        plot.caption = element_text(face = "italic", size = 10),  # Estilo de la fuente
+        axis.title = element_text(size = 14),  # Tamaño del texto de los ejes
+        axis.text = element_text(size = 12))   #Tamaño del texto de las etiquetas de los ejes
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+
+Ahora veamos el ejemplo de un gráfico bivariado. para esto debemos fijar una varaible en cada eje para las aesthetics. En este caso veremos la relación entre años de escolaridad y ingresos del trabajo. Para esto usaremos un scatterplot, construido a partir de geom_point().
+Filtraremos la base de datos a la Región de Valparaíso para reducir la cantidad de datos a graficar, y limitaremos los datos hasta 5 millones de peso para evitar valores muy extremos que dificulten la visualización.  
+
+
+```r
+casen %>%
+  filter(region == 5, ytrabajocor <= 5000000) %>%
+  ggplot() + 
+  aes(x = esc, y = ytrabajocor) +
+  geom_point()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+
+Como vemos el gráfico tiene la escolaridad en el eje x, y los ingresos en el eje y. sin embargo, dada la gran cantidad de puntos, la relación entre ambas variables no resulta tan clara. Para mejorar lo anterior haremos dos cambios, aplicaremos una transparencia a cada punto apra poder observar la densidad de los puntos en cada parte del gráfico, y añadiremos una linea de tendencia lineal con la función geom_smooth().
+
+
+```r
+casen %>%
+  filter(region == 5, ytrabajocor <= 5000000) %>%
+  ggplot() + 
+  aes(x = esc, y = ytrabajocor) +
+  geom_point(alpha = 0.1) +
+  geom_smooth(method = "lm", color = "red") + 
+  theme_bw()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+
+Ahora podemos observar de mejor manera que hay una relación positiva entre ambas variables, es decir que, a más escolaridad, en promedio los ingresos del trabajo son más altos. 
+
+
+```r
+casen %>%
+  filter(region == 5, ytrabajocor <= 5000000) %>%
+  ggplot(aes(x = esc, y = ytrabajocor)) + 
+  geom_point(alpha = 0.1) +  # Aumentar la transparencia para mejorar la visualización de la densidad
+  geom_smooth(method = "lm", color = "red", se = FALSE) +  # Añadir una línea de tendencia sin la banda de confianza para claridad
+  scale_x_continuous(name = "Años de Escolaridad") +  # Renombrar eje X
+  scale_y_continuous(name = "Ingresos por Trabajo (CLP)", labels = scales::comma) +  # Renombrar eje Y y formatear como números
+  labs(title = "Relación entre Escolaridad e Ingresos por Trabajo",
+       subtitle = "Región de Valparaíso, Encuesta Casen",
+       caption = "Fuente: Encuesta Casen 2022") +
+  theme_bw() +  # Usar un tema de fondo blanco y negro para claridad
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotar las etiquetas del eje X para mejorar la legibilidad
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+
+Por último agregamos las etiquetas del gráfico y otros elementos estéticos para mejorar su presentación.
+
+Ahora veremos como hacer gráficos de barras para variables categóricas a partir de la variable sexo. Para esto usaremos geom_bar().
+
+
+```r
+casen %>% 
+ggplot(aes(x = as_factor(sexo))) +
+  geom_bar(width = 0.4,  fill=rgb(0.1,1,0.5,0.7)) + 
+  scale_x_discrete("Sexo") +  
+  scale_y_continuous("Frecuencia") +
+  labs(title = "Frecuencia relativa de sexo en Casen 2022",
+       caption = "Fuente: Encuesta Casen 2022") + 
+  theme_bw()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-20-1.png" width="672" />
+
+Para cambiar a frecuencias relativas, se modifica la definición de la estética y dentro de geom_bar() para calcular el porcentaje que cada barra representa del total. Esto se hace dividiendo el conteo de cada grupo (..count..) por la suma de todos los conteos (sum(..count..)), lo convierte las frecuencias absolutas en relativas:
+
+
+```r
+casen %>% 
+ggplot(aes(x = as_factor(sexo))) +
+  geom_bar(width = 0.4,  fill= rgb(0.1,0.3,0.5,0.7), aes(y = (..count..)/sum(..count..))) + 
+  scale_x_discrete("Sexo") +  
+  scale_y_continuous("Porcentaje",labels=scales::percent)+
+  labs(title = "Frecuencia absoluta de sexo en Casen 2022",
+       caption = "Fuente: Encuesta Casen 2022") + 
+  theme_bw()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-21-1.png" width="672" />
+
+A continuación haremos un gráfico de linea, que exprese la proporción de pobres según edad. Para esto tendremos que modificar los datos y agruparlos por edad previamente a construir el gráfico. Preparamos los datos con las siguientes operaciones: 
+- mutate(pobreza1 = ifelse(pobreza %in% 1:2, 1, 0)): Crea una nueva columna "pobreza1" donde los individuos considerados pobres (con valores de "pobreza" de 1 o 2) se marcan con un 1, y los no pobres (valor de "pobreza" 3) con un 0.
+- filter(edad < 90): Filtra para incluir solo a individuos con edad menor a 90 años.
+- group_by(edad): Agrupa los datos por edad.
+- summarize(pob = mean(pobreza1, na.rm = TRUE) * 100): Calcula el porcentaje promedio de individuos pobres por edad, multiplicando por 100 para obtener un porcentaje.
+
+Luego a partir de esta base de datos contruimos el gráfico, ocupando dos geom, geom_point() y geom_line(), para dibujar una línea y puntos en cada edad, para visualizar la tendencia de la pobreza con la edad.
+
+
+```r
+casen_pob <- casen %>%
+  mutate(pobreza1 = ifelse(pobreza %in% 1:2, 1, 0)) %>%
+  filter(edad < 90) %>%
+  group_by(edad) %>%
+  summarize(pob = mean(pobreza1, na.rm = TRUE) * 100)
+
+head(casen_pob)
+```
+
+```
+## # A tibble: 6 × 2
+##    edad   pob
+##   <dbl> <dbl>
+## 1     0  16.0
+## 2     1  15.2
+## 3     2  13.8
+## 4     3  14.0
+## 5     4  12.7
+## 6     5  12.7
+```
+
+```r
+casen_pob %>%
+  ggplot(aes(x = edad, y = pob)) +
+  geom_line(color = "#40E0D0") +
+  ylim(0, 17) +
+  geom_point(shape = 21, fill = "#40E0D0", size = 1) +
+  ylab("% Pobreza") +
+  xlab("Edad") +
+  labs(title = "Porcentaje de pobreza según edad",
+       caption = "Fuente: Encuesta Casen 2022") + 
+  theme_bw()
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+
+Por útlimo veremos una posibilidad muy útil que ofrece ggplot que es segemtnar le gráfico a partir de una variable adicional. facet_wrap es una función de ggplot2 que permite dividir un gráfico en múltiples paneles basados en los niveles de una variable, organizando los paneles en una matriz que, por defecto, está orientada por filas. Esto facilita la comparación directa de subconjuntos de datos dentro de la misma área de visualización, manteniendo las mismas escalas y ejes en todos los paneles.
+
+Para esto al calcular el porcentaje de pobreza para cada grupo de edad segmentaremos adicionalmente por área urbana y rural. Luego usaremos esta variable para segmentar el gráfico en facet_wrap.
+
+
+```r
+casen_pob_a <- casen %>%
+  mutate(pobreza1 = ifelse(pobreza %in% 1:2, 1, 0)) %>%
+  filter(edad < 90) %>%
+  group_by(edad, area) %>%
+  summarize(pob = mean(pobreza1, na.rm = TRUE) * 100)
+
+head(casen_pob_a)
+```
+
+```
+## # A tibble: 6 × 3
+## # Groups:   edad [3]
+##    edad area         pob
+##   <dbl> <dbl+lbl>  <dbl>
+## 1     0 1 [Urbano]  14.4
+## 2     0 2 [Rural]   22.6
+## 3     1 1 [Urbano]  14.3
+## 4     1 2 [Rural]   19.6
+## 5     2 1 [Urbano]  12.9
+## 6     2 2 [Rural]   17.5
+```
+
+```r
+casen_pob_a %>% 
+  ggplot(aes(x = edad, y = pob)) +
+  geom_line(color = "#40E0D0") +
+  ylim(0, 25) +
+  geom_point(shape = 21, fill = "#40E0D0", size = 1) +
+  ylab("% Pobreza") +
+  xlab("Edad") +
+  labs(title = "Porcentaje de pobreza según edad por zona",
+       caption = "Fuente: Encuesta Casen 2022") + 
+  theme_bw() +
+  facet_wrap(as_factor(casen_pob_a$area))
+```
+
+<img src="/example/02-practico_files/figure-html/unnamed-chunk-23-1.png" width="672" />
+
+
+Para ver material adicional pueden revisar la siguiente [Introducción al uso del paquete ggplot2](https://bookdown.org/gboccardo/manual-ED-UCH/construccion-de-graficos-usando-rstudio-funcionalidades-basicas-y-uso-del-paquete-ggplot2.html#introduccion-al-uso-del-paquete-ggplot2). Para una revisión más profunda pueden revisar los capítulos 3 y 28 del libro [R para ciencia de datos](https://es.r4ds.hadley.nz/visualizaci%C3%B3n-de-datos.html)
