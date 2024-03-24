@@ -19,8 +19,8 @@ lessons:
   - title: '• Cálculo de estadísticos descriptivos<br>• Visualización de datos con ggplot'
     session: "Sesión 2"
     date: "18 marzo"
-    # content: "02-content"
-    #example: "02-practico"
+    content: "02-content"
+    example: "02-practico"
     # assignment: "00-tarea"
     # resource: "markdown"
     bg: 1

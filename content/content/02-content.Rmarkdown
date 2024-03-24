@@ -1,9 +1,9 @@
 ---
-title: "Herramientas para el uso de R"
-linktitle: "2: Herramientas para el uso de R"
-date: "2022-03-21"
-start_date: "2022-03-21"
-end_date: "2022-03-25"
+title: "2. Visualización de datos en R"
+linktitle: "2. Visualización de datos en R"
+date: "2024-03-24"
+start_date: "2024-03-24"
+end_date: "2024-03-24"
 menu:
   content:
     parent: Contenido
@@ -37,36 +37,5 @@ slide_tabs(slide_details, "/slides/02-slides.html")
 {{% /div %}}
 
 
-# Video de la clase
-
-- [<i class="fas fa-video"></i> `Video de la clase`](https://zoom.us/rec/share/ng-5McE6dA8_cjBGouCZcEArBoP4IYUKuO3LYOdQqKmUoYuICw_cT4ENUCEEPaOZ.i-kqnRNBvpqj-U_I?startTime=1629145685000)
-
-
-# Materiales de la clase
-
-## Rprojects
-
-- [<i class="fas fa-file-archive"></i> `02-class.zip`](https://github.com/learn-R/02-class/raw/main/02-clase.zip) 
-
-- [<i class="fas fa-laptop-code"></i> Práctico N°2](https://learn-r-uah.netlify.app/example/02-practico/)
-
-
-# Recomendaciones
-
-- <i class="fas fa-book"></i> Hadley Wickham, ["Data Science: How is it Different To Statistics?"](http://bulletin.imstat.org/2014/09/data-science-how-is-it-different-to-statistics%E2%80%89/) 
-
-- <i class="fab fa-youtube"></i> Tutoriales, ["Learn-R"](https://www.youtube.com/watch?v=UOoMzaWOQJA) 
-    - <small>Ver Tutorial N°1 Instalación de softwares</small>
-    - <small>Ver Tutorial N°2 GitHub y GitHub Class Room</small>
-
-
-
-## De RMarkdown
-
-- [RMarkdown en Ciencia de Datos - Hadley Whickham](https://es.r4ds.hadley.nz/r-markdown.html)
-- [R Markdown](https://rmarkdown.rstudio.com/) 
-- [Tutoriales Markdown](https://rmarkdown.rstudio.com/lesson-1.html) 
-- [cheatsheets](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-- Para practicar ir a [Tutorial de Markdown](https://www.markdowntutorial.com/es/)
 
 
