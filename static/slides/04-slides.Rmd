@@ -53,7 +53,7 @@ htmltools::tagList(
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Análisis de regresión logística
+# Análisis de regresión lineal múltiple
 ]
 
 .class-info[
@@ -64,481 +64,282 @@ class: center middle main-title section-title-1 top-logo
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudante** Anaís Herrera
 .tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
 
+---
+class: title title-inv-1
+
+# Objetivos de la sesión
+
+- Introducir el análisis de regresión lineal simple y múltiple 
+
+- Revisar la ejecución de modelos de regresión en R 
 
 ---
 class: title title-inv-1
 
 # Contenidos Sesión N°4
 
+.box-3.medium.sp-after-half[**Introducción a regresión lineal**]
 
-.box-2.medium.sp-after-half[**Modelos de probabilidad lineal**]
+.box-4.medium.sp-after-half[**Regresión lineal múltiple**]
 
-.box-4.medium.sp-after-half[**Modelo de regresión logística binaria**]
-
-.box-1.medium.sp-after-half[**Odds y odds ratio**]
-
----
-class: title title-inv-1
-
-# Contenidos Sesión N°4
-
-.box-1.medium.sp-after-half[**Cálculo de modelos e interpretación de coeficientes**]
-
-.box-2.medium.sp-after-half[**Estadísticos de ajuste y selección de modelos**]
-
-
+.box-1.medium.sp-after-half[**Supuestos del modelo de regresión**]
 
 
 ---
 
-class: center middle main-title section-title-2 top-logo
+class: center middle main-title section-title-3 top-logo
 
-# Modelos de probabilidad lineal
-
----
-
-class: title title-2
-
-# Regresiones para variables dicotómicas
-
-La semana pasada revisamos los modelos de regresión lineal múltiple, que nos permiten analizar la relación de una variable dependiente continua y variables independientes de cualquier nivel de medida. Ahora cabe la pregunta:
-
-
-.box-2.medium.sp-after-half[¿cómo podemos modelar variables dicotómicas?]
-
----
-class: title title-2
-
-#Modelos de probabilidad lineal
-
-
-<style>
-.left {
-  float: left;
-  width: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.right {
-  float: right;
-  width: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-</style>
-
-<div class="left">
-Una opción son los modelos de probabilidad lineal, los cuales consisten en usar una regresión estimada mediante mínimos cuadrados ordinarios para una variable dicotómica (valores 0 y 1). En estos los valores beta pueden interpretarse como cambios promedio en la probabilidad.
-</div>
-
-<div class="right">
-
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>Statistical models</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
-<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
-<td style="padding-left: 5px;padding-right: 5px;">0.08<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
-<td style="padding-left: 5px;padding-right: 5px;">(0.00)</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
-<td style="padding-left: 5px;padding-right: 5px;">0.04<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
-<td style="padding-left: 5px;padding-right: 5px;">(0.00)</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">R<sup>2</sup></td>
-<td style="padding-left: 5px;padding-right: 5px;">0.00</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Adj. R<sup>2</sup></td>
-<td style="padding-left: 5px;padding-right: 5px;">0.00</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
-<td style="padding-left: 5px;padding-right: 5px;">62911</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
-</tr>
-</tfoot>
-</table>
-
-  </ul>
-</div>
+# Introducción a regresión lineal
 
 ---
 
-class: title title-2
+class: title title-3
 
-# Modelos de probabilidad lineal
+# Varianza
 
-A pesar de la simpleza de su interpretación, los modelos de probabilidad lineal cuentan con dos problemas:
+.small[**Varianza:** es el promedio de las distancias de los casos al promedio, tomando en cuenta los signos (eleva al cuadrado todas las distancias al promediarlas)]
 
-.box-2.sma.sp-after-half[1) Pueden entregar variables predichos más allá del rango 0-1 lo cual no tiene sentido en el caso de una probabilidad]
+.center[![:scale 20%](https://www.calculadoraconversor.com/wp-content/uploads/2016/11/formula-varianza-muestral.png)]
 
-.box-2.sma.sp-after-half[2) No entregan un buen ajuste en términos de cumplimiento de los supuestos del modelo y ajuste a los datos]
+.small[**Desviación estándar:** Es la raíz cuadrada de la varianza. Es la que mejor da cuenta de la dispersión (es decir de las distancias de los casos al promedio]
+
+.center[![:scale 30%](https://revistachilenadeanestesia.cl/img/Rev%20Chil%20Anest%202014;%2043%20116-121.xml_image14.jpg)]
+
+---
+
+class: title title-3
+
+# Covarianza
+
+.sma[La covarianza da cuenta del a variación conjunta de dos variables respecto de sus medias.  
+Puede tomar valores positivos, dando cuenta de una relación directa (por ejemplo a mayor educación, mayores ingresos) o valores negativos, dando cuenta de una relación inversa (por ejemplo a menores horas de trabajo, mayor satisfacción con la vida).]
+.center[![:scale 50%](https://economipedia.com/wp-content/uploads/2017/10/F%C3%B3rmula-de-la-Covarianza-tama%C3%B1o-extenso.jpg)]
+
+---
+
+class: title title-3
+
+# Correlación
+
+La correlación (correlación de Pearson) corresponde a un valor estandarizado de la covarianza que puede tomar valores ente -1 y 1.
+  
+
+.center[![:scale 55%](https://www.questionpro.com/blog/wp-content/uploads/2019/07/analisis-de-correlacion-2-450x122.jpg)]
+.center[![:scale 20%](https://economipedia.com/wp-content/uploads/2015/12/formula-correlaci%C3%B3n.png)]
+
+---
+
+class: title title-3
+
+# Correlación
+
+.center[![:scale 75%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/corr.png)]
+
+---
+
+class: title title-3
+
+# Regresión lineal
+
+.small[La regresión lineal es una técnica de análisis estadístico que nos permite estimar los efectos de ciertas variables (independientes o predictores) en una variable cuantitativa (dependiente o predicha).  
+
+Nos permite conocer la variación de una variable dependiente respecto a la variación de una o más variables independientes. Esto nos puede permitir predecir el valor que asume la variable dependiente á partir del valor de las independientes.   
+
+Al igual que las pruebas estadística bivariadas revisadas en la clases pasadas, nos permite hacer inferencia estadística, es decir, determinar si las relaciones observadas en el modelo de regresión son estadísticamente significativas.]
+
+---
+
+class: title title-3
+
+# Recta de regresión
+
+La covariación de Y respecto de X puede expresarse a partir de una recta. 
+
+.center[𝑌=𝛼+𝛽𝑋]
+
+  
+.small[𝑌 =  Valor estimado de la variable dependiente  
+𝛼 = El intercepto (valor que asume Y cuando X es 0)  
+𝛽 = el coeficiente de regresión o pendiente es decir, el efecto en Y de un aumento de 1 en X   
+X = la variable independiente.]
+
+---
+
+class: title title-3
+
+# .small[Estimación de mínimos cuadrados ordinarios]
+.center[![:scale 62%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/mco.png)]
+
+.tiny[Para estimar dicha recta se utiliza la estimación de mínimos cuadrados ordinarios (Ordinary Least Squares OLS). Esta busca minimizar al suma de los residuos al cuadrado, siendo estos últimos la diferencia entre los valores predichos por el modelo (la recta) y cada valor observado.]
+
+---
+
+class: title title-3
+
+# Coeficientes de la ecuación  
+
+Constante o intercepto 
+Valor esperado de Y cuando la variable independiente tiene el valor 0
+
+.center[![:scale 30%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/B0.jpg)]
 
 
+Coeficiente de regresión (β)
+Cambio en Y por cada aumento en una unidad de X, indica la relación entre X e Y
 
+.center[![:scale 30%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/B1.jpg)]
+---
+
+class: title title-3
+
+# Coeficiente de determinación R2
+
+Estadístico de ajuste que describe la proporción de la varianza de Y que se relaciona con las variables independientes del modelo.
+
+.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/R2.jpg)]
 ---
 
 class: center middle main-title section-title-4 top-logo
 
-# Modelo de regresión logística binaria
+# Regresión lineal múltiple
 
 ---
 
 class: title title-4
 
-# Regresión logística
+# Regresión lineal múltiple
 
-Una solución a los problemas anteriormente revisado es utilizar otro tipo de modelo: un modelo de regresión logística binaria. En lugar de modelar la probabilidad directamente, hacemos una transformación la variable dependiente: modelamos el logaritmo de los odds (chances).
+Corresponde a una extensión del modelo de regresión lineal donde agregamos más variables independientes.
 
-.center[![:scale 50%](https://media.licdn.com/dms/image/C4D12AQECoCrreAiteg/article-inline_image-shrink_1000_1488/0/1546295790796?e=1682553600&v=beta&t=uLtnpgp2IFmmzXmBSXTaRSkBTx2vBeifL_KjUY9d9PY)]
+.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/rlm.jpg)]
+
+.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/03/rlm2.jpg)]
+---
+
+class: title title-4
+
+# Regresión lineal múltiple
+
+.small[**Constante o intercepto**   
+Valor esperado de Y cuando las variables independientes tienen valor 0
+
+**Coeficiente de regresión (β)**  
+Cambio en Y por cada aumento en una unidad de X, controlando por las demás variables en el modelo. Indica la relación parcial entre X e Y
+
+**Coeficiente de determinación R2 **  
+Igual interpretación que en el modelo de regresión simple
+Describe la proporción en la varianza de Y que es explicada por el modelo de regresión (en este caso, por todas las variables incluidas)]
 
 ---
 
 class: title title-4
 
-# Regresión logistica
+# Control estadístico
 
-![:scale 100%](https://www.statdeveloper.com/wp-content/uploads/2020/02/regresion-lineal-vs-regresion-logistica.png)
+En una regresión lineal múltiple buscamos dar cuenta de la relación entre una variable x1 sobre y considerando además el efecto de x2 sobre y.  
+Así, podemos estimar el efecto, por ejemplo, de la edad en los ingresos independiente de la educación, es decir, manteniendo esta última constante (controlando por).  
+Cuando no existe relación entre los predictores, la inclusión de otras variables no afecta el valor de los coeficientes de regresión. 
+
+---
+
+class: title title-4
+
+# Inferencia en los coeficientes de regresión
+
+Igual que en el caso de la regresión lineal, pero evaluando si una variable tiene un efecto significativo una vez que controlamos por las demás variables en el modelo:
+
+H0: 𝛽𝑗=0, controlando por las demás variables
+H1: 𝛽𝑗≠0, controlando por las demás variables
+
+Distribución muestral t con n-(k+1) grados de libertad
+
+Donde 
+n= tamaño de la muestra
+k= número de variables independientes en el modelo
 
 ---
 
 class: center middle main-title section-title-1 top-logo
 
-# Odds y odds ratio
+# Supuestos del modelo de regresión
 
 ---
 
 class: title title-1
 
-# Concepto de Odds
+# Ausencia de casos atípicos
 
-Los odds (chances) corresponden a la razón entre la probabilidad de que algo ocurra dividio por la probabildiad de que algo no ocurra.
+Corresponden a observaciones individuales que no siguen el patrón de relación de los demás casos. Es decir, son casos que el modelo predice menos bien que a los demás casos.  
+- Estos casos pueden influenciar resultados, en particular si la muestra es chica. 
+- Se recomienda correr el modelo excluyendo casos atípicos para ver si cambian los estadísticos (pendiente y constante). 
 
-$$Odds = {p\over1-p}$$ 
-Ejemplo en CASEN 2020, odds de ser pobre
 
-Odds pobreza = 0.095/0.905 = 0.105
-
-Es decir, de acuerdo a la CASEN 2020, las chances de ser pobre son de 0.105
 ---
+
 class: title title-1
 
-# Concepto de Odds
-
-Odds de **1** significa que existen chances iguales de la correncia o no ocurrencia de cierto hecho.
-
-Odds **menores de 1** dan cuenta de chances negativas (es más probable que ocurra a que no ocurra)
-
-Odds **mayores a 1** dan cuenta de chances positivas (es más probable que ocurra a que no ocurra)
-
+# Relación lineal
+- Y y X se relacionan por medio de una ecuación lineal (gráficamente, la relación forma una recta).
+- Si la relación es aproximadamente lineal, tiene sentido usar modelos de regresión lineal.
+- Se puede evaluar en base a diagramas de dispersión (si el n es pequeño)
+- Una correlación alta entre las variables es indicación de que la relación es lineal.
+- Si la relación no es lineal, considerar utilizar otro tipo de regresión o transformar variables (por ejemplo, ver efectos de variables al cuadrado).
 
 ---
+
 class: title title-1
 
-# Odds de dos grupos
-
-En nuestro ejemplo original queremos ver como cambia la probabilidad de que un hogar este en la pobreza según sexo del jefe de hogar.
-
-$$Odds_{JH- Hombre} = 0.076/0.924=0.08225 $$
-
-$$Odds_{JH- Mujer} = 0.114/0.886=0.1286 $$
-Es decir, existen 8,22 hogares con jefatura masculina en situación de pobreza por cada 100 que no lo están, mientras que 12,86 hogares con jefatura femenina en situación de pobreza por cada 100 que no lo están.
+# .tiny[Ausencia de multicolinealidad entre las variables dependientes]  
+.small[Cuando dos o más variables independientes están altamente correlacionadas. 
+- En estas situaciones resulta difícil estimar cuál de las dos variables es la que explica la variable dependiente, generando errores estándar altos y baja precisión de los coeficientes calculados. 
+- Para identificar esta situación, hay que revisar la matriz de correlación entre las variables y detectar correlaciones de 0,8 o más. Si este es el caso, es recomendable eliminar una de las dos variables del modelo.]
 
 ---
+
 class: title title-1
 
-# Concepto de Odds ratio
-
-Los odds ratio resultan útiles para comparar la asociación entre las chances de dos variables dicotómicas.
-
-OR de pobreza de un hogar con jefatura masculina / OR de pobreza de un hogar con jefatura masculina
-
-$$Odds\: ratio = {{p_{m}(1-p_{m})}\over p_{h}(1-p_{h})}$$ 
-$$= {0.114/0.886 \over 0.076/0.924} = {0.1286\over 0.08225}= 1.564 $$ 
----
-class: title title-1
-
-# Concepto de Odds ratio
-
-Las chances de un hogar con jefatura femenina de encontrarse esn situación de pobreza son 1,564 veces mayores a las chanches de un hogar con jefatura masculina.
-
-.box-1.sma.sp-after-half[Los odds ratio nos permiten resumir en un número la relación entre dos variables categóricas]
-
-Ahora con estos conceptos en mente pasemos a ver como se ajusta un modelo de regresión logística.
----
-class: center middle main-title section-title-1 top-logo
-
-# Cálculo de modelos e interpretación de coeficientes
----
-class: title title-1
-
-# Cálculo de modelo en R: función GLM
-
-Para estimar un modelo de regresión logística binaria en R debemos usar la función glm, incluida en r base
-
-
-```{r, eval=FALSE}
-glm(pobre~as_factor(sexo), 
-    data=base[base$pco1==1,], # filtro por JH
-    family="binomial")
-```
-
-Especificamos la formula igual que en una regresión lineal (la variable dependiente debe estar en formato 0-1). Debemos especificar la familia de modelos (ya que la función glm sirve para calcular distintos tipos de modelos lineales generalizados). 
----
-
-
-<style>
-.left {
-  float: left;
-  width: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.right {
-  float: right;
-  width: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-</style>
-
-<div class="left">
-Los beta de un modelo de regresión logística están puestos en términos del logaritmo de los odds.   
-
-Es decir, el beta de mujer nos indica que los log-odds de encontrarse en situación de pobreza aumentan en 0.41 en las mujeres en relación a los hombres. 
-</div>
-
-<div class="right">
-
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>Statistical models</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
-<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
-<td style="padding-left: 5px;padding-right: 5px;">-2.40<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
-<td style="padding-left: 5px;padding-right: 5px;">(0.02)</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
-<td style="padding-left: 5px;padding-right: 5px;">0.41<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
-<td style="padding-left: 5px;padding-right: 5px;">(0.03)</td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">AIC</td>
-<td style="padding-left: 5px;padding-right: 5px;">41074.58</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">BIC</td>
-<td style="padding-left: 5px;padding-right: 5px;">41092.68</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Log Likelihood</td>
-<td style="padding-left: 5px;padding-right: 5px;">-20535.29</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Deviance</td>
-<td style="padding-left: 5px;padding-right: 5px;">41070.58</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
-<td style="padding-left: 5px;padding-right: 5px;">62911</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
-</tr>
-</tfoot>
-</table>
-
-  </ul>
-</div>
----
-class: title title-1
-
-# Interpretación de coeficientes
-
-Para poder realizar una interpretación con sentido de los coeficientes del modelo debemos realizar una transformación, de forma que el beta quede expresado como odds. Para esto debemos hacer una **exponenciación** de los coeficientes.
-
-
-```{r, eval=FALSE}
-exp(0.41)=1.506818
-```
-
-Es decir, los odds (chances) de ser pobre para un hogar con jefatura femenina son 1,506818 veces más que las de uno con jefatura masculina.
-
----
-class: title title-1
-
-# .small[Modelos con múltiples variables independientes]
-
-
-<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
-<caption>Statistical models</caption>
-<thead>
-<tr>
-<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
-<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
-<td style="padding-left: 5px;padding-right: 5px;">-1.07 (0.05)<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
-<td style="padding-left: 5px;padding-right: 5px;">0.39 (0.03)<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Edad</td>
-<td style="padding-left: 5px;padding-right: 5px;">-0.03 (0.00)<sup>&#42;&#42;&#42;</sup></td>
-</tr>
-<tr style="border-top: 1px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">AIC</td>
-<td style="padding-left: 5px;padding-right: 5px;">40182.30</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">BIC</td>
-<td style="padding-left: 5px;padding-right: 5px;">40209.45</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Log Likelihood</td>
-<td style="padding-left: 5px;padding-right: 5px;">-20088.15</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">Deviance</td>
-<td style="padding-left: 5px;padding-right: 5px;">40176.30</td>
-</tr>
-<tr style="border-bottom: 2px solid #000000;">
-<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
-<td style="padding-left: 5px;padding-right: 5px;">62911</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
-</tr>
-</tfoot>
-</table>
-
----
-class: title title-1
-
-# .small[Modelos con múltiples variables independientes]
-
-En el caso de un modelo de regresión logística con múltiples predictores o variables independientes la interpretación es similar, pero integrando el concepto de control estadístico.
-
-En este caso podemos decir que los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aquellos con jefatura masculina **controlando por edad**
-
-En el mismo sentido, los log-odds predichos de ser encontrarse en situación de pobreza disminuyen en 0.03 por cada año más de edad del jefe de hogar, **controlando por sexo**.
-
----
-class: center middle main-title section-title-2 top-logo
-
-# Estadísticos de ajuste y selección de modelos
-
----
-
-class: title title-2
-
-# Estadísticos de ajuste
-
-En el caso de los modelos de regresión logística no contamos con una sola medida de ajuste de los modelos y esta suele interpretarse principalmente en términos comparativos.
-
-4 principales aproximaciones
-
-- Devianza
-- Test de Razón de Verosimilitud
-- Pseudo R2s
-- Cirterios de Información (AIC y BIC)
----
-
-class: title title-2
-
-# Devianza
-
-- La devianza es una medida de ajuste que se utiliza para evaluar la calidad de un modelo de regresión logística binaria. Es la diferencia entre la log-verosimilitud del modelo ajustado y la log-verosimilitud del modelo nulo, multiplicada por -2. Por eso también se conoce como devianza residual.
-
-
-- Formula: **.red[Devianza =-2*log likelihood]**
-
----
-class: title title-2
-
-# Test de razón de verosimilitud
-
-**Test de razón de verosimilitud:** es un test estadístico utilizado para comparar dos modelos, uno más simple (modelo nulo) y otro más complejo (modelo ajustado). El test de LR se basa en la comparación de la devianza de ambos modelos, y se utiliza para determinar si el modelo ajustado mejora significativamente la predicción en comparación con el modelo nulo.
-
----
-class: title title-2
-
-# Criterios de información (AIC y BIC)
-
-Criterios de información: son medidas utilizadas para comparar diferentes modelos y seleccionar el modelo más adecuado. Los dos criterios de información más comunes son el Akaike Information Criterion (AIC) y el **Bayesian Information Criterion (BIC)**. Estos criterios toman en cuenta tanto la bondad de ajuste del modelo como la complejidad del modelo. Un modelo con un valor de AIC o BIC más bajo se considera mejor ajustado que un modelo con un valor más alto.  
-
----
-class: title title-2
-
-# Pseudo R2s
-
-.small[Son medidas de la variabilidad explicada por el modelo. No pueden interpretarse como proporción de la varianza explicada, como en le caso de los modelos con variable dependientes continuas.
-
-Existen varios tipos de PseudoR2, cada uno con una interpretación diferente. Uno de los PseudoR2 más comunes es el McFadden's PseudoR2. Se define como: $1−[LL(LM)/LL(L0)]$, donde
+# .tiny[Ausencia de multicolinealidad entre las variables dependientes]  
 .small[
-- LL es el log likelihood del modelo
-- LM es el modelo posterior (con más predictores)
-- L0 es el modelo nulo]
+- También existen estadísticos que miden la presencia de multicolinealidad al correr el análisis de regresión. En particular: 
+- **Factor de inflación de la varianza, VIF**: indicador de cuánto aumenta el error estándar debido a problemas de multicolinealidad.
+- Sacamos la raíz cuadrada e interpretamos el valor resultante como en cuantas veces mayor es el error estándar debido a problemas de multicolinealidad. Por ejemplo, un VIF de 4 significa que el error estándar es 2 veces mayor de lo que sería si las variables no estuvieran correlacionadas.
+- Un VIF mayor a 2.5 es considerado como indicando problemas de multicolinealidad.]
 
-Un valor cercano a 1 indica que el modelo explica una gran cantidad de la variabilidad en los datos, mientras que un valor cercano a 0 indica que el modelo no explica mucha variabilidad.]
+---
+
+class: title title-1
+
+# Homocedasticidad de los errores
+
+Los residuos tienen una varianza constante a lo largo de los distintos valores de Y  
+
+- Residuos: diferencia entre el valor estimado por el modelo y el valor observado que tiene un caso en la muestra  
+- Esto quiere decir que el modelo es igualmente apropiado para predecir valores bajos (por ejemplo, bajos ingresos) y altos de la variable dependiente (por ejemplo, altos ingresos).  
+- El contrario es heterocedasticidad  
+**Solución: Modelos con errores estándares robustos**
+
+---
+
+class: title title-1
+
+# .small[Normalidad en la distribución de los residuos]
+
+Los residuos en torno a los valores estimados de Y se distribuyen normalmente.
+- Si los residuos se distribuyen normalmente, quiere decir que la mayor parte de los residuos se encuentran en torno a 0 (es decir, son valores que se alejan poco del valor observado). 
+- A su vez, son cada vez menos los residuos a medida que estos valores son mayores en términos absolutos.
 
 
 ---
-layout: false
 class: center middle main-title section-title-1 top-logo
 
 .small[
-# Análisis de regresión logística
+# Análisis de regresión lineal múltiple
 ]
 
 .class-info[
@@ -549,10 +350,8 @@ class: center middle main-title section-title-1 top-logo
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudante** Anaís Herrera
 .tiny[Universidad Diego Portales<br>
 ]
 ]
 
 ]
-
