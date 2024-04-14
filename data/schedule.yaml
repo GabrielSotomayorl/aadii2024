@@ -50,8 +50,8 @@ lessons:
   - title: '• Introducción<br>• Modelo Logarítmico bivariado'
     session: "Sesión 4"
     date: "1 abril"
-    #content: "04-content"
-    #example: "04-practico"
+    content: "04-content"
+    example: "04-practico"
     bg: 1
 
 
