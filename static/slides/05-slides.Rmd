@@ -1,5 +1,5 @@
 ---
-title: "Análisis Factorial Exploratorio"
+title: "Análisis de regresión logística"
 author: "Gabriel Sotomayor"
 date: "`r Sys.Date()`"
 output:
@@ -24,20 +24,19 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, 
+                      fig.retina = 3, fig.align = "center")
+```
+
 ```{r packages-data, include=FALSE}
 pacman::p_load(tidyverse, sjPlot, ggsci, wordcloud2)
 theme_set(theme_sjplot2())
-
 ```
+
 ```{r xaringanExtra, echo=FALSE}
-xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "share_again", "scribble", "frezeeframe", "editable", "progress_bar"))
-
-xaringanExtra::use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
-)
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "share_again", "scribble", "frezeeframe", "editable"))
 ```
-
 
 ```{r xaringanExtra-clipboard, echo=FALSE}
 htmltools::tagList(
@@ -50,17 +49,11 @@ htmltools::tagList(
 )
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = F, 
-                      fig.retina = 3, fig.align = "center")
-```
-
 
 class: center middle main-title section-title-1 top-logo
 
-.small[
-# Análisis Factorial Exploratorio
-]
+
+# Análisis de regresión logística
 
 .class-info[
 <br>
@@ -70,14 +63,10 @@ class: center middle main-title section-title-1 top-logo
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudantes** Anaís Herrera  
-           Francisco Meneses
 
-.tiny[Universidad Diego Portales<br>
 ]
 ]
 
-]
 
 
 
@@ -87,238 +76,467 @@ class: title title-inv-1
 # Contenidos Sesión N°5
 
 
-.box-2.medium.sp-after-half[**Análisis Factorial Exploratorio (y Análisis de Componentes Principales)**]
+.box-2.medium.sp-after-half[**Modelos de probabilidad lineal**]
 
-.box-4.medium.sp-after-half[**Etapas del análisis factorial**]
+.box-4.medium.sp-after-half[**Modelo de regresión logística binaria**]
 
-.box-1.medium.sp-after-half[**Preparación de los datos y evaluación de supuestos**]
+.box-1.medium.sp-after-half[**Odds y odds ratio**]
 
 ---
 class: title title-inv-1
 
 # Contenidos Sesión N°5
 
-.box-2.medium.sp-after-half[**La extracción de factores iniciales**]
+.box-1.medium.sp-after-half[**Cálculo de modelos e interpretación de coeficientes**]
 
-.box-4.medium.sp-after-half[**La obtención de la matriz factorial y su interpretación**]
+.box-2.medium.sp-after-half[**Estadísticos de ajuste y selección de modelos**]
 
-.box-1.medium.sp-after-half[**La evaluación del modelo factorial.**]
 
-.box-3.medium.sp-after-half[**Cálculo de las puntuaciones factoriales**]
 
 
 ---
 
 class: center middle main-title section-title-2 top-logo
 
-# Análisis Factorial Exploratorio (y ACP)
+# Modelos de probabilidad lineal
 
 ---
 
 class: title title-2
 
-# Variables latentes en Ciencias Sociales
+# Regresiones para variables dicotómicas
 
-En ciencias sociales muchos de los conceptos que usamos no pueden medirse directamente: el autoritarismo, la conciencia de clase, el capital cultural, etc.
+La semana pasada revisamos los modelos de regresión lineal múltiple, que nos permiten analizar la relación de una variable dependiente continua y variables independientes de cualquier nivel de medida. Ahora cabe la pregunta:
 
-Estos corresponden a variable latentes: variables que no puede ser directamente observada o medida, pero se puede inferir a través de la medición de otras variables relacionadas.   
 
-Es decir, una variable latente es una construcción teórica o abstracta que no se puede medir directamente, pero que se asume que está influyendo en los datos observados.
+.box-2.medium.sp-after-half[¿cómo podemos modelar variables dicotómicas?]
+
+---
+class: title title-2
+
+#Modelos de probabilidad lineal
+
+
+<style>
+.left {
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+</style>
+
+<div class="left">
+Una opción son los modelos de probabilidad lineal, los cuales consisten en usar una regresión estimada mediante mínimos cuadrados ordinarios para una variable dicotómica (valores 0 y 1). En estos los valores beta pueden interpretarse como cambios promedio en la probabilidad.
+</div>
+
+<div class="right">
+
+<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
+<caption>Statistical models</caption>
+<thead>
+<tr>
+<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
+<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
+<td style="padding-left: 5px;padding-right: 5px;">0.08<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
+<td style="padding-left: 5px;padding-right: 5px;">(0.00)</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
+<td style="padding-left: 5px;padding-right: 5px;">0.04<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
+<td style="padding-left: 5px;padding-right: 5px;">(0.00)</td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">R<sup>2</sup></td>
+<td style="padding-left: 5px;padding-right: 5px;">0.00</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Adj. R<sup>2</sup></td>
+<td style="padding-left: 5px;padding-right: 5px;">0.00</td>
+</tr>
+<tr style="border-bottom: 2px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
+<td style="padding-left: 5px;padding-right: 5px;">62911</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
+</tr>
+</tfoot>
+</table>
+
+  </ul>
+</div>
 
 ---
 
 class: title title-2
 
-# Variables latentes en Ciencias Sociales
+# Modelos de probabilidad lineal
 
-La medición de variables latentes requiere de que contemos con un **modelo de medición**.
+A pesar de la simpleza de su interpretación, los modelos de probabilidad lineal cuentan con dos problemas:
 
-Permiten evaluar la manera en que se relacionan un conjunto de variables observadas y si estas efectivamente miden un concepto teórico de interés:
-- Análisis factorial exploratorio
-- Análisis factorial confirmatorio
+.box-2.sma.sp-after-half[1) Pueden entregar variables predichos más allá del rango 0-1 lo cual no tiene sentido en el caso de una probabilidad]
 
----
+.box-2.sma.sp-after-half[2) No entregan un buen ajuste en términos de cumplimiento de los supuestos del modelo y ajuste a los datos]
 
-class: title title-2
 
-# Análisis Factorial Exploratorio
-
-Conjunto de técnicas de análisis **Se busca la síntesis de la información proporcionada por “p” variables observadas (o indicadores), con la menor pérdida posible de información, en un número inferior de “k” variables no observadas** (factores comunes). Esta serie menor de variables latentes ha de caracterizarse por aglutinar variables empíricas que estén bastante correlacionadas entre sí y escasamente correlacionadas con aquellas variables empíricas que conforman otra estructura latente (o dimensión del concepto que se analice).
-
----
-
-class: title title-2
-
-# Análisis Factorial Exploratorio
-
-Tiene dos objetivos principales:  
-
-1. Analizar la correlación existente en una serie de variables, con el propósito de descubrir si comparten alguna estructura latente (no directamente observable).  
- 
-2. La obtención de puntuaciones factoriales, variables típicas o, en su caso, variables sucedáneas, para cada factor. Éstas actuarán en representación de los factores o componentes en análisis posteriores.
----
-
-class: title title-2
-
-# Análisis Factorial Exploratorio
-.center[![:scale 60%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/ecua.png)]
-  
-.small[Cada variable observada X¡ se expresa mediante una combinación lineal de un número pequeño de factores comunes latentes y un factor único, también latente. Estos últimos representan la parte de la varianza de la variable observada que “no” es explicada por los factores comunes. La elección de la letra “e” para denotar al factor único procede de su consideración como “término de error”.]
----
-class: title title-2
-
-# AFE y ACP
-
-Además del análisis factorial, otra técnica que se usa frecuentemente para la reducción de dimensiones de conjuntos de variables es el Análisis de Componentes Principales.
-
-Se diferencia principalmente porque este último trabaja con la varianza total de las variables, mientras que el AFE utiliza solo la varianza común de las variables, la comunalidad.
 
 ---
 
 class: center middle main-title section-title-4 top-logo
 
-# Etapas del Análisis Factorial Exploratorio 
+# Modelo de regresión logística binaria
 
 ---
-.center[![:scale 50%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/esquema.png)]
+
+class: title title-4
+
+# Regresión logística
+
+Una solución a los problemas anteriormente revisado es utilizar otro tipo de modelo: un modelo de regresión logística binaria. En lugar de modelar la probabilidad directamente, hacemos una transformación la variable dependiente: modelamos el logaritmo de los odds (chances).
+
+.center[![:scale 50%](https://quantifyinghealth.com/wp-content/uploads/2021/05/Logistic-regression-equation.png)]
+
+---
+
+class: title title-4
+
+# Regresión logistica
+
+![:scale 100%](https://www.statdeveloper.com/wp-content/uploads/2020/02/regresion-lineal-vs-regresion-logistica.png)
+
 ---
 
 class: center middle main-title section-title-1 top-logo
 
-# Preparación de los datos y evaluación de supuestos
-
----
-class: title title-1
-
-# Supuestos del AFE
-- Nivel de medición 
-- Tamaño muestral 
-- Normalidad
-- Colinealidad 
-- Multicolinealidad
-- Tratamiento de casos perdidos y casos atípicos
-
----
-class: title title-1
-
-# Nivel de medición
-
-.center[![:scale 70%](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/Medida.png)  
-El AFE requiere que las variables sean continuas, o variables ordinales que trataremos como tales. Esto puede resolverse también con el tipo de matriz de correlaciones a utilizar]
+# Odds y odds ratio
 
 ---
 
 class: title title-1
 
-# Tamaño Muestral
+# Concepto de Odds
 
-Como piso mínimo se requieren 5 casos por cada variable que se incluya en el análisis, sin embargo, es preferible contar con al menos 20. Tamaños muestrales mayores ayudarán a obtener estimaciones muestrales estables.  
+Los odds (chances) corresponden a la razón entre la probabilidad de que algo ocurra dividio por la probabildiad de que algo no ocurra.
 
-Cómo mínimo se esperan unos 200 o 300 casos en total.  
+$$Odds = {p\over1-p}$$ 
+Ejemplo en CASEN 2020, odds de ser pobre
 
-Debe considerarse los casos perdidos y aquellos que puedan ser eliminados por ser casos atípicos. 
+Odds pobreza = 0.095/0.905 = 0.105
+
+Es decir, de acuerdo a la CASEN 2020, las chances de ser pobre son de 0.105
+---
+class: title title-1
+
+# Concepto de Odds
+
+Odds de **1** significa que existen chances iguales de la correncia o no ocurrencia de cierto hecho.
+
+Odds **menores de 1** dan cuenta de chances negativas (es más probable que ocurra a que no ocurra)
+
+Odds **mayores a 1** dan cuenta de chances positivas (es más probable que ocurra a que no ocurra)
+
 
 ---
 class: title title-1
 
-# Normalidad (Multivariante)
+# Odds de dos grupos
 
-Todas las variables observadas y sus combinaciones lineales han de estar distribuidas normalmente. Es decir, se espera que exista normalidad univariada en cada variable y normalidad multivariante.  
+En nuestro ejemplo original queremos ver como cambia la probabilidad de que un hogar este en la pobreza según sexo del jefe de hogar.
 
-El uso de procedimientos de extracción habituales en AFC, como los llamados “máxima verosimilitud” (ML) o “mínimos cuadrados” exige el cumplimiento del supuesto de normalidad multivariable.
+$$Odds_{JH- Hombre} = 0.076/0.924=0.08225 $$
 
-Cuando no se cumple habrá que buscar que cada variable no sea extremadamente asimétrica (se sugiere
-coeficientes de asimetría que se encuentren dentro de un intervalo de +-2).
-
----
-class: title title-1
-
-# Colinealidad
-
-Para la extracción de factores comunes debe existir varianza común entre las variables, de lo contrario es poco probable encontrar estructuras latentes relevantes.
-
-Como mínimo, se espera la existencia  de correlaciones de al menos 0,3 entre las variables.
-
-Según el nivel de medida pueden utilizarse correlaciones de Pearson (variables continuas o ordinales de suficientes categorías) o policóricas (variables ordinales)
+$$Odds_{JH- Mujer} = 0.114/0.886=0.1286 $$
+Es decir, existen 8,22 hogares con jefatura masculina en situación de pobreza por cada 100 que no lo están, mientras que 12,86 hogares con jefatura femenina en situación de pobreza por cada 100 que no lo están.
 
 ---
 class: title title-1
 
-# Correlaciones policoricas 
+# Concepto de Odds ratio
 
-Las correlaciones policóricas son una medida de asociación entre variables ordinales que se basa en la teoría de correlación de Pearson y tiene en cuenta la naturaleza discreta de los datos.
+Los odds ratio resultan útiles para comparar la asociación entre las chances de dos variables dicotómicas.
 
-Supone una variable subyacente continua y teóricamente normal.
+OR de pobreza de un hogar con jefatura masculina / OR de pobreza de un hogar con jefatura masculina
 
-Se recomienda un mínimo de 50 observaciones.  
-
-Sólo se interpreta sentido y fuerza, no un p de significación.
-
-En el caso de variables dicotómicas se utilizan correlaciones tetracóricas.
-
+$$Odds\: ratio = {{p_{m}(1-p_{m})}\over p_{h}(1-p_{h})}$$ 
+$$= {0.114/0.886 \over 0.076/0.924} = {0.1286\over 0.08225}= 1.564 $$ 
 ---
 class: title title-1
 
-# Multicolinealidad
+# Concepto de Odds ratio
 
-Además de las correlaciones bivariadas existen pruebas estadísticas que nos permiten establecer la existencia de multicolinealidad en el conjunto de variables.
+Las chances de un hogar con jefatura femenina de encontrarse esn situación de pobreza son 1,564 veces mayores a las chanches de un hogar con jefatura masculina.
 
-.small[**Test de esfericidad de Barlett**: Esta prueba se utiliza para determinar la existencia de multicolinealidad en un conjunto de datos. Si el valor-p es significativo (generalmente <0,05), entonces se rechaza la hipótesis nula de que la matriz de correlación es igual a una matriz de identidad, lo que indica la presencia de multicolinealidad. **Su correcta interpretación requiere de la existencia de normalidad multivariante**, por lo que en caso de que esta no exista, debe priorizarse la interpretación de la prueba KMO.]
+.box-1.sma.sp-after-half[Los odds ratio nos permiten resumir en un número la relación entre dos variables categóricas]
 
----
-class: title title-1
-
-# Multicolinealidad: KMO
-
-.small[La **prueba KMO (Kaiser-Meyer-Olkin)** se utiliza para evaluar la presencia de multicolinealidad en un conjunto de variables. La prueba produce un valor de MSA (Medida de adecuación de la muestra) para el conjunto de datos y para cada variable individual en el conjunto de datos.
-
-Existen diferentes criterios para interpretar los valores del índice KMO en el AFE , pero algunos de los umbrales comúnmente utilizados son:
-.small[- Excelente adecuación: KMO mayor que 0,9.
-- Buena adecuación: KMO entre 0,8 y 0,9.
-- Adecuación aceptable: KMO entre 0,7 y 0,8.
-- Inadecuada adecuación: KMO menor que 0,7.  
-
-Es importante tener en cuenta que estos umbrales son solo una guía general y que la interpretación de los resultados del AFE debe basarse en varios criterios, incluyendo el juicio del investigador, la coherencia con la teoría y la interpretación de los patrones de carga factorial.]]
-
----
-class: title title-1
-
-# Tratamiento de variables
-
-Antes de realizar un AFE debemos revisar dos decisiones respecto a los datos: La existencia de **casos atípicos** y de **casos perdidos**. 
-
-Casos perdidos:
-
-- Proporción de casos perdidos (10% aprox)
-- Distribución aleatoria o no de los casos perdidos
-- Imputación de datos: media, regresión lineal, criterio de investigación, imputación múltiple
----
-class: title title-1
-
-# Tratamiento de variables
-
-Antes de realizar un AFE debemos revisar dos decisiones respecto a los datos: La existencia de **casos atípicos**  y de **casos perdidos**. 
-
-Casos atípicos:
-
-Debe realizarse un diagnóstico de casos atípicos multivariantes, es decir, aquellos que se alejan del centro medio de las observaciones en un espacio multidimensional. Esto se mide con la distancia de Mahalanobis (distancias mayores a 0,001 se consideran atípicas)
-
----
-class: title title-1
-
-# .small[Tratamiento de variables: estandarización]
-
-- La estandarización favorece la comparabilidad de variables y es comúnmente utilizada en análisis factorial.
-- Se realiza mediante la transformación de las variables a puntajes Z.
-- La varianza de las variables depende de su unidad de medida, por lo que la estandarización permite comparar variables con diferentes grados de heterogeneidad.
-- La elección de la matriz de entrada para obtener un modelo factorial depende de si las variables están en su unidad original o estandarizadas.
-
+Ahora con estos conceptos en mente pasemos a ver como se ajusta un modelo de regresión logística.
 ---
 class: center middle main-title section-title-1 top-logo
 
+# Cálculo de modelos e interpretación de coeficientes
+---
+class: title title-1
+
+# Cálculo de modelo en R: función GLM
+
+Para estimar un modelo de regresión logística binaria en R debemos usar la función glm, incluida en r base
+
+
+```{r, eval=FALSE}
+glm(pobre~as_factor(sexo), 
+    data=base[base$pco1==1,], # filtro por JH
+    family="binomial")
+```
+
+Especificamos la formula igual que en una regresión lineal (la variable dependiente debe estar en formato 0-1). Debemos especificar la familia de modelos (ya que la función glm sirve para calcular distintos tipos de modelos lineales generalizados). 
+---
+
+
+<style>
+.left {
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+</style>
+
+<div class="left">
+Los beta de un modelo de regresión logística están puestos en términos del logaritmo de los odds.   
+
+Es decir, el beta de mujer nos indica que los log-odds de encontrarse en situación de pobreza aumentan en 0.41 en las mujeres en relación a los hombres. 
+</div>
+
+<div class="right">
+
+<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
+<caption>Statistical models</caption>
+<thead>
+<tr>
+<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
+<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
+<td style="padding-left: 5px;padding-right: 5px;">-2.40<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
+<td style="padding-left: 5px;padding-right: 5px;">(0.02)</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
+<td style="padding-left: 5px;padding-right: 5px;">0.41<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">&nbsp;</td>
+<td style="padding-left: 5px;padding-right: 5px;">(0.03)</td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">AIC</td>
+<td style="padding-left: 5px;padding-right: 5px;">41074.58</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">BIC</td>
+<td style="padding-left: 5px;padding-right: 5px;">41092.68</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Log Likelihood</td>
+<td style="padding-left: 5px;padding-right: 5px;">-20535.29</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Deviance</td>
+<td style="padding-left: 5px;padding-right: 5px;">41070.58</td>
+</tr>
+<tr style="border-bottom: 2px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
+<td style="padding-left: 5px;padding-right: 5px;">62911</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
+</tr>
+</tfoot>
+</table>
+
+  </ul>
+</div>
+---
+class: title title-1
+
+# Interpretación de coeficientes
+
+Para poder realizar una interpretación con sentido de los coeficientes del modelo debemos realizar una transformación, de forma que el beta quede expresado como odds. Para esto debemos hacer una **exponenciación** de los coeficientes.
+
+
+```{r, eval=FALSE}
+exp(0.41)=1.506818
+```
+
+Es decir, los odds (chances) de ser pobre para un hogar con jefatura femenina son 1,506818 veces más que las de uno con jefatura masculina.
+
+---
+class: title title-1
+
+# .small[Modelos con múltiples variables independientes]
+
+
+<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
+<caption>Statistical models</caption>
+<thead>
+<tr>
+<th style="padding-left: 5px;padding-right: 5px;">&nbsp;</th>
+<th style="padding-left: 5px;padding-right: 5px;">Pobreza según sexo JH</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Intercepto</td>
+<td style="padding-left: 5px;padding-right: 5px;">-1.07 (0.05)<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Mujer (ref.hombre)</td>
+<td style="padding-left: 5px;padding-right: 5px;">0.39 (0.03)<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Edad</td>
+<td style="padding-left: 5px;padding-right: 5px;">-0.03 (0.00)<sup>&#42;&#42;&#42;</sup></td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">AIC</td>
+<td style="padding-left: 5px;padding-right: 5px;">40182.30</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">BIC</td>
+<td style="padding-left: 5px;padding-right: 5px;">40209.45</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Log Likelihood</td>
+<td style="padding-left: 5px;padding-right: 5px;">-20088.15</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">Deviance</td>
+<td style="padding-left: 5px;padding-right: 5px;">40176.30</td>
+</tr>
+<tr style="border-bottom: 2px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">Num. obs.</td>
+<td style="padding-left: 5px;padding-right: 5px;">62911</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="font-size: 0.8em;" colspan="2"><sup>&#42;&#42;&#42;</sup>p &lt; 0.001; <sup>&#42;&#42;</sup>p &lt; 0.01; <sup>&#42;</sup>p &lt; 0.05</td>
+</tr>
+</tfoot>
+</table>
+
+---
+class: title title-1
+
+# .small[Modelos con múltiples variables independientes]
+
+En el caso de un modelo de regresión logística con múltiples predictores o variables independientes la interpretación es similar, pero integrando el concepto de control estadístico.
+
+En este caso podemos decir que los log-odds predichos de encontrarse en situación de pobreza aumentan en 0,39 en los hogares con jefatura femenina respecto aquellos con jefatura masculina **controlando por edad**
+
+En el mismo sentido, los log-odds predichos de ser encontrarse en situación de pobreza disminuyen en 0.03 por cada año más de edad del jefe de hogar, **controlando por sexo**.
+
+---
+class: center middle main-title section-title-2 top-logo
+
+# Estadísticos de ajuste y selección de modelos
+
+---
+
+class: title title-2
+
+# Estadísticos de ajuste
+
+En el caso de los modelos de regresión logística no contamos con una sola medida de ajuste de los modelos y esta suele interpretarse principalmente en términos comparativos.
+
+4 principales aproximaciones
+
+- Devianza
+- Test de Razón de Verosimilitud
+- Pseudo R2s
+- Cirterios de Información (AIC y BIC)
+---
+
+class: title title-2
+
+# Devianza
+
+- La devianza es una medida de ajuste que se utiliza para evaluar la calidad de un modelo de regresión logística binaria. Es la diferencia entre la log-verosimilitud del modelo ajustado y la log-verosimilitud del modelo nulo, multiplicada por -2. Por eso también se conoce como devianza residual.
+
+
+- Formula: **.red[Devianza =-2*log likelihood]**
+
+---
+class: title title-2
+
+# Test de razón de verosimilitud
+
+**Test de razón de verosimilitud:** es un test estadístico utilizado para comparar dos modelos, uno más simple (modelo nulo) y otro más complejo (modelo ajustado). El test de LR se basa en la comparación de la devianza de ambos modelos, y se utiliza para determinar si el modelo ajustado mejora significativamente la predicción en comparación con el modelo nulo.
+
+---
+class: title title-2
+
+# Criterios de información (AIC y BIC)
+
+Criterios de información: son medidas utilizadas para comparar diferentes modelos y seleccionar el modelo más adecuado. Los dos criterios de información más comunes son el Akaike Information Criterion (AIC) y el **Bayesian Information Criterion (BIC)**. Estos criterios toman en cuenta tanto la bondad de ajuste del modelo como la complejidad del modelo. Un modelo con un valor de AIC o BIC más bajo se considera mejor ajustado que un modelo con un valor más alto.  
+
+---
+class: title title-2
+
+# Pseudo R2s
+
+.small[Son medidas de la variabilidad explicada por el modelo. No pueden interpretarse como proporción de la varianza explicada, como en le caso de los modelos con variable dependientes continuas.
+
+Existen varios tipos de PseudoR2, cada uno con una interpretación diferente. Uno de los PseudoR2 más comunes es el McFadden's PseudoR2. Se define como: $1−[LL(LM)/LL(L0)]$, donde
 .small[
-# Análisis Factorial Exploratorio
-]
+- LL es el log likelihood del modelo
+- LM es el modelo posterior (con más predictores)
+- L0 es el modelo nulo]
+
+Un valor cercano a 1 indica que el modelo explica una gran cantidad de la variabilidad en los datos, mientras que un valor cercano a 0 indica que el modelo no explica mucha variabilidad.]
+
+
+---
+layout: false
+class: center middle main-title section-title-1 top-logo
+
+
+# Análisis de regresión logística
 
 .class-info[
 <br>
@@ -328,11 +546,8 @@ class: center middle main-title section-title-1 top-logo
 
 .pull-right.small[
 **Profesor** Gabriel Sotomayor López <br>
-**Ayudantes** Anaís Herrera  
-           Francisco Meneses
 
-.tiny[Universidad Diego Portales<br>
 ]
 ]
 
-]
+

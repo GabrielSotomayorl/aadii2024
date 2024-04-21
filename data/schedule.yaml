@@ -59,8 +59,8 @@ lessons:
   - title: '• Modelo Logarítmico Multivariado<br>• Interpretación de los coeficientes<br>• Ejemplos de aplicación en R'
     session: "Sesión 5"
     date: "8 abril"
-    #content: "05-content"
-    #example: "05-practico"
+    content: "05-content"
+    example: "05-practico"
     bg: 1
     bottomborder: True
 
