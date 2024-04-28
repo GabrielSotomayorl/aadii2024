@@ -75,8 +75,8 @@ lessons:
     session: "Sesión 6"
     date: "15 abril"
     bg: 2
-    # content: "06-content"
-    # example: "06-practico"
+    content: "06-content"
+    example: "06-practico"
     # assignment: "02-tarea"
     
   - title: '• La extracción de factores comunes<br>• La matriz factorial y su interpretación'
