@@ -1,11 +1,11 @@
 ---
 title: "Análisis Factorial Exploratorio II"
-linktitle: "6: Análisis Factorial Exploratorio II"
+linktitle: "7: Análisis Factorial Exploratorio II"
 date: "2021-08-30"
 menu:
   example:
     parent: Ejemplos
-    weight: 6
+    weight: 7
 type: docs
 toc: true
 editor_options: 
