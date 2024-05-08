@@ -84,7 +84,7 @@ mean<-colMeans(datosLW[1:9])
 Sx<-cov(datosLW[1:9]) #matriz de varianza covariaza 
 D2<-mahalanobis(datosLW[1:9],mean,Sx)
 
-datosLW$sigmahala=(1-pchisq(D2, 3))  
+datosLW$sigmahala=(1-pchisq(D2, 9))  
 
 datosLW<-datosLW[which(datosLW$sigmahala>0.001),]#dar por perdido o eliminar caso atipico
 datosLW$sigmahala<-NULL

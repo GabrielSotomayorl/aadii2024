@@ -1,134 +1,146 @@
 ---
-title: "Análisis Factorial Confirmatorio con R"
-linktitle: "7: Análisis Factorial Confirmatorio con R"
-date: "2023-05-05"
+title: "Análisis Factorial Exploratorio II"
+linktitle: "6: Análisis Factorial Exploratorio II"
+date: "2021-08-30"
 menu:
   example:
     parent: Ejemplos
-    weight: 7
+    weight: 6
 type: docs
 toc: true
 editor_options: 
   chunk_output_type: console
 ---
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+## 0. Objetivo del práctico
+
+El objetivo de este práctico revisar como realizar un Análisis factorial Exploratorio en R considerando la selección del número de factores, la extracción de factores, la rotación, la selección del modelo final y su interpretación, y el cálculo de puntuaciones factoriales. Este en una continuación del práctico anterior, donde realziamos la gestión de datos y la comprobación de los supuestos del análisis.
+
+
+## 1. Carga y gestión de datos y librerias
+
+Cargamos nuevamente la base de datos de PNUD 2015, que incluye los siguientes ítem. Con estos esperamos revisar si existen estructuras latentes en como las personas evalúan las oportunidades que entrega Chile. Además eliminamos los casos perdidos y atípicos. Para los detalles estas decisiones, revisar el práctico anterior. 
+
+![](https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/img/05/Practico.png)
+
+Cargamos el paquete "psych" que nos permitirá realizar en análisis factorial exporatorio (AFE), "GPArotation" para poder hacer rotación promax, y "dplyr()" para gestión de datos.
+
+```{r, warning=FALSE,message=FALSE}
+library(psych)
+library(GPArotation)
+library(dplyr)
 ```
-
-Este análisis se lleva a cabo con el objetivo de verificar la estructura factorial sugerida por una teoría o un modelo en particular.
-
-Primero, debemos asegurarnos de tener todos los paquetes necesarios instalados y cargados. Utilizaremos haven para importar datos, lavaan para estimar el Modelo de Ecuaciones Estructurales (SEM), semPlot para crear gráficos de SEM y semTable para producir tablas de SEM.
 
 ```{r}
-# Carga paquetes
-library(haven) # importar SPSS, Stata, etc.
-library(lavaan) # estimar SEM
-library(semPlot) # graficar SEM
-library(semTable) # tablas SEM
+datosog <- read.csv("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EDH_2013_csv.csv")
+
+datoslw <- datosog %>%
+  select(cor, salud = P25a,ingr = P25b, trab = P25c,  educ = P25d, vivi = P25e,  segur = P25f, medio = P25g, liber = P25h, proye = P25i) %>%
+  mutate(across(everything(), ~na_if(.x, 9))) %>%
+  mutate(across(everything(), ~na_if(.x, 8))) %>%
+  na.omit()
+
+
+# Tratamiento de casos atípicos
+mean <- colMeans(datoslw[, 2:10], na.rm = TRUE)
+Sx <- cov(datoslw[, 2:10], use = "complete.obs") # matriz de varianza-covarianza
+D2 <- mahalanobis(datoslw[, 2:10], center = mean, cov = Sx)
+datoslw$sigmahala <- (1 - pchisq(D2, df = 9))  # Usando 9 grados de libertad
+
+# Filtrar casos atípicos
+datoslw <- datoslw %>%
+  filter(sigmahala > 0.001) %>%
+  select(-sigmahala)
+
+# Guardar ID para hacer el merge luego con otras variables
+id <- datoslw$cor
+datoslw$cor <- NULL
 ```
 
-Posteriormente, importamos los datos que vamos a analizar. En este caso, los datos están almacenados en un archivo .sav de SPSS llamado "base_ideologia_afc.sav". Lo importamos utilizando la función read_spss() del paquete haven.
+
+
+## 2. Análisis factorial exploratorio
+
+
+### Gráfico de sedimentación
+El gráfico de sedimentación (scree plot) nos ayuda a decidir cuántos factores mantener en el análisis. Para ello, utilizaremos la función scree() de la librería psych.
+
+El gráfico de sedimentación muestra la proporción de varianza explicada por cada factor en el eje Y y el número de factores en el eje X. Se busca identificar un punto de inflexión en la gráfica, donde la pendiente de la curva se aplana. Este punto indica la cantidad de factores que se deben retener.
 
 ```{r}
-# Importar datos
-#datos <- read_spss("base_ideologia_afc.sav")
-
-datos <- read_sav(url("https://github.com/Clases-GabrielSotomayor/pruebapagina/raw/master/content/example/input/data/base_ideologia_afc.sav"))
-
+scree(datoslw)
 ```
 
-A continuación, definimos el modelo de medición para nuestro Análisis Factorial Confirmatorio (AFC). Estamos definiendo dos factores latentes ("autoritarismo" y "dominancia") y tres ítems observables para cada factor. El operador =~ se utiliza para indicar las relaciones entre los factores y los ítems.
+### Selección del número de factores
+Para decidir cuántos factores incluir en el análisis factorial, utilizaremos la función fa.parallel() de la librería psych. Esta función utiliza análisis paralelos para determinar cuántos factores se deben retener.
+
 
 ```{r}
-# Definir modelo de medición
-mod_conf <- 'autoritarismo =~ aut1 + aut2 + aut3
-             dominancia    =~ dom1 + dom2 + dom3'
+set.seed(231) #fijamos semilla para tener resutlados replicables
+nofactor <- fa.parallel(datoslw, fa="fa")
+nofactor$fa.values
 ```
-Una vez definido el modelo, lo ajustamos utilizando la función cfa() del paquete lavaan. Como argumentos, le pasamos el modelo y los datos.
+
+En este caso, el análisis paralelo sugiere retener 4 factores.
+
+### Análisis factorial exploratorio con diferentes configuraciones
+Ahora realizaremos el análisis factorial exploratorio utilizando diferentes configuraciones, como el número de factores, rotaciones y correlaciones. Esto nos permitirá comparar y seleccionar el mejor modelo.  
+
+Cuando se trabaja con variables ordinales o categóricas en un análisis factorial exploratorio, es más apropiado utilizar correlaciones policóricas, ya que tienen en cuenta la naturaleza no lineal y discreta de los datos. Dado que nuestras variables tienen 7 categorías probamos ambos tipos de correlaciones para ver el nivel de ajuste. El análisis con correlaciones policóricas explica una mayor proporción de la varianza por lo que se seguirá con estas.
+
+
 ```{r}
-# Ajustar modelo CFA
-mod_conf_afc <- cfa(mod_conf, data = datos)
+# Prueba de Modelos segun parallel 
+fa(datoslw,nfactors=4, fm="minres",rotate="none")
+
+# Prueba con 4 factores y correlación polychoric
+fa(datoslw, nfactors=4, rotate="none", cor = "poly")
 ```
-Para ver un resumen de los resultados del modelo, utilizamos la función summary(). Hemos establecido standardized = TRUE para obtener las cargas factoriales estandarizadas, que son independientes de la escala de las variables observables. Además, fit.measures = TRUE se utiliza para mostrar los índices de ajuste del modelo, que nos indican cuán bien nuestro modelo especificado se ajusta a los datos.
+
+La rotación de factores es un paso importante en el AFE, ya que facilita la interpretación de los resultados. La rotación puede ser ortogonal o oblicua. La rotación ortogonal (e.g. varimax) asume que los factores no están correlacionados, mientras que la rotación oblicua (e.g. promax) permite que los factores estén correlacionados.
+
+Para decidir qué rotación utilizar, es útil explorar la correlación entre los factores. Si las correlaciones son bajas (menores a 0.3), la rotación ortogonal es apropiada. Si las correlaciones son altas, se recomienda utilizar la rotación oblicua.
+
 ```{r}
-# Resultados
-## Salida general
-summary(mod_conf_afc,
-        standardized = TRUE, # mostrar cargas estandarizadas
-        fit.measures = TRUE) # mostrar índices de ajuste extendidos
+# Prueba con 4 factores y rotación varimax y promax
+fa(datoslw, nfactors=4, rotate="varimax", cor = "poly")
+fa(datoslw, nfactors=4, rotate="promax", cor = "poly")
 
+# Modelo final
+modelofinal <- fa(datoslw, nfactors=4, rotate="promax", cor = "poly")
 ```
-Además, podemos utilizar la función fitmeasures() para ver solo los índices de ajuste específicos que nos interesan.
+
+Después de comparar los resultados, decidimos utilizar un modelo con 4 factores y rotación promax.
+
+# Visualización de resultados
+
+Podemos observar los resultados del análisis con el comando fa.diagram(), que nos muestra las cargas factoriales de los ítems del modelo con cada uno de los factores latentes. 
+
 ```{r}
-# Ver solo índices de ajuste
-fitmeasures(mod_conf_afc,
-            fit.measures = c("chisq", "df", "pvalue",
-                             "cfi", "rmsea"))
+fa.diagram(modelofinal)
 ```
-Después, creamos un diagrama de nuestro modelo con la función semPaths() del paquete semPlot.
+
+# Cálculo de puntuaciones factoriales
+
+Finalmente, podemos calcular las puntuaciones factoriales para cada individuo en nuestra muestra utilizando la función factor.scores(). Estas puntuaciones pueden ser utilizadas en análisis posteriores o como variables en otros modelos
+
 ```{r}
-# Diagrama modelo
-semPaths(mod_conf_afc, # modelo ajustado
-         what = "std",  # mostrar cargas estandarizadas
-         label.cex = 1, edge.label.cex = 1, # tamaño flechas y caracteres
-         residuals = FALSE, # no mostrar residuos
-         edge.color = "black") # color flechas
-```
-En el gráfico anterior, las flechas representan las relaciones causales sugeridas por el modelo y las cargas factoriales estandarizadas se muestran a lo largo de las flechas.
+#Extracción de puntuaciones factoriales
 
-A continuación, estandarizamos las variables observadas utilizando la función scale(), lo que permite hacer comparaciones más justas entre las variables.
-```{r}
-# Estandarizar variables observadas
-datos.std <- scale(datos)
-```
-Luego ajustamos nuevamente el modelo CFA, pero esta vez utilizando los datos estandarizados.
-```{r}
-## Crear objeto con mismo modelo pero estandarizado
-mod_conf_afc_std <- cfa(mod_conf,
-                        std.lv = TRUE,
-                        meanstructure = TRUE,
-                        data = datos.std)
-```
-Después, creamos y guardamos una tabla de los resultados en formato HTML utilizando la función semTable().
-```{r,results = 'asis'}
-## Crear y guardar tabla en formato html
-semTable(mod_conf_afc_std, type = "html", 
-         file = "resultados_cfa_ideologia",
-         paramSets = c("loadings", 
-                       "latentcovariances", 
-                       "fits"))
-```
+#Extraemos las puntuaciones facotriales del objeto del modelo final
+summary(modelofinal$scores)
 
-Primero, examinamos las cargas factoriales (o "Factor Loadings"), que representan las correlaciones entre cada ítem y el factor correspondiente. Los valores varían entre -1 y +1, donde los valores más cercanos a +1 o -1 indican una relación más fuerte entre el ítem y el factor.
+#Guardamos los puntajes en la base
+basefinal<-cbind(datoslw,modelofinal$scores )
 
-Para "autoritarismo", todos los ítems (aut1, aut2, aut3) tienen cargas factoriales altas, entre 0.80 y 0.90, lo que indica que están fuertemente relacionados con el factor "autoritarismo". Todos estos resultados son estadísticamente significativos (p < .000).
+#Pegamos la variable GSE de la base de datos original
+datosog<- datosog |> filter(datosog$cor%in% id) 
+basefinal<-cbind(basefinal,datosog$GSEo)
+basefinal$gse<-factor(basefinal$`datosog$GSEo`,1:4,labels = c("ABC1"  , "C2" ,  "C3"  ,  "D"))
 
-Para "dominancia", los ítems (dom1, dom2, dom3) también muestran cargas factoriales relativamente altas, variando de 0.68 a 0.92, sugiriendo una fuerte relación con el factor "dominancia". De nuevo, todos los resultados son estadísticamente significativos (p < .001).
-
-En segundo lugar, examinamos la covarianza entre los factores latentes (o "Latent Covariances"). Aquí, la covarianza entre "autoritarismo" y "dominancia" es de 0.34. Esto sugiere una relación positiva moderada entre los dos factores, y este resultado es estadísticamente significativo (p < .001).
-
-Finalmente, examinamos los índices de ajuste del modelo (o "Fit Indices"). Estos índices evalúan qué tan bien nuestro modelo se ajusta a los datos observados. Los índices incluyen el chi cuadrado (χ2), el Índice de Ajuste Comparativo (CFI), el Índice de Ajuste no Normado (TLI) y el Error Cuadrático Medio de Aproximación (RMSEA).
-
-El valor de χ2 es de 12.33 con 8 grados de libertad y un p-valor de 0.137. Un p-valor superior a 0.05 sugiere que el modelo se ajusta bien a los datos.
-
-El CFI y el TLI son ambos 0.99. Estos índices varían de 0 a 1, y los valores superiores a 0.95 generalmente indican un buen ajuste del modelo a los datos.
-
-El RMSEA es de 0.06. Los valores de RMSEA menores a 0.08 suelen considerarse como una indicación de un buen ajuste del modelo.
-
-En resumen, los resultados sugieren que el modelo propuesto se ajusta bien a los datos, y las cargas factoriales indican que cada ítem se relaciona fuertemente con el factor correspondiente. 
-
-Desde la consola de R puedes ver la tabla abriendo el archivo HTML generado o utilizando la función browseURL().
-```{r eval=FALSE}
-browseURL("resultados_afc_ideologia.html") 
-```
-El siguiente paso es calcular las comunalidades, que representan la proporción de la varianza de cada variable observable explicada por los factores. Para esto, utilizamos la función inspect() con el argumento what = "rsquare".
-```{r}
-# Comunalidades
-inspect(mod_conf_afc, what = "rsquare")
-```
-Por último, revisamos los índices de modificación, que nos dan sugerencias sobre cómo mejorar el ajuste del modelo. Mostramos los índices en orden decreciente para identificar primero los cambios potencialmente más impactantes.
-```{r}
-# Índices de modificación
-## Mostrar 'mi' en orden decreciente
-modificationindices(mod_conf_afc, sort. = T)
+#Comparamos el
+aggregate(basefinal$MR1,list(basefinal$gse),mean) #Derechos sociales
+aggregate(basefinal$MR2,list(basefinal$gse),mean) #Derechos individuales
+aggregate(basefinal$MR3,list(basefinal$gse),mean) #Jubilación
+aggregate(basefinal$MR4,list(basefinal$gse),mean) #Seguridad
 ```

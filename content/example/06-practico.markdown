@@ -197,7 +197,7 @@ mean<-colMeans(datosLW[1:9])
 Sx<-cov(datosLW[1:9]) #matriz de varianza covariaza 
 D2<-mahalanobis(datosLW[1:9],mean,Sx)
 
-datosLW$sigmahala=(1-pchisq(D2, 3))  
+datosLW$sigmahala=(1-pchisq(D2, 9))  
 
 datosLW<-datosLW[which(datosLW$sigmahala>0.001),]#dar por perdido o eliminar caso atipico
 datosLW$sigmahala<-NULL
@@ -218,33 +218,33 @@ MVN::mvn(datosLW,mvnTest	= "mardia",multivariatePlot="qq")
 ```
 ## $multivariateNormality
 ##              Test        Statistic               p value Result
-## 1 Mardia Skewness 1024.97674314003 4.20675113139256e-124     NO
-## 2 Mardia Kurtosis 13.6081361520113                     0     NO
+## 1 Mardia Skewness 1717.51387000739 3.02564099408859e-256     NO
+## 2 Mardia Kurtosis 33.0903314287217                     0     NO
 ## 3             MVN             <NA>                  <NA>     NO
 ## 
 ## $univariateNormality
 ##               Test  Variable Statistic   p value Normality
-## 1 Anderson-Darling   SALUD     28.6413  <0.001      NO    
-## 2 Anderson-Darling   INGR      26.6601  <0.001      NO    
-## 3 Anderson-Darling   TRAB      26.5021  <0.001      NO    
-## 4 Anderson-Darling   EDUC      25.5337  <0.001      NO    
-## 5 Anderson-Darling   VIVI      26.1493  <0.001      NO    
-## 6 Anderson-Darling   SEGUR     33.4689  <0.001      NO    
-## 7 Anderson-Darling   MEDIO     27.4659  <0.001      NO    
-## 8 Anderson-Darling   LIBER     32.7548  <0.001      NO    
-## 9 Anderson-Darling   PROYE     33.7289  <0.001      NO    
+## 1 Anderson-Darling   SALUD     31.3706  <0.001      NO    
+## 2 Anderson-Darling   INGR      31.2712  <0.001      NO    
+## 3 Anderson-Darling   TRAB      29.5520  <0.001      NO    
+## 4 Anderson-Darling   EDUC      28.4630  <0.001      NO    
+## 5 Anderson-Darling   VIVI      29.3404  <0.001      NO    
+## 6 Anderson-Darling   SEGUR     45.0719  <0.001      NO    
+## 7 Anderson-Darling   MEDIO     30.6619  <0.001      NO    
+## 8 Anderson-Darling   LIBER     36.5204  <0.001      NO    
+## 9 Anderson-Darling   PROYE     36.7923  <0.001      NO    
 ## 
 ## $Descriptives
 ##          n     Mean  Std.Dev Median Min Max 25th 75th        Skew   Kurtosis
-## SALUD 1412 4.065864 1.667821      4   1   7    3    5 -0.25263651 -0.6874886
-## INGR  1412 3.513456 1.679227      3   1   7    2    5  0.14764264 -0.8046420
-## TRAB  1412 3.997875 1.603282      4   1   7    3    5 -0.15429604 -0.6120418
-## EDUC  1412 3.859773 1.662577      4   1   7    3    5 -0.08589195 -0.7899976
-## VIVI  1412 4.021955 1.635520      4   1   7    3    5 -0.17217851 -0.7308634
-## SEGUR 1412 3.332861 1.760975      3   1   7    2    5  0.22988413 -0.9486602
-## MEDIO 1412 4.107649 1.624502      4   1   7    3    5 -0.24817625 -0.6387453
-## LIBER 1412 4.364023 1.598390      5   1   7    3    5 -0.45141365 -0.3765372
-## PROYE 1412 4.435552 1.548446      5   1   7    4    6 -0.48952927 -0.2833381
+## SALUD 1572 4.052799 1.727196      4   1   7    3    5 -0.22291461 -0.7825718
+## INGR  1572 3.459288 1.726418      3   1   7    2    5  0.19631825 -0.8448538
+## TRAB  1572 4.008270 1.630176      4   1   7    3    5 -0.16483891 -0.6426724
+## EDUC  1572 3.812977 1.694905      4   1   7    3    5 -0.05273125 -0.8424847
+## VIVI  1572 3.968830 1.703233      4   1   7    3    5 -0.15459228 -0.8210521
+## SEGUR 1572 3.202926 1.795437      3   1   7    1    5  0.31135796 -0.9781712
+## MEDIO 1572 4.080153 1.692440      4   1   7    3    5 -0.23657352 -0.7497611
+## LIBER 1572 4.419847 1.627833      5   1   7    3    6 -0.47010342 -0.3896008
+## PROYE 1572 4.481552 1.565962      5   1   7    4    6 -0.48968037 -0.2984462
 ```
 
 Tanto el test de mardia como la prueba de normalidad univariante para cada variable dan cuenta de que no existe normalidad, lo cual debe tenerse en cuenta al seleccionar la forma de extracción de los factores. También nos indica que más adelante no será posible interpretar la preuba de esfericidad de Barlett para multicolinealdiad, ya que esta supone normalidad multivariante.
@@ -264,25 +264,25 @@ print(cor_datos)
 
 ```
 ##           SALUD      INGR      TRAB      EDUC      VIVI     SEGUR     MEDIO
-## SALUD 1.0000000 0.7420187 0.7061226 0.7355949 0.7108488 0.5813200 0.6403432
-## INGR  0.7420187 1.0000000 0.7119460 0.7297410 0.7045040 0.6844146 0.6401415
-## TRAB  0.7061226 0.7119460 1.0000000 0.7953929 0.7770609 0.5861336 0.6871631
-## EDUC  0.7355949 0.7297410 0.7953929 1.0000000 0.8304784 0.6663916 0.7159214
-## VIVI  0.7108488 0.7045040 0.7770609 0.8304784 1.0000000 0.6761304 0.7227902
-## SEGUR 0.5813200 0.6844146 0.5861336 0.6663916 0.6761304 1.0000000 0.6529007
-## MEDIO 0.6403432 0.6401415 0.6871631 0.7159214 0.7227902 0.6529007 1.0000000
-## LIBER 0.6540362 0.6099701 0.7210026 0.7246200 0.7386788 0.5599566 0.7933515
-## PROYE 0.6425699 0.6217780 0.7451753 0.7265637 0.7442531 0.5573235 0.7299445
+## SALUD 1.0000000 0.7003683 0.6409862 0.6787399 0.6464408 0.5103176 0.5834421
+## INGR  0.7003683 1.0000000 0.6697089 0.6913384 0.6612182 0.6165792 0.5803900
+## TRAB  0.6409862 0.6697089 1.0000000 0.7598912 0.7256791 0.5126788 0.6116159
+## EDUC  0.6787399 0.6913384 0.7598912 1.0000000 0.7981664 0.6013051 0.6480850
+## VIVI  0.6464408 0.6612182 0.7256791 0.7981664 1.0000000 0.6192391 0.6496336
+## SEGUR 0.5103176 0.6165792 0.5126788 0.6013051 0.6192391 1.0000000 0.5950104
+## MEDIO 0.5834421 0.5803900 0.6116159 0.6480850 0.6496336 0.5950104 1.0000000
+## LIBER 0.5735002 0.5272623 0.6631359 0.6449380 0.6542137 0.4780704 0.7181173
+## PROYE 0.5627119 0.5573827 0.7028506 0.6675755 0.6757716 0.4669196 0.6377446
 ##           LIBER     PROYE
-## SALUD 0.6540362 0.6425699
-## INGR  0.6099701 0.6217780
-## TRAB  0.7210026 0.7451753
-## EDUC  0.7246200 0.7265637
-## VIVI  0.7386788 0.7442531
-## SEGUR 0.5599566 0.5573235
-## MEDIO 0.7933515 0.7299445
-## LIBER 1.0000000 0.8582211
-## PROYE 0.8582211 1.0000000
+## SALUD 0.5735002 0.5627119
+## INGR  0.5272623 0.5573827
+## TRAB  0.6631359 0.7028506
+## EDUC  0.6449380 0.6675755
+## VIVI  0.6542137 0.6757716
+## SEGUR 0.4780704 0.4669196
+## MEDIO 0.7181173 0.6377446
+## LIBER 1.0000000 0.8135928
+## PROYE 0.8135928 1.0000000
 ```
 
 ```r
@@ -290,7 +290,7 @@ print(det(cor_datos))#Cercano a 0 correlacion multivariante
 ```
 
 ```
-## [1] 0.0001593243
+## [1] 0.0007194266
 ```
 
 La matriz de correlaciones da cuenta de un alto nivel de correlación entre las variables. Como criterio general se espera que existan correlaciones de al menos 0,3. 
@@ -310,26 +310,26 @@ polychoric(datosLW)
 ## Polychoric correlations 
 ##       SALUD INGR TRAB EDUC VIVI SEGUR MEDIO LIBER PROYE
 ## SALUD 1.00                                             
-## INGR  0.77  1.00                                       
-## TRAB  0.73  0.75 1.00                                  
-## EDUC  0.76  0.76 0.82 1.00                             
-## VIVI  0.73  0.74 0.81 0.86 1.00                        
-## SEGUR 0.62  0.72 0.63 0.71 0.72 1.00                   
-## MEDIO 0.66  0.67 0.72 0.75 0.75 0.70  1.00             
-## LIBER 0.67  0.64 0.75 0.76 0.77 0.61  0.83  1.00       
-## PROYE 0.67  0.66 0.77 0.76 0.78 0.60  0.77  0.89  1.00 
+## INGR  0.74  1.00                                       
+## TRAB  0.67  0.71 1.00                                  
+## EDUC  0.71  0.73 0.79 1.00                             
+## VIVI  0.67  0.70 0.76 0.83 1.00                        
+## SEGUR 0.54  0.66 0.55 0.65 0.67 1.00                   
+## MEDIO 0.61  0.62 0.64 0.68 0.68 0.64  1.00             
+## LIBER 0.59  0.56 0.69 0.68 0.69 0.52  0.75  1.00       
+## PROYE 0.59  0.59 0.73 0.70 0.71 0.51  0.68  0.84  1.00 
 ## 
 ##  with tau of 
-##           1     2       3      4    5   6
-## SALUD -1.25 -0.89 -0.4184  0.164 0.85 1.5
-## INGR  -1.00 -0.55  0.0071  0.538 1.15 1.7
-## TRAB  -1.35 -0.88 -0.3934  0.277 0.93 1.6
-## EDUC  -1.21 -0.76 -0.2511  0.318 0.96 1.6
-## VIVI  -1.34 -0.86 -0.3591  0.207 0.88 1.6
-## SEGUR -0.77 -0.39  0.0960  0.609 1.12 1.8
-## MEDIO -1.34 -0.95 -0.4516  0.195 0.79 1.6
-## LIBER -1.41 -1.11 -0.6436 -0.030 0.68 1.4
-## PROYE -1.52 -1.18 -0.6947 -0.076 0.64 1.5
+##           1     2      3      4    5   6
+## SALUD -1.18 -0.84 -0.391  0.159 0.81 1.4
+## INGR  -0.92 -0.49  0.038  0.555 1.14 1.6
+## TRAB  -1.31 -0.87 -0.399  0.263 0.91 1.5
+## EDUC  -1.15 -0.71 -0.215  0.338 0.96 1.6
+## VIVI  -1.21 -0.80 -0.316  0.223 0.86 1.5
+## SEGUR -0.64 -0.28  0.168  0.653 1.15 1.8
+## MEDIO -1.24 -0.88 -0.417  0.184 0.76 1.5
+## LIBER -1.40 -1.11 -0.672 -0.067 0.62 1.4
+## PROYE -1.53 -1.19 -0.711 -0.109 0.60 1.4
 ```
 
 Por último, chequeamos la existencia de multicolinealidad. Con fines de presentar el código, se calcula la prueba de esfericidad de Bartlett, sin embargo esta no puede interpretarse de manera confiable, ya que esta presupone normalidad multivariante, la cual no existe en este caso. 
@@ -346,7 +346,7 @@ print(cortest.bartlett(cor_datos,n = nrow(datosLW)))
 
 ```
 ## $chisq
-## [1] 12305.07
+## [1] 11341.67
 ## 
 ## $p.value
 ## [1] 0
@@ -368,10 +368,10 @@ KMO(datosLW)
 ```
 ## Kaiser-Meyer-Olkin factor adequacy
 ## Call: KMO(r = datosLW)
-## Overall MSA =  0.94
+## Overall MSA =  0.93
 ## MSA for each item = 
 ## SALUD  INGR  TRAB  EDUC  VIVI SEGUR MEDIO LIBER PROYE 
-##  0.95  0.93  0.96  0.95  0.95  0.93  0.94  0.89  0.92
+##  0.95  0.92  0.95  0.94  0.94  0.93  0.94  0.87  0.90
 ```
 
 El output incluye:

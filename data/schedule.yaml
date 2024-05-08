@@ -83,8 +83,8 @@ lessons:
     session: "Sesión 7"
     date: "22 abril"
     bottomborder: True
-    #content: "07-content"
-    #example: "07-practico"
+    content: "07-content"
+    example: "07-practico"
     # assignment: "03-tarea"
     bg: 2
 
