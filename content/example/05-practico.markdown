@@ -14,7 +14,7 @@ editor_options:
 <link href="/rmarkdown-libs/tile-view/tile-view.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/tile-view/tile-view.js"></script>
 <link href="/rmarkdown-libs/animate.css/animate.xaringan.css" rel="stylesheet" />
-<script type="application/json" id="xaringanExtra-editable-docid">{"id":"x30d1df7b01e40dc97f6bad67530fd0a","expires":14}</script>
+<script type="application/json" id="xaringanExtra-editable-docid">{"id":"xbde0842ab074f9daeb8e8ad4e636cc9","expires":14}</script>
 <script src="/rmarkdown-libs/himalaya/himalaya.js"></script>
 <script src="/rmarkdown-libs/js-cookie/js.cookie.js"></script>
 <link href="/rmarkdown-libs/editable/editable.css" rel="stylesheet" />
@@ -51,6 +51,7 @@ Para esto haremos uso de la encuesta [CASEN (2020)](http://observatorio.minister
 
 ```r
 library(haven)
+library(dplyr)
 temp <- tempfile() #Creamos un archivo temporal
 download.file("http://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2020/Casen_en_Pandemia_2020_revisada202209.sav.zip",temp) #descargamos los datos
 casen <- haven::read_sav(unz(temp, "Casen_en_Pandemia_2020_revisada202209.sav")) #cargamos los datos
@@ -71,14 +72,19 @@ table(as_factor(casen$pobreza))
 ```
 
 ```r
-casen$pobre<-car::recode(casen$pobreza,"1:2=1;3=0")
+casen <- casen %>%
+  mutate(pobre = case_when(
+    pobreza %in% 1:2 ~ 1,
+    pobreza == 3 ~ 0
+  ))
 ```
 
 Además filtraremos la base de datos para quedarnos solo con las jefaturas de hogar, de modo de tener solo un caso por hogar.
 
 
 ```r
-casen<-casen[casen$pco1==1,]
+casen <- casen |> 
+  filter(pco1==1)
 ```
 
 

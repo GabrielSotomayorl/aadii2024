@@ -29,9 +29,12 @@ En primer lugar, cargaremos una base de datos de PNUD 2015, que incluye los sigu
 
 Estos datos están en formato csv (comma separated value), por lo cual podemos leerlos con la función *read.csv2* incluida con r base.
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
 #cargamos los datos 
-datos <- read.csv2("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EjemploAF.csv")
+datos <- read.csv("https://raw.githubusercontent.com/Clases-GabrielSotomayor/pruebapagina/master/static/slides/data/EDH_2013_csv.csv") |> 
+  select(salud = P25a,ingr = P25b, trab = P25c,  educ = P25d, vivi = P25e,  segur = P25f, medio = P25g, liber = P25h, proye = P25i) 
+
 ```
 
 
@@ -42,8 +45,9 @@ A continuación, revisamos los datos y daremos por perdidos los valores no sabe 
 summary(datos)
 
 #Categorizar como NA 8 y 9 (NS/NR).
-datos[datos==9] <- NA
-datos[datos==8] <- NA
+datos <- datos %>%
+  mutate(across(everything(), ~na_if(.x, 9))) %>%
+  mutate(across(everything(), ~na_if(.x, 8)))
 ```
 
 A continuación, exploramos los datos para conocer sus medias y distribución. En este punto es relevante revisar si existe mucha diferencia en sus niveles de variabilidad, ya que esto afectara los resultados del Análisis Factorial Exploratorio.
@@ -67,14 +71,13 @@ Para la comprobación de supuestos partiremos por generar una base de datos list
 
 ```{r}
 #   5a.   Crear una base solo con listwise (para test de Mardia)
-
 datosLW <- na.omit(datos)
 dim(datosLW)
 ```
 
 A continuación, revisaremos la existencia de casos atípicos multivariantes a partir del cálculo y evaluación de la distancia de Mahalanobis. Primero se crean las medias para cada variable (mean) y la matriz de covarianzas (Sx) para calcular la distancia de mahalanobis con la función correspondiente. 
 
-Luego se calcula el valor p asociado con cada distancia de Mahalanobis D2 y se guarda como una nueva variable: datosLW$sigmahala=(1-pchisq(D2, 3)).
+Luego se calcula el valor p asociado con cada distancia de Mahalanobis D2 y se guarda como una nueva variable: datosLW$sigmahala=(1-pchisq(D2, 9)).
 
 Finalmente se filtran los casos atípicos multivariantes según el valor p de la distancia de mahalanobis, y se elimina la variable creada en el paso anterior.
 
@@ -84,10 +87,12 @@ mean<-colMeans(datosLW[1:9])
 Sx<-cov(datosLW[1:9]) #matriz de varianza covariaza 
 D2<-mahalanobis(datosLW[1:9],mean,Sx)
 
-datosLW$sigmahala=(1-pchisq(D2, 9))  
+datosLW$sigmahala=(1-pchisq(D2, df = 9))  # Usando 9 grados de libertad
 
-datosLW<-datosLW[which(datosLW$sigmahala>0.001),]#dar por perdido o eliminar caso atipico
-datosLW$sigmahala<-NULL
+#eliminar casos atipicos
+datosLW <- datosLW %>%
+  filter(sigmahala > 0.001) %>%
+  select(-sigmahala)
 ```
 
 A continuación, utilizamos la función **mvn**  para evaluar la normalidad multivariante y univariante en un conjunto de datos. Especificamos que utilice el test de Mardia para evaluar la existencia de normalidad multivariante en nuestros datos.   
@@ -138,7 +143,7 @@ La prueba de esfericidad de Bartlett evalúa si la matriz de correlaciones es si
 print(cortest.bartlett(cor_datos,n = nrow(datosLW)))
 ```
 
-En este caso, el valor chi-cuadrado es 12305.07 y el valor p es muy pequeño, lo que indica que se debe rechazar la hipótesis nula de que la matriz de correlaciones es igual a la matriz de identidad. Esto sugiere que hay correlaciones entre las variables y es apropiado continuar con el análisis factorial exploratorio.
+En este caso, el valor chi-cuadrado es 11479.18 y el valor p es muy pequeño, lo que indica que se debe rechazar la hipótesis nula de que la matriz de correlaciones es igual a la matriz de identidad. Esto sugiere que hay correlaciones entre las variables y es apropiado continuar con el análisis factorial exploratorio.
 
 La función **KMO()** calcula la medida de adecuación del muestreo de Kaiser-Meyer-Olkin (KMO) para evaluar la adecuación de los datos para el análisis factorial. La medida KMO varía entre 0 y 1, y valores más altos indican que el análisis factorial es más adecuado para los datos. 
 
@@ -152,4 +157,4 @@ El output incluye:
 - Overall MSA: La medida KMO general para todo el conjunto de datos.  
 - MSA for each item: La medida KMO para cada variable en el conjunto de datos.  
 
-En este caso, la medida KMO general es 0.94, lo que indica una adecuación muy alta para el análisis factorial. Además, las medidas KMO para cada variable también son altas (entre 0.89 y 0.96), lo que sugiere que cada variable contribuye adecuadamente al análisis factorial.
+En este caso, la medida KMO general es 0.94, lo que indica una adecuación muy alta para el análisis factorial. Además, las medidas KMO para cada variable también son altas (entre 0.88 y 0.95), lo que sugiere que cada variable contribuye adecuadamente al análisis factorial.
