@@ -110,8 +110,8 @@ lessons:
   - title: '• Análisis factorial confirmatorio y su aplicación<br>• Especificación e identificación del modelo'
     session: "Sesión 10"
     date: "20 mayo"
-    #content: "08-content"
-    # example: "08-practico"
+    content: "08-content"
+    example: "08-practico"
     # assignment: "04-tarea"
     bg: 1
 
