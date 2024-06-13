@@ -1,9 +1,9 @@
 ---
-title: "Análisis de Senderos (Taller)"
-linktitle: "11: Análisis de Senderos (Taller)"
-date: "2021-11-08"
-start_date: "2021-09-27"
-end_date: "2021-11-08"
+title: "Análisis de Senderos II"
+linktitle: "11: Análisis de Senderos II"
+date: "2024-06-17"
+start_date: "2024-06-17"
+end_date: "2024-06-17"
 menu:
   content:
     parent: Contenido
@@ -12,7 +12,7 @@ type: docs
 toc: true
 bibliography: "../../static/bib/references.bib"
 csl: "../../static/bib/chicago-fullnote-bibliography-no-bib.csl"
-slides: "clase pa taller"
+slides: "Clase PA II"
 ---
 
 ```{r slides-videos, echo=FALSE, include=FALSE}
@@ -30,7 +30,7 @@ slide_details <- tibble::tribble(
 `r blogdown::shortcode("slide-buttons")`
 
 ```{r show-slide-tabs, echo=FALSE, results="asis"}
-slide_tabs(slide_details, "/slides/clase pa taller.html")
+slide_tabs(slide_details, "/slides/Clase PA II.html")
 ```
 
 {{% div fyi %}}
